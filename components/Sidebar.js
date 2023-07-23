@@ -118,8 +118,8 @@ function Sidebar({ currentTopic, disable=true }) {
                 </div>
 
                 {loaded &&
-                    topics.map((topic) => (
-                        <div className="mb-2 mr-2" key={getNextKey()}>
+                    topics.map((topic, index) => (
+                        <div className={`mb-2 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
                             <div
                                 className="flex items-center mb-2 hover:cursor-pointer justify-between"
                                 onClick={() => toggleCollapse(topic)}

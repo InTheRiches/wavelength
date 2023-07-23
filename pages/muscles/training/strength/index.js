@@ -13,7 +13,29 @@ export default function TrainingBasics({}) {
             <Content
                 id={"reps-sets-rest"}
                 title={"Reps, Sets, and Rest"}
-                content={"When training for strength, it is important to focus on high intensity, low volume workouts. Typically, 3-5 sets of 3-6 reps  above 85% of your [/muscles/training/basics/concepts#terminology,1RM] is recommended. This intensity range challenges the neuromuscular system to adapt and improve maximal strength. The emphasis is on quality over quantity, with longer rest periods between sets to allow for optimal recovery. Rest times are typically around 2-5 minutes to allow for sufficient **recovery** between sets and ensure the ability to lift heavy with proper form. This type of training helps you build maximal strength by challenging your muscles and central nervous system to handle heavy loads.-.-The specific rest time within this range can be adjusted based on individual factors and training circumstances. Some individuals may find they need slightly longer or shorter rest periods to optimize their performance and achieve their desired hypertrophic results."}
+                content={"When training for strength, it is important to focus on high intensity, low volume workouts. Typically, 3-5 sets of 3-6 reps  above 85% of your [/muscles/training/basics/concepts#terminology,1RM] is recommended. This intensity range challenges the neuromuscular system to adapt and improve maximal strength. The emphasis is on quality over quantity, with longer rest periods between sets to allow for optimal recovery. Rest times are typically around 2-5 minutes to allow for sufficient **recovery** between sets and ensure the ability to lift heavy with proper form. This type of training helps you build maximal strength by challenging your muscles and central nervous system to handle heavy loads."}
+                ></Content>
+            <div className={"w-full px-4 border-1 border-neutral-700 rounded-md"}>
+                <table className="table-auto w-full">
+                    <thead>
+                    <tr className={"border-b-1 border-neutral-700"}>
+                        <th className={"py-2 text-left"}>% of 1RM</th>
+                        <th className={"py-2 text-left"}>Reps / Sets</th>
+                        <th className={"py-2 text-left"}>Rest Times</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td className={"border-b-1 border-neutral-700 py-2 flex flex-row items-center"}>>85%</td>
+                        <td className={"border-b-1 border-neutral-700 py-2"}>3-6 / 3-5</td>
+                        <td className={"border-b-1 border-neutral-700 py-2"}>3-5m</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <Content
+                title={""}
+                content={"The specific rest time within this range can be adjusted based on individual factors and training circumstances. Some individuals may find they need slightly longer or shorter rest periods to optimize their performance and achieve their desired hypertrophic results."}
                 ></Content>
         </div>
     );
