@@ -29,7 +29,7 @@ export default function Layout() {
     // }, []);
 
     return (
-        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center font-mono bg-cyan-300 dark:bg-cyan-accent`}>
+        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center font-mono bg-cyan-accent`}>
             <header className={"flex flex-col items-center w-full h-screen bg-white dark:bg-neutral-900 slant"}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 {/*<svg id="visual" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" version="1.1" className='w-full h-full absolute'>*/}

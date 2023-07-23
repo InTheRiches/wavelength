@@ -111,11 +111,11 @@ function Sidebar({ currentTopic, disable=true }) {
     return (
         <div className="flex flex-col h-full w-full max-w-1/5">
             <div id="sidebar" style={{ maxHeight: remainingHeight + "px" }} className={`sidebar-taper sticky top-20 overflow-y-auto z-10 bg-white dark:bg-neutral-900 px-4 mt-15 pr-4 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
-                <div className="w-full bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 backdrop-blur dark:bg-neutral-900/50 sticky top-0 z-10 ">
-                    <button className="w-full lg:flex border-1 border-slate-200 hover:border-cyan-accent border-opacity-50 hover:border-opacity-75 items-center text-sm leading-6 text-neutral-700 dark:text-slate-300 hover:dark:text-slate-50 hover:text-neutral-900 rounded-md shadow-sm py-1.5 pl-2 pr-3 mb-6 transition-all duration-100 bg-transparent">
-                        <a>Search...</a>
-                    </button>
-                </div>
+                {/*<div className="w-full bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 backdrop-blur dark:bg-neutral-900/50 sticky top-0 z-10 ">*/}
+                {/*    <button className="w-full lg:flex border-1 border-slate-200 hover:border-cyan-accent border-opacity-50 hover:border-opacity-75 items-center text-sm leading-6 text-neutral-700 dark:text-slate-300 hover:dark:text-slate-50 hover:text-neutral-900 rounded-md shadow-sm py-1.5 pl-2 pr-3 mb-6 transition-all duration-100 bg-transparent">*/}
+                {/*        <a>Search...</a>*/}
+                {/*    </button>*/}
+                {/*</div>*/}
 
                 {loaded &&
                     topics.map((topic) => (

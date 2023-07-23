@@ -1,3 +1,4 @@
+
 [
   {
     "id": 0,
@@ -23,7 +24,10 @@
               { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
             ]
           },
-          { "id": 2, "title": "Strength", "href": "/muscles/training/strength"}
+          { "id": 2, "title": "Strength", "href": "/muscles/training/strength"},
+          { "id": 3, "title": "Hypertrophy", "href": "/muscles/training/hypertrophy"},
+          { "id": 4, "title": "Cardio", "href": "/muscles/training/cardio" },
+          { "id": 5, "title": "Power", "href": "/muscles/training/power"}
         ]
       },
       {
@@ -69,13 +73,40 @@
     "id": 2,
     "title": "Cardio",
     "subtopics": [
-      { "id": 0, "title": "Basics", "href": "/cardio/basics"}
+      { "id": 0, "title": "Basics", "href": "/cardio/basics"},
+      { "id": 1, "title": "Options", "subtopics":[
+        { "id": 0, "title": "Cycling", "href": "/cardio/options/cycling" },
+        { "id": 1, "title": "Running", "href": "/cardio/options/running" },
+        { "id": 2, "title": "Walking", "href": "/cardio/options/walking" },
+        { "id": 3, "title": "Swimming", "href": "/cardio/options/swimming" },
+        { "id": 4, "title": "HIIT", "href": "/cardio/options/hiit"}
+      ]}
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Recovery",
+    "subtopics": [
+      { "id": 1, "title": "Rest Set Periods", "href": "/recovery/rest-set-periods" },
+      { "id": 2, "title": "Rest Days", "href": "/recovery/rest-days" },
+      { "id": 3, "title": "Active Recovery", "href": "/recovery/active-recovery" },
+      { "id": 4, "title": "Sleep", "href": "/recovery/sleep" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Diet",
+    "subtopics": [
+      { "id": 1, "title": "Basics", "href": "/diet/basics" },
+      { "id": 2, "title": "Cutting", "href": "/diet/cutting" },
+      { "id": 3, "title": "Bulking", "href": "/diet/bulking" }
     ]
   },
   {
     "id": 5,
     "title": "Supplements",
     "subtopics": [
+      { "id": 1, "title": "Basics", "href": "/supplements/basics" },
       {
         "id": 2,
         "title": "Performance",
@@ -95,7 +126,9 @@
           { "id": 2, "title": "Loaded Protein", "href": "/supplements/muscle-gain/loaded-protein" },
           { "id": 3, "title": "Glutamine", "href": "/supplements/muscle-gain/glutamine" }
         ]
-      }
+      },
+      { "id": 4, "title": "Recovery", "href": "/supplements/recovery" },
+      { "id": 5, "title": "Weight Loss", "href": "/supplements/weight-loss" }
     ]
   }
 
