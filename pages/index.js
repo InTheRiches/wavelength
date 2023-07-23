@@ -1,8 +1,5 @@
-import {useEffect, useState} from 'react'
-import { useRouter } from 'next/router'
+import {useEffect} from 'react'
 import Navigation from '@/components/Navigation'
-import Content from '@/components/Content'
-import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import useDarkMode from 'use-dark-mode';
 
@@ -30,7 +27,7 @@ export default function Layout() {
 
     return (
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center font-mono bg-cyan-accent`}>
-            <header className={"flex flex-col items-center w-full h-screen bg-white dark:bg-neutral-900 slant"}>
+            <header className={"flex flex-col items-center w-full h-screen bg-white dark:bg-neutral-900"}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 {/*<svg id="visual" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" version="1.1" className='w-full h-full absolute'>*/}
                 {/*    <rect x="0" y="0" className={"w-screen h-full"} fill="#001220"></rect>*/}
@@ -63,16 +60,16 @@ export default function Layout() {
                 </div>
             </header>
 
-            <section className="text-center max-w-7xl px-8 pt-10 sm:pt-15 md:pt-20 pb-14"><h2
+            <section className="text-center max-w-7xl px-8 pt-10 sm:pt-15 md:pt-20 pb-14 slant"><h2
                 className="text-slate-900 text-4xl font-extrabold sm:text-5xl dark:text-white">Understanding the mechanics behind working out significantly increases effectiveness.</h2>
                 <figure>
-                    <blockquote><p className="mt-6 max-w-3xl mx-auto text-lg lg:text-xl text-slate-600 dark:text-slate-900">During my fitness journey, I realized the importance of understanding the human anatomy and the underlying science of muscle <a className={"text-slate-50"}>hypertrophy</a>. As my understanding of these concepts grew, so did my <a className={"text-slate-50"}>efficiency</a> and <a className={"text-slate-50"}>effectiveness</a> in the gym. By comprehending the precise mechanisms behind muscle development and how to optimize them, I found that my workouts became more <a className={"text-slate-50"}>gratifying</a> and <a className={"text-cyan-accent"}>productive</a>.</p></blockquote>
+                    <blockquote><p className="mt-6 max-w-3xl mx-auto text-lg lg:text-xl text-slate-900">During my fitness journey, I realized the importance of understanding the human anatomy and the underlying science of muscle <a className={"text-slate-50"}>hypertrophy</a>. As my understanding of these concepts grew, so did my <a className={"text-slate-50"}>efficiency</a> and <a className={"text-slate-50"}>effectiveness</a> in the gym. By comprehending the precise mechanisms behind muscle development and how to optimize them, I found that my workouts became more <a className={"text-slate-50"}>gratifying</a> and <a className={"text-cyan-accent"}>productive</a>.</p></blockquote>
                     <figcaption className="mt-6 flex items-center justify-center space-x-4 text-left"><img
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" className="w-14 h-14 rounded-full"
                         loading="lazy" decoding="async"></img>
                         <div>
-                            <div className="text-slate-900 font-bold dark:text-white text-lg">Hayden Williams</div>
-                            <div className="mt-0.5 text-lg leading-6 text-slate-600 dark:text-slate-900">Co-Founder of Surge Strength</div>
+                            <div className="font-bold text-white text-lg">Hayden Williams</div>
+                            <div className="mt-0.5 text-lg leading-6 text-slate-900">Co-Founder of Surge Strength</div>
                         </div>
                     </figcaption>
                 </figure>
