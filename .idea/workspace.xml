@@ -9,8 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/muscles/training/basics/repsandsets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/basics/repsandsets/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/muscles/training/strength/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/strength/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +146,7 @@
       <workItem from="1686873540992" duration="4720000" />
       <workItem from="1687704265121" duration="5888000" />
       <workItem from="1690059433029" duration="1759000" />
-      <workItem from="1690122908072" duration="2414000" />
+      <workItem from="1690122908072" duration="2961000" />
     </task>
     <servers />
   </component>

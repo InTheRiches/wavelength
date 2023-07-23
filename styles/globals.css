@@ -18,6 +18,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: white;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 body.d {
   background: rgb(23 23 23);
