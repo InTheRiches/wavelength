@@ -4,7 +4,7 @@ import {scroll} from "@/components/ContentScroll";
 
 export default function Content({id, title, content, bulletPoints}) {
     const spans = content ? content.split("-.-") : [];
-    const regex = /\[(.*?),([a-zA-Z\d\s]*)\]/g; // regex to match the hyperlink pattern
+    const regex = /\[([^\],]*),([a-zA-Z\d\s.,]*)\]/g; // regex to match the hyperlink pattern
     const router = useRouter();
 
     const handleClick = (link) => {
@@ -162,7 +162,7 @@ export default function Content({id, title, content, bulletPoints}) {
             </div>}
             {bullets.length > 0 && <ul className={`text-lg list-inside ${text.length > 0 ? "" : "mt-6"} list-disc lg:grid w-full`}>
                 {bullets.map((key, index) => (
-                    <li key={index}><b>{Object.keys(bulletPoints)[index]}:</b><span> {key}</span></li>
+                    <li className={"mb-4"} key={index}><b>{Object.keys(bulletPoints)[index]}:</b><span> {key}</span></li>
                 ))}
             </ul>}
         </div>

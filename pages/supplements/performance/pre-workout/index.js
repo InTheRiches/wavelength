@@ -42,7 +42,7 @@ export default function PerformancePreWorkout({}) {
                     "BCAAs": "Branched-chain amino acids (leucine, isoleucine, and valine) that can help stimulate muscle protein synthesis and reduce muscle breakdown during exercise. ([/supplements/performance/bcaas,Learn More])",
                     "Tyrosine": "An amino acid that can help improve focus and mental performance during exercise.",
                     "Taurine": "An amino acid that can help reduce muscle damage and improve exercise performance.",
-                    "Betaine": "A compound that can help improve muscle power and strength.",
+                    "Betaine": "A compound that can help improve muscle endurance and strength.",
                     "Electrolytes": "Minerals such as sodium, potassium, and magnesium that can help improve hydration and reduce the risk of muscle cramps during exercise."
                 }}
                 >

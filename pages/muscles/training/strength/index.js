@@ -26,7 +26,7 @@ export default function TrainingBasics({}) {
                     </thead>
                     <tbody>
                     <tr>
-                        <td className={"border-b-1 border-neutral-700 py-2 flex flex-row items-center"}>>85%</td>
+                        <td className={"border-b-1 border-neutral-700 py-2 flex flex-row items-center"}>{'>'}85%</td>
                         <td className={"border-b-1 border-neutral-700 py-2"}>3-6 / 3-5</td>
                         <td className={"border-b-1 border-neutral-700 py-2"}>3-5m</td>
                     </tr>

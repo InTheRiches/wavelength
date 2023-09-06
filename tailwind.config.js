@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
+  plugins: [
+    // ...
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+  corePlugins: {
+    aspectRatio: false,
+  },
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,6 +21,11 @@ module.exports = {
         ]
     },
     extend: {
+      lineHeight: {
+        '16': '4rem',
+        '20': '5rem',
+        '24': "7rem",
+      },
       fontFamily: {
         'spacemono': ['Space Mono', 'monospace'],
         'jetbrains': ['JetBrains Mono', 'monospace'],
@@ -29,6 +42,11 @@ module.exports = {
         "link-text": "#56caff",
         "cyan-accent-light": "#3fb1e7",
         "red-accent": "#c62368",
+        "light-focus": "#e8f0fe",
+        "dark-focus": "#151920"
+      },
+      ringWidth: {
+        "1.5": "1.5px",
       },
       borderWidth: {
         1: '1px',

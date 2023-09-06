@@ -1,0 +1,96 @@
+import {useRouter} from "next/router";
+import useDarkMode from "use-dark-mode";
+import React, {useEffect} from "react";
+import {toast} from "react-toastify";
+import {setCookie} from "cookies-next";
+
+export default function Login() {
+    const router = useRouter();
+
+    const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
+
+    useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [isDarkMode]);
+
+    let emailRef = React.createRef();
+    let passwordRef = React.createRef();
+
+    return (
+        <div className="flex min-h-screen flex-col justify-center px-6 pb-24 lg:px-8 bg-white dark:bg-neutral-900">
+            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                <img className="mx-auto h-10 w-auto hover:cursor-pointer" src="logo.png" alt="Your Company" onClick={(e) => {
+                    e.preventDefault();
+                    router.push("/");
+                }}/>
+                <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-slate-900 dark:text-slate-50">Sign in to your account</h2>
+            </div>
+
+            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <form className="space-y-6" onSubmit={async (e) => {
+                    e.preventDefault();
+
+                    try {
+                        const reqBody = {
+                            email: emailRef.current.value,
+                            password: passwordRef.current.value,
+                        }
+
+                        const response = await fetch('/api/user/login', {
+                            method: 'POST',
+                            body: JSON.stringify(reqBody),
+                        }).then(res => {
+                            if (res.ok || res.status !== 403) {
+                                res.json().then(async json => {
+                                    setCookie("accessToken", json.user.accessToken);
+                                    setCookie("id", json.user.id);
+
+                                    console.log("account found with token " + json.user.refreshToken);
+                                    // await router.replace('/');
+                                });
+
+                                return;
+                            }
+
+                            // error, do whatever to signal wrong information
+                        });
+                    } catch (e) {
+                        toast.error(e.message);
+                    }
+                }}>
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-50">Email address</label>
+                        <div className="mt-2">
+                            <input id="email" name="email" type="email" autoComplete="email" required ref={emailRef} className="bg-white dark:bg-neutral-950 block w-full rounded-md border-0 py-1.5 text-slate-900 dark:text-slate-50 shadow-sm ring-1 ring-inset ring-cyan-accent placeholder:text-slate-700 focus:ring-1.5 focus:ring-inset focus:ring-cyan-accent sm:text-sm sm:leading-6"/>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="flex items-center justify-between">
+                            <label htmlFor="password" className="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-50">Password</label>
+                            <div className="text-sm">
+                                <a href="#" className="font-semibold text-cyan-accent hover:text-cyan-accent-light">Forgot password?</a>
+                            </div>
+                        </div>
+                        <div className="mt-2">
+                            <input id="password" name="password" type="password" autoComplete="current-password" required ref={passwordRef} className="bg-white dark:bg-neutral-950 block w-full rounded-md border-0 py-1.5 text-slate-900 dark:text-slate-50 shadow-sm ring-1 ring-inset ring-cyan-accent focus:ring-1.5 focus:ring-inset focus:ring-cyan-accent placeholder:text-slate-700 sm:text-sm sm:leading-6"/>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" className="flex w-full justify-center hover:shadow-lg rounded-md bg-cyan-accent px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-cyan-accent-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+                    </div>
+                </form>
+
+                <p className="mt-10 text-center text-sm text-gray-500">
+                    Not a member?
+                    <a href="/signup" className="font-semibold leading-6 text-cyan-accent hover:text-cyan-accent-light"> Create an account</a>
+                </p>
+            </div>
+        </div>
+    )
+}

@@ -8,10 +8,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/db/genuuid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/db/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/db/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mongodb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/user/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/user/login/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/user/signup/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/course/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/login/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/signup/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/manRunningLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/ReactToastify.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/cardio/basics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cardio/basics/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/basics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/basics/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/functions/arms/triceps/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/functions/arms/triceps/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/functions/back/lats/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/functions/back/lats/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/functions/legs/calves/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/functions/legs/calves/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/functions/legs/glutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/functions/legs/glutes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/functions/legs/hamstrings/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/functions/legs/hamstrings/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/functions/legs/quads/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/functions/legs/quads/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/training/basics/concepts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/basics/concepts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/muscles/training/basics/repsandsets/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/basics/repsandsets/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/training/power/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/endurance/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/muscles/training/strength/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/strength/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/supplements/performance/creatine/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/supplements/performance/creatine/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/supplements/performance/pre-workout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/supplements/performance/pre-workout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +63,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2PijrFqfWWRaSNUpw0XTA9Wkeig" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,28 +74,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/Tonia/Documents/GitHub/coach-phrog",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "ts.external.directory.path": "C:\\Users\\hayde\\AppData\\Local\\JetBrains\\Toolbox\\apps\\WebStorm\\ch-0\\231.8109.174\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.0.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.0.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Unity/Projects/coach-phrog/pages/api/user/login&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\hayde\\AppData\\Local\\JetBrains\\Toolbox\\apps\\WebStorm\\ch-0\\232.8660.143\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -72,11 +110,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Unity\Projects\coach-phrog\pages\api\user\login" />
+      <recent name="D:\Unity\Projects\coach-phrog\libs" />
+      <recent name="D:\Unity\Projects\coach-phrog\pages\api\user\signup" />
       <recent name="D:\Unity\Projects\coach-phrog\public" />
       <recent name="D:\Unity\Projects\coach-phrog\pages\muscles\functions\legs" />
-      <recent name="D:\Unity\Projects\coach-phrog\pages\muscles\functions\arms" />
-      <recent name="D:\Unity\Projects\coach-phrog\components" />
-      <recent name="D:\Unity\Projects\coach-phrog\pages\muscles\training\basics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Unity\Projects\coach-phrog\pages\muscles\functions" />
@@ -149,6 +187,20 @@
       <workItem from="1687704265121" duration="5888000" />
       <workItem from="1690059433029" duration="1759000" />
       <workItem from="1690122908072" duration="2414000" />
+      <workItem from="1691197139633" duration="1166000" />
+      <workItem from="1691338218133" duration="412000" />
+      <workItem from="1691346503787" duration="1805000" />
+      <workItem from="1691523099275" duration="383000" />
+      <workItem from="1691715849658" duration="597000" />
+      <workItem from="1692031417031" duration="2000" />
+      <workItem from="1692031449866" duration="107000" />
+      <workItem from="1692031630733" duration="26000" />
+      <workItem from="1692031723863" duration="6568000" />
+      <workItem from="1692288758165" duration="9840000" />
+      <workItem from="1692496434404" duration="20830000" />
+      <workItem from="1693352797612" duration="4144000" />
+      <workItem from="1693958005701" duration="8000" />
+      <workItem from="1693958035639" duration="591000" />
     </task>
     <servers />
   </component>
