@@ -15,7 +15,7 @@ export default function TrainingBasics({}) {
                 title={"Reps, Sets, and Rest"}
                 content={"When training for strength, it is important to focus on high intensity, low volume workouts. Typically, 3-5 sets of 3-6 reps  above 85% of your [/muscles/training/basics/concepts#terminology,1RM] is recommended. This intensity range challenges the neuromuscular system to adapt and improve maximal strength. The emphasis is on quality over quantity, with longer rest periods between sets to allow for optimal recovery. Rest times are typically around 2-5 minutes to allow for sufficient **recovery** between sets and ensure the ability to lift heavy with proper form. This type of training helps you build maximal strength by challenging your muscles and central nervous system to handle heavy loads."}
                 ></Content>
-            <div className={"w-full px-4 border-1 border-neutral-700 rounded-md"}>
+            <div className={"w-full mt-6 px-4 border-1 border-neutral-700 rounded-md"}>
                 <table className="table-auto w-full">
                     <thead>
                     <tr className={"border-b-1 border-neutral-700"}>
