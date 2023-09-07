@@ -78,6 +78,39 @@ body.d {
 /*  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);*/
 /*}*/
 
+span {
+  position: relative;
+}
+
+ul li {
+  list-style-position: outside;
+}
+
+ul li::marker {
+  color: #cbd5e1;
+}
+
+span .tooltip {
+  opacity: 0;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+span:hover .tooltip {
+  opacity: 1;
+}
+
 .slant {
   position: relative;
   overflow: hidden;

@@ -75,7 +75,7 @@ export default function ContentPage({ location, title, description, currentTopic
     // }, []);
 
     return (
-        <div className={"flex flex-col min-h-screen bg-white dark:bg-neutral-900 text-slate-900 dark:text-slate-50 justify-center items-center"}>
+        <div className={"flex flex-col min-h-screen bg-white dark:bg-neutral-900 text-slate-900 dark:text-slate-200 justify-center items-center"}>
             <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
 
             <div className="main-grid sm:grid sm:gap-8 sm:grid-cols-3 max-w-screen-4xl md:px-6 my-8">

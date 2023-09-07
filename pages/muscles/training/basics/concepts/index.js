@@ -29,17 +29,17 @@ export default function Concepts({}) {
             <Content
                 id={"finisher-set"}
                 title={"Intense Finisher Set"}
-                content={"Research suggests ([https://pubmed.ncbi.nlm.nih.gov/15574075/,Goto et al., 2004]) that performing a single set of an exercise of high reps (15-30) to complete muscular failure after your existing normal sets can significantly improve muscle growth. Goto et al. (2004) found that performing a single set of low-intensity and high-repetition exercise added immediately after the previous regimen showed significantly larger increases in 1RM leg press, maximal isokinetic strength, and muscular endurance of leg extension compared to just the original regimen. The muscle's cross sectional area (CSA, essentially the size of the muscle) also increased."}
+                content={"Research suggests ([https://pubmed.ncbi.nlm.nih.gov/15574075/,Goto et al., 2004]) that performing a single set of an exercise of high reps (15-30) to complete muscular failure after your existing normal sets can significantly improve muscle growth. Goto et al. (2004) found that performing a single set of low-intensity and high-repetition exercise added immediately after the previous regimen without rest showed significantly larger increases in 1RM leg press, and muscular endurance of leg extension compared to just the original regimen. The muscle's **cross sectional area** (CSA, essentially the size of the muscle) also increased. This means that by adding this finisher set, you can significantly increase both muscular **strength and endurance**, as well as the muscle's size."}
             ></Content>
             <Content
                 id={"terminology"}
                 title={"Terminology"}
                 bulletPoints={{
-                    "Repetition": "A repetition, or rep, is a single movement of an exercise. For example, a single push up is one repetition.",
-                    "Set": "A set is a group of repetitions. For example, 3 sets of 10 push ups is 30 total repetitions.",
+                    "Repetition[/muscles/training/basics/repsandsets#reps-and-sets]": "A repetition, or rep for short, is a single movement of an exercise. For example, a single push up is one repetition. A rep is the most basic form of measurement in weight lifting.",
+                    "Set": "A set is a group of repetitions. For example, a set would be 10 push ups performed in succession. If the reps were not performed in succession, it would typically not be a set.",
                     "Weight": "Weight refers to the amount of resistance used in an exercise. This can be in the form of dumbbells, barbells, or even body weight.",
-                    "Volume": "Volume refers to the total amount of work performed during a workout. It is a combination of the number of sets, repetitions, and weight or resistance used in an exercise.",
-                    "1RM": "1RM, or one rep max, is the maximum amount of weight you can lift for a single repetition of an exercise. It is used to determine the amount of weight you should use for a given exercise."
+                    "Volume[/muscles/training/basics/concepts#Volume]": "Volume refers to the total amount of work performed during a workout. It is a combination of the number of sets, repetitions, and weight or resistance used in an exercise.",
+                    "1RM": "1RM, or one rep max, is the maximum amount of weight you can lift for a single repetition of an exercise. It is used to determine the amount of weight you should use for a given exercise. It is important you accurately track this, and make sure you are at true muscular failure."
                 }}
             ></Content>
         </div>
