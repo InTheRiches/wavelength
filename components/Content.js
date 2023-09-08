@@ -4,7 +4,7 @@ import {scroll} from "@/components/ContentScroll";
 
 export default function Content({id, title, content, bulletPoints}) {
     const spans = content ? content.split("-.-") : [];
-    const regex = /\[([^\],]*),([a-zA-Z\d\s.,]*)\]/g; // regex to match the hyperlink pattern
+    const regex = /\[([^\],]*),([\p{L}\d\s.,-]*)\]/ug; // regex to match the hyperlink pattern /\[([^\],]*),([a-zA-Z\d\s.,À-ÖØ-öø-ÿ]*)\]/g
     const router = useRouter();
 
     const handleClick = (link) => {
