@@ -8,8 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/muscles/training/strength/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/strength/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ContentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ContentPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/muscles/training/basics/concepts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/training/basics/concepts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "20.0.0",
     "javascript.nodejs.core.library.typings.version": "20.0.0",
     "last_opened_file_path": "D:/Unity/Projects/coach-phrog/pages/api/user/login",
@@ -170,6 +171,7 @@
       <workItem from="1693958005701" duration="8000" />
       <workItem from="1693958035639" duration="591000" />
       <workItem from="1693963773035" duration="25000" />
+      <workItem from="1694042435610" duration="593000" />
     </task>
     <servers />
   </component>
