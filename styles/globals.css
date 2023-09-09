@@ -86,7 +86,7 @@ ul li {
   list-style-position: outside;
 }
 
-ul li::marker {
+ul.markerColor li::marker {
   color: #cbd5e1;
 }
 

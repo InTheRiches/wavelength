@@ -36,13 +36,17 @@ export default function Content({id, title, content, bulletPoints}) {
     const text = spans.map((originalBlock, index) => {
         let block = []
 
+        let key = 0;
+
         while (originalBlock.includes("**")) {
             const boldStart = originalBlock.indexOf("**");
             const boldEnd = originalBlock.indexOf("**", boldStart + 2);
             const bold = originalBlock.substring(boldStart + 2, boldEnd);
 
             block.push(originalBlock.substring(0, boldStart));
-            block.push(<b className="uline">{bold}</b>);
+            block.push(<b className="uline" key={key}>{bold}</b>);
+
+            key++;
 
             originalBlock = originalBlock.substring(boldEnd + 2);
         }
@@ -53,35 +57,75 @@ export default function Content({id, title, content, bulletPoints}) {
             const code = originalBlock.substring(codeStart + 1, codeEnd);
 
             block.push(originalBlock.substring(0, codeStart));
-            block.push(<code className="border-1 border-neutral-700 flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1">{code}</code>);
+            block.push(<code className="border-1 border-neutral-700 flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1" key={key}>{code}</code>);
+
+            key++;
 
             originalBlock = originalBlock.substring(codeEnd + 1);
         }
 
-        for (let i = 0; i < block.length; i++){
+        // for (let i = 0; i < block.length; i++){
+        //     let blockElement = block[i];
+        //     if (typeof blockElement !== "string") continue;
+        //     // check for link, if so, insert link
+        //     let count = 1;
+        //     while (blockElement.match(regex)) {
+        //         let linkData = loadLinkData(blockElement);
+        //
+        //         block[i + (count-1)] = blockElement.substring(0, linkData.startIndex);
+        //         block.splice(i + count, 0, <a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"} key={key}>{linkData.linkText}</a>);
+        //         blockElement = blockElement.substring(linkData.endIndex);
+        //
+        //         key++;
+        //         count += 2;
+        //     }
+        //
+        //     if (block[i] !== blockElement)
+        //         block.splice(i + (count), 0, blockElement);
+        // }
+
+        const modifiedBlock = [];
+
+        for (let i = 0; i < block.length; i++) {
             let blockElement = block[i];
-            if (typeof blockElement !== "string") continue;
-            // check for link, if so, insert link
-            let count = 1;
-            while (blockElement.match(regex)) {
-                let linkData = loadLinkData(blockElement);
 
-                block[i] = blockElement.substring(0, linkData.startIndex);
-                block.splice(i + count, 0, <a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}>{linkData.linkText}</a>);
-                blockElement = blockElement.substring(linkData.endIndex);
+            if (typeof blockElement === "string") {
+                let count = 1;
 
-                count++;
+                while (blockElement.match(regex)) {
+                    let linkData = loadLinkData(blockElement);
+
+                    modifiedBlock.push(blockElement.substring(0, linkData.startIndex));
+                    modifiedBlock.push(
+                        <a
+                            onClick={() => handleClick(linkData.linkUrl)}
+                            className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}
+                            key={key}
+                        >
+                            {linkData.linkText}
+                        </a>
+                    );
+
+                    blockElement = blockElement.substring(linkData.endIndex);
+
+                    key++;
+                    count += 2;
+                }
             }
 
-            if (block[i] !== blockElement)
-                block.splice(i + count, 0, blockElement);
+            modifiedBlock.push(blockElement);
         }
+
+        block.length = 0;
+        block.push(...modifiedBlock);
 
         while (originalBlock.match(regex)) {
             let linkData = loadLinkData(originalBlock);
 
             block.push(originalBlock.substring(0, linkData.startIndex));
-            block.push(<a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}>{linkData.linkText}</a>);
+            block.push(<a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"} key={key}>{linkData.linkText}</a>);
+
+            key++;
 
             originalBlock = originalBlock.substring(linkData.endIndex);
         }
@@ -176,14 +220,15 @@ export default function Content({id, title, content, bulletPoints}) {
                 ))}
             </div>}
             {bullets.length > 0 &&
-                <ul className={`text-lg list-inside ${text.length > 0 ? "" : "mt-6"} list-disc lg:grid w-full`}>
+                <ul className={`markerColor text-lg list-inside ${text.length > 0 ? "" : "mt-6"} list-disc lg:grid w-full`}>
                     {bullets.map((key, index) => (
                         <li className={"mb-8 pl-4"} key={index}>
                             {analyzeBulletTitle(Object.keys(bulletPoints)[index])}
                             <span>{key}</span>
                         </li>
                     ))}
-                </ul>}
+                </ul>
+            }
         </div>
     )
 }
