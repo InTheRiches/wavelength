@@ -8,12 +8,6 @@ export default function Content({id, title, content, bulletPoints}) {
     const router = useRouter();
 
     const handleClick = (link) => {
-        // console.log(link.replace(/#.*$/, ''));
-        // console.log(link.replace(/#.*$/, '') === (new URL(window.location.href).pathname.replace(/#.*$/, '')));
-        // if (link.replace(/#.*$/, '') === (new URL(window.location.href).pathname.replace(/#.*$/, ''))) {
-        //     router.push(link).then(() => scroll());
-        //     return;
-        // }
         router.push(link).then(() => scroll());
     };
 
@@ -21,46 +15,138 @@ export default function Content({id, title, content, bulletPoints}) {
         bulletPoints = {};
     }
 
-    const text = spans.map((block) => {
-        return block
-            .split("**")
-            .map((block, index) => {
-                const bold = index % 2 === 1;
+    const loadLinkData = (link) => {
+        let match = regex.exec(link);
+        const hyperlink = match[0]; // the entire match (e.g. [/google/muscles,Google])
+        const linkUrl = match[1]; // the URL of the link (e.g. /google/muscles)
+        const linkText = match[2]; // the name of the link (e.g. Google)
+        const startIndex = match.index; // the starting index of the hyperlink in the original string
+        const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
 
-                if (block.match(regex)) {
-                    let match;
-                    let lastMatch = 0;
-                    const matches = []
+        return {
+            match,
+            hyperlink,
+            linkUrl,
+            linkText,
+            startIndex,
+            endIndex
+        }
+    }
 
-                    while ((match = regex.exec(block)) !== null) {
-                        const hyperlink = match[0]; // the entire match (e.g. [/google/muscles,Google])
-                        const linkUrl = match[1]; // the URL of the link (e.g. /google/muscles)
-                        const linkText = match[2]; // the name of the link (e.g. Google)
-                        const startIndex = match.index; // the starting index of the hyperlink in the original string
-                        const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
+    const text = spans.map((originalBlock, index) => {
+        let block = []
 
-                        // do something with the hyperlink, like replace it with an HTML anchor tag
-                        matches.push(<span key={startIndex}>{block.substring(lastMatch, startIndex)}<a key={index} onClick={() => handleClick(linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}>{linkText}</a></span>);
-                        lastMatch = endIndex;
-                    }
-                    matches.push(block.substring(lastMatch, block.length));
-                    return <span key={index}>{matches}</span>;
-                }
-                if (block.includes("`")) {
-                    return block.split("`").map((block1, index) => {
-                        if (index % 2 !== 1) return;
+        while (originalBlock.includes("**")) {
+            const boldStart = originalBlock.indexOf("**");
+            const boldEnd = originalBlock.indexOf("**", boldStart + 2);
+            const bold = originalBlock.substring(boldStart + 2, boldEnd);
 
-                        return <code
-                            className={"border-1 border-neutral-700 flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1"}
-                            key={index}>{block1}</code>;
-                    });
-                }
-                if (bold)
-                    return <b className="uline" key={index}>{block}</b>;
+            block.push(originalBlock.substring(0, boldStart));
+            block.push(<b className="uline">{bold}</b>);
 
-                return <span key={index}>{block}</span>; /* <div className={"tooltip"}>ToolTip</div> */
-            });
+            originalBlock = originalBlock.substring(boldEnd + 2);
+        }
+
+        while (originalBlock.includes("`")) {
+            const codeStart = originalBlock.indexOf("`");
+            const codeEnd = originalBlock.indexOf("`", codeStart + 1);
+            const code = originalBlock.substring(codeStart + 1, codeEnd);
+
+            block.push(originalBlock.substring(0, codeStart));
+            block.push(<code className="border-1 border-neutral-700 flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1">{code}</code>);
+
+            originalBlock = originalBlock.substring(codeEnd + 1);
+        }
+
+        for (let i = 0; i < block.length; i++){
+            let blockElement = block[i];
+            if (typeof blockElement !== "string") continue;
+            // check for link, if so, insert link
+            let count = 1;
+            while (blockElement.match(regex)) {
+                let linkData = loadLinkData(blockElement);
+
+                block[i] = blockElement.substring(0, linkData.startIndex);
+                block.splice(i + count, 0, <a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}>{linkData.linkText}</a>);
+                blockElement = blockElement.substring(linkData.endIndex);
+
+                count++;
+            }
+
+            if (block[i] !== blockElement)
+                block.splice(i + count, 0, blockElement);
+        }
+
+        while (originalBlock.match(regex)) {
+            let linkData = loadLinkData(originalBlock);
+
+            block.push(originalBlock.substring(0, linkData.startIndex));
+            block.push(<a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}>{linkData.linkText}</a>);
+
+            originalBlock = originalBlock.substring(linkData.endIndex);
+        }
+
+        block.push(originalBlock);
+
+        return <span key={index}>{block}</span>;
     });
+
+    // const text = spans.map((block) => {
+    //     return block
+    //         .split("**")
+    //         .map((block, index) => {
+    //             const bold = index % 2 === 1;
+    //
+    //             if (block.match(regex)) {
+    //                 let match;
+    //                 let lastMatch = 0;
+    //                 const matches = []
+    //
+    //                 while ((match = regex.exec(block)) !== null) {
+    //                     const hyperlink = match[0]; // the entire match (e.g. [/google/muscles,Google])
+    //                     const linkUrl = match[1]; // the URL of the link (e.g. /google/muscles)
+    //                     const linkText = match[2]; // the name of the link (e.g. Google)
+    //                     const startIndex = match.index; // the starting index of the hyperlink in the original string
+    //                     const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
+    //
+    //                     // do something with the hyperlink, like replace it with an HTML anchor tag
+    //                     matches.push(<span key={startIndex}>{block.substring(lastMatch, startIndex)}<a key={index} onClick={() => handleClick(linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}>{linkText}</a></span>);
+    //                     lastMatch = endIndex;
+    //                 }
+    //                 matches.push(block.substring(lastMatch, block.length));
+    //                 return <span key={index}>{matches}</span>;
+    //             }
+    //             if (block.includes("`")) {
+    //                 return block.split("`").map((block1, index) => {
+    //                     if (index % 2 !== 1) return;
+    //
+    //                     return <code
+    //                         className={"border-1 border-neutral-700 flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1"}
+    //                         key={index}>{block1}</code>;
+    //                 });
+    //             }
+    //
+    //             // const keyword = "other";
+    //             //
+    //             // if (block.includes(keyword)) {
+    //             //     const words = block.split(keyword);
+    //             //     for (let i = 0; i < words.length; i++) {
+    //             //
+    //             //     }
+    //             //     const beforeKeyword = words[0];
+    //             //     const afterKeyword = words.slice(1).join(keyword);
+    //             //
+    //             //     // Log the words before and after the keyword to the console
+    //             //     console.log("Before:", beforeKeyword);
+    //             //     console.log("After:", afterKeyword);
+    //             // }
+    //
+    //             if (bold)
+    //                 return <b className="uline" key={index}>{block}</b>;
+    //
+    //             return <span key={index}>{block}</span>; // <div className={"tooltip"}>ToolTip</div>
+    //         });
+    // });
 
     const bullets = Object.values(bulletPoints).map((bullet) => {
         return bullet
