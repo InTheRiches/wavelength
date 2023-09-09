@@ -91,63 +91,6 @@ export default function Content({id, title, content, bulletPoints}) {
         return <span key={index}>{block}</span>;
     });
 
-    // const text = spans.map((block) => {
-    //     return block
-    //         .split("**")
-    //         .map((block, index) => {
-    //             const bold = index % 2 === 1;
-    //
-    //             if (block.match(regex)) {
-    //                 let match;
-    //                 let lastMatch = 0;
-    //                 const matches = []
-    //
-    //                 while ((match = regex.exec(block)) !== null) {
-    //                     const hyperlink = match[0]; // the entire match (e.g. [/google/muscles,Google])
-    //                     const linkUrl = match[1]; // the URL of the link (e.g. /google/muscles)
-    //                     const linkText = match[2]; // the name of the link (e.g. Google)
-    //                     const startIndex = match.index; // the starting index of the hyperlink in the original string
-    //                     const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
-    //
-    //                     // do something with the hyperlink, like replace it with an HTML anchor tag
-    //                     matches.push(<span key={startIndex}>{block.substring(lastMatch, startIndex)}<a key={index} onClick={() => handleClick(linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}>{linkText}</a></span>);
-    //                     lastMatch = endIndex;
-    //                 }
-    //                 matches.push(block.substring(lastMatch, block.length));
-    //                 return <span key={index}>{matches}</span>;
-    //             }
-    //             if (block.includes("`")) {
-    //                 return block.split("`").map((block1, index) => {
-    //                     if (index % 2 !== 1) return;
-    //
-    //                     return <code
-    //                         className={"border-1 border-neutral-700 flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1"}
-    //                         key={index}>{block1}</code>;
-    //                 });
-    //             }
-    //
-    //             // const keyword = "other";
-    //             //
-    //             // if (block.includes(keyword)) {
-    //             //     const words = block.split(keyword);
-    //             //     for (let i = 0; i < words.length; i++) {
-    //             //
-    //             //     }
-    //             //     const beforeKeyword = words[0];
-    //             //     const afterKeyword = words.slice(1).join(keyword);
-    //             //
-    //             //     // Log the words before and after the keyword to the console
-    //             //     console.log("Before:", beforeKeyword);
-    //             //     console.log("After:", afterKeyword);
-    //             // }
-    //
-    //             if (bold)
-    //                 return <b className="uline" key={index}>{block}</b>;
-    //
-    //             return <span key={index}>{block}</span>; // <div className={"tooltip"}>ToolTip</div>
-    //         });
-    // });
-
     const bullets = Object.values(bulletPoints).map((bullet) => {
         return bullet
             .split("**")
