@@ -151,3 +151,23 @@ span:hover .tooltip {
 .main-grid {
   grid-template-columns: .75fr 2.25fr .75fr !important;
 }
+
+*::-webkit-scrollbar {
+  width: 8px;
+  z-index: 20;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0ea5e9;
+  border-radius: 14px;
+  border: 0 solid;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3fb1e7;
+}

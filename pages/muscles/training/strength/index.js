@@ -13,7 +13,6 @@ export default function TrainingBasics({}) {
             <Content
                 id={"reps-sets-rest"}
                 title={"Reps, Sets, and Rest"}
-                content={"When training for strength, it is important to focus on high intensity, low volume workouts. Typically, 3-5 sets of 3-6 reps  above 85% of your [/muscles/training/basics/concepts#terminology,1RM] is recommended. This intensity range challenges the neuromuscular system to adapt and improve maximal strength. The emphasis is on quality over quantity, focusing on good form and full range of motion. Rest times are typically around 1-3 minutes to allow for sufficient **recovery** between sets and ensure the ability to lift heavy with proper form. You can obviously change this to fit your needs, look into [/muscles/training/basics/repsandsets,Reps and Sets] for more information. This type of training helps you build maximal strength by challenging your muscles and central nervous system to handle heavy loads."}
                 ></Content>
             <div className={"w-full mt-6 px-4 border-1 border-neutral-700 rounded-md"}>
                 <table className="table-auto w-full">
@@ -26,16 +25,16 @@ export default function TrainingBasics({}) {
                     </thead>
                     <tbody>
                     <tr>
-                        <td className={"border-b-1 border-neutral-700 py-2 flex flex-row items-center"}>{'>'}85%</td>
-                        <td className={"border-b-1 border-neutral-700 py-2"}>3-6 / 3-5</td>
-                        <td className={"border-b-1 border-neutral-700 py-2"}>3-5m</td>
+                        <td className={"py-2 flex flex-row items-center"}>{'>'}85%</td>
+                        <td className={"py-2"}>3-6 / 1-3</td>
+                        <td className={"py-2"}>1-3m</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <Content
-                title={""}
-                content={"The specific rest time within this range can be adjusted based on individual factors and training circumstances. Some individuals may find they need slightly longer or shorter rest periods to optimize their performance and achieve their desired hypertrophic results."}
+                id={""}
+                content={"When training for strength, it is important to focus on high intensity, low volume workouts. Typically, 3-5 sets of 3-6 reps  above 85% of your [/muscles/training/basics/concepts#terminology,1RM] is recommended. This intensity range challenges the neuromuscular system to adapt and improve maximal strength. The emphasis is on quality over quantity, focusing on good form and full range of motion. Rest times are typically around 1-3 minutes to allow for sufficient **recovery** between sets and ensure the ability to lift heavy with proper form. You can obviously change this to fit your needs, look into [/muscles/training/basics/repsandsets,Reps and Sets] for more information. This type of training helps you build maximal strength by challenging your muscles and central nervous system to handle heavy loads."}
                 ></Content>
         </div>
     );

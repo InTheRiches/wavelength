@@ -102,7 +102,7 @@ export default function ContentPage({ location, title, description, currentTopic
                                 if (index > 0)
                                     router.push(keys[index - 1]);
                             }}
-                            className="w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center transition-colors duration-150 hover:bg-cyan-accent-light"
+                            className="shadow-lg w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center transition-colors duration-150 hover:bg-cyan-accent-light"
                         >
                             <svg
                                 className="w-6 h-6"
@@ -127,7 +127,7 @@ export default function ContentPage({ location, title, description, currentTopic
                                 if (index < keys.length - 1)
                                     router.push(keys[index + 1]);
                             }}
-                            className="w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center transition-colors duration-150 hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700"
+                            className="shadow-lg w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center transition-colors duration-150 hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700"
                         >
                             <svg
                                 className="w-6 h-6 -scale-x-100"

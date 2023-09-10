@@ -57,7 +57,7 @@ export default function Content({id, title, content, bulletPoints}) {
             const code = originalBlock.substring(codeStart + 1, codeEnd);
 
             block.push(originalBlock.substring(0, codeStart));
-            block.push(<code className="border-1 border-neutral-700 flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1" key={key}>{code}</code>);
+            block.push(<code className="border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1" key={key}>{code}</code>);
 
             key++;
 
@@ -214,7 +214,7 @@ export default function Content({id, title, content, bulletPoints}) {
                     {title}
                 </h1>
             </div>
-            {text.length > 0 && <div className="flex flex-col mt-6 text-lg">
+            {text.length > 0 && <div className={`flex flex-col ${title ? "mt-6" : ""} text-lg`}>
                 {text.map((substring, index) => (
                     <div className={`mb-6 indent-4`} key={index}>{substring}</div>
                 ))}
