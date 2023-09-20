@@ -1,6 +1,14 @@
 import {Fragment, useEffect} from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {useRouter} from "next/router";
+import {Lobster} from "next/font/google";
+
+const lobster = Lobster({
+  variable: '--font-lobster',
+  weight: '400',
+  subsets: ['latin'],
+  display: 'auto',
+})
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -27,7 +35,7 @@ export default function Navigation({dark, setDark}) {
   // }, []);
 
   return (
-    <Disclosure as="nav" id="navigation" className="sticky py-3 top-0 z-40 w-full text-neutral-900 dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50">
+    <Disclosure as="nav" id="navigation" className="sticky py-2 top-0 z-40 w-full text-neutral-900 dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -55,7 +63,7 @@ export default function Navigation({dark, setDark}) {
                     alt="Your Company"
                   />
                 </div>
-                <a className="ml-4 text-2xl sm:text-3xl font-bold text-center font-roboto">wavelength</a>
+                <a className={"ml-4 text-2xl sm:text-4xl font-bold text-center " + lobster.className}>wavelength</a>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2">
                 <button
