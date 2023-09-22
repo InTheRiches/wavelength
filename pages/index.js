@@ -66,14 +66,14 @@ export default function Layout() {
 
     return (
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center font-mono`}>
-            <div className={"absolute top-0 right-0 w-1/3 h-1/2 bg-slate-900"}>
+            {/*<div className={"absolute top-0 right-0 w-1/3 h-1/2 bg-slate-900"}>*/}
 
-            </div>
+            {/*</div>*/}
 
             <header className={"flex flex-col items-center w-full h-screen "}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-row items-center w-full h-full z-10"}>
-                    <div className="relative w-2/3 pl-24 flex justify-start flex-col h-full">
+                    <div className="relative w-3/5 pl-32 flex justify-start flex-col h-full">
                         <h1 className={"pt-20 sm:pt-24 lg:pt-26 px-3 text-slate-900 font-extrabold text-2xl sm:text-5xl xl:text-9xl max-w-4xl tracking-tight text-left dark:text-white text-header-gradient pb-6 " + lobster.className}>Transform
                             your physique with expert guidance.</h1>
                         <p className="text-lg lg:text-2xl text-slate-600 text-left max-w-3xl dark:text-slate-400">A
@@ -82,15 +82,17 @@ export default function Layout() {
                                 className={"text-cyan-accent"}>stronger</a>, arranged to be understood and accessible by
                             all.</p>
 
-                        <div className="mt-10 flex space-x-6 text-sm">
+                        <div className="mt-10 flex space-x-6 text-sm h-12">
                             <a
-                                className="bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto dark:bg-cyan-accent dark:highlight-white/20 dark:hover:bg-cyan-accent-light"
+                                className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light p-5 w-full sm:w-auto flex items-center justify-center text-white font-semibold focus:outline-none"
                                 href="/getting-started/introduction">Get started</a>
                         </div>
                     </div>
-                    <div className={"pt-20 sm:pt-24 lg:pt-26 flex flex-col p-10 w-1/3 mx-auto text-xl lg:text-2xl text-slate-50 bg-slate-900 h-3/4 slant"}>
-                        <div className={"mb-8"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>
-                        <div>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>
+                    <div className={"h-full w-1/3 mr-32 pt-32"}>
+                        <div className={"p-10 py-16 sm:py-20 lg:py-24 flex flex-col rounded-lg shadow-button w-full mx-auto text-xl lg:text-2xl text-slate-50 bg-slate-900 slant"}>
+                            <div className={"pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>
+                            <div className={"pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>
+                        </div>
                     </div>
                 </div>
             </header>
