@@ -164,7 +164,7 @@ span:hover .tooltip {
 }
 
 .text-header-gradient {
-  background: -webkit-linear-gradient(180deg, #0ea5e9, #5ec1ed, #0ea5e9);
+  background: -webkit-linear-gradient(180deg, #06a3e3, #5ec1ed, #06a3e3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

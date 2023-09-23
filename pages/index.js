@@ -1,5 +1,5 @@
-import {useEffect} from 'react'
-import { Lobster } from 'next/font/google';
+import React, {useEffect} from 'react'
+import {Lobster, Open_Sans} from 'next/font/google';
 import Navigation from '@/components/Navigation'
 import Footer from "@/components/Footer";
 import useDarkMode from 'use-dark-mode';
@@ -8,6 +8,13 @@ import {getCookie, hasCookie} from "cookies-next";
 
 const lobster = Lobster({
     variable: '--font-lobster',
+    weight: '400',
+    subsets: ['latin'],
+    display: 'auto',
+})
+
+const openSans = Open_Sans({
+    variable: '--font-open-sans',
     weight: '400',
     subsets: ['latin'],
     display: 'auto',
@@ -65,31 +72,40 @@ export default function Layout() {
     // }, []);
 
     return (
-        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center font-mono`}>
-            {/*<div className={"absolute top-0 right-0 w-1/3 h-1/2 bg-slate-900"}>*/}
+        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 ` + openSans.className}>
+            <div className={"absolute top-0 right-0 w-full h-full"}>
+                <img src={"/landingPageBG.png"} className={"w-full h-full object-cover opacity-50 dark:opacity-20"}></img>
+            </div>
 
-            {/*</div>*/}
-
-            <header className={"flex flex-col items-center w-full h-screen "}>
+            <header className={"flex flex-col items-center w-full h-screen"}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-row items-center w-full h-full z-10"}>
                     <div className="relative w-3/5 pl-32 flex justify-start flex-col h-full">
-                        <h1 className={"pt-20 sm:pt-24 lg:pt-26 px-3 text-slate-900 font-extrabold text-2xl sm:text-5xl xl:text-9xl max-w-4xl tracking-tight text-left dark:text-white text-header-gradient pb-6 " + lobster.className}>Transform
+                        <h1 className={"pt-20 sm:pt-24 lg:pt-26 px-3 text-slate-900 font-extrabold text-2xl sm:text-5xl xl:text-9xl max-w-4xl tracking-tight text-left dark:text-white text-header-gradient pb-10 " + lobster.className}>Transform
                             your physique with expert guidance.</h1>
-                        <p className="text-lg lg:text-2xl text-slate-600 text-left max-w-3xl dark:text-slate-400">A
+                        <p className="text-lg lg:text-3xl text-slate-600 text-left max-w-3xl dark:text-slate-400 ml-1">A
                             science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
                                 className={"text-cyan-accent"}>losing fat</a>, and getting <a
                                 className={"text-cyan-accent"}>stronger</a>, arranged to be understood and accessible by
                             all.</p>
 
-                        <div className="mt-10 flex space-x-6 text-sm h-12">
+                        <div className="mt-10 flex flex-row space-x-6 text-md h-12 ml-1">
                             <a
-                                className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light p-5 w-full sm:w-auto flex items-center justify-center text-white font-semibold focus:outline-none"
-                                href="/getting-started/introduction">Get started</a>
+                                className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
+                                href="/getting-started/introduction">Get started<div className={"ml-2 rounded-full flex items-center justify-center w-10 h-10 bg-cyan-accent-dark"}>
+                                <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M15 19l-7-7 7-7"
+                                    />
+                                </svg>
+                            </div></a>
                         </div>
                     </div>
                     <div className={"h-full w-1/3 mr-32 pt-32"}>
-                        <div className={"p-10 py-16 sm:py-20 lg:py-24 flex flex-col rounded-lg shadow-button w-full mx-auto text-xl lg:text-2xl text-slate-50 bg-slate-900 slant"}>
+                        <div className={"p-10 py-16 sm:py-20 lg:py-24 flex flex-col rounded-lg shadow-button dark:shadow-quote w-full mx-auto text-xl lg:text-2xl text-slate-600 dark:text-slate-50 bg-white dark:bg-neutral-900 bg-opacity-0 dark:bg-opacity-40 dark:backdrop-blur-xl slant"}>
                             <div className={"pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>
                             <div className={"pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>
                         </div>

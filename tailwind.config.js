@@ -16,7 +16,8 @@ module.exports = {
   ],
   theme: {
     boxShadow: {
-      'button': "0 5px 15px -3px rgb(0 0 0 / .4), 0 4px 6px -4px rgb(0 0 0 / 0.1);"
+      'button': "0 5px 15px -3px rgb(0 0 0 / .4), 0 4px 6px -4px rgb(0 0 0 / 0.1);",
+      'quote': "0 5px 30px -3px rgb(0 0 0 / .6), 0 4px 6px -4px rgb(0 0 0 / 0.1);"
     },
     fontFamily: {
         mono: [
@@ -42,6 +43,7 @@ module.exports = {
       },
       colors: {
         "cyan-accent": "#0ea5e9",
+        "cyan-accent-dark": "#0c7eb3",
         "link-text": "#56caff",
         "cyan-accent-light": "#3fb1e7",
         "red-accent": "#c62368",
