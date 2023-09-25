@@ -295,8 +295,8 @@ export function HeaderListSidebar() {
                 <div>
                     {h1List.map((h1, index) => {
                         return (
-                            <div key={index+150} className="text-lg mb-3">
-                                <a className="hover:text-cyan-accent dark:hover:text-cyan-accent dark:text-slate-300 transition-colors duration-75 hover:cursor-pointer" onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
+                            <div key={index+150} className="text-lg mb-1 pb-2 flex flex-col w-fit items-center">
+                                <a className={`w-full pb-3 ${h1List.length === index+1 ? "" : "border-b-1 hover:border-cyan-accent"} hover:text-cyan-accent dark:hover:text-cyan-accent dark:text-slate-300 transition-colors duration-75 hover:cursor-pointer`} onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
                             </div>
                         );
                     })}
