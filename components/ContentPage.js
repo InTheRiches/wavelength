@@ -99,9 +99,12 @@ export default function ContentPage({ location, title, description, currentTopic
 
     return (
         <div className={"flex flex-col min-h-screen bg-white dark:bg-neutral-900 text-slate-900 dark:text-slate-200 justify-center items-center " + openSans.className}>
+            <div className={"absolute top-0 right-0 w-full h-full z-10"}>
+                <img src={"/contentBG.png"} className={"w-full h-full object-cover opacity-30 dark:opacity-10"}></img>
+            </div>
             <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
 
-            <div className="main-grid sm:grid sm:gap-8 sm:grid-cols-3 max-w-screen-4xl md:px-6 my-8">
+            <div className="main-grid sm:grid sm:gap-8 sm:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
                 <Sidebar currentTopic={currentTopic}></Sidebar>
                 <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full pr-6"}>
                     {/* Page Header */}
