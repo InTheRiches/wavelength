@@ -82,7 +82,7 @@ export default function Layout() {
                 <div className={"flex flex-col h-full w-full"}>
                     <div className={"flex flex-row items-center w-full h-full z-10"}>
                         <div className="relative w-3/5 pl-32 flex justify-start flex-col h-full">
-                            <h1 className={"pt-20 sm:pt-24 lg:pt-26 px-3 text-slate-900 font-extrabold text-2xl sm:text-5xl xl:text-9xl max-w-4xl tracking-tight text-left dark:text-white text-header-gradient pb-10 " + lobster.className}>Transform
+                            <h1 className={"pt-5 sm:pt-8 xl:pt-26 px-3 text-slate-900 font-extrabold text-2xl sm:text-5xl lg:text-7xl xl:text-9xl max-w-4xl tracking-tight text-left dark:text-white text-header-gradient pb-10 " + lobster.className}>Transform
                                 your physique with expert guidance.</h1>
                             <p className="text-lg lg:text-3xl text-slate-600 text-left max-w-3xl dark:text-slate-400 ml-1">A
                                 science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
@@ -106,11 +106,11 @@ export default function Layout() {
                             </div>
                         </div>
                         <div className={"relative w-1/3 h-full flex flex-col justify-center"}>
-                            <img className={"mt-5 w-172 h-172"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
+                            <img className={"mt-5 sm:w-32 sm:h-32 lg:w-64 lg:h-64 xl:w-172 xl:h-172"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
                             <div className={"h-full max-w-3xl mt-8"}>
                                 <div className={"p-10 py-6 sm:py-10 lg:py-16 flex flex-col rounded-lg shadow-button dark:shadow-quote w-full mx-auto text-xl lg:text-2xl text-slate-600 dark:text-slate-50 bg-white dark:bg-neutral-900 bg-opacity-0 dark:bg-opacity-40 dark:backdrop-blur-xl slant"}>
-                                    <div className={"pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>
-                                    <div className={"pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>
+                                    <div className={"text-lg pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>
+                                    <div className={"text-lg pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>
                                 </div>
                             </div>
                         </div>
