@@ -9,6 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +84,7 @@
       <recent name="D:\Unity\Projects\coach-phrog\pages\muscles\functions\legs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Unity\Projects\coach-phrog\public" />
       <recent name="D:\Unity\Projects\coach-phrog\pages\muscles\functions" />
       <recent name="D:\Unity\Projects\coach-phrog\pages\muscles\training\basics" />
     </key>
@@ -181,7 +183,7 @@
       <workItem from="1693963773035" duration="25000" />
       <workItem from="1694042435610" duration="593000" />
       <workItem from="1694481583460" duration="17614000" />
-      <workItem from="1695431448783" duration="12090000" />
+      <workItem from="1695431448783" duration="12703000" />
     </task>
     <servers />
   </component>
