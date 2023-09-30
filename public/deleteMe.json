@@ -1,0 +1,157 @@
+[
+  {
+    "questId": "e285c2ca-b046-4d73-b9a7-f0bfe685ab13",
+    "rewardId": "c844b237-b63b-41f4-8695-08a55b542821",
+    "createdAt": "2023-09-20T17:42:59.130Z",
+    "updatedAt": "2023-09-20T17:42:59.130Z",
+    "quest": {
+      "id": "e285c2ca-b046-4d73-b9a7-f0bfe685ab13",
+      "seasonId": "549c7f95-f048-459d-8da1-823732c506d7",
+      "platform": "MINECRAFT",
+      "type": "PLUGIN_MINECRAFT_KILL",
+      "cadence": "DAILY",
+      "title": "Task 1",
+      "description": "Task 1 description",
+      "active": true,
+      "totalSteps": 10,
+      "xpReward": 10,
+      "isCustom": false,
+      "isTask": true,
+      "metadata": {
+        "minecraft": {
+          "kill": "horse",
+          "link": "https://blossomcraft.org"
+        }
+      },
+      "submissionType": null,
+      "xpType": "SEASON",
+      "linkSocialAccount": true,
+      "sortOrder": null,
+      "activeOnDay": null,
+      "activeFor": null,
+      "realm": null,
+      "createdAt": "2023-09-20T17:42:59.031Z",
+      "updatedAt": "2023-09-20T17:42:59.031Z"
+    },
+    "reward": {
+      "id": "c844b237-b63b-41f4-8695-08a55b542821",
+      "metadataId": "3f847a97-4f28-4084-996a-999fb710e382",
+      "quantity": 1,
+      "limit": -1,
+      "isCrafted": false,
+      "command": null,
+      "metadata": {
+        "id": "3f847a97-4f28-4084-996a-999fb710e382",
+        "name": "Task Reward 1",
+        "description": "This is the task 1 reward",
+        "image": "https://matrixgg-public.s3.us-west-2.amazonaws.com/rewards/04c9fd69-3096-477d-a3f0-80510b78c4f1.png",
+        "type": "DEFAULT",
+        "createdAt": "2023-09-20T17:02:12.129Z",
+        "updatedAt": "2023-09-20T17:02:12.129Z"
+      }
+    }
+  },
+  {
+    "questId": "a9aef922-bc4f-4bee-9d82-5ee783292704",
+    "rewardId": "3c85b242-1b84-4f5b-a390-93dd85d7e139",
+    "createdAt": "2023-09-20T18:31:23.930Z",
+    "updatedAt": "2023-09-20T18:31:23.930Z",
+    "quest": {
+      "id": "a9aef922-bc4f-4bee-9d82-5ee783292704",
+      "seasonId": "549c7f95-f048-459d-8da1-823732c506d7",
+      "platform": "MINECRAFT",
+      "type": "PLUGIN_MINECRAFT_BLOCKS_BROKEN",
+      "cadence": "DAILY",
+      "title": "Task 2",
+      "description": "Task 2 description",
+      "active": true,
+      "totalSteps": 15,
+      "xpReward": 20,
+      "isCustom": false,
+      "isTask": true,
+      "metadata": {
+        "minecraft": {
+          "link": "https://blossomcraft.org",
+          "block": "iron_ore"
+        }
+      },
+      "submissionType": null,
+      "xpType": "SEASON",
+      "linkSocialAccount": true,
+      "sortOrder": null,
+      "activeOnDay": null,
+      "activeFor": null,
+      "realm": null,
+      "createdAt": "2023-09-20T18:31:23.842Z",
+      "updatedAt": "2023-09-20T18:31:23.842Z"
+    },
+    "reward": {
+      "id": "3c85b242-1b84-4f5b-a390-93dd85d7e139",
+      "metadataId": "3d9652ec-c76a-41dc-a8f3-23bbcf1f4fdd",
+      "quantity": 1,
+      "limit": -1,
+      "isCrafted": false,
+      "command": null,
+      "metadata": {
+        "id": "3d9652ec-c76a-41dc-a8f3-23bbcf1f4fdd",
+        "name": "Task reward 2",
+        "description": "Task reward 2 description",
+        "image": "https://matrixgg-public.s3.us-west-2.amazonaws.com/rewards/1da1d576-3a86-4532-bc39-5c305900cdd0.png",
+        "type": "DEFAULT",
+        "createdAt": "2023-09-20T18:29:04.230Z",
+        "updatedAt": "2023-09-20T18:29:04.230Z"
+      }
+    }
+  },
+  {
+    "questId": "80bacd2d-7d12-4517-bf7d-cc374e17ce80",
+    "rewardId": "96640083-d264-4f0f-afb8-c6e7ff135d20",
+    "createdAt": "2023-09-26T20:38:10.633Z",
+    "updatedAt": "2023-09-26T20:38:10.633Z",
+    "quest": {
+      "id": "80bacd2d-7d12-4517-bf7d-cc374e17ce80",
+      "seasonId": "549c7f95-f048-459d-8da1-823732c506d7",
+      "platform": "MINECRAFT",
+      "type": "GFUEL_PURCHASE",
+      "cadence": "STANDARD",
+      "title": "Purchase a Gfuel",
+      "description": "Purchase a Gfuel and share your order number",
+      "active": true,
+      "totalSteps": 10,
+      "xpReward": 100,
+      "isCustom": false,
+      "isTask": true,
+      "metadata": {
+        "minecraft": {
+          "link": "https://gfuel.com/matrix/123"
+        }
+      },
+      "submissionType": null,
+      "xpType": "SEASON",
+      "linkSocialAccount": false,
+      "sortOrder": null,
+      "activeOnDay": null,
+      "activeFor": 10,
+      "realm": null,
+      "createdAt": "2023-09-26T20:38:10.537Z",
+      "updatedAt": "2023-09-26T20:38:10.537Z"
+    },
+    "reward": {
+      "id": "96640083-d264-4f0f-afb8-c6e7ff135d20",
+      "metadataId": "85a13f35-bc58-4cac-9811-2cef81278d95",
+      "quantity": 10,
+      "limit": -1,
+      "isCrafted": false,
+      "command": "mtx reward gfuel",
+      "metadata": {
+        "id": "85a13f35-bc58-4cac-9811-2cef81278d95",
+        "name": "Gfuel Reward",
+        "description": "Get this by completing the gfuel purchase task",
+        "image": "https://cdn.discordapp.com/attachments/1136399063969964042/1154560604015697940/bottle_halloween.png?ex=6514129a&is=6512c11a&hm=32e00acb2fd45c7dc85dc5a1f00290144fb79be2df08ddaacb61d9149bf8e498&",
+        "type": "DEFAULT",
+        "createdAt": "2023-09-26T19:36:38.640Z",
+        "updatedAt": "2023-09-26T19:36:38.640Z"
+      }
+    }
+  }
+]

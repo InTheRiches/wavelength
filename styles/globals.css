@@ -168,3 +168,8 @@ span:hover .tooltip {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.landing-img-shadow {
+  -webkit-filter: drop-shadow(5px 5px -5px #222);
+  filter: drop-shadow(5px 5px -5px #222);
+}
