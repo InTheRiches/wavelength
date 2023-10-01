@@ -82,7 +82,7 @@ export default function Layout() {
                 <div className={"flex flex-col h-full w-full"}>
                     <div className={"flex flex-row items-center w-full h-full z-10"}>
                         <div className="relative md:w-2/5 lg:w-3/5 pl-32 flex justify-start flex-col h-full">
-                            <h1 className={"xl:px-3 xl:pt-24 text-2xl xl:text-9xl max-w-4xl pb-10 " +
+                            <h1 className={"xl:px-3 xl:pt-24 text-2xl min-[1200px]:text-4xl min-[1280px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
 
 
                                 "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform

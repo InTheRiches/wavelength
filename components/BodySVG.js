@@ -1,7 +1,7 @@
 import {useRouter} from "next/router";
 import {useEffect} from "react";
 
-export function BackFullBodySVG({highlighted = ""}) {
+export function BackFullBodySVG({highlighted = "", big = false}) {
     const router = useRouter();
 
     function handleHover(e) {
@@ -41,7 +41,7 @@ export function BackFullBodySVG({highlighted = ""}) {
     });
 
     return (
-        <svg id="backFullBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={"h-full max-h-132"}>
+        <svg id="backFullBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={`h-full ${big ? "max-h-188" : "max-h-132"}`}>
             <g id="svg-glutes" data-name="Glutes" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/legs/glutes")}
                className={`muscle-svg ${highlighted.split(",").includes("glutes") ? "muscle-highlighted" : ""}`}>
                 <g>
@@ -387,7 +387,7 @@ export function BackUpperBodySVG({highlighted = ""}) {
     )
 }
 
-export function FrontFullBodySVG({highlighted = ""}) {
+export function FrontFullBodySVG({highlighted = "", big = false}) {
     const router = useRouter();
 
     function handleHover(e) {
@@ -427,7 +427,7 @@ export function FrontFullBodySVG({highlighted = ""}) {
     });
 
     return (
-        <svg id={"frontFullBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 907" className={"h-full max-h-132"}>
+        <svg id={"frontFullBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 907" className={`h-full ${big ? "max-h-188" : "max-h-132"}`}>
             <g id="svg-forarms" data-name="Forarms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forarms")}
                className={`muscle-svg ${highlighted.split(",").includes("forarms") ? "muscle-highlighted" : ""}`}>
                 <g>

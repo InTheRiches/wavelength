@@ -30,12 +30,16 @@ body.d {
   fill: black;
 }
 
+.muscle-svg > g > path:last-child {
+  fill: #0ea5e9;
+}
+
 .muscle-svg > g > path:first-child {
-  fill: #d4d4d4;
+  fill: #ffffff;
 }
 
 .muscle-highlighted > g > path:first-child {
-  fill: #e97c0e;
+  fill: rgba(14, 165, 233, .7);
 }
 
 .muscle-svg:hover > g > path:first-child {
@@ -53,6 +57,14 @@ body.d {
 
 .dark .muscle-svg > g > path:first-child {
   fill: #2f2f2f;
+}
+
+.dark .muscle-svg > g > path:last-child {
+  fill: #7c7c7c;
+}
+
+.dark .muscle-highlighted > g > path:last-child {
+  fill: rgba(14, 165, 233, .7);
 }
 
 .dark .muscle-highlighted > g > path:first-child {
@@ -172,4 +184,13 @@ span:hover .tooltip {
 .landing-img-shadow {
   -webkit-filter: drop-shadow(5px 5px -5px #222);
   filter: drop-shadow(5px 5px -5px #222);
+}
+
+.partial-bottom-border::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 50%;
+  background-color: #0ea5e9;
+  margin: 10px auto auto;
 }
