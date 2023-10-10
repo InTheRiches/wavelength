@@ -31,7 +31,19 @@
       "activeFor": null,
       "realm": null,
       "createdAt": "2023-09-20T17:42:59.031Z",
-      "updatedAt": "2023-09-20T17:42:59.031Z"
+      "updatedAt": "2023-09-20T17:42:59.031Z",
+      "questUser": {
+        "questId": "e285c2ca-b046-4d73-b9a7-f0bfe685ab13",
+        "userId": "4c46af0c-7a88-4ead-8438-b7c538457e50",
+        "status": "INCOMPLETE",
+        "progress": 0,
+        "totalProgress": -1,
+        "os": null,
+        "lastCompletedAt": null,
+        "active": null,
+        "createdAt": "2023-09-29T21:46:27.099Z",
+        "updatedAt": "2023-09-29T21:46:27.099Z"
+      }
     },
     "reward": {
       "id": "c844b237-b63b-41f4-8695-08a55b542821",
@@ -83,7 +95,19 @@
       "activeFor": null,
       "realm": null,
       "createdAt": "2023-09-20T18:31:23.842Z",
-      "updatedAt": "2023-09-20T18:31:23.842Z"
+      "updatedAt": "2023-09-20T18:31:23.842Z",
+      "questUser": {
+        "questId": "a9aef922-bc4f-4bee-9d82-5ee783292704",
+        "userId": "4c46af0c-7a88-4ead-8438-b7c538457e50",
+        "status": "INCOMPLETE",
+        "progress": 0,
+        "totalProgress": -1,
+        "os": null,
+        "lastCompletedAt": null,
+        "active": null,
+        "createdAt": "2023-09-29T21:48:10.324Z",
+        "updatedAt": "2023-09-29T21:48:10.324Z"
+      }
     },
     "reward": {
       "id": "3c85b242-1b84-4f5b-a390-93dd85d7e139",
@@ -134,7 +158,19 @@
       "activeFor": 10,
       "realm": null,
       "createdAt": "2023-09-26T20:38:10.537Z",
-      "updatedAt": "2023-09-26T20:38:10.537Z"
+      "updatedAt": "2023-09-26T20:38:10.537Z",
+      "questUser": {
+        "questId": "80bacd2d-7d12-4517-bf7d-cc374e17ce80",
+        "userId": "4c46af0c-7a88-4ead-8438-b7c538457e50",
+        "status": "INCOMPLETE",
+        "progress": 0,
+        "totalProgress": -1,
+        "os": null,
+        "lastCompletedAt": null,
+        "active": null,
+        "createdAt": "2023-09-29T21:48:17.447Z",
+        "updatedAt": "2023-09-29T21:48:17.447Z"
+      }
     },
     "reward": {
       "id": "96640083-d264-4f0f-afb8-c6e7ff135d20",

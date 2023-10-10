@@ -237,6 +237,9 @@ export default function Content({id, title, content, bulletPoints}) {
                     ))}
                 </ul>
             }
+            <div className={"w-full flex justify-center"}>
+                <div className={"h-0.5 rounded-md w-1/2 bg-neutral-700"}></div>
+            </div>
         </div>
     )
 }

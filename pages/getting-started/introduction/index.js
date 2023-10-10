@@ -8,7 +8,7 @@ export default function GettingStarted({}) {
             <Content
                 id={"getting-started"}
                 title={"Getting Started"}
-                content={"Welcome to the world of weightlifting! Whether you're a beginner looking to enhance your physical fitness or an experienced lifter seeking to fine-tune your technique, this guide aims to provide you with a solid foundation and general information to help you on your weightlifting journey. In addition to understanding the **technical aspects** of lifting, it's essential to grasp the **broader concepts** that contribute to a successful and enjoyable workout experience."}
+                content={"Welcome to the world of weightlifting! Whether you're a beginner looking to build up your physical fitness or an experienced lifter seeking to fine-tune your technique, this guide aims to provide you with a solid foundation and general information to help you on your weightlifting journey. In addition to understanding the **technical aspects** of lifting, it's essential to grasp the **broader concepts** that contribute to a successful and enjoyable workout experience."}
                 ></Content>
             <Content
                 id={"consistency"}

@@ -23,12 +23,15 @@ const openSans = Open_Sans({
 export default function Layout() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
 
+    const [loaded, setLoaded] = React.useState(false);
+
     useEffect(() => {
         if (isDarkMode) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
+        setLoaded(true);
 
         if (!hasCookie("accessToken") || !hasCookie("id"))
             return;
@@ -59,6 +62,8 @@ export default function Layout() {
         };
 
         loadUserData();
+
+
     }, [isDarkMode]);
 
     // useEffect(() => {
@@ -74,15 +79,18 @@ export default function Layout() {
     return (
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 ` + openSans.className}>
             <div className={"absolute top-0 right-0 w-full h-full"}>
-                <img src={"/landingPageBG.png"} className={"w-full h-full object-cover opacity-50 dark:opacity-20"}></img>
+                {loaded && (
+                    <img src={isDarkMode ? "/landingPageGym.jpg" : "/landingPageBG.png"} className={"w-full h-full object-cover opacity-50 dark:opacity-20"} alt={""}></img>
+                )}
+
             </div>
 
             <header className={"flex flex-col items-center w-full h-screen"}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-col h-full w-full"}>
-                    <div className={"flex flex-row items-center w-full h-full z-10"}>
-                        <div className="relative md:w-2/5 lg:w-3/5 pl-32 flex justify-start flex-col h-full">
-                            <h1 className={"xl:px-3 xl:pt-24 text-2xl min-[1200px]:text-4xl min-[1280px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
+                    <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
+                        <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-32 flex justify-start flex-col h-full">
+                            <h1 className={"px-3 lg:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
 
 
                                 "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
@@ -108,8 +116,8 @@ export default function Layout() {
                                 </div></a>
                             </div>
                         </div>
-                        <div className={"relative w-1/3 h-full flex flex-col items-center"}>
-                            <img className={"xl:w-full h-min aspect-square object-cover landing-img-shadow"} src={"/manRunningLogoV2.png"}  alt={"Wavelength"}></img>
+                        <div className={"relative p-12 w-full min-[550px]:w-1/2 sm:w-3/5 lg:w-1/3 h-full flex flex-col items-center"}>
+                            <img className={"2xl:w-5/6 lg:pt-24 h-min aspect-square object-cover landing-img-shadow"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
                             {/*<div className={"h-full max-w-3xl mt-8"}>*/}
                             {/*    <div className={"py-2 xl:py-8 px-4 mx-auto text-xl lg:text-2xl " +*/}
 
@@ -138,12 +146,12 @@ export default function Layout() {
                         more <a className={"text-cyan-accent"}>gratifying</a> and <a
                             className={"text-cyan-accent"}>productive</a>.</p></blockquote>
                     <figcaption className="mt-6 flex items-center justify-center space-x-4 text-left"><img
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="/DiscordPFPNissan.png"
                         alt="" className="w-14 h-14 rounded-full"
                         loading="lazy" decoding="async"></img>
                         <div>
-                            <div className="font-bold text-neutral-900 dark:text-white text-lg">Co-Founder</div>
-                            <div className="mt-0.5 text-lg leading-6 text-slate-900 dark:text-slate-500">Co-Founder of Surge Strength</div>
+                            <div className="font-bold text-neutral-900 dark:text-white text-lg">riches.exe</div>
+                            <div className="mt-0.5 text-lg leading-6 text-slate-900 dark:text-slate-500">Co-Founder of Wavelength</div>
                         </div>
                     </figcaption>
                 </figure>

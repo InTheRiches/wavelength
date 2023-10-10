@@ -14,8 +14,12 @@
 :root {
   --foreground-rgb: 0, 0, 0;
 
-  --dark-diagram-outline: rgb(12, 12, 12);
-  --dark-diagram-fill: rgba(21, 21, 21, 0.2);
+  --diagram-high-fill: rgba(14, 165, 233, .7);
+  --diagram-fill: rgba(255,255,255,.6);
+  --diagram-outline: rgb(79, 79, 79);
+
+  --dark-diagram-outline: rgba(14, 165, 233, .3);
+  --dark-diagram-fill: rgba(21, 21, 21, 0.8);
   --dark-diagram-high-outline: rgba(14, 165, 233, 1);
   --dark-diagram-high-fill: rgba(14, 165, 233, .7);
 }
@@ -36,11 +40,11 @@ body.d {
 }
 
 .muscle-svg > g > path:last-child {
-  fill: #0ea5e9;
+  fill: var(--diagram-outline);
 }
 
 .muscle-svg > g > path:first-child {
-  fill: #ffffff;
+  fill: var(--diagram-fill);
 }
 
 .muscle-highlighted > g > path:first-child {
