@@ -63,7 +63,7 @@ export default function Navigation({dark, setDark}) {
                     alt="Your Company"
                   />
                 </div>
-                <a className={"ml-4 text-4xl font-bold text-center " + lobster.className}>wavelength</a>
+                <a className={"ml-4 mb-1 text-4xl font-bold text-center " + lobster.className}>wavelength</a>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2">
                 <button

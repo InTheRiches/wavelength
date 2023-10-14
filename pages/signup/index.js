@@ -55,7 +55,7 @@ export default function Signup() {
     return (
         <div className="flex min-h-screen flex-col justify-center px-6 pb-24 lg:px-8 bg-white dark:bg-neutral-900">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img className="mx-auto h-12 w-auto hover:cursor-pointer" src="logo.png" alt="Your Company" onClick={(e) => {
+                <img className="mx-auto h-12 w-auto hover:cursor-pointer" src="logo.png" alt="wavelength" onClick={(e) => {
                     e.preventDefault();
                     router.push("/");
                 }}/>

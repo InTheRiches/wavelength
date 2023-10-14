@@ -224,7 +224,7 @@ export default function Content({id, title, content, bulletPoints}) {
             </div>
             {text.length > 0 && <div className={`flex flex-col ${title ? "mt-6" : ""} text-lg`}>
                 {text.map((substring, index) => (
-                    <div className={`mb-6 indent-4`} key={index}>{substring}</div>
+                    <div className={`mb-6 indent-6`} key={index}>{substring}</div>
                 ))}
             </div>}
             {bullets.length > 0 &&
@@ -237,9 +237,9 @@ export default function Content({id, title, content, bulletPoints}) {
                     ))}
                 </ul>
             }
-            <div className={"w-full flex justify-center"}>
-                <div className={"h-0.5 rounded-md w-1/2 bg-neutral-700"}></div>
-            </div>
+            {/*{(text.length > 0 || bullets.length > 0) && <div className={"w-full flex justify-center"}>*/}
+            {/*    <div className={"h-0.5 rounded-md w-1/2 bg-neutral-700"}></div>*/}
+            {/*</div>}*/}
         </div>
     )
 }

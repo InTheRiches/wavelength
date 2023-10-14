@@ -11,7 +11,7 @@ export default function QuadsFunction({}) {
             <Content
                 id={"location"}
                 title="Location"
-                content={"The gluteal muscles are located in the **posterior** (back) region of the hip and buttocks. The gluteus maximus, the largest of the three gluteal muscles, is positioned superficially and forms the bulk of the buttocks. The gluteus medius and gluteus minimus lie deeper and are situated on the lateral (outer) side of the hip, beneath the gluteus maximus."}
+                content={"The gluteal muscles are located in the **posterior** (back) region of the hip and buttocks. The gluteus maximus, the largest of the three gluteal muscles, is positioned superficially and forms the bulk of the buttocks. The gluteus medius and gluteus minimus lie deeper and are situated on the lateral (outer) side of the hip, beneath the gluteus maximus. They play a larger role in the movement of the [/muscles/functions/abductors,abductors] of the hip, and perform different movements than the gluteus maximus."}
             ></Content>
             <div className={"p-8 flex justify-around items-center"}>
                 <FrontFullBodySVG highlighted="glutes"/>

@@ -33,7 +33,7 @@ export default function PerformancePreWorkout({}) {
             <Content
                 id="ingrediants"
                 title="Ingrediants"
-                content={"Pre-Workouts contain various ingredients, although the most common are:"}
+                content={"Pre-Workouts contain various ingredients and dosages, it all depends on the brand and what it is designed for. For example, certain pre-workouts are **stim-free**, meaning they dont have caffeine, and focus on other elements to improve your workout. However, these are the most common ingredients:"}
                 bulletPoints={{
                     "Caffeine": "A stimulant that can help improve focus, alertness, and energy levels during exercise.",
                     "Citrulline": "An amino acid that can help improve blood flow and reduce fatigue during exercise. ([/supplements/performance/citrulline,Learn More])",

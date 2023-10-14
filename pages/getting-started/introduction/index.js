@@ -25,7 +25,6 @@ export default function GettingStarted({}) {
                 id={"goals"}
                 content={`The internet is filled with "6 minute 6 pack" videos that promise amazing results with little commitment. Unfortunately that isn't how weightlifting works. Understanding that you won't look like Dwayne Johnson after your first few workouts is important. It takes time to build an aesthetic physique, and you should set realistic expectations of yourself. The average person cannot achieve the body of Alex Eubank or David Laid. The commitment it takes to develop that body, not even mentioning the genetics that are in play, makes it unrealistic to achieve that physique.-.-Establishing clear and achievable goals is vital for motivation and tracking your progress. Set both short-term and long-term objectives, such as increasing the amount of weight lifted, improving endurance, or achieving specific body composition goals. Regularly assess your progress, keep a workout log, and celebrate milestones along the way to maintain your motivation and drive.`}
                 ></Content>
-
         </div>
     );
 

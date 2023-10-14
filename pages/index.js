@@ -80,9 +80,8 @@ export default function Layout() {
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 ` + openSans.className}>
             <div className={"absolute top-0 right-0 w-full h-full"}>
                 {loaded && (
-                    <img src={isDarkMode ? "/landingPageGym.jpg" : "/landingPageBG.png"} className={"w-full h-full object-cover opacity-50 dark:opacity-20"} alt={""}></img>
+                    <img src={isDarkMode ? "/landingPageGym.jpg" : "/landingPageBG.png"} className={"w-full h-full object-cover opacity-40 dark:opacity-20"} alt={""}></img>
                 )}
-
             </div>
 
             <header className={"flex flex-col items-center w-full h-screen"}>
@@ -90,7 +89,7 @@ export default function Layout() {
                 <div className={"flex flex-col h-full w-full"}>
                     <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
                         <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-32 flex justify-start flex-col h-full">
-                            <h1 className={"px-3 lg:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
+                            <h1 className={"px-3 pt-3 lg:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
 
 
                                 "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
@@ -133,11 +132,11 @@ export default function Layout() {
 
             </header>
 
-            <section className="text-center max-w-7xl px-8 pt-10 sm:pt-15 md:pt-20 pb-14 border-t-2 dark:border-neutral-700"><h2
-                className="text-slate-900 text-4xl font-extrabold sm:text-5xl dark:text-white">Understanding the
+            <section className="max-w-7xl px-8 pt-10 sm:pt-15 md:pt-20 pb-14 border-t-2 dark:border-neutral-700"><h2
+                className="text-left sm:text-center text-slate-900 text-4xl font-extrabold sm:text-5xl dark:text-white">Understanding the
                 mechanics behind working out significantly increases effectiveness.</h2>
                 <figure>
-                    <blockquote><p className="mt-6 max-w-3xl mx-auto text-lg lg:text-xl text-slate-900 dark:text-slate-500">During my
+                    <blockquote><p className="text-left sm:text-center mt-6 max-w-3xl mx-auto text-lg lg:text-xl text-slate-900 dark:text-slate-500">During my
                         fitness journey, I realized the importance of understanding the human anatomy and the underlying
                         science of muscle <a className={"text-cyan-accent"}>hypertrophy</a>. As my understanding of these
                         concepts grew, so did my <a className={"text-cyan-accent"}>efficiency</a> and <a
@@ -145,7 +144,7 @@ export default function Layout() {
                         mechanisms behind muscle development and how to optimize them, I found that my workouts became
                         more <a className={"text-cyan-accent"}>gratifying</a> and <a
                             className={"text-cyan-accent"}>productive</a>.</p></blockquote>
-                    <figcaption className="mt-6 flex items-center justify-center space-x-4 text-left"><img
+                    <figcaption className="mt-6 flex items-center justify-start sm:justify-center space-x-4 text-left"><img
                         src="/DiscordPFPNissan.png"
                         alt="" className="w-14 h-14 rounded-full"
                         loading="lazy" decoding="async"></img>
