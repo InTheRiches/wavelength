@@ -1,14 +1,7 @@
 import {Fragment, useEffect} from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {useRouter} from "next/router";
-import {Lobster} from "next/font/google";
-
-const lobster = Lobster({
-  variable: '--font-lobster',
-  weight: '400',
-  subsets: ['latin'],
-  display: 'auto',
-})
+import {lobster} from "@/components/Fonts";
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },

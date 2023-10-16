@@ -1,14 +1,7 @@
 import React from "react";
 import {useRouter} from "next/router";
 import {scroll} from "@/components/ContentScroll";
-import {Open_Sans} from "next/font/google";
-
-const openSansBold = Open_Sans({
-    variable: '--font-open-sans',
-    weight: '800',
-    subsets: ['latin'],
-    display: 'auto',
-})
+import {openSansBold} from "@/components/Fonts";
 
 export default function Content({id, title, content, bulletPoints}) {
     const spans = content ? content.split("-.-") : [];
@@ -52,7 +45,7 @@ export default function Content({id, title, content, bulletPoints}) {
             const bold = originalBlock.substring(boldStart + 2, boldEnd);
 
             block.push(originalBlock.substring(0, boldStart));
-            block.push(<b className={"uline dark:text-slate-50 " + openSansBold.className} key={key}>{bold}</b>);
+            block.push(<b className={"dark:text-slate-50 " + openSansBold.className} key={key}>{bold}</b>);
 
             key++;
 
@@ -72,53 +65,31 @@ export default function Content({id, title, content, bulletPoints}) {
             originalBlock = originalBlock.substring(codeEnd + 1);
         }
 
-        // for (let i = 0; i < block.length; i++){
-        //     let blockElement = block[i];
-        //     if (typeof blockElement !== "string") continue;
-        //     // check for link, if so, insert link
-        //     let count = 1;
-        //     while (blockElement.match(regex)) {
-        //         let linkData = loadLinkData(blockElement);
-        //
-        //         block[i + (count-1)] = blockElement.substring(0, linkData.startIndex);
-        //         block.splice(i + count, 0, <a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"} key={key}>{linkData.linkText}</a>);
-        //         blockElement = blockElement.substring(linkData.endIndex);
-        //
-        //         key++;
-        //         count += 2;
-        //     }
-        //
-        //     if (block[i] !== blockElement)
-        //         block.splice(i + (count), 0, blockElement);
-        // }
-
         const modifiedBlock = [];
 
         for (let i = 0; i < block.length; i++) {
             let blockElement = block[i];
 
-            if (typeof blockElement === "string") {
-                let count = 1;
+            if (typeof blockElement !== "string") {
+                modifiedBlock.push(blockElement);
+                continue;
+            }
 
-                while (blockElement.match(regex)) {
-                    let linkData = loadLinkData(blockElement);
+            let count = 1;
 
-                    modifiedBlock.push(blockElement.substring(0, linkData.startIndex));
-                    modifiedBlock.push(
-                        <a
-                            onClick={() => handleClick(linkData.linkUrl)}
-                            className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"}
-                            key={key}
-                        >
-                            {linkData.linkText}
-                        </a>
-                    );
+            while (blockElement.match(regex)) {
+                let linkData = loadLinkData(blockElement);
 
-                    blockElement = blockElement.substring(linkData.endIndex);
+                modifiedBlock.push(blockElement.substring(0, linkData.startIndex));
+                modifiedBlock.push(
+                    <a onClick={() => handleClick(linkData.linkUrl)} className={"text-cyan-accent dark:text-link-text hover:cursor-pointer"} key={key}>
+                        {linkData.linkText}
+                    </a>
+                );
+                blockElement = blockElement.substring(linkData.endIndex);
 
-                    key++;
-                    count += 2;
-                }
+                key++;
+                count += 2;
             }
 
             modifiedBlock.push(blockElement);
@@ -228,9 +199,9 @@ export default function Content({id, title, content, bulletPoints}) {
                 ))}
             </div>}
             {bullets.length > 0 &&
-                <ul className={`markerColor text-lg list-inside ${text.length > 0 ? "" : "mt-6"} list-disc lg:grid w-full`}>
+                <ul className={`markerColor text-lg list-outside ${text.length > 0 ? "" : "mt-6"} list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full`}>
                     {bullets.map((key, index) => (
-                        <li className={"mb-8 pl-4"} key={index}>
+                        <li className={"mb-8 pl-4 h-min"} key={index}>
                             {analyzeBulletTitle(Object.keys(bulletPoints)[index])}
                             <span>{key}</span>
                         </li>

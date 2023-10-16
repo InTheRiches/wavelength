@@ -8,17 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/Fonts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/InformationBlocks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ContentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ContentPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/getting-started/introduction/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/getting-started/introduction/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/muscles/basics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/basics/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/muscles/functions/legs/glutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/muscles/functions/legs/glutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/diet/basics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/diet/basics/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/supplements/performance/pre-workout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/supplements/performance/pre-workout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +193,8 @@
       <workItem from="1695431448783" duration="38125000" />
       <workItem from="1696464595554" duration="7387000" />
       <workItem from="1696878324156" duration="5515000" />
+      <workItem from="1697382302037" duration="2400000" />
+      <workItem from="1697403029131" duration="3539000" />
     </task>
     <servers />
   </component>

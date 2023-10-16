@@ -1,5 +1,6 @@
 import Content from "@/components/Content";
 import ContentPage from "@/components/ContentPage";
+import {openSansBold} from "@/components/Fonts";
 
 export default function DietBasics({}) {
     const content = (
@@ -8,7 +9,7 @@ export default function DietBasics({}) {
             <Content
                 id={"calorie-surplus"}
                 title={"Calorie Surplus"}
-                content={"A **calorie surplus** is essential to muscle growth. Consuming more calories than you burn is vital, as it provides **extra-energy** required for muscle growth. By consuming an **additional 250-500 calories**, individuals can adequately support muscle development. During a calorie surplus you might get a little fat growth, but most will be muscular. If you want muscle gain and fat gain, consider ---BULKING---. If you wish to lose fat at the slight cost of muscle growth, consider ---CUTTING---."}
+                content={"A **calorie surplus** is essential to muscle growth. Consuming more calories than you burn is vital, as it provides **extra-energy** required for muscle growth. By consuming an **additional 250-500 calories**, individuals can adequately support muscle development. During a calorie surplus you might get a little fat growth, but most will be muscular. If you want muscle gain and fat gain, consider [/dieting/bulking,bulking]. If you wish to lose fat at the slight cost of muscle growth, consider [/dieting/cutting,cutting]."}
             ></Content>
             <Content
                 id={"protein"}
@@ -25,11 +26,10 @@ export default function DietBasics({}) {
                 title={"Carbohydrates (Carbs)"}
                 content={`Carbohydrates are a vital **energy source** for intense workouts and play a crucial role in supporting muscle growth. They are your body's preferred energy source, and replenish glycogen stores in muscles, which are depleted during exercise. Additionally, carbohydrates help **spare protein** for muscle development, allowing it to be utilized for its primary purpose rather than as an energy source. There are two types of carbs, **simple** and **complex**.-.-Simple carbs (simple sugars) are composed up of **one or two sugar molecules**. They are typically found in **naturally sugary** foods, along with **processed** sweets. Simple sugars provide a **short release** of energy, but lack necessary nutrients such as **fiber**. Consuming excessive amounts of simple carbs can contribute to **weight gain** and an increased risk of chronic health conditions like **type 2 diabetes** and **heart disease**.-.-Complex carbohydrates are made up of longer chains of sugar molecules, and are **slower to digest**, providing a **steady and sustained** release of energy. They are often rich in dietary fiber, vitamins, minerals, and other nutrients, contributing to better overall health. Complex carbohydrates found in whole grains, fruits, vegetables, and legumes should be incorporated into the diet to ensure **optimal muscle-building potential**.`}
             ></Content>
-
         </div>
     );
 
     return (
-        <ContentPage location={"Diet"} title={"Basics"} description={<span className={"text-lg"}>Exercising and building muscle is a multifaceted process that involves not only dedicated strength training but also <b>proper nutrition</b>. While exercise stimulates muscle growth, diet plays a fundamental role in providing the necessary nutrients and energy for this process.</span>} currentTopic={"Diet-Basics"} content={content}></ContentPage>
+        <ContentPage location={"Diet"} title={"Basics"} description={<span className={"text-lg"}>Exercising and building muscle is a multifaceted process that involves not only dedicated strength training but also <b className={openSansBold.className}>proper nutrition</b>. While exercise stimulates muscle growth, diet plays a fundamental role in providing the necessary nutrients and energy for this process.</span>} currentTopic={"Diet-Basics"} content={content}></ContentPage>
     )
 }
