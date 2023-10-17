@@ -178,28 +178,25 @@ function Sidebar({ currentTopic, disable=true }) {
                                                 {subtopic.subtopics && collapsed[subtopic.title + "-" + subtopic.id] && (
                                                     <div className="ml-8">
                                                         {subtopic.subtopics.map((subsubtopic) => (
-                                                            <div
-                                                                key={getNextKey()}
-                                                                className={`flex flex-col ${
-                                                                    subtopic.subtopics ? '' : ''
-                                                                }`}
-                                                            >
+                                                            <div key={getNextKey()} className={`flex flex-col`}>
                                                                 <div
                                                                     key={getNextKey()}
                                                                     className={`${
                                                                         currentTopic === topic.title + "-" + subtopic.title + "-" + subsubtopic.title
                                                                             ? 'text-cyan-accent border-cyan-accent'
                                                                             : 'text-neutral-700 dark:text-slate-300 border-neutral-200 dark:border-neutral-700'
-                                                                    } flex items-center transition-all duration-200 hover:cursor-pointer hover:text-cyan-accent hover:dark:text-cyan-accent border-l-1 py-1 text-xl justify-between`}
+                                                                    } flex items-center transition-all duration-200 hover:cursor-pointer py-1 text-xl hover:text-cyan-accent hover:dark:text-cyan-accent border-l-1`}
                                                                     onClick={() => {
                                                                         if (subsubtopic.subtopics) {
                                                                             toggleCollapse(subsubtopic);
                                                                         } else {
                                                                             router.push(subsubtopic.href);
                                                                         }
-                                                                    }}
-                                                                >
-                                                                    <a className={`text-xl ml-6`}>{subsubtopic.title}</a>
+                                                                    }}>
+                                                                    {!subsubtopic.subtopics && (
+                                                                        <div className={"rounded-full bg-white w-1.5 h-1.5 ml-2"}></div>
+                                                                    )}
+                                                                    <a className={`text-xl ${!subsubtopic.subtopics ? "ml-2" : "ml-6"}`}>{subsubtopic.title}</a>
                                                                     {subsubtopic.subtopics && (
                                                                         <svg
                                                                             xmlns="http://www.w3.org/2000/svg"
