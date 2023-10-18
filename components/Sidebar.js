@@ -193,10 +193,7 @@ function Sidebar({ currentTopic, disable=true }) {
                                                                             router.push(subsubtopic.href);
                                                                         }
                                                                     }}>
-                                                                    {!subsubtopic.subtopics && (
-                                                                        <div className={"rounded-full bg-white w-1.5 h-1.5 ml-2"}></div>
-                                                                    )}
-                                                                    <a className={`text-xl ${!subsubtopic.subtopics ? "ml-2" : "ml-6"}`}>{subsubtopic.title}</a>
+                                                                    <a className={`text-xl ml-6`}>{subsubtopic.title}</a>
                                                                     {subsubtopic.subtopics && (
                                                                         <svg
                                                                             xmlns="http://www.w3.org/2000/svg"
