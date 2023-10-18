@@ -4,7 +4,7 @@ export default function Footer({ darkBG = "neutral-900" }) {
             <div className="flex items-center justify-center text-center">
                 <p>&copy; 2023 Wavelength. All rights reserved.</p>
                 
-                <a href={"/privacy"} className={"hover:underline ml-2 text-cyan-accent"}>Privacy Policy</a>
+                <a href={"/privacy"} className={"hover:underline ml-2 text-cyan-accent dark:text-black"}>Privacy Policy</a>
             </div>
         </footer>
     </>
