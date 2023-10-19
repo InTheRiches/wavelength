@@ -13,7 +13,7 @@ export default function PerformancePreWorkout({}) {
             <InformationBlock title={"Note"} content={"It's important to note that pre-workout supplements can have side effects, especially if they contain high doses of stimulants like caffeine. These side effects may include jitters, anxiety, rapid heartbeat, and sleep disturbances. It's essential to speak with a healthcare professional before starting any new supplement regimen and to follow the recommended dosage to avoid negative side effects."}></InformationBlock>
             <Content
                 id={"when-how"}
-                title={"Timing/Dosage of Consumption"}
+                title={"Timing / Dosage of Consumption"}
                 content={"First, it is important to note that **pre-workout supplements** should be taken **before exercise, typically 30-60 minutes** before your workout. This allows the ingredients to be absorbed and start working before you begin your exercise routine. Taking the supplement too soon before your workout may result in a **delay** in its effects and can cause **jitters** or other **negative side effects**.-.-The recommended dosage can vary depending on the specific product and your individual tolerance. It is important to carefully read the label and follow the manufacturer's instructions for dosage. If your pre-workout contains caffeine, you should make sure to introduce it to your body if you haven't already, as the high dosages can result in **jitters** and other unwanted side effects. In general, starting with a lower dosage and gradually increasing it as your tolerance builds (especially if it contains caffeine or something similar) is a good strategy to avoid potential negative side effects."}
                 ></Content>
             <Content
