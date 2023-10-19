@@ -145,7 +145,7 @@ export default function Layout() {
                         more <a className={"text-cyan-accent"}>gratifying</a> and <a
                             className={"text-cyan-accent"}>productive</a>.</p></blockquote>
                     <figcaption className="mt-6 flex items-center justify-start sm:justify-center space-x-4 text-left"><img
-                        src="/DiscordPFPNissan.png"
+                        src="/images/pfps/DiscordPFPNissan.png"
                         alt="" className="w-14 h-14 rounded-full"
                         loading="lazy" decoding="async"></img>
                         <div>
