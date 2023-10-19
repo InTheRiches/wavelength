@@ -95,11 +95,11 @@
   },
   {
     "id": 4,
-    "title": "Diet",
+    "title": "Dieting",
     "subtopics": [
-      { "id": 1, "title": "Basics", "href": "/diet/basics" },
-      { "id": 2, "title": "Cutting", "href": "/diet/cutting" },
-      { "id": 3, "title": "Bulking", "href": "/diet/bulking" }
+      { "id": 1, "title": "Basics", "href": "/dieting/basics" },
+      { "id": 2, "title": "Cutting", "href": "/dieting/cutting" },
+      { "id": 3, "title": "Bulking", "href": "/dieting/bulking" }
     ]
   },
   {
@@ -122,13 +122,23 @@
         "id": 3,
         "title": "Muscle Gain",
         "subtopics": [
-          { "id": 1, "title": "Whey Protein", "href": "/supplements/muscle-gain/whey-protein" },
-          { "id": 2, "title": "Loaded Protein", "href": "/supplements/muscle-gain/loaded-protein" },
-          { "id": 3, "title": "Glutamine", "href": "/supplements/muscle-gain/glutamine" }
+          {
+            "id": 1,
+            "title": "Whey Protein",
+            "href": "/supplements/muscle-gain/whey-protein"
+          },
+          {
+            "id": 2,
+            "title": "Loaded Protein",
+            "href": "/supplements/muscle-gain/loaded-protein"
+          },
+          {
+            "id": 3,
+            "title": "Glutamine",
+            "href": "/supplements/muscle-gain/glutamine"
+          }
         ]
-      },
-      { "id": 4, "title": "Recovery", "href": "/supplements/recovery" },
-      { "id": 5, "title": "Weight Loss", "href": "/supplements/weight-loss" }
+      }
     ]
   }
 ]

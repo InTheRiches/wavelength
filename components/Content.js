@@ -9,7 +9,11 @@ export default function Content({id, title, content, bulletPoints}) {
     const router = useRouter();
 
     const handleClick = (link) => {
-        router.push(link).then(() => scroll());
+        console.log(link);
+        router.push({
+            pathname: link.split("#")[0],
+            hash: link.split("#")[1]
+        }).then(() => scroll());
     };
 
     if (!bulletPoints) {
@@ -193,7 +197,7 @@ export default function Content({id, title, content, bulletPoints}) {
                     {title}
                 </h1>
             </div>
-            {text.length > 0 && <div className={`flex flex-col ${title ? "mt-6" : ""} text-lg`}>
+            {text.length > 0 && <div className={`flex flex-col ${title ? "mt-4" : ""} text-lg`}>
                 {text.map((substring, index) => (
                     <div className={`mb-6 indent-6`} key={index}>{substring}</div>
                 ))}

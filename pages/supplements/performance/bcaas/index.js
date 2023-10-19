@@ -29,7 +29,7 @@ export default function PerformanceBCAAs({}) {
             <Content
                 id={"when-how"}
                 title={"Timing/Dosage of Consumption"}
-                content={"Firstly, it is important to read the nutrition information for the specific product. Each brand does it differently. Typically, one scoop a day should be sufficient. The timing of consumption does not effect the benefits.-.-Remember, the supplementation of BCAAs and EAAs are not necessary if you are consuming a balanced diet."}
+                content={"Firstly, it is important to read the nutrition information for the specific product. Each brand does it differently. Typically, one scoop a day should be sufficient. The timing of consumption does not effect the benefits.-.-Remember, the supplementation of BCAAs and EAAs are not necessary if you are consuming a balanced dieting."}
                 ></Content>
         </div>
     );

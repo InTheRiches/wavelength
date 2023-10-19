@@ -21,7 +21,7 @@ export default function PerformancePreWorkout({}) {
                 title="Ingrediants"
                 content={"Pre-Workouts contain various ingredients and dosages, it all depends on the brand and what it is designed for. For example, certain pre-workouts are **stim-free**, meaning they dont have caffeine, and focus on other elements to improve your workout. However, these are the most common ingredients:"}
                 bulletPoints={{
-                    "Electrolytes[/diet/basics#Electrolytes]": "Minerals such as sodium, potassium, and magnesium (what you sweat out) that can help improve hydration and reduce the risk of muscle cramps during exercise.",
+                    "Electrolytes[/dieting/basics#electrolytes]": "Minerals such as sodium, potassium, and magnesium (what you sweat out) that can help improve hydration and reduce the risk of muscle cramps during exercise.",
                     "Citrulline[/supplements/performance/citrulline]": "An amino acid that can help improve blood flow by dilating blood vessel size and reduces fatigue during exercise.",
                     "Beta-Alanine[/supplements/performance/beta-alanine]": "An amino acid that helps reduce muscle fatigue and improve exercise endurance. Also has anti-aging effects.",
                     "Nitric Oxide (Nitrate)[/supplements/performance/nitrate]": "A gas that is produced naturally that relaxes blood vessels and improves blood flow and may temporarily reduce the body’s oxygen demand during exercise.",

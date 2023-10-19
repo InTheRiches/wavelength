@@ -4,6 +4,7 @@ import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
 import React from "react";
 import {scroll} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
+import {WarningBlock} from "@/components/InformationBlocks";
 
 
 export default function PecsFunction({}) {
@@ -25,26 +26,19 @@ export default function PecsFunction({}) {
                 id={"rotator-cuff"}
                 content={"The rotator cuff serves several crucial functions in the shoulder joint, working together to provide stability, control, and facilitate movement.-.-One of the main functions of the rotator cuff is to **stabilize** the shoulder joint. The muscles and tendons of the rotator cuff help hold the head of the humerus (upper arm bone) securely within the shallow socket of the scapula (shoulder blade). This stability is vital for maintaining proper alignment of the joint during various movements, preventing excessive translation or **dislocation** of the humeral head. The rotator cuff acts as a dynamic stabilizer, particularly during overhead movements and activities that require a wide range of shoulder motion, such as throwing, reaching, or lifting weights.-.-The rotator cuff muscles also play a crucial role in controlling the movement of the shoulder joint. They work together to initiate and control the fine-tuned motions of the shoulder, allowing for **precise movements and adjustments**. The coordinated action of the rotator cuff muscles helps maintain proper muscle balance and force distribution around the shoulder joint, preventing impingement or excessive stress on other structures. This control is particularly important during movements like abduction (lifting the arm sideways), external rotation, and internal rotation of the shoulder.-.-Additionally, the rotator cuff muscles contribute to the dynamic stabilization of the humeral head (end of humerus bone) during arm movements. They generate forces that help **center and hold** the humeral head within the glenoid cavity, enhancing joint strength and optimizing the efficiency of muscle contractions. This function is crucial in activities that involve repetitive or forceful arm movements, where the rotator cuff provides dynamic support and protection to the shoulder joint.-.-In summary, the rotator cuff serves important functions in stabilizing the shoulder joint, controlling movement, and providing dynamic stabilization. By working together, these muscles enhance shoulder stability, promote precise and controlled motions, and protect the joint during various activities. Proper conditioning, strengthening, and flexibility of the rotator cuff are essential for maintaining shoulder health, preventing injuries, and optimizing performance in tasks involving the upper extremities."}
             ></Content>
-            <div className="">
-                <div className="flex rounded-md border-1 border-yellow-200 bg-yellow-50 dark:bg-black dark:bg-opacity-20 p-4 text-lg text-yellow-500 dark:text-yellow-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mr-3 mt-1.5 h-5 w-5 flex-shrink-0">
-                        <path fillRule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
-                    </svg>
-                    <div className={"w-full"}>
-                        <h4 className="font-bold">Make sure to strengthen the rotator cuff as you increase load on shoulder bearing movements, as permanent damage can occur.</h4>
-                        <div className="mt-1">
-                            <ul className="list-inside list-disc lg:grid w-full">
-                                <li>Shoulder pain</li>
-                                <li>Weakness, loss of stability</li>
-                                <li>Limited range of motion</li>
-                                <li>Tendinitis</li>
-                                <li>Bursitis</li>
-                                <li>Rotator cuff tear, often permanent, requiring surgical intervention</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <WarningBlock
+                title={"Make sure to strengthen the rotator cuff as you increase load on shoulder bearing movements, as permanent damage can occur."}
+                content={
+                    <ul className="list-inside list-disc lg:grid w-full">
+                        <li>Shoulder pain</li>
+                        <li>Weakness, loss of stability</li>
+                        <li>Limited range of motion</li>
+                        <li>Tendinitis</li>
+                        <li>Bursitis</li>
+                        <li>Rotator cuff tear, often permanent, requiring surgical intervention</li>
+                    </ul>
+                }
+                ></WarningBlock>
         </div>
     )
 
