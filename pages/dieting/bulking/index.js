@@ -9,7 +9,7 @@ export default function DietBulking({}) {
             <Content
                 id={"basics"}
                 title={"Basics"}
-                content={"Bulking is a popular dieting method used by athletes to gain muscle quickly. The goal of bulking is to consume high-calorie foods that provide excess fuel to the body. The idea behind it is that by providing more energy, the body will be able to grow more. Bulking is typically done in the winter, as your aesthetics don't matter since you are already covering up for the cold weather.-.-There are two ways to bulk: dirty or clean. Dirty bulking is unhealthier and won't provide as ideal of results, but it is far easier and cheaper. Clean bulking is the perfect scenario that will result in the best gains."}
+                content={"Bulking is a popular dieting method used by athletes to gain muscle quickly. The goal of bulking is to consume **high-calorie** foods that provide excess fuel to the body. The idea behind it is that by providing more energy, the body will be able to grow more. Bulking is typically done in the winter, as your aesthetics don't matter since you are already covering up for the cold weather.-.-There are two ways to bulk: **dirty and clean**. Dirty bulking is unhealthier and won't provide as ideal of results, but it is far easier and cheaper. Clean bulking is the perfect scenario that will result in the best gains."}
             ></Content>
             <Content
                 id={"dirty-bulking"}
@@ -19,12 +19,12 @@ export default function DietBulking({}) {
             <Content
                 id={"clean-bulking"}
                 title={"Clean Bulking"}
-                content={"Clean bulking, on the other hand, emphasizes quality over quantity. It is a more structured and health-conscious approach, focusing on balanced nutrient intake from whole, minimally processed foods. Lean proteins such as chicken and beef, [/dieting/basics#carbohydrates,complex carbohydrates], and essential fats are the focus, as they provide the necessary nutrition for muscle growth while minimizing fat gain. Clean bulking requires planning, discipline, and calorie control, and it is a healthier and more sustainable approach to building muscle. Choosing whether to dirty or clean bulk should depend on your fitness goals, preferences, and overall health considerations. If you are unsure, consult with a healthcare profressonal or registered dietition. Their advice is tailored to your specific situation."}
+                content={"Clean bulking, on the other hand, emphasizes **quality over quantity**. It is a more structured and health-conscious approach, focusing on balanced nutrient intake from whole, minimally processed foods. **Lean** proteins such as chicken and beef, [/dieting/basics#carbohydrates,complex carbohydrates], and essential fats are the focus, as they provide the necessary nutrition for muscle growth while minimizing fat gain. Clean bulking requires planning, discipline, and calorie control, and is a healthier and more sustainable approach to building muscle. Choosing whether to dirty or clean bulk should depend on your fitness goals, preferences, and overall health considerations. If you are unsure, consult with a **healthcare professional** or **registered dietitian**. Their advice is tailored to your specific situation."}
             ></Content>
             <Content
                 id={"howto"}
                 title={"How to Bulk"}
-                content={`When bulking, it is recommended to consume 10-20% more calories than your daily maintenance amount, which is typically around 2000-2500 calories. This surplus of calories will result in an average weight gain of 0.25-0.5% of your body weight per week. For men, a 500-calorie surplus is recommended, while for women, a 350-calorie surplus is suggested.`}
+                content={`When bulking, it is recommended to consume 10-20% more calories than your **daily maintenance** amount, which is typically around 2000-2500 calories. This surplus of calories will result in an average weight gain of 0.25-0.5% of your body weight per week. For men, a 500-calorie surplus is recommended, while for women, a 350-calorie surplus is suggested.`}
             ></Content>
             <InformationBlock
                 title={"Note"}
