@@ -74,7 +74,7 @@ export default function Layout() {
     return (
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 ` + openSans.className}>
             <div className={"absolute top-0 right-0 w-full h-full z-10"}>
-                <img src={"/landingPageBG.png"} className={"w-full h-full object-cover opacity-50 dark:opacity-20"}></img>
+                <img src={"/images/backgrounds/landingPageBG.png"} className={"w-full h-full object-cover opacity-50 dark:opacity-20"}></img>
             </div>
 
             <header className={"flex flex-col items-center w-full h-screen z-20"}>
@@ -90,17 +90,17 @@ export default function Layout() {
                             <div className={"grid grid-cols-2 gap-4"}>
                                 <div className={"rounded-md p-4 flex flex-col bg-neutral-500 bg-opacity-5 w-full transition-all duration-200 hover:cursor-pointer hover:shadow-button"}>
                                     <span className="mb-4 inline-block text-2xl sm:text-2xl font-bold text-slate-900 tracking-tight dark:text-slate-50 partial-bottom-border text-center">Bench Press</span>
-                                    <img src={"/exampleBenchPress.png"} className={"w-full h-full aspect-square rounded-md"}></img>
+                                    <img src={"/images/temporary/exampleBenchPress.png"} className={"w-full h-full aspect-square rounded-md"}></img>
                                 </div>
 
                                 <div className={"rounded-md p-4 flex flex-col bg-neutral-500 bg-opacity-5 w-full transition-all duration-200 hover:cursor-pointer hover:shadow-button"}>
                                     <span className="mb-4 inline-block text-2xl sm:text-2xl font-bold text-slate-900 tracking-tight dark:text-slate-50 partial-bottom-border text-center">Chest Fly</span>
-                                    <img src={"/exampleChestFly.png"} className={"w-full h-full aspect-square rounded-md"}></img>
+                                    <img src={"/images/temporary/exampleChestFly.png"} className={"w-full h-full aspect-square rounded-md"}></img>
                                 </div>
 
                                 <div className={"rounded-md p-4 flex flex-col bg-neutral-500 bg-opacity-5 w-full transition-all duration-200 hover:cursor-pointer hover:shadow-button"}>
                                     <span className="mb-4 inline-block text-2xl sm:text-2xl font-bold text-slate-900 tracking-tight dark:text-slate-50 partial-bottom-border text-center">Cable Crossover</span>
-                                    <img src={"/exampleCableFly.png"} className={"w-full h-full aspect-square rounded-md"}></img>
+                                    <img src={"/images/temporary/exampleCableFly.png"} className={"w-full h-full aspect-square rounded-md"}></img>
                                 </div>
                             </div>
                         </div>
