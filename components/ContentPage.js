@@ -106,7 +106,7 @@ export default function ContentPage({ location, title, description, currentTopic
 
             <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
                 {windowWidth >= 1024 ? <Sidebar currentTopic={currentTopic}></Sidebar> : <></>}
-                <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full pr-12 lg:pr-6"}>
+                <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full lg:pr-6"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-12">
