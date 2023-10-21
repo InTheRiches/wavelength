@@ -104,9 +104,9 @@ export default function ContentPage({ location, title, description, currentTopic
             </div>
             <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
 
-            <div className="main-grid sm:grid sm:gap-8 sm:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
-                <Sidebar currentTopic={currentTopic}></Sidebar>
-                <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full pr-6"}>
+            <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
+                {windowWidth >= 1024 ? <Sidebar currentTopic={currentTopic}></Sidebar> : <></>}
+                <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full pr-12 lg:pr-6"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-12">
@@ -116,7 +116,7 @@ export default function ContentPage({ location, title, description, currentTopic
                                 {description}
                             </div>}
                         </div>
-                        {windowWidth < 640 ? <MobileHeaderListSidebar></MobileHeaderListSidebar> : <></> }
+                        {windowWidth < 1024 ? <MobileHeaderListSidebar></MobileHeaderListSidebar> : <></> }
                         {content}
                     </div>
                     <div className={"w-full flex justify-around mt-4"}>
@@ -144,16 +144,16 @@ export default function ContentPage({ location, title, description, currentTopic
                         </button>
                     </div>
                 </div>
-                {windowWidth >= 640 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
+                {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
             </div>
 
             <Footer></Footer>
 
-            <div className={"fixed inset-0 z-50 block sm:hidden"}>
-                <div className={"relative bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-full"}>
-                    <MobileSidebar></MobileSidebar>
-                </div>
-            </div>
+            {/*<div className={"fixed inset-0 z-50 block sm:hidden"}>*/}
+            {/*    <div className={"relative bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-full"}>*/}
+            {/*        <MobileSidebar></MobileSidebar>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     )
 }
