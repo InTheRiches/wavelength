@@ -107,7 +107,7 @@ export default function ContentPage({ location, title, description, currentTopic
             </div>
             <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
 
-            (sidebar && <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
+            {sidebar && <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
                 {windowWidth >= 1024 ? sidebar : <></>}
                 <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full lg:pr-6"}>
                     {/* Page Header */}
@@ -148,7 +148,7 @@ export default function ContentPage({ location, title, description, currentTopic
                     </div>
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
-            </div>)
+            </div>}
 
             <Footer></Footer>
 
