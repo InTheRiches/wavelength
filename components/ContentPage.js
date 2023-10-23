@@ -100,14 +100,14 @@ export default function ContentPage({ location, title, description, currentTopic
         console.log(currentScrolledSection);
     };
 
-    return ((sidebar &&
+    return (
         <div className={"flex flex-col min-h-screen bg-white dark:bg-neutral-900 text-slate-900 dark:text-slate-200 justify-center items-center " + openSans.className}>
             <div className={"absolute top-0 right-0 w-full h-full z-10"}>
                 <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>
             </div>
             <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
 
-            <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
+            (sidebar && <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
                 {windowWidth >= 1024 ? sidebar : <></>}
                 <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full lg:pr-6"}>
                     {/* Page Header */}
@@ -148,7 +148,7 @@ export default function ContentPage({ location, title, description, currentTopic
                     </div>
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
-            </div>
+            </div>)
 
             <Footer></Footer>
 
@@ -158,5 +158,5 @@ export default function ContentPage({ location, title, description, currentTopic
             {/*    </div>*/}
             {/*</div>*/}
         </div>
-    ) || <></>);
+    )
 }
