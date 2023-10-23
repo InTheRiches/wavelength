@@ -77,7 +77,7 @@ export default function Layout() {
     // }, []);
 
     return (
-        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 ` + openSans.className}>
+        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 `}> {/*  + openSans.className */}
             <div className={"absolute top-0 right-0 w-full h-full"}>
                 {loaded && (
                     <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/landingPageBG.png"} className={"w-full h-full object-cover opacity-40 dark:opacity-20"} alt={""}></img>
@@ -101,8 +101,7 @@ export default function Layout() {
                                 all.</p>
 
                             <div className="mt-10 flex flex-row space-x-6 text-md h-12 ml-1">
-                                <a
-                                    className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
+                                <a className="text-lg transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
                                     href="/getting-started/introduction">Get started<div className={"ml-2 rounded-full flex items-center justify-center w-10 h-10 bg-cyan-accent dark:bg-cyan-accent-dark"}>
                                     <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path

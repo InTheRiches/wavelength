@@ -426,8 +426,8 @@ export function FrontFullBodySVG({highlighted = "", big = false}) {
 
     return (
         <svg id={"frontFullBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 907" className={`h-full ${big ? "max-h-212" : "max-h-132"}`}>
-            <g id="svg-forarms" data-name="Forarms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forarms")}
-               className={`muscle-svg ${highlighted.split(",").includes("forarms") ? "muscle-highlighted" : ""}`}>
+            <g id="svg-forearms" data-name="forearms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forearms")}
+               className={`muscle-svg ${highlighted.split(",").includes("forearms") ? "muscle-highlighted" : ""}`}>
                 <g>
                     <path className={"transition-colors duration-200"}
                           d="m120,262.5c-2.16,37.19-13.3,76.1-31.59,108.55-3.12,5.54-6.45,10.95-9.79,16.36-4.15,6.74-8.3,13.48-12.45,20.22-8.83,14.34-16.28,26.72-18.71,43.38-7.38.7-16.45,2.67-23.66.99-3.92-.92-7.84-2.22-11.04-4.65s-4.27-3.31-4.3-7.33c-.02-2.66,1.03-8.52,2-11,5.57-14.18,9.74-27.93,15.31-42.11,5.09-12.95,10.19-25.95,13.36-39.5,2.8-11.97,4.06-24.27,7.03-36.2,3.47-13.98,9.29-27.37,17.14-39.45,2.57-3.96,6.71-8.26,9.71-11.26,4.38,9.09,7.15,20.68,7.51,30.77.08,2.34.49,6.23,1.49,7.23.55.55,3.27-1.38,3.72-2.01,4.28-5.99,8.25-9.45,13.03-13.67,7.71-6.81,12.75-13.61,20.77-18.58"/>
@@ -664,7 +664,7 @@ export function FrontUpperBodySVG({highlighted = ""}) {
 
     return (
         <svg id={"frontUpperBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 460" className={"h-full max-h-80"}>
-            <g id="svg-forarms" data-name="Forearms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forearms")}
+            <g id="svg-forearms" data-name="Forearms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forearms")}
                className={`muscle-svg ${highlighted.split(",").includes("forearms") ? "muscle-highlighted" : ""}`}>
                 <g>
                     <path className={"transition-colors duration-200"}

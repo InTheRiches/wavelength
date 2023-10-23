@@ -96,8 +96,6 @@ export default function ContentPage({ location, title, description, currentTopic
                 break;
             }
         }
-
-        console.log(currentScrolledSection);
     };
 
     return (
