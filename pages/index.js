@@ -116,7 +116,7 @@ export default function Layout() {
                             </div>
                         </div>
                         <div className={"relative p-12 w-full min-[550px]:w-1/2 sm:w-3/5 lg:w-1/3 h-full flex flex-col items-center"}>
-                            <img className={"2xl:w-5/6 lg:pt-24 h-min aspect-square object-cover landing-img-shadow"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
+                            <img className={"2xl:w-5/6 lg:pt-24 w-min aspect-square object-cover landing-img-shadow"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
                             {/*<div className={"h-full max-w-3xl mt-8"}>*/}
                             {/*    <div className={"py-2 xl:py-8 px-4 mx-auto text-xl lg:text-2xl " +*/}
 
