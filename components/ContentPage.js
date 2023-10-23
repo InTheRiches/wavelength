@@ -21,6 +21,7 @@ export default function ContentPage({ location, title, description, currentTopic
     ContentScroll();
 
     const [windowWidth, setWindowWidth] = useState(640);
+    const [sidebar, setSidebar] = useState(null);
 
     const router = useRouter();
 
@@ -58,6 +59,8 @@ export default function ContentPage({ location, title, description, currentTopic
         }
 
         setWindowWidth(window.innerWidth);
+
+        setSidebar(<Sidebar currentTopic={currentTopic}></Sidebar>)
 
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -97,7 +100,7 @@ export default function ContentPage({ location, title, description, currentTopic
         console.log(currentScrolledSection);
     };
 
-    return (
+    return ((sidebar &&
         <div className={"flex flex-col min-h-screen bg-white dark:bg-neutral-900 text-slate-900 dark:text-slate-200 justify-center items-center " + openSans.className}>
             <div className={"absolute top-0 right-0 w-full h-full z-10"}>
                 <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>
@@ -105,7 +108,7 @@ export default function ContentPage({ location, title, description, currentTopic
             <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
 
             <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
-                {windowWidth >= 1024 ? <Sidebar currentTopic={currentTopic}></Sidebar> : <></>}
+                {windowWidth >= 1024 ? sidebar : <></>}
                 <div onScrollCapture={() => handleScroll()} className={"ml-6 sm:ml-12 flex flex-col w-full h-full lg:pr-6"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
@@ -155,5 +158,5 @@ export default function ContentPage({ location, title, description, currentTopic
             {/*    </div>*/}
             {/*</div>*/}
         </div>
-    )
+    ) || <></>);
 }
