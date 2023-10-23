@@ -101,7 +101,7 @@ export default function ContentPage({ location, title, description, currentTopic
     };
 
     return (
-        <div className={"flex flex-col min-h-screen bg-white dark:bg-neutral-900 text-slate-900 dark:text-slate-200 justify-center items-center " + openSans.className}>
+        <div className={"flex flex-col min-h-screen bg-white dark:bg-neutral-900 text-slate-900 dark:text-slate-200 justify-center items-center "}> {/*  + openSans.className */}
             <div className={"absolute top-0 right-0 w-full h-full z-10"}>
                 <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>
             </div>
