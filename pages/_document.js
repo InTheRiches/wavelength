@@ -15,9 +15,9 @@ export default function Document() {
                 <meta property="og:type" content="website"/>
             </Head>
             <body>
-            <script src={"/noflash.js"}></script>
-            <Main/>
-            <NextScript/>
+                <script src={"/noflash.js"}></script>
+                <Main/>
+                <NextScript/>
             </body>
         </Html>
     )
