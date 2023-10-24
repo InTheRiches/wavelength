@@ -155,7 +155,7 @@ export default function Layout() {
                 </figure>
             </section>
 
-            <Footer darkBG={"cyan-accent"}></Footer>
+            <Footer></Footer>
         </div>
     )
 }

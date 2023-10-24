@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="" />
+    <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +193,7 @@
       <workItem from="1697382302037" duration="2400000" />
       <workItem from="1697403029131" duration="7005000" />
       <workItem from="1697676072822" duration="8575000" />
-      <workItem from="1698087592464" duration="4863000" />
+      <workItem from="1698087592464" duration="5220000" />
     </task>
     <servers />
   </component>
