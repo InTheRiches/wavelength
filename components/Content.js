@@ -1,7 +1,6 @@
 import React from "react";
 import {useRouter} from "next/router";
 import {scroll} from "@/components/ContentScroll";
-import {openSansBold} from "@/components/Fonts";
 
 export default function Content({id, title, content, bulletPoints}) {
     const spans = content ? content.split("-.-") : [];
@@ -49,7 +48,7 @@ export default function Content({id, title, content, bulletPoints}) {
             const bold = originalBlock.substring(boldStart + 2, boldEnd);
 
             block.push(originalBlock.substring(0, boldStart));
-            block.push(<b className={"dark:text-slate-50 " + openSansBold.className} key={key}>{bold}</b>);
+            block.push(<b className={"dark:text-slate-50 font-bold"} key={key}>{bold}</b>);
 
             key++;
 
