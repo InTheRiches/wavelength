@@ -190,6 +190,7 @@ export function HeaderListSidebar() {
 
         setLoaded(true);
     }, []);
+    // ${h1List.length === index + 1 ? "" : "border-b-1.5"}
 
     return loaded ? (
         <div className={"h-full max-w-1/5 w-full"}>
@@ -199,7 +200,8 @@ export function HeaderListSidebar() {
                     {h1List.map((h1, index) => {
                         return (
                             <div key={index + 150} className="text-lg mb-1 pb-2 flex flex-col w-fit items-center">
-                                <a className={`w-full pb-3 ${h1List.length === index + 1 ? "" : "border-b-1.5"} dark:border-neutral-300 border-neutral-600 hover:text-cyan-accent dark:hover:text-cyan-accent dark:text-slate-300 transition-colors duration-75 hover:cursor-pointer`}
+                                <div className={"w-2 h-2 bg-neutral-300"}></div>
+                                <a className={`w-full pb-3 dark:border-neutral-300 border-neutral-600 hover:text-cyan-accent dark:hover:text-cyan-accent dark:text-slate-300 transition-colors duration-75 hover:cursor-pointer`}
                                    onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
                             </div>
                         );
