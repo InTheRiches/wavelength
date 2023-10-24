@@ -196,13 +196,13 @@ export default function Content({id, title, content, bulletPoints}) {
                     {title}
                 </h1>
             </div>
-            {text.length > 0 && <div className={`flex flex-col ${title ? "mt-4" : ""} text-lg`}>
+            {text.length > 0 && <div className={`flex flex-col ${title ? "mt-4" : ""} text-xl`}>
                 {text.map((substring, index) => (
                     <div className={`mb-6 indent-6`} key={index}>{substring}</div>
                 ))}
             </div>}
             {bullets.length > 0 &&
-                <ul className={`markerColor text-lg list-outside ${text.length > 0 ? "" : "mt-6"} list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full`}>
+                <ul className={`markerColor text-xl list-outside ${text.length > 0 ? "" : "mt-6"} list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full`}>
                     {bullets.map((key, index) => (
                         <li className={"mb-8 pl-4 h-min"} key={index}>
                             {analyzeBulletTitle(Object.keys(bulletPoints)[index])}
