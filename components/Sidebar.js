@@ -52,17 +52,6 @@ function Sidebar({disable = true}) {
         );
     };
 
-    // const setCollapse = (topic, value) => {
-    //     console.log("collapse");
-    //     setCollapsed({...collapsed, [topic.title + "-" + topic.id]: value});
-    //
-    //     // save the new state to LocalStorage
-    //     window.localStorage.setItem(
-    //         "sidebar-collapsed-state",
-    //         JSON.stringify({...collapsed, [topic.title + "-" + topic.id]: value})
-    //     );
-    // }
-
     useEffect(() => {
         // retrieve the state of the menus from LocalStorage
         const storedState = window.localStorage.getItem(
@@ -159,8 +148,6 @@ function SubCategory({ subcategory, collapsed, activeTopic, toggleCollapse }) {
 }
 
 function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
-    const router = useRouter();
-
     return (
         <div className={`mb-2 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
             <div className="flex items-center mb-2 hover:cursor-pointer justify-between"
@@ -173,48 +160,7 @@ function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
             {collapsed[category.title + "-" + category.id] && (
                 <div>
                     {category.subtopics.map((subtopic) => (
-                        <div key={getNextKey()} className={`flex flex-col ${subtopic.subtopics ? 'border-l-1 border-neutral-200 dark:border-neutral-700' : ''}`}>
-                            <div className={`${
-                                activeTopic === subtopic.href
-                                    ? 'text-cyan-accent border-cyan-accent'
-                                    : 'text-neutral-700 dark:text-slate-300 border-neutral-200 dark:border-neutral-700'
-                            } ${subtopic.subtopics ? "" : "border-l-1"} flex items-center text-2xl transition-all duration-200 hover:cursor-pointer hover:text-cyan-accent dark:hover:text-cyan-accent flex-row py-1 justify-between`}
-                                 onClick={() => {
-                                     if (subtopic.subtopics)
-                                         toggleCollapse(subtopic);
-                                     else
-                                         router.push(subtopic.href);
-                                 }}>
-                                <a className={`text-xl ml-6`}>{subtopic.title}</a>
-                                {subtopic.subtopics && (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className={`w-5 h-5 transition-transform duration-100 ${
-                                            collapsed[subtopic.title + "-" + subtopic.id]
-                                                ? "-scale-y-100"
-                                                : "scale-y-100"
-                                        }`}>
-                                        <path strokeLinecap="round" strokeLinejoin="round"
-                                              d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-                                    </svg>
-                                )}
-                            </div>
-                            <div>
-                                {subtopic.subtopics && collapsed[subtopic.title + "-" + subtopic.id] && (
-                                    <div className="ml-8">
-                                        {subtopic.subtopics.map((subsubtopic) => (
-                                            subsubtopic.subtopics ? (
-                                                    <SubCategory subcategory={subsubtopic} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse} key={getNextKey()}></SubCategory>
-                                                ) : <Topic topic={subsubtopic} activeTopic={activeTopic} key={getNextKey()}/>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
+                        subtopic.subtopics ? <SubCategory subcategory={subtopic} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse}></SubCategory> : <Topic topic={subtopic} activeTopic={activeTopic} key={getNextKey()}/>
                     ))}
                 </div>
             )}
