@@ -112,7 +112,7 @@ export default function ContentPage({ location, title, description, currentTopic
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-12">
                             <span className="text-cyan-accent mb-1 text-lg font-semibold">{location}</span>
-                            <span className="mb-10 inline-block text-4xl lg:text-6xl font-bold text-slate-900 tracking-tight dark:text-slate-50">{title}</span>
+                            <span className="mb-10 inline-block text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50">{title}</span>
                             {description && <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md"}>
                                 {description}
                             </div>}
