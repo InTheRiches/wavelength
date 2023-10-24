@@ -123,7 +123,7 @@ function SubCategory({ subcategory, collapsed, activeTopic, toggleCollapse }) {
                  onClick={() => {
                      toggleCollapse(subcategory);
                  }}>
-                <a className={`text-1xl ml-6`}>{subcategory.title}</a>
+                <a className={`text-lg ml-6`}>{subcategory.title}</a>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-transform duration-100 ${
                     collapsed[subcategory.title + "-" + subcategory.id]
                         ? "-scale-y-100"
@@ -152,7 +152,7 @@ function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
         <div className={`mb-2 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
             <div className="flex items-center mb-2 hover:cursor-pointer justify-between"
                  onClick={() => toggleCollapse(category)}>
-                <h2 className="font-bold text-2xl">{category.title}</h2>
+                <h2 className="font-bold text-xl">{category.title}</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-all duration-100 ${collapsed[category.title + "-" + category.id] ? "-scale-y-100" : "scale-y-100"}`}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
                 </svg>
