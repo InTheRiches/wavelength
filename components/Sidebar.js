@@ -192,7 +192,7 @@ export function HeaderListSidebar() {
     }, []);
 
     return loaded ? (
-        <div className={"h-full w-full"}>
+        <div className={"h-full max-w-1/5 w-full"}>
             <div className='ml-4 sticky top-20 overflow-y-auto'>
                 <div className="text-lg font-bold mb-6">On this page</div>
                 <div>
