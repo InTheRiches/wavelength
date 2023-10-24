@@ -198,7 +198,7 @@ export default function Content({id, title, content, bulletPoints}) {
             </div>
             {text.length > 0 && <div className={`flex flex-col ${title ? "mt-4" : ""} text-xl`}>
                 {text.map((substring, index) => (
-                    <div className={`mb-6 indent-6`} key={index}>{substring}</div>
+                    <div className={`mb-6 indent-6 text-left sm:text-justify`} key={index}>{substring}</div>
                 ))}
             </div>}
             {bullets.length > 0 &&
