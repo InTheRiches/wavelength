@@ -1,7 +1,7 @@
 export default function InformationBlock({ title, content }) {
     return (
         <div>
-            <div className="flex rounded-md border-1 border-sky-400 p-4 dark:bg-blue-500 dark:bg-opacity-10 text-lg text-sky-400 bg-blue-50">
+            <div className="flex rounded-md border-1 border-sky-500 p-4 dark:bg-blue-500 dark:bg-opacity-10 text-lg text-sky-600 bg-blue-50">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                      className="mr-3 mt-1 h-5 w-5 flex-shrink-0">
                     <path fillRule="evenodd"

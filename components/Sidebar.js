@@ -199,9 +199,12 @@ export function HeaderListSidebar() {
                 <div>
                     {h1List.map((h1, index) => {
                         return (
-                            <div key={index + 150} className="sidebar-header text-lg mb-1 pb-2 flex flex-row w-fit items-center">
-                                <div className={"w-2 h-2 mr-2 bg-neutral-500 rounded-full"}></div>
-                                <a className={`w-full dark:border-neutral-300 border-neutral-600 hover:text-cyan-accent dark:hover:text-cyan-accent dark:text-slate-300 transition-colors duration-75 hover:cursor-pointer`}
+                            <div key={index + 150} className="sidebar-header text-lg pb-3 flex flex-row w-fit items-center">
+                                {/*<div className={"w-2 h-2 mr-2 bg-neutral-500 rounded-full aspect-square"}></div>*/}
+                                <svg className={"w-1.5 h-1.5 mr-2 transition-colors duration-75"} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={"#cbd5e1"}>
+                                    <circle cx="50" cy="50" r="50"/>
+                                </svg>
+                                <a className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75`}
                                    onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
                             </div>
                         );

@@ -204,7 +204,7 @@ export default function Content({id, title, content, bulletPoints}) {
             {bullets.length > 0 &&
                 <ul className={`markerColor text-lg list-outside ${text.length > 0 ? "" : "mt-6"} list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full`}>
                     {bullets.map((key, index) => (
-                        <li className={"mb-8 pl-4 h-min"} key={index}>
+                        <li className={"mb-8 pl-2 h-min"} key={index}>
                             {analyzeBulletTitle(Object.keys(bulletPoints)[index])}
                             <span>{key}</span>
                         </li>

@@ -4,6 +4,7 @@ import ContentPage from '@/components/ContentPage';
 import {BackFullBodySVG, FrontFullBodySVG} from "@/components/BodySVG";
 import {useRouter} from "next/router";
 import React from "react";
+import InformationBlock from "@/components/InformationBlocks";
 
 
 export default function MuscleBasics({}) {
@@ -34,35 +35,23 @@ export default function MuscleBasics({}) {
                 title={"Muscle Heads"}
                 content={'Some muscles are made up of multiple "heads". These parts of the muscle attach to different bones in your body and work together to perform **movement**. For example, the biceps muscle in your upper arm has two heads - the "long head" and the "short head". These heads attach to different parts of your shoulder blade and forearm bone, respectively.-.-Each head of a muscle can work independently or together with the other heads of the same muscle. This means that different heads can produce different movements or help to **stabilize** joints in different ways.-.-For example, let\'s go back to the biceps muscle. The long head of the biceps attaches to a part of the shoulder blade called the "supraglenoid tubercle". This attachment point allows the long head to help **stabilize the shoulder joint** when you lift your arm. Meanwhile, the short head of the biceps attaches to the forearm bone called the "radius". This attachment point allows the short head to help flex the elbow joint when you curl your arm.-.-By working together, the different heads of a muscle can produce complex movements that require multiple joints to move. For example, when you lift a heavy object towards your shoulder, you\'re using both the long and short heads of the biceps to stabilize your shoulder joint and flex your elbow joint.'}
             ></Content>
-            <div className="">
-                <div className="flex rounded-md border-1 border-sky-500 p-4 dark:bg-blue-500 dark:bg-opacity-10 text-lg text-sky-600 dark:text-sky-300 bg-blue-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                            className="mr-3 mt-1.2 h-5 w-5 flex-shrink-0">
-                        <path fillRule="evenodd"
-                                d="M19 10.5a8.5 8.5 0 11-17 0 8.5 8.5 0 0117 0zM8.25 9.75A.75.75 0 019 9h.253a1.75 1.75 0 011.709 2.13l-.46 2.066a.25.25 0 00.245.304H11a.75.75 0 010 1.5h-.253a1.75 1.75 0 01-1.709-2.13l.46-2.066a.25.25 0 00-.245-.304H9a.75.75 0 01-.75-.75zM10 7a1 1 0 100-2 1 1 0 000 2z"
-                                clipRule="evenodd"/>
-                    </svg>
-                    <div className={"w-full"}>
-                        <h4 className="font-bold">Muscles with multiple "heads" can provide some unique benefits to the body because the different heads can work together or independently to produce different movements and functions. Here are a few examples:</h4>
-                        <div className="mt-1">
-                            <ul className="list-inside list-disc lg:grid w-full"> {/*lg:grid-cols-2*/}
-                                <li>Allow muscles to attach to different bones and produce complex movements</li>
-                                <li>Can work together or independently to produce different movements</li>
-                                <li>Help to stabilize joints in different ways</li>
-                                <li>Provide a wider range of functional capabilities than a single muscle</li>
-                                <li>Allow for greater precision in movement and force production</li>
-                                <li>Can help to distribute force more evenly across a joint, reducing the risk of injury</li>
-                                <li>Allow for greater muscle mass and strength in certain areas of the body where multiple heads are present.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <InformationBlock content={
+                <ul className="list-inside list-disc lg:grid w-full mt-1"> {/*lg:grid-cols-2*/}
+                    <li>Allow muscles to attach to different bones and produce complex movements</li>
+                    <li>Can work together or independently to produce different movements</li>
+                    <li>Help to stabilize joints in different ways</li>
+                    <li>Provide a wider range of functional capabilities than a single muscle</li>
+                    <li>Allow for greater precision in movement and force production</li>
+                    <li>Can help to distribute force more evenly across a joint, reducing the risk of injury</li>
+                    <li>Allow for greater muscle mass and strength in certain areas of the body where multiple heads are present.</li>
+                </ul>
+            } title={"Muscles with multiple \"heads\" can provide some unique benefits to the body because the different heads can work together or independently to produce different movements and functions. Here are a few examples:"}/>
+
             <Content
                 id="soreness"
                 title={"Soreness"}
                 content={`**Muscle soreness** is the feeling of discomfort or pain in your muscles that you might experience after exercising or doing physical activities. It's like when you feel a bit achy or stiff in your muscles after playing sports or doing exercise.-.-There are multiple reasons why you might feel sore. As mentioned before, when your muscles are pushed during an activity like weight lifting, small **tears** in the fibers can occur. These tears can feel sore and achy while they are recovering. This often results in **Delayed Onset Muscle Soreness** (DOMS). It's called "delayed onset" because it doesn't happen right away. It's like when you eat something spicy, and your mouth feels fine at first, but a little while later, it starts to feel really hot. DOMS usually kick in **a day or two** after intense exercise, and only last a day or two.-.-Another reason is due to **lactic acid**. When your muscles contract, they require ATP. The most efficient way to get ATP requires oxygen (cellular respiration), which is not always available. Your body substitutes with fermentation, which does not require oxygen. As a compromise, it only partially breaks down **glucose** (your body’s main energy source), which produces lactic acid as a byproduct. Your body is really good at clearing this lactic acid out, but it often cannot keep up during high intensity activities. This results in a **buildup** of lactic acid, which can cause a burning sensation within the muscle. This lactic acid can also stay in the muscle for a few days as it is progressively cleared out, resulting in prolonged soreness.`}
-                ></Content>
+            ></Content>
         </div>
     );
 

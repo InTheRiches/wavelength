@@ -58,7 +58,6 @@ export default function ContentScroll() {
 }
 
 export function scroll() {
-    console.log("scroll");
     const hash = window.location.hash.substr(1);
     if (!hash) {
         return;
@@ -69,8 +68,8 @@ export function scroll() {
     if (section) {
         const nav = document.getElementById('navigation');
         const navHeight = nav.getBoundingClientRect().height;
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY - navHeight;
-        console.log(sectionTop);
+        let sectionTop = section.getBoundingClientRect().top + window.scrollY - navHeight;
+        sectionTop -= 20;
         window.scrollTo({
             top: sectionTop,
             behavior: 'smooth',
