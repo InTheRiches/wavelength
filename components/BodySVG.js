@@ -41,7 +41,7 @@ export function BackFullBodySVG({highlighted = "", big = false}) {
     });
 
     return (
-        <svg preserveAspectRatio="none" id="backFullBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={`h-full ${big ? "max-h-212" : "max-h-132"}`}>
+        <svg width="100%" height="100%" preserveAspectRatio="none" id="backFullBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={`h-full ${big ? "max-h-212" : "max-h-132"}`}>
             <g id="svg-glutes" data-name="Glutes" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/legs/glutes")}
                className={`muscle-svg ${highlighted.split(",").includes("glutes") ? "muscle-highlighted" : ""}`}>
                 <g>
