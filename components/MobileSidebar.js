@@ -6,8 +6,8 @@ import {Category} from "@/components/Sidebar";
 
 function MobileSidebar({ currentTopic }) {
     const [loaded, setLoaded] = useState(false);
-    const activeTopic = window.location.pathname;
     const router = useRouter();
+    const activeTopic = router.pathname;
 
     const [collapsed, setCollapsed] = useState(() => {
         const initialState = {};
