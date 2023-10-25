@@ -86,46 +86,44 @@ export default function Layout() {
 
             <header className={"flex flex-col items-center w-full h-screen"}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
-                <div className={"flex flex-col h-full w-full"}>
-                    <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
-                        <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-32 flex justify-start flex-col h-full">
-                            <h1 className={"px-3 pt-3 lg:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
+                <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
+                    <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-32 flex justify-start flex-col h-full">
+                        <h1 className={"px-3 pt-3 lg:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
 
 
-                                "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
-                                your physique with expert guidance.</h1>
-                            <p className="text-lg lg:text-xl xl:text-3xl text-slate-600 text-left max-w-3xl dark:text-slate-400 ml-1">A
-                                science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
-                                    className={"text-cyan-accent"}>losing fat</a>, and getting <a
-                                    className={"text-cyan-accent"}>stronger</a>, arranged to be understood and accessible by
-                                all.</p>
+                            "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
+                            your physique with expert guidance.</h1>
+                        <p className="text-lg lg:text-xl xl:text-3xl text-slate-600 text-left max-w-3xl dark:text-slate-400 ml-1">A
+                            science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
+                                className={"text-cyan-accent"}>losing fat</a>, and getting <a
+                                className={"text-cyan-accent"}>stronger</a>, arranged to be understood and accessible by
+                            all.</p>
 
-                            <div className="mt-10 flex flex-row space-x-6 text-md h-12 ml-1">
-                                <a className="text-lg transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
-                                    href="/getting-started/introduction">Get started<div className={"ml-2 rounded-full flex items-center justify-center w-10 h-10 bg-cyan-accent dark:bg-cyan-accent-dark"}>
-                                    <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M15 19l-7-7 7-7"
-                                        />
-                                    </svg>
-                                </div></a>
-                            </div>
+                        <div className="mt-10 flex flex-row space-x-6 text-md h-12 ml-1">
+                            <a className="text-lg transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
+                               href="/getting-started/introduction">Get started<div className={"ml-2 rounded-full flex items-center justify-center w-10 h-10 bg-cyan-accent dark:bg-cyan-accent-dark"}>
+                                <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M15 19l-7-7 7-7"
+                                    />
+                                </svg>
+                            </div></a>
                         </div>
-                        <div className={"relative p-12 w-full min-[550px]:w-1/2 sm:w-3/5 lg:w-1/3 h-full flex flex-col items-center"}>
-                            <img className={"2xl:w-5/6 lg:pt-24 w-min aspect-square object-cover landing-img-shadow"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
-                            {/*<div className={"h-full max-w-3xl mt-8"}>*/}
-                            {/*    <div className={"py-2 xl:py-8 px-4 mx-auto text-xl lg:text-2xl " +*/}
+                    </div>
+                    <div className={"relative p-12 w-full min-[550px]:w-1/2 sm:w-3/5 lg:w-1/3 h-full flex flex-col items-center"}>
+                        <img className={"2xl:w-5/6 lg:pt-24 w-min aspect-square object-cover landing-img-shadow"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
+                        {/*<div className={"h-full max-w-3xl mt-8"}>*/}
+                        {/*    <div className={"py-2 xl:py-8 px-4 mx-auto text-xl lg:text-2xl " +*/}
 
 
-                            {/*        "flex flex-col rounded-lg shadow-button dark:shadow-quote w-full text-slate-600 dark:text-slate-50 bg-white dark:bg-neutral-900 bg-opacity-0 dark:bg-opacity-40 dark:backdrop-blur-xl slant"}>*/}
-                            {/*        <div className={"text-base lg:text-lg 2xl:text-xl pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>*/}
-                            {/*        <div className={"text-base lg:text-lg 2xl:text-xl pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-                        </div>
+                        {/*        "flex flex-col rounded-lg shadow-button dark:shadow-quote w-full text-slate-600 dark:text-slate-50 bg-white dark:bg-neutral-900 bg-opacity-0 dark:bg-opacity-40 dark:backdrop-blur-xl slant"}>*/}
+                        {/*        <div className={"text-base lg:text-lg 2xl:text-xl pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>*/}
+                        {/*        <div className={"text-base lg:text-lg 2xl:text-xl pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
 

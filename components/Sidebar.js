@@ -98,7 +98,7 @@ function Sidebar({disable = true}) {
     );
 }
 
-function Topic({ topic, activeTopic }) {
+export function Topic({ topic, activeTopic }) {
     const router = useRouter();
 
     return (
@@ -115,7 +115,7 @@ function Topic({ topic, activeTopic }) {
     );
 }
 
-function SubCategory({ subcategory, collapsed, activeTopic, toggleCollapse }) {
+export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollapse }) {
     return (
         <div key={getNextKey()} className={`flex flex-col`}>
             <div key={getNextKey()}
@@ -147,7 +147,7 @@ function SubCategory({ subcategory, collapsed, activeTopic, toggleCollapse }) {
     )
 }
 
-function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
+export function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
     return (
         <div className={`mb-2 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
             <div className="flex items-center mb-2 hover:cursor-pointer justify-between"
