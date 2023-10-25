@@ -58,6 +58,10 @@ function Sidebar({disable = true}) {
             "sidebar-collapsed-state"
         );
 
+        const storedScroll = localStorage.getItem(
+            "sidebar-scroll"
+        );
+
         if (storedState) {
             setCollapsed(JSON.parse(storedState));
         }
@@ -72,9 +76,24 @@ function Sidebar({disable = true}) {
 
         calculateRemainingHeight();
 
+        const sidebar = document.getElementById("sidebar");
+
+        sidebar.scrollTop = parseInt(storedScroll);
+        console.log("setting scroll to " + storedScroll);
+
+        const handleUnload = () => {
+            localStorage.setItem('sidebar-scroll', sidebar.scrollTop.toString());
+            console.log("setting scrol to " + sidebar.scrollTop.toString());
+
+            console.log(localStorage.getItem('sidebar-scroll'));
+        };
+
+        window.addEventListener('wheel', handleUnload);
         window.addEventListener('resize', calculateRemainingHeight);
+
         return () => {
             window.removeEventListener('resize', calculateRemainingHeight);
+            window.removeEventListener('wheel', handleUnload);
         };
     }, [window]);
 
@@ -110,7 +129,7 @@ export function Topic({ topic, activeTopic }) {
              onClick={() => {
                  router.push(topic.href);
              }}>
-            <a className={`text-1xl ml-6`}>{topic.title}</a>
+            <a className={`text-xl ml-6`}>{topic.title}</a>
         </div>
     );
 }
@@ -123,7 +142,7 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
                  onClick={() => {
                      toggleCollapse(subcategory);
                  }}>
-                <a className={`text-lg ml-6`}>{subcategory.title}</a>
+                <a className={`text-xl ml-6`}>{subcategory.title}</a>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-transform duration-100 ${
                     collapsed[subcategory.title + "-" + subcategory.id]
                         ? "-scale-y-100"
@@ -137,7 +156,7 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
                     <div className="ml-8">
                         {subcategory.subtopics.map((subtopic) => (
                             subtopic.subtopics ? (
-                                <SubCategory subcategory={subtopic} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse}></SubCategory>
+                                <SubCategory key={getNextKey()} subcategory={subtopic} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse}></SubCategory>
                             ) : <Topic topic={subtopic} activeTopic={activeTopic} key={getNextKey()}/>
                         ))}
                     </div>
@@ -152,7 +171,7 @@ export function Category({ category, index, collapsed, activeTopic, toggleCollap
         <div className={`mb-2 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
             <div className="flex items-center mb-2 hover:cursor-pointer justify-between"
                  onClick={() => toggleCollapse(category)}>
-                <h2 className="font-bold text-xl">{category.title}</h2>
+                <h2 className="font-bold text-1xl">{category.title}</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-all duration-100 ${collapsed[category.title + "-" + category.id] ? "-scale-y-100" : "scale-y-100"}`}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
                 </svg>
@@ -160,7 +179,7 @@ export function Category({ category, index, collapsed, activeTopic, toggleCollap
             {collapsed[category.title + "-" + category.id] && (
                 <div>
                     {category.subtopics.map((subtopic) => (
-                        subtopic.subtopics ? <SubCategory subcategory={subtopic} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse}></SubCategory> : <Topic topic={subtopic} activeTopic={activeTopic} key={getNextKey()}/>
+                        subtopic.subtopics ? <SubCategory subcategory={subtopic} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse} key={getNextKey()}></SubCategory> : <Topic topic={subtopic} activeTopic={activeTopic} key={getNextKey()}/>
                     ))}
                 </div>
             )}

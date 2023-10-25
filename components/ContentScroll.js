@@ -2,7 +2,6 @@ import {useRouter} from "next/router";
 import {useEffect} from "react";
 
 export default function ContentScroll() {
-
     useEffect(() => {
         const handleHashChange = () => {
             const hash = window.location.hash;

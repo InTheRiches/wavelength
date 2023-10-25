@@ -117,7 +117,6 @@ export default function ContentPage({ location, title, description, currentTopic
                                 {description}
                             </div>}
                         </div>
-                        {windowWidth < 1024 ? <MobileHeaderListSidebar></MobileHeaderListSidebar> : <></> }
                         {content}
                     </div>
                     <div className={"w-full flex justify-around mt-4"}>
