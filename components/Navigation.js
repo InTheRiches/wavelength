@@ -59,7 +59,7 @@ export default function Navigation({dark, setDark}) {
             </button>
           </div>
         </div>
-      <MobileSidebar currentTopic={router.pathname}></MobileSidebar>
+      {isOpen ? <MobileSidebar currentTopic={router.pathname}></MobileSidebar> : <></>}
     </div>
   )
 }
