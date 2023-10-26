@@ -41,7 +41,7 @@ export function BackFullBodySVG({highlighted = "", big = false}) {
     });
 
     return (
-        <svg height="100%" preserveAspectRatio="none" id="backFullBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={`w-auto h-auto ${big ? "max-h-212" : "max-h-132"}`}>
+        <svg height="100%" preserveAspectRatio="none" id="backFullBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={`w-fit h-auto ${big ? "max-h-212" : "max-h-132"}`}>
             <g id="svg-glutes" data-name="Glutes" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/legs/glutes")}
                className={`muscle-svg ${highlighted.split(",").includes("glutes") ? "muscle-highlighted" : ""}`}>
                 <g>
@@ -257,7 +257,7 @@ export function BackUpperBodySVG({highlighted = ""}) {
     });
 
     return (
-        <svg preserveAspectRatio="none" id="backUpperBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 400" className={"w-auto h-auto max-h-96"}>
+        <svg preserveAspectRatio="none" id="backUpperBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 400" className={"w-fit h-auto max-h-96"}>
             <g id="svg-lower-back" data-name="Lower Back" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/core/lower-back")}
                className={`muscle-svg ${highlighted.split(",").includes("lower-back") ? "muscle-highlighted" : ""}`}>
                 <g>
@@ -425,7 +425,7 @@ export function FrontFullBodySVG({highlighted = "", big = false}) {
     });
 
     return (
-        <svg preserveAspectRatio="none" id={"frontFullBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 907" className={`w-auto h-auto ${big ? "max-h-212" : "max-h-132"}`}>
+        <svg preserveAspectRatio="none" id={"frontFullBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 907" className={`w-fit h-auto ${big ? "max-h-212" : "max-h-132"}`}>
             <g id="svg-forearms" data-name="forearms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forearms")}
                className={`muscle-svg ${highlighted.split(",").includes("forearms") ? "muscle-highlighted" : ""}`}>
                 <g>
@@ -663,7 +663,7 @@ export function FrontUpperBodySVG({highlighted = ""}) {
     });
 
     return (
-        <svg preserveAspectRatio="none" id={"frontUpperBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 460" className={"w-auto h-auto max-h-80"}>
+        <svg preserveAspectRatio="none" id={"frontUpperBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 460" className={"w-fit h-auto max-h-80"}>
             <g id="svg-forearms" data-name="Forearms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forearms")}
                className={`muscle-svg ${highlighted.split(",").includes("forearms") ? "muscle-highlighted" : ""}`}>
                 <g>
