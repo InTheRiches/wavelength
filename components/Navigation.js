@@ -68,8 +68,8 @@ export default function Navigation({dark, setDark}) {
         </div>
       {isOpen ?             
       <div className={"fixed inset-0 z-50 block"}>
-          <div className={"relative flex flex-col bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] px-6 pb-4 pt-3 h-screen"}>
-              <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="ml-1 block h-6 w-6" aria-hidden="true" />
+          <div className={"relative flex flex-col bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] px-6 pb-4 pt-4 h-screen"}>
+              <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="ml-1 block h-7 w-7" aria-hidden="true" />
               <MobileSidebar></MobileSidebar>
           </div>
       </div> 
