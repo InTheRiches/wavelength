@@ -21,9 +21,13 @@ export default function Navigation({dark, setDark}) {
 
   const [windowWidth, setWindowWidth] = useState(640);
   const [isOpen, setIsOpen] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
+
+    const nav = document.getElementById('navigation');
+    setNavHeight(nav.getBoundingClientRect().height);
 
     const handleResize = () => {
         setWindowWidth(window.innerWidth);
@@ -68,8 +72,7 @@ export default function Navigation({dark, setDark}) {
         </div>
       {isOpen ?             
       <div className={"fixed inset-0 z-50 block"}>
-          <div className={"relative flex flex-col bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] px-6 pb-4 pt-4 h-screen"}>
-              <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="ml-1 block h-7 w-7" aria-hidden="true" />
+          <div className={"mt-[" + navHeight + "px] relative flex flex-col bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-screen"}>
               <MobileSidebar></MobileSidebar>
           </div>
       </div> 
