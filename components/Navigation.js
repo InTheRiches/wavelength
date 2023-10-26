@@ -19,23 +19,30 @@ function classNames(...classes) {
 export default function Navigation({dark, setDark}) {
   const router = useRouter();
 
+  const [windowWidth, setWindowWidth] = useState(640);
   const [isOpen, setIsOpen] = useState(false);
 
-  // useEffect(() => {
-  //   // Select all text elements on the page
-  //   const textElements = document.querySelectorAll('.font-roboto');
-  //
-  //   // Loop through each text element
-  //   textElements.forEach((element) => {
-  //     ScrambleElement(element, false, true);
-  //   });
-  // }, []);
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+    };
+
+    // Attach the event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+  }, [window]);
 
   return (
     <div id="navigation" className="sticky py-2 top-0 z-40 w-full text-neutral-900 dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50">
         <div className="mx-auto px-2 sm:px-6 lg:px-8 w-full relative flex max-h-6v items-center justify-between">
-          {router.pathname !== "/" &&
-            <div className="flex items-center md:hidden">
+          {router.pathname !== "/" && windowWidth < 1024 &&
+            <div className="flex items-center">
               <div onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center rounded-md p-2 text-gray-400">
                 <span className="sr-only">Open main menu</span>
                 {isOpen ? (
@@ -50,7 +57,7 @@ export default function Navigation({dark, setDark}) {
             <div className="flex flex-shrink-0 items-center">
               <img className="h-10 w-10" src="/logo.png" alt="Wavelength"/>
             </div>
-            <a className={"ml-4 mb-1 text-4xl font-bold text-center hidden md:block " + lobster.className}>wavelength</a>
+            <a className={"ml-4 mb-1 text-4xl font-bold text-center hidden min-[1024px]:block " + lobster.className}>wavelength</a>
           </div>
           <div className="flex items-center pr-2">
             <button type="button" className="rounded-full p-1 text-gray-400 hover:text-cyan-accent">
