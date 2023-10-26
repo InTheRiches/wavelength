@@ -148,12 +148,6 @@ export default function ContentPage({ location, title, description, currentTopic
             </div> : <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl h-screen md:px-6 my-8 z-20"></div>}
 
             <Footer></Footer>
-
-            {/*<div className={"fixed inset-0 z-50 block sm:hidden"}>*/}
-            {/*    <div className={"relative bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-full"}>*/}
-            {/*        <MobileSidebar></MobileSidebar>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
         </div>
     )
 }

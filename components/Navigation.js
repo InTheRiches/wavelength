@@ -66,7 +66,13 @@ export default function Navigation({dark, setDark}) {
             </button>
           </div>
         </div>
-      {isOpen ? <MobileSidebar currentTopic={router.pathname}></MobileSidebar> : <></>}
+      {isOpen ?             
+      <div className={"fixed inset-0 z-50 block sm:hidden"}>
+          <div className={"relative bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-full"}>
+              <MobileSidebar></MobileSidebar>
+          </div>
+      </div> 
+      : <></>}
     </div>
   )
 }
