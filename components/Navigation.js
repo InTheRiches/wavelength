@@ -67,7 +67,7 @@ export default function Navigation({dark, setDark}) {
           </div>
         </div>
       {isOpen ?             
-      <div className={"fixed inset-0 z-50 block sm:hidden"}>
+      <div className={"fixed inset-0 z-50 block"}>
           <div className={"relative bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-full"}>
               <MobileSidebar></MobileSidebar>
           </div>
