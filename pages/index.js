@@ -88,7 +88,7 @@ export default function Layout() {
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
                     <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-32 flex justify-start flex-col h-full">
-                        <h1 className={"px-3 pt-3 lg:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
+                        <h1 className={"px-3 pt-3 xl:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
 
 
                             "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
