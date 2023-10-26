@@ -72,7 +72,7 @@ export default function Navigation({dark, setDark}) {
         </div>
       {isOpen ?             
       <div className={"fixed inset-0 z-50 block"}>
-          <div className={"relative flex flex-col bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-screen " + (`mt-[${Math.floor(navHeight)}px]`)}>
+          <div className={"relative flex flex-col bg-white dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] p-6 h-screen " + (`[margin-top:${Math.floor(navHeight)}px]`)}>
               <MobileSidebar></MobileSidebar>
           </div>
       </div> 
