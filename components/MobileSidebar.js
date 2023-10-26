@@ -12,37 +12,21 @@ function MobileSidebar({ currentTopic }) {
     const [collapsed, setCollapsed] = useState(() => {
         const initialState = {};
         topics.forEach((topic) => {
-            topic.subtopics.forEach((subtopic) => {
-                if (
-                    currentTopic ===
-                    topic.title + "-" + subtopic.title
-                )
-                    initialState[
-                    topic.title + "-" + subtopic.id
-                        ] = true;
-                else if (subtopic.subtopics) {
-                    subtopic.subtopics.forEach((subsubtopic) => {
-                        if (
-                            currentTopic ===
-                            topic.title +
-                            "-" +
-                            subtopic.title +
-                            "-" +
-                            subsubtopic.title
-                        ) {
-                            initialState[
-                            subtopic.title + "-" + subtopic.id
-                                ] = true;
-                            initialState[
-                            topic.title + "-" + topic.id
-                                ] = true;
-                        }
-                    });
-                }
-            });
+            initialState[topic.title + "-" + topic.id] = true;
+            // topic.subtopics.forEach((subtopic) => {
+            //     initialState[subtopic.title + "-" + subtopic.id] = true;
+            //
+            //     if (subtopic.subtopics) {
+            //         subtopic.subtopics.forEach((subsubtopic) => {
+            //             initialState[subsubtopic.title + "-" + subsubtopic.id] = true;
+            //         });
+            //     }
+            // });
         });
         return initialState;
     });
+
+    console.log(collapsed);
 
     useEffect(() => {
         // retrieve the state of the menus from LocalStorage
