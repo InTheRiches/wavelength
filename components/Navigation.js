@@ -36,7 +36,7 @@ export default function Navigation({dark, setDark}) {
     return () => {
         window.removeEventListener('resize', handleResize);
     };
-  }, [window]);
+  }, []);
 
   return (
     <div id="navigation" className="sticky py-2 top-0 z-40 w-full text-neutral-900 dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50">
