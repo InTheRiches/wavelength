@@ -156,8 +156,8 @@ export default function Signup() {
                 </form>
 
                 <p className="mt-10 text-center text-sm text-gray-500">
-                    Not a member?
-                    <a href="/signup" className="font-semibold leading-6 text-cyan-accent hover:text-cyan-accent-light"> Create an account</a>
+                    Forgot your password?
+                    <a href="/signup" className="font-semibold leading-6 text-cyan-accent hover:text-cyan-accent-light"> Reset it</a>
                 </p>
             </div>
             <ToastContainer />
