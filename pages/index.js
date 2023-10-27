@@ -111,18 +111,18 @@ export default function Layout() {
                             </div></a>
                         </div>
                     </div>
-                    <div className={"hidden sm:block relative p-12 w-full sm:w-4/5 md:w-3/5 lg:w-1/2 h-full flex flex-col items-center"}>
-                        <img className={"2xl:w-5/6 lg:pt-24 w-min aspect-square object-cover landing-img-shadow"} src={"/kettlebell.png"}  alt={"Wavelength"}></img>
-                        {/*<div className={"h-full max-w-3xl mt-8"}>*/}
-                        {/*    <div className={"py-2 xl:py-8 px-4 mx-auto text-xl lg:text-2xl " +*/}
+                    {/*<div className={"hidden sm:block relative p-12 w-full sm:w-4/5 md:w-3/5 lg:w-1/2 h-full flex flex-col items-center"}>*/}
+                    {/*    <img className={"2xl:w-5/6 lg:pt-24 w-min aspect-square object-cover landing-img-shadow"} src={"/kettlebell.png"}  alt={"Wavelength"}></img>*/}
+                    {/*    /!*<div className={"h-full max-w-3xl mt-8"}>*!/*/}
+                    {/*    /!*    <div className={"py-2 xl:py-8 px-4 mx-auto text-xl lg:text-2xl " +*!/*/}
 
 
-                        {/*        "flex flex-col rounded-lg shadow-button dark:shadow-quote w-full text-slate-600 dark:text-slate-50 bg-white dark:bg-neutral-900 bg-opacity-0 dark:bg-opacity-40 dark:backdrop-blur-xl slant"}>*/}
-                        {/*        <div className={"text-base lg:text-lg 2xl:text-xl pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>*/}
-                        {/*        <div className={"text-base lg:text-lg 2xl:text-xl pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
-                    </div>
+                    {/*    /!*        "flex flex-col rounded-lg shadow-button dark:shadow-quote w-full text-slate-600 dark:text-slate-50 bg-white dark:bg-neutral-900 bg-opacity-0 dark:bg-opacity-40 dark:backdrop-blur-xl slant"}>*!/*/}
+                    {/*    /!*        <div className={"text-base lg:text-lg 2xl:text-xl pb-4 border-b-1 border-cyan-accent"}>Many prioritize impressing others over self-improvement, building ever fancier facades...</div>*!/*/}
+                    {/*    /!*        <div className={"text-base lg:text-lg 2xl:text-xl pt-4"}>Until, inevitably, these facades <strong className={"text-cyan-accent"}>crumble</strong>. But <strong className={"text-cyan-accent"}>you</strong> have the power to break free from this cycle. Choose self-improvement over fleeting impressions and watch yourself rise above the rest.</div>*!/*/}
+                    {/*    /!*    </div>*!/*/}
+                    {/*    /!*</div>*!/*/}
+                    {/*</div>*/}
                 </div>
 
             </header>

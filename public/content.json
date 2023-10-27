@@ -23,10 +23,7 @@
               { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
             ]
           },
-          { "id": 2, "title": "Strength", "href": "/muscles/training/strength"},
-          { "id": 3, "title": "Hypertrophy", "href": "/muscles/training/hypertrophy"},
-          { "id": 4, "title": "Cardio", "href": "/muscles/training/cardio" },
-          { "id": 5, "title": "Power", "href": "/muscles/training/power"}
+          { "id": 2, "title": "Strength", "href": "/muscles/training/strength"}
         ]
       },
       {
@@ -96,7 +93,6 @@
           { "id": 2, "title": "Pre Workout", "href": "/supplements/performance/pre-workout" },
           { "id": 3, "title": "Beta Alanine", "href": "/supplements/performance/beta-alanine" },
           { "id": 4, "title": "BCAAs", "href": "/supplements/performance/bcaas" },
-          { "id": 5, "title": "Nitrate", "href": "/supplements/performance/nitrate" },
           { "id": 6, "title": "Citrulline", "href": "/supplements/performance/citrulline" }
         ]},
       {
