@@ -18,12 +18,12 @@ export function EntireBodyMap({highlighted = ""}) {
                 </a>
             </div>
             <div className={"hidden sm:block w-full h-full flex flex-row items-center justify-around"}>
-                <FrontFullBodySVG/>
+                <FrontFullBodySVG customID={"desktopFrontFullBodySVG"}/>
                 <BackFullBodySVG customID={"desktopBackFullBodySVG"}/>
             </div>
 
             <div className={"sm:hidden w-full h-full flex flex-row items-center justify-around"}>
-                {isFront && <FrontFullBodySVG/>}
+                {isFront && <FrontFullBodySVG customID={"mobileFrontFullBodySVG"}/>}
                 {!isFront && <BackFullBodySVG customID={"mobileBackFullBodySVG"}/>}
             </div>
         </div>
