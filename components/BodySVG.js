@@ -9,7 +9,7 @@ export function EntireBodyMap({highlighted = ""}) {
 
     return (
         <div className={"p-8 flex flex-col items-center"}>
-            <div onClick={() => setIsFront(!isFront)} className={"sm:hidden flex flex-row items-center justify-center bg-neutral-950 rounded-full w-min px-1 py-1"}>
+            <div onClick={() => setIsFront(!isFront)} className={"sm:hidden flex flex-row items-center justify-center bg-neutral-950 rounded-full w-min px-1 py-1 mb-4"}>
                 <a className={"text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (isFront ? "bg-cyan-accent" : "bg-neutral-950")}>
                     Front
                 </a>
