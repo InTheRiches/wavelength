@@ -192,7 +192,7 @@ export default function Content({id, title, content, bulletPoints}) {
                         </svg>
                     </div>
                 </a>
-                <h1 id={id + "x"} className="text-3xl font-bold flex items-center dark:text-slate-50">
+                <h1 id={id + "x"} className="text-3xl font-bold text-left flex items-center dark:text-slate-50">
                     {title}
                 </h1>
             </div>

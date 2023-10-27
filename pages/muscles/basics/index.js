@@ -16,9 +16,19 @@ export default function MuscleBasics({}) {
                 id={"muscle-locations"}
                 title="Muscle Locations Map"
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontFullBodySVG/>
-                <BackFullBodySVG/>
+            <div className={"p-8 flex flex-col"}>
+                <div className={"sm:hidden flex flex-row w-full items-center justify-center"}>
+                    <a className={"text-lg w-min h-min py-2 px-4 border-1 outline-white bg-neutral-950 rounded-xl transition-all duration-200 hover:cursor-pointer hover:border-cyan-accent hover:text-cyan-accent"}>
+                        Front
+                    </a>
+                    <a className={"ml-4 text-lg w-min h-min py-2 px-4 border-1 outline-white bg-neutral-950 rounded-xl transition-all duration-200 hover:cursor-pointer hover:border-cyan-accent hover:text-cyan-accent"}>
+                        Back
+                    </a>
+                </div>
+                <div className={"w-full h-full flex flex-row items-center justify-around"}>
+                    <FrontFullBodySVG/>
+                    <BackFullBodySVG/>
+                </div>
             </div>
             <Content
                 id="muscle-activation"
