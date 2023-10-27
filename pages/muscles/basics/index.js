@@ -1,7 +1,7 @@
 import Content from '@/components/Content'
 import {scroll} from "@/components/ContentScroll";
 import ContentPage from '@/components/ContentPage';
-import {BackFullBodySVG, FrontFullBodySVG} from "@/components/BodySVG";
+import {BackFullBodySVG, EntireBodyMap, FrontFullBodySVG} from "@/components/BodySVG";
 import {useRouter} from "next/router";
 import React from "react";
 import InformationBlock from "@/components/InformationBlocks";
@@ -16,20 +16,7 @@ export default function MuscleBasics({}) {
                 id={"muscle-locations"}
                 title="Muscle Locations Map"
             ></Content>
-            <div className={"p-8 flex flex-col"}>
-                <div className={"sm:hidden flex flex-row w-full items-center justify-center"}>
-                    <a className={"text-lg w-min h-min py-2 px-4 border-1 outline-white bg-neutral-950 rounded-xl transition-all duration-200 hover:cursor-pointer hover:border-cyan-accent hover:text-cyan-accent"}>
-                        Front
-                    </a>
-                    <a className={"ml-4 text-lg w-min h-min py-2 px-4 border-1 outline-white bg-neutral-950 rounded-xl transition-all duration-200 hover:cursor-pointer hover:border-cyan-accent hover:text-cyan-accent"}>
-                        Back
-                    </a>
-                </div>
-                <div className={"w-full h-full flex flex-row items-center justify-around"}>
-                    <FrontFullBodySVG/>
-                    <BackFullBodySVG/>
-                </div>
-            </div>
+            <EntireBodyMap></EntireBodyMap>
             <Content
                 id="muscle-activation"
                 title="Muscle Activation"

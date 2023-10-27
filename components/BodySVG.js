@@ -1,19 +1,48 @@
 import {useRouter} from "next/router";
 import {useEffect} from "react";
+import React from "react";
 
-export function BackFullBodySVG({highlighted = "", big = false}) {
+export function EntireBodyMap({highlighted = ""}) {
+    const [isFront, setIsFront] = React.useState(true);
+
+    console.log(isFront);
+
+    return (
+        <div className={"p-8 flex flex-col items-center"}>
+            <div onClick={() => setIsFront(!isFront)} className={"sm:hidden flex flex-row items-center justify-center bg-neutral-950 rounded-full w-min px-1 py-1"}>
+                <a className={"text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (isFront ? "bg-cyan-accent" : "bg-neutral-950")}>
+                    Front
+                </a>
+                <a onClick={() => setIsFront(!isFront)} className={"ml-4 text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (isFront ? "bg-neutral-950" : "bg-cyan-accent")}>
+                    Back
+                </a>
+            </div>
+            <div className={"hidden sm:block w-full h-full flex flex-row items-center justify-around"}>
+                <FrontFullBodySVG/>
+                <BackFullBodySVG customID={"desktopBackFullBodySVG"}/>
+            </div>
+
+            <div className={"sm:hidden w-full h-full flex flex-row items-center justify-around"}>
+                {isFront && <FrontFullBodySVG/>}
+                {!isFront && <BackFullBodySVG customID={"mobileBackFullBodySVG"}/>}
+            </div>
+        </div>
+    )
+}
+
+export function BackFullBodySVG({highlighted = "", big = false, customID = ""}) {
     const router = useRouter();
 
     function handleHover(e) {
-        const svg = document.querySelector('#backFullBodySVG');
+        const svg = document.querySelector(`#${customID === "" ? "backFullBodySVG" : customID}`);
         const gElement = findParentGElement(e.target);
 
         svg.append(gElement);
     }
 
     function handleUnHover(e) {
-        const svg = document.querySelector('#backFullBodySVG');
-        const muscle = document.querySelector('#backFullBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "backFullBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "backFullBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     }
@@ -34,14 +63,14 @@ export function BackFullBodySVG({highlighted = "", big = false}) {
     }
 
     useEffect(() => {
-        const svg = document.querySelector('#backFullBodySVG');
-        const muscle = document.querySelector('#backFullBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "backFullBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "backFullBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     });
 
     return (
-        <svg height="100%" preserveAspectRatio="none" id="backFullBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={`w-fit h-auto ${big ? "max-h-212" : "max-h-132"}`}>
+        <svg height="100%" preserveAspectRatio="none" id={customID === "" ? "backFullBodySVG" : customID} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 713.76" className={`w-fit h-auto ${big ? "max-h-212" : "max-h-132"}`}>
             <g id="svg-glutes" data-name="Glutes" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/legs/glutes")}
                className={`muscle-svg ${highlighted.split(",").includes("glutes") ? "muscle-highlighted" : ""}`}>
                 <g>
@@ -217,19 +246,19 @@ export function BackFullBodySVG({highlighted = "", big = false}) {
     )
 }
 
-export function BackUpperBodySVG({highlighted = ""}) {
+export function BackUpperBodySVG({highlighted = "", customID = ""}) {
     const router = useRouter();
 
     function handleHover(e) {
-        const svg = document.querySelector('#backUpperBodySVG');
+        const svg = document.querySelector(`#${customID === "" ? "backUpperBodySVG" : customID}`);
         const gElement = findParentGElement(e.target);
 
         svg.append(gElement);
     }
 
     function handleUnHover(e) {
-        const svg = document.querySelector('#backUpperBodySVG');
-        const muscle = document.querySelector('#backUpperBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "backUpperBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "backUpperBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     }
@@ -250,14 +279,14 @@ export function BackUpperBodySVG({highlighted = ""}) {
     }
 
     useEffect(() => {
-        const svg = document.querySelector('#backUpperBodySVG');
-        const muscle = document.querySelector('#backUpperBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "backUpperBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "backUpperBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     });
 
     return (
-        <svg preserveAspectRatio="none" id="backUpperBodySVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 400" className={"w-fit h-auto max-h-96"}>
+        <svg preserveAspectRatio="none" id={customID === "" ? "backUpperBodySVG" : customID} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 359.54 400" className={"w-fit h-auto max-h-96"}>
             <g id="svg-lower-back" data-name="Lower Back" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/core/lower-back")}
                className={`muscle-svg ${highlighted.split(",").includes("lower-back") ? "muscle-highlighted" : ""}`}>
                 <g>
@@ -385,19 +414,19 @@ export function BackUpperBodySVG({highlighted = ""}) {
     )
 }
 
-export function FrontFullBodySVG({highlighted = "", big = false}) {
+export function FrontFullBodySVG({highlighted = "", big = false, customID = ""}) {
     const router = useRouter();
 
     function handleHover(e) {
-        const svg = document.querySelector('#frontFullBodySVG');
+        const svg = document.querySelector(`#${customID === "" ? "frontFullBodySVG" : customID}`);
         const gElement = findParentGElement(e.target);
 
         svg.append(gElement);
     }
 
     function handleUnHover(e) {
-        const svg = document.querySelector('#frontFullBodySVG');
-        const muscle = document.querySelector('#frontFullBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "frontFullBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "frontFullBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     }
@@ -418,14 +447,14 @@ export function FrontFullBodySVG({highlighted = "", big = false}) {
     }
 
     useEffect(() => {
-        const svg = document.querySelector('#frontFullBodySVG');
-        const muscle = document.querySelector('#frontFullBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "frontFullBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "frontFullBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     });
 
     return (
-        <svg preserveAspectRatio="none" id={"frontFullBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 907" className={`w-fit h-auto ${big ? "max-h-212" : "max-h-132"}`}>
+        <svg preserveAspectRatio="none" id={customID === "" ? "frontFullBodySVG" : customID} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 907" className={`w-fit h-auto ${big ? "max-h-212" : "max-h-132"}`}>
             <g id="svg-forearms" data-name="forearms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forearms")}
                className={`muscle-svg ${highlighted.split(",").includes("forearms") ? "muscle-highlighted" : ""}`}>
                 <g>
@@ -623,19 +652,19 @@ export function FrontFullBodySVG({highlighted = "", big = false}) {
     );
 }
 
-export function FrontUpperBodySVG({highlighted = ""}) {
+export function FrontUpperBodySVG({highlighted = "", customID = ""}) {
     const router = useRouter();
 
     function handleHover(e) {
-        const svg = document.querySelector('#frontUpperBodySVG');
+        const svg = document.querySelector(`#${customID === "" ? "frontUpperBodySVG" : customID}`);
         const gElement = findParentGElement(e.target);
 
         svg.append(gElement);
     }
 
     function handleUnHover(e) {
-        const svg = document.querySelector('#frontUpperBodySVG');
-        const muscle = document.querySelector('#frontUpperBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "frontUpperBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "frontUpperBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     }
@@ -656,14 +685,14 @@ export function FrontUpperBodySVG({highlighted = ""}) {
     }
 
     useEffect(() => {
-        const svg = document.querySelector('#frontUpperBodySVG');
-        const muscle = document.querySelector('#frontUpperBodySVG .muscle-highlighted');
+        const svg = document.querySelector(`#${customID === "" ? "frontUpperBodySVG" : customID}`);
+        const muscle = document.querySelector(`#${customID === "" ? "frontUpperBodySVG" : customID} .muscle-highlighted`);
 
         svg.append(muscle);
     });
 
     return (
-        <svg preserveAspectRatio="none" id={"frontUpperBodySVG"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 460" className={"w-fit h-auto max-h-80"}>
+        <svg preserveAspectRatio="none" id={customID === "" ? "frontUpperBodySVG" : customID} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.5 460" className={"w-fit h-auto max-h-80"}>
             <g id="svg-forearms" data-name="Forearms" onMouseEnter={handleHover} onMouseLeave={handleUnHover} onClick={() => router.push("/muscles/functions/arms/forearms")}
                className={`muscle-svg ${highlighted.split(",").includes("forearms") ? "muscle-highlighted" : ""}`}>
                 <g>
