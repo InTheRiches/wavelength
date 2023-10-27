@@ -26,6 +26,6 @@ export default function QuadsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Legs" title="Quadriceps (Quads)" description={<span className={"text-lg"}>The quadriceps, also known as the quadriceps femoris, is a group of four muscles located in the front of the thigh. These muscles include the rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius. The quadriceps is responsible for extending the knee joint and is actively involved in various movements such as walking, running, and jumping.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Quads"}></ContentPage>
+        <ContentPage location="Muscles • Functions • Legs" title="Quadriceps (Quads)" description={<span>The quadriceps, also known as the quadriceps femoris, is a group of four muscles located in the front of the thigh. These muscles include the rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius. The quadriceps is responsible for extending the knee joint and is actively involved in various movements such as walking, running, and jumping.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Quads"}></ContentPage>
     )
 }

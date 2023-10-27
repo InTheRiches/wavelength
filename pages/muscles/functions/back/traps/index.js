@@ -27,6 +27,6 @@ export default function TrapsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Back"} title={"Trapezius (Traps)"} description={<span className={"text-lg"}>The trapezius muscle, located in the upper back and neck, plays a fundamental role in stabilizing and moving the shoulder girdle. It aids in elevating, retracting, and depressing the shoulders, allowing for movements like shrugging and maintaining posture. Additionally, it assists in rotating and tilting the head and neck when one side contracts while the other side relaxes. Overall, the trapezius muscle contributes to the overall stability, mobility, and proper functioning of the upper back, shoulder, and neck regions.</span>} content={content} currentTopic={"Muscles-Functions-Back-Trapezius"}></ContentPage>
+        <ContentPage location={"Muscles • Functions • Back"} title={"Trapezius (Traps)"} description={<span>The trapezius muscle, located in the upper back and neck, plays a fundamental role in stabilizing and moving the shoulder girdle. It aids in elevating, retracting, and depressing the shoulders, allowing for movements like shrugging and maintaining posture. Additionally, it assists in rotating and tilting the head and neck when one side contracts while the other side relaxes. Overall, the trapezius muscle contributes to the overall stability, mobility, and proper functioning of the upper back, shoulder, and neck regions.</span>} content={content} currentTopic={"Muscles-Functions-Back-Trapezius"}></ContentPage>
     )
 }

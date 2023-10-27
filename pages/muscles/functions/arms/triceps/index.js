@@ -29,6 +29,6 @@ export default function TricepsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Arms"} title={"Triceps Brachii (Triceps)"} description={<span className={"text-lg"}>The triceps, short for triceps brachii, is a large muscle located at the back of the upper arm. It consists of three heads—long head, lateral head, and medial head—and is responsible for extending the elbow joint, straightening the arm, and assisting in shoulder stability during certain movements.</span>} content={content} currentTopic={"Muscles-Functions-Arms-Triceps"}></ContentPage>
+        <ContentPage location={"Muscles • Functions • Arms"} title={"Triceps Brachii (Triceps)"} description={<span>The triceps, short for triceps brachii, is a large muscle located at the back of the upper arm. It consists of three heads—long head, lateral head, and medial head—and is responsible for extending the elbow joint, straightening the arm, and assisting in shoulder stability during certain movements.</span>} content={content} currentTopic={"Muscles-Functions-Arms-Triceps"}></ContentPage>
     )
 }

@@ -42,7 +42,7 @@ export default function MuscleBasics({}) {
                     <li>Can help to distribute force more evenly across a joint, reducing the risk of injury</li>
                     <li>Allow for greater muscle mass and strength in certain areas of the body where multiple heads are present.</li>
                 </ul>
-            } title={"Muscles with multiple \"heads\" can provide some unique benefits to the body because the different heads can work together or independently to produce different movements and functions. Here are a few examples:"}/>
+            } title={"Multiple \"heads\" on a muscle can work together or independently to produce different movements and functions. Here are a few examples:"}/>
 
             <Content
                 id="soreness"
@@ -53,6 +53,6 @@ export default function MuscleBasics({}) {
     );
 
     return (
-        <ContentPage location={"Muscles"} title={"Basics"} description={<span className={"text-lg"}>Muscles are a type of tissue in our bodies that allow us to <b>move</b> and <b>carry</b> out physical activities. Think of muscles like rubber bands or ropes that are attached to our bones and can <b>contract</b>, or shorten, to pull the bones closer together, allowing us to move our bodies.</span>} currentTopic={"Muscles-Basics"} content={content}></ContentPage>
+        <ContentPage location={"Muscles"} title={"Basics"} description={<span>Muscles are a type of tissue in our bodies that allow us to <b>move</b> and <b>carry</b> out physical activities. Think of muscles like rubber bands or ropes that are attached to our bones and can <b>contract</b>, or shorten, to pull the bones closer together, allowing us to move our bodies.</span>} currentTopic={"Muscles-Basics"} content={content}></ContentPage>
     )
 }

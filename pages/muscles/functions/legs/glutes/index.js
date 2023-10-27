@@ -26,6 +26,6 @@ export default function QuadsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Legs" title="Gluteal Muscles (Glutes)" description={<span className={"text-lg"}>The gluteal muscle refers to a group of muscles located in the buttocks region. It primarily includes the gluteus maximus, gluteus medius, and gluteus minimus. The gluteal muscles are responsible for hip movement, such as hip extension, abduction, and rotation, and they provide stability and support to the pelvis and lower body during various movements and activities.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Glutes"}></ContentPage>
+        <ContentPage location="Muscles • Functions • Legs" title="Gluteal Muscles (Glutes)" description={<span>The gluteal muscle refers to a group of muscles located in the buttocks region. It primarily includes the gluteus maximus, gluteus medius, and gluteus minimus. The gluteal muscles are responsible for hip movement, such as hip extension, abduction, and rotation, and they provide stability and support to the pelvis and lower body during various movements and activities.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Glutes"}></ContentPage>
     )
 }

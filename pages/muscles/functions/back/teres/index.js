@@ -31,6 +31,6 @@ export default function TrapsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Back"} title={"Teres Major/Minor"} description={<span className={"text-lg"}>The teres major and teres minor are two separate muscles located in the back of the upper body, specifically in the shoulder region. The teres major muscle is a thick, triangular muscle that assists in the rotation and movement of the scapula. The teres minor muscle is a small, elongated muscle located just below the teres major. It rotates the scapula and helps stabilize.</span>} content={content} currentTopic={"Muscles-Functions-Back-Teres"}></ContentPage>
+        <ContentPage location={"Muscles • Functions • Back"} title={"Teres Major/Minor"} description={<span>The teres major and teres minor are two separate muscles located in the back of the upper body, specifically in the shoulder region. The teres major muscle is a thick, triangular muscle that assists in the rotation and movement of the scapula. The teres minor muscle is a small, elongated muscle located just below the teres major. It rotates the scapula and helps stabilize.</span>} content={content} currentTopic={"Muscles-Functions-Back-Teres"}></ContentPage>
     )
 }

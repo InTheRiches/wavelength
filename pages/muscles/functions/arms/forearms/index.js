@@ -34,6 +34,6 @@ export default function TricepsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Arms"} title={"Flexor/Extensor Muscles (Forearms)"} description={<span className={"text-lg"}>The forearm muscles enable wrist and finger movements for gripping, grasping, and fine motor tasks. They also facilitate forearm pronation and supination, allowing palm-down and palm-up rotations. Overall, these muscles provide dexterity, strength, and control for a wide range of manual activities.</span>} content={content} currentTopic={"Muscles-Functions-Arms-Forearms"}></ContentPage>
+        <ContentPage location={"Muscles • Functions • Arms"} title={"Flexor/Extensor Muscles (Forearms)"} description={<span>The forearm muscles enable wrist and finger movements for gripping, grasping, and fine motor tasks. They also facilitate forearm pronation and supination, allowing palm-down and palm-up rotations. Overall, these muscles provide dexterity, strength, and control for a wide range of manual activities.</span>} content={content} currentTopic={"Muscles-Functions-Arms-Forearms"}></ContentPage>
     )
 }

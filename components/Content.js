@@ -114,7 +114,7 @@ export default function Content({id, title, content, bulletPoints}) {
 
         block.push(originalBlock);
 
-        return <span key={index}>{block}</span>;
+        return <span className={"text-slate-300"} key={index}>{block}</span>;
     });
 
     const bullets = Object.values(bulletPoints).map((bullet) => {
@@ -192,11 +192,11 @@ export default function Content({id, title, content, bulletPoints}) {
                         </svg>
                     </div>
                 </a>
-                <h1 id={id + "x"} className="text-3xl font-bold text-left flex items-center dark:text-slate-50">
+                <h1 id={id + "x"} className="min-[424px]:text-3xl text-2xl font-bold text-left flex items-center dark:text-slate-50">
                     {title}
                 </h1>
             </div>
-            {text.length > 0 && <div className={`flex flex-col ${title ? "mt-4" : ""} text-lg`}>
+            {text.length > 0 && <div className={`flex flex-col ${title ? "mt-4" : ""} min-[424px]:text-lg text-md`}>
                 {text.map((substring, index) => (
                     <div className={`mb-6 indent-6 text-left sm:text-justify`} key={index}>{substring}</div>
                 ))}

@@ -24,6 +24,6 @@ export default function PecsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Back"} title={"Rhomboids"} description={<span className={"text-lg"}>The rhomboids are a pair of muscles located in the upper back, between the shoulder blades, underneath the middle trapezius. They are triangular in shape and help to move the shoulder blades and arms.</span>} content={content} currentTopic={"Muscles-Functions-Back-Rhomboids"}></ContentPage>
+        <ContentPage location={"Muscles • Functions • Back"} title={"Rhomboids"} description={<span>The rhomboids are a pair of muscles located in the upper back, between the shoulder blades, underneath the middle trapezius. They are triangular in shape and help to move the shoulder blades and arms.</span>} content={content} currentTopic={"Muscles-Functions-Back-Rhomboids"}></ContentPage>
     )
 }

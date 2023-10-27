@@ -30,6 +30,6 @@ export default function PecsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Chest" title="Anterior & Medial Deltoid (Front/Middle Delt)" description={<span className={"text-lg"}>The anterior and medial deltoids are muscle heads part of the deltoid, located at the front of the shoulder, the other being the <a onClick={() => router.push("/muscles/functions/back/rear-delt").then(() => scroll())} className={"text-link-text hover:underline hover:cursor-pointer"}>rear delt</a>. Its main function is to flex and internally rotate the arm at the shoulder joint, allowing for movements such as raising the arm forward and inward.</span>} content={content} currentTopic={"Muscles-Functions-Chest-Delts"}></ContentPage>
+        <ContentPage location="Muscles • Functions • Chest" title="Anterior & Medial Deltoid (Front/Middle Delt)" description={<span>The anterior and medial deltoids are muscle heads part of the deltoid, located at the front of the shoulder, the other being the <a onClick={() => router.push("/muscles/functions/back/rear-delt").then(() => scroll())} className={"text-link-text hover:underline hover:cursor-pointer"}>rear delt</a>. Its main function is to flex and internally rotate the arm at the shoulder joint, allowing for movements such as raising the arm forward and inward.</span>} content={content} currentTopic={"Muscles-Functions-Chest-Delts"}></ContentPage>
     )
 }

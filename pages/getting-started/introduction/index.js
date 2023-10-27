@@ -29,6 +29,6 @@ export default function GettingStarted({}) {
     );
 
     return (
-        <ContentPage location={"Getting Started"} title={"Introduction"} description={<span className={"text-lg"}>Weight lifting, also known as resistance training, is the process of lifting, pushing, and or pulling weights and resistance devices, resulting in an increase in muscle mass and strength, along with improvements in overall physical fitness.</span>} currentTopic={"Getting Started-Introduction"} content={content}></ContentPage>
+        <ContentPage location={"Getting Started"} title={"Introduction"} description={<span>Weight lifting, also known as resistance training, is the process of lifting, pushing, and or pulling weights and resistance devices, resulting in an increase in muscle mass and strength, along with improvements in overall physical fitness.</span>} currentTopic={"Getting Started-Introduction"} content={content}></ContentPage>
     )
 }

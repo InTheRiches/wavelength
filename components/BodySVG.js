@@ -5,11 +5,9 @@ import React from "react";
 export function EntireBodyMap({highlighted = ""}) {
     const [isFront, setIsFront] = React.useState(true);
 
-    console.log(isFront);
-
     return (
         <div className={"p-8 flex flex-col items-center"}>
-            <div onClick={() => setIsFront(!isFront)} className={"sm:hidden flex flex-row items-center justify-center bg-neutral-950 rounded-full w-min px-1 py-1 mb-4"}>
+            <div onClick={() => setIsFront(!isFront)} className={"sm:hidden min-[1024px]:max-[1290px]:sm:flex flex flex-row items-center justify-center bg-neutral-950 rounded-full w-min px-1 py-1 mb-4"}>
                 <a className={"text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (isFront ? "bg-cyan-accent" : "bg-neutral-950")}>
                     Front
                 </a>
@@ -17,12 +15,12 @@ export function EntireBodyMap({highlighted = ""}) {
                     Back
                 </a>
             </div>
-            <div className={"hidden sm:flex w-full h-full flex flex-row items-center justify-around"}>
+            <div className={"hidden min-[1024px]:max-[1290px]:sm:hidden sm:flex w-full h-full flex-row items-center justify-around"}>
                 <FrontFullBodySVG customID={"desktopFrontFullBodySVG"}/>
                 <BackFullBodySVG customID={"desktopBackFullBodySVG"}/>
             </div>
 
-            <div className={"sm:hidden w-full h-full flex flex-row items-center justify-around"}>
+            <div className={"sm:hidden min-[1024px]:max-[1290px]:sm:flex w-full h-full flex flex-row items-center justify-around"}>
                 {isFront && <FrontFullBodySVG customID={"mobileFrontFullBodySVG"}/>}
                 {!isFront && <BackFullBodySVG customID={"mobileBackFullBodySVG"}/>}
             </div>

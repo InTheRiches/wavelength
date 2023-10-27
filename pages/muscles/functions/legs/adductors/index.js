@@ -26,6 +26,6 @@ export default function QuadsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Legs" title="Hip Adductor Muscles" description={<span className={"text-lg"}>The hip adductors are a group of muscles located on the inner side of the thigh responsible for hip adduction, or bringing the leg inward toward the midline of the body. They play a key role in stabilizing the pelvis, controlling movement, and maintaining balance during activities such as walking, running, and side-to-side motions.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Adductors"}></ContentPage>
+        <ContentPage location="Muscles • Functions • Legs" title="Hip Adductor Muscles" description={<span>The hip adductors are a group of muscles located on the inner side of the thigh responsible for hip adduction, or bringing the leg inward toward the midline of the body. They play a key role in stabilizing the pelvis, controlling movement, and maintaining balance during activities such as walking, running, and side-to-side motions.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Adductors"}></ContentPage>
     )
 }

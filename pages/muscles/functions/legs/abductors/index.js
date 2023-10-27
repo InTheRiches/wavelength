@@ -26,6 +26,6 @@ export default function QuadsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Legs" title="Abductor Muscles" description={<span className={"text-lg"}>The hip abductors are a group of muscles responsible for moving the leg away from the midline of the body. They help with the lateral movement of the hip joint, allowing us to perform actions like side stepping, leg lifts to the side, and maintaining balance while standing on one leg.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Abductors"}></ContentPage>
+        <ContentPage location="Muscles • Functions • Legs" title="Abductor Muscles" description={<span>The hip abductors are a group of muscles responsible for moving the leg away from the midline of the body. They help with the lateral movement of the hip joint, allowing us to perform actions like side stepping, leg lifts to the side, and maintaining balance while standing on one leg.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Abductors"}></ContentPage>
     )
 }

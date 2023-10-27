@@ -27,6 +27,6 @@ export default function PecsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Back"} title={"Latissimus Dorsi (Lats)"} description={<span className={"text-lg"}>The latissimus dorsi, commonly referred to as the lats, is a large muscle located on the back. Its primary function is to perform shoulder extension, which involves pulling the upper arm downward and backward. The lats also assist in movements such as shoulder adduction, internal rotation, and contribute to overall back strength and stability.</span>} content={content} currentTopic={"Muscles-Functions-Back-Lats"}></ContentPage>
+        <ContentPage location={"Muscles • Functions • Back"} title={"Latissimus Dorsi (Lats)"} description={<span>The latissimus dorsi, commonly referred to as the lats, is a large muscle located on the back. Its primary function is to perform shoulder extension, which involves pulling the upper arm downward and backward. The lats also assist in movements such as shoulder adduction, internal rotation, and contribute to overall back strength and stability.</span>} content={content} currentTopic={"Muscles-Functions-Back-Lats"}></ContentPage>
     )
 }

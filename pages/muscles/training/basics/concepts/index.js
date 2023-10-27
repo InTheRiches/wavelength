@@ -51,6 +51,6 @@ export default function Concepts({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Training • Basics"} title={"Concepts"} description={<span className={"text-lg"}>Weight lifting may seem complicated at first, especially with all the various terminology and concepts thrown around. Despite the initial reaction, these ideas are actually very simple. By breaking them down into their basics, you can fully grasp the concepts and utilize what they have to offer.</span>} content={content} currentTopic={"Muscles-Training-Basics-Concepts"}></ContentPage>
+        <ContentPage location={"Muscles • Training • Basics"} title={"Concepts"} description={<span>Weight lifting may seem complicated at first, especially with all the various terminology and concepts thrown around. Despite the initial reaction, these ideas are actually very simple. By breaking them down into their basics, you can fully grasp the concepts and utilize what they have to offer.</span>} content={content} currentTopic={"Muscles-Training-Basics-Concepts"}></ContentPage>
     )
 }

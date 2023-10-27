@@ -180,7 +180,7 @@ export function HeaderListSidebar() {
     const [h1List, setH1List] = useState([]);
 
     useEffect(() => {
-        const h1Elements = document.querySelectorAll('.text-3xl.font-bold.flex.items-center');
+        const h1Elements = document.querySelectorAll('.font-bold.text-left.flex.items-center');
         const h1List = [];
 
         h1Elements.forEach((element) => {

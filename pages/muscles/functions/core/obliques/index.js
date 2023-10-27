@@ -25,6 +25,6 @@ export default function ObliquesFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Core" title="Obliques (External/Internal)" description={<span className={"text-lg"}>The obliques, consisting of the external obliques and internal obliques, are muscles located on the sides of the abdomen. They contribute to core stability, trunk rotation, and lateral flexion. These muscles play a vital role in maintaining proper posture, supporting the spine, enabling rotational movements, and facilitating side-bending actions.</span>} content={content} currentTopic={"Muscles-Functions-Core-Obliques"}></ContentPage>
+        <ContentPage location="Muscles • Functions • Core" title="Obliques (External/Internal)" description={<span>The obliques, consisting of the external obliques and internal obliques, are muscles located on the sides of the abdomen. They contribute to core stability, trunk rotation, and lateral flexion. These muscles play a vital role in maintaining proper posture, supporting the spine, enabling rotational movements, and facilitating side-bending actions.</span>} content={content} currentTopic={"Muscles-Functions-Core-Obliques"}></ContentPage>
     )
 }
