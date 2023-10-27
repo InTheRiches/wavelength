@@ -17,7 +17,7 @@ export function EntireBodyMap({highlighted = ""}) {
                     Back
                 </a>
             </div>
-            <div className={"hidden sm:block w-full h-full flex flex-row items-center justify-around"}>
+            <div className={"hidden sm:flex w-full h-full flex flex-row items-center justify-around"}>
                 <FrontFullBodySVG customID={"desktopFrontFullBodySVG"}/>
                 <BackFullBodySVG customID={"desktopBackFullBodySVG"}/>
             </div>
