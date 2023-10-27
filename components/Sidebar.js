@@ -17,23 +17,7 @@ function Sidebar({disable = true}) {
     const [collapsed, setCollapsed] = useState(() => {
         const initialState = {};
         topics.forEach((topic) => {
-            topic.subtopics.forEach((subtopic) => {
-                if (
-                    activeTopic === subtopic.href
-                )
-                    initialState[
-                    topic.title + "-" + subtopic.id
-                        ] = true;
-                else if (subtopic.subtopics) {
-                    subtopic.subtopics.forEach((subsubtopic) => {
-                        if (activeTopic !== subsubtopic.href)
-                            return;
-
-                        initialState[subtopic.title + "-" + subtopic.id] = true;
-                        initialState[topic.title + "-" + topic.id] = true;
-                    });
-                }
-            });
+            initialState[topic.title + "-" + topic.id] = true;
         });
         return initialState;
     });
@@ -168,10 +152,10 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
 
 export function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
     return (
-        <div className={`mb-2 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
+        <div className={`mb-4 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
             <div className="flex items-center mb-2 hover:cursor-pointer justify-between"
                  onClick={() => toggleCollapse(category)}>
-                <h2 className="font-bold text-lg xl:text-1xl">{category.title}</h2>
+                <h2 className="font-bold text-lg lg:text-xl xl:text-1xl">{category.title}</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-all duration-100 ${collapsed[category.title + "-" + category.id] ? "-scale-y-100" : "scale-y-100"}`}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
                 </svg>

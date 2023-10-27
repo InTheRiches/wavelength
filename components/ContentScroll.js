@@ -1,7 +1,7 @@
 import {useRouter} from "next/router";
 import {useEffect} from "react";
 
-export default function ContentScroll() {
+export default function ContentScroll(sidebar = "sidebar") {
     useEffect(() => {
         const handleHashChange = () => {
             const hash = window.location.hash;
@@ -53,7 +53,7 @@ export default function ContentScroll() {
         return () => {
             window.removeEventListener('beforeunload', handleUnload);
         };
-    }, []);
+    }, [sidebar]);
 }
 
 export function scroll() {

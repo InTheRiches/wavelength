@@ -2,7 +2,7 @@ import Content from "@/components/Content";
 import ContentPage from "@/components/ContentPage";
 import InformationBlock from "@/components/InformationBlocks";
 
-export default function DietBulking({}) {
+export default function MuscleBiology({}) {
     const content = (
         <div className="w-full max-w-5xl flex-col">
             {/* Topics */}
@@ -34,6 +34,6 @@ export default function DietBulking({}) {
     );
 
     return (
-        <ContentPage location={"Dieting"} title={"Bulking"} currentTopic={"Dieting-Bulking"}  description={<span className={"text-lg"}>Bulking is a style of dieting typically utilized during the winter to gain large amounts of muscle, not worrying about fat. There are multiple ways to achieve a bulk, typically dirty / clean.</span>} content={content}></ContentPage>
+        <ContentPage location={"Dieting"} title={"Bulking"} currentTopic={"Dieting-Bulking"} description={<span className={"text-lg"}>Bulking is a style of dieting typically utilized during the winter to gain large amounts of muscle, not worrying about fat. There are multiple ways to achieve a bulk, typically dirty / clean.</span>} content={content}></ContentPage>
     )
 }

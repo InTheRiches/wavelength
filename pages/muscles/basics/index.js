@@ -56,6 +56,6 @@ export default function MuscleBasics({}) {
     );
 
     return (
-        <ContentPage location={"Muscles"} title={"Basics"} description={<span className={"text-lg mb-2"}>Muscles are a type of tissue in our bodies that allow us to <b>move</b> and <b>carry</b> out physical activities. Think of muscles like rubber bands or ropes that are attached to our bones and can <b>contract</b>, or shorten, to pull the bones closer together, allowing us to move our bodies. For example, when you bend your arm, your bicep muscle contracts, <b>pulling</b> your forearm towards your shoulder. When you straighten your arm, your tricep muscle contracts, <b>pushing</b> your forearm away from your shoulder.</span>} currentTopic={"Muscles-Basics"} content={content}></ContentPage>
+        <ContentPage location={"Muscles"} title={"Basics"} description={<span className={"text-lg"}>Muscles are a type of tissue in our bodies that allow us to <b>move</b> and <b>carry</b> out physical activities. Think of muscles like rubber bands or ropes that are attached to our bones and can <b>contract</b>, or shorten, to pull the bones closer together, allowing us to move our bodies.</span>} currentTopic={"Muscles-Basics"} content={content}></ContentPage>
     )
 }

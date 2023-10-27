@@ -87,10 +87,8 @@ export default function Layout() {
             <header className={"flex flex-col items-center w-full h-screen"}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
-                    <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-32 flex justify-start flex-col h-full">
-                        <h1 className={"px-3 pt-3 xl:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1506px]:text-8xl 2xl:text-9xl max-w-4xl pb-10 " +
-
-
+                    <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-20 xl:pl-32 flex justify-start flex-col h-full">
+                        <h1 className={"px-3 pt-3 xl:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1920px]:text-8xl 3xl:text-9xl max-w-4xl pb-10 " +
                             "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
                             your physique with expert guidance.</h1>
                         <p className="text-lg lg:text-xl xl:text-3xl text-slate-600 text-left max-w-3xl dark:text-slate-400 ml-1">A
@@ -113,7 +111,7 @@ export default function Layout() {
                             </div></a>
                         </div>
                     </div>
-                    <div className={"relative p-12 w-full min-[550px]:w-1/2 sm:w-3/5 lg:w-1/3 h-full flex flex-col items-center"}>
+                    <div className={"hidden sm:block relative p-12 w-full sm:w-4/5 md:w-3/5 lg:w-1/3 h-full flex flex-col items-center"}>
                         <img className={"2xl:w-5/6 lg:pt-24 w-min aspect-square object-cover landing-img-shadow"} src={"/manRunningLogo.png"}  alt={"Wavelength"}></img>
                         {/*<div className={"h-full max-w-3xl mt-8"}>*/}
                         {/*    <div className={"py-2 xl:py-8 px-4 mx-auto text-xl lg:text-2xl " +*/}

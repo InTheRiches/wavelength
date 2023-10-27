@@ -25,6 +25,12 @@ module.exports = {
         ]
     },
     extend: {
+      opacity: {
+        '1': "0.01",
+        '2': "0.02",
+        '3': "0.03",
+        '4': "0.04",
+      },
       lineHeight: {
         '16': '4rem',
         '20': '5rem',
@@ -235,7 +241,6 @@ module.exports = {
       },
       strokeWidth: {
         "3": "3",
-
       },
       width: {
         "5v": "5vw",
@@ -279,6 +284,9 @@ module.exports = {
         "90vh": "90vh",
         "95vh": "95vh",
         "100vh": "100vh",
+      },
+      screens: {
+        '3xl': '1920px',
       },
     },
   },

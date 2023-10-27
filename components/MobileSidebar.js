@@ -13,20 +13,9 @@ function MobileSidebar({ currentTopic }) {
         const initialState = {};
         topics.forEach((topic) => {
             initialState[topic.title + "-" + topic.id] = true;
-            // topic.subtopics.forEach((subtopic) => {
-            //     initialState[subtopic.title + "-" + subtopic.id] = true;
-            //
-            //     if (subtopic.subtopics) {
-            //         subtopic.subtopics.forEach((subsubtopic) => {
-            //             initialState[subsubtopic.title + "-" + subsubtopic.id] = true;
-            //         });
-            //     }
-            // });
         });
         return initialState;
     });
-
-    console.log(collapsed);
 
     useEffect(() => {
         // retrieve the state of the menus from LocalStorage
