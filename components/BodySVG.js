@@ -7,11 +7,11 @@ export function EntireBodyMap({highlighted = ""}) {
 
     return (
         <div className={"p-8 flex flex-col items-center"}>
-            <div onClick={() => setIsFront(!isFront)} className={"sm:hidden min-[1024px]:max-[1290px]:sm:flex flex flex-row items-center justify-center bg-neutral-950 rounded-full w-min px-1 py-1 mb-4"}>
-                <a className={"text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (isFront ? "bg-cyan-accent" : "bg-neutral-950")}>
+            <div className={"sm:hidden min-[1024px]:max-[1290px]:sm:flex flex flex-row items-center justify-center bg-neutral-500 bg-opacity-5 dark:bg-neutral-950 rounded-full w-min px-1 py-1 mb-4"}>
+                <a onClick={() => setIsFront(!isFront)} className={"text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (!isFront ? "bg-transparent" : "bg-cyan-accent")}>
                     Front
                 </a>
-                <a onClick={() => setIsFront(!isFront)} className={"ml-4 text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (isFront ? "bg-neutral-950" : "bg-cyan-accent")}>
+                <a onClick={() => setIsFront(!isFront)} className={"ml-4 text-lg w-min h-min py-1 px-3 rounded-full transition-all duration-200 hover:cursor-pointer hover:bg-cyan-accent " + (isFront ? "bg-transparent" : "bg-cyan-accent")}>
                     Back
                 </a>
             </div>
