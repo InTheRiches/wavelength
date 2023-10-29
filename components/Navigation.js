@@ -39,7 +39,7 @@ export default function Navigation({dark, setDark}) {
   }, []);
 
   return (
-    <div id="navigation" className="sticky py-2 top-0 z-40 w-full text-neutral-50 dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50">
+    <div id="navigation" className={`sticky py-2 top-0 z-40 w-full ${router.pathname !== "/" ? "text-neutral-700" : "text-slate-50"} dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50`}>
         <div className="mx-auto px-2 sm:px-6 lg:px-8 w-full relative flex max-h-6v items-center justify-between">
           {router.pathname !== "/" && windowWidth < 1024 &&
             <div className="flex items-center">
