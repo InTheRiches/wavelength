@@ -26,6 +26,6 @@ export default function TricepsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Arms"} title={"Biceps Brachii (Biceps)"} description={<span>The bicep, or biceps brachii, is a large muscle in the upper arm that consists of two heads, the long head and the short head. It is responsible for flexing the elbow joint and supinating the forearm, which allows for movements like lifting, pulling, and curling. The biceps also plays a role in stabilizing the shoulder joint during certain movements.</span>} content={content} currentTopic={"Muscles-Functions-Arms-Biceps"}></ContentPage>
+        <ContentPage title={"Biceps Brachii (Biceps)"} description={<span>The bicep, or biceps brachii, is a large muscle in the upper arm that consists of two heads, the long head and the short head. It is responsible for flexing the elbow joint and supinating the forearm, which allows for movements like lifting, pulling, and curling. The biceps also plays a role in stabilizing the shoulder joint during certain movements.</span>} content={content}></ContentPage>
     )
 }

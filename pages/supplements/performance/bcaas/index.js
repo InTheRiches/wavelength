@@ -35,6 +35,6 @@ export default function PerformanceBCAAs({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Performance"} title={"BCAAs / EAAs"} description={<span className={"text-lg mb-2"}>Branched-chain amino acids (BCAAs) are three essential amino acids that are frequently supplemented because of their role in muscle growth and development. These amino acids are naturally found in dietary protein sources. Studies show that supplementation of BCAAs alone does not increase muscle growth, as all essential amino acids must be present for muscle protein synthesis to occur.</span>} currentTopic={"Supplements-Performance-BCAAs"} content={content}></ContentPage>
+        <ContentPage title={"BCAAs / EAAs"} description={<span className={"text-lg mb-2"}>Branched-chain amino acids (BCAAs) are three essential amino acids that are frequently supplemented because of their role in muscle growth and development. These amino acids are naturally found in dietary protein sources. Studies show that supplementation of BCAAs alone does not increase muscle growth, as all essential amino acids must be present for muscle protein synthesis to occur.</span>} content={content}></ContentPage>
     )
 }

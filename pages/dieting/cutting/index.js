@@ -34,6 +34,6 @@ export default function DietBulking({}) {
     );
 
     return (
-        <ContentPage location={"Dieting"} title={"Cutting"} currentTopic={"Dieting-Cutting"}  description={<span>Cutting is a dieting and fitness approach used to reduce body fat and achieve a leaner physique, typically during the spring and summer months when your body is more exposed. There are various methods to achieve a successful cut, and it's essential to focus on both your diet and exercise routine to maximize results.</span>} content={content}></ContentPage>
+        <ContentPage title={"Cutting"} description={<span>Cutting is a dieting and fitness approach used to reduce body fat and achieve a leaner physique, typically during the spring and summer months when your body is more exposed. There are various methods to achieve a successful cut, and it's essential to focus on both your diet and exercise routine to maximize results.</span>} content={content}></ContentPage>
     )
 }

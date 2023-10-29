@@ -21,6 +21,6 @@ export default function TrainingBasics({}) {
     );
 
     return (
-        <ContentPage location={"Muscles • Training"} title={"Power"} description={<span>Weight lifting, also known as resistance training, is a process involving the lifting, pushing, or pulling weights or resistance devices, resulting in an increase in muscle mass and improvements in overall physical fitness.</span>} currentTopic={"Muscles-Training-Power"} content={content}></ContentPage>
+        <ContentPage title={"Power"} description={<span>Weight lifting, also known as resistance training, is a process involving the lifting, pushing, or pulling weights or resistance devices, resulting in an increase in muscle mass and improvements in overall physical fitness.</span>} content={content}></ContentPage>
     )
 }

@@ -40,6 +40,6 @@ export default function PerformanceBCAAs({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Performance"} title={"Creatine"} description={<span className={"text-lg mb-2"}>Creatine is one of the most thoroughly studied and potent supplements, which can swiftly generate energy during high-intensity physical activity and enhance exercise performance. While there may be cognitive advantages linked with creatine consumption, additional research is required to confirm these findings.</span>} currentTopic={"Supplements-Performance-Creatine"} content={content}></ContentPage>
+        <ContentPage title={"Creatine"} description={<span className={"text-lg mb-2"}>Creatine is one of the most thoroughly studied and potent supplements, which can swiftly generate energy during high-intensity physical activity and enhance exercise performance. While there may be cognitive advantages linked with creatine consumption, additional research is required to confirm these findings.</span>} content={content}></ContentPage>
     )
 }

@@ -35,6 +35,6 @@ export default function PerformanceCitrulline({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Performance"} title={"Citrulline"} description={<span className={"text-lg mb-2"}>L-Citrulline, or Citrulline, is an amino acid used in your body. It is non-essential, and is converted to L-argenine in the liver once supplemented. It increases nitric oxide production and matabolism in the body.</span>} currentTopic={"Supplements-Performance-Citrulline"} content={content}></ContentPage>
+        <ContentPage title={"Citrulline"} description={<span className={"text-lg mb-2"}>L-Citrulline, or Citrulline, is an amino acid used in your body. It is non-essential, and is converted to L-argenine in the liver once supplemented. It increases nitric oxide production and matabolism in the body.</span>} content={content}></ContentPage>
     )
 }

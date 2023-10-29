@@ -32,6 +32,6 @@ export default function Glutamine({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Muscle Gain"} title={"Glutamine"} description={<span className={"text-lg mb-2"}>Glutamine is a type of amino acid that is present in all proteins. It is classified as conditionally essential, which implies that it becomes necessary during certain circumstances such as injury, surgery or illness. Glutamine has the highest concentration among all amino acids in the blood serum. However, its levels tend to decrease relative to the severity of trauma experienced by the body.</span>} currentTopic={"Supplements-Muscle Gain-Glutamine"} content={content}></ContentPage>
+        <ContentPage title={"Glutamine"} description={<span className={"text-lg mb-2"}>Glutamine is a type of amino acid that is present in all proteins. It is classified as conditionally essential, which implies that it becomes necessary during certain circumstances such as injury, surgery or illness. Glutamine has the highest concentration among all amino acids in the blood serum. However, its levels tend to decrease relative to the severity of trauma experienced by the body.</span>} content={content}></ContentPage>
     )
 }

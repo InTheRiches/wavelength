@@ -17,33 +17,15 @@ import MobileSidebar, {MobileHeaderListSidebar} from "@/components/MobileSidebar
 //     display: 'auto',
 // })
 
-export default function ContentPage({ location, title, description, currentTopic, content }) {
+export default function ContentPage({ title, description, content }) {
     const [windowWidth, setWindowWidth] = useState(640);
     const [sidebar, setSidebar] = useState(null);
 
     const router = useRouter();
+    const activeTopic = router.pathname;
 
-    let keys = [];
-
-    topics.forEach((topic) => {
-        topic.subtopics.forEach((subtopic) => {
-            if (subtopic.subtopics) {
-                subtopic.subtopics.forEach((subsubtopic) => {
-                    if (subsubtopic.subtopics) {
-                        subsubtopic.subtopics.forEach((subsubsubtopic) => {
-                            keys.push(subsubsubtopic.href)
-                        });
-                    }
-                    else {
-                        keys.push(subsubtopic.href)
-                    }
-                });
-            }
-            else {
-                keys.push(subtopic.href);
-            }
-        });
-    });
+    const [location, setLocation] = useState("");
+    const [keys, setKeys] = useState([]);
 
     const { value: isDarkMode, toggle: toggleDarkMode } = useDarkMode();
 
@@ -56,9 +38,40 @@ export default function ContentPage({ location, title, description, currentTopic
           document.body.classList.remove('d');
         }
 
+        // find the title of the current topic's parents and index all topics
+        topics.forEach((topic) => {
+            topic.subtopics.forEach((subtopic) => {
+                if (subtopic.href === activeTopic) {
+                    setLocation(topic.title + " • " + subtopic.title);
+                }
+
+                if (subtopic.subtopics) {
+                    subtopic.subtopics.forEach((subsubtopic) => {
+                        if (subsubtopic.href === activeTopic) {
+                            setLocation(topic.title + " • " + subtopic.title + " • " + subsubtopic.title);
+                        }
+
+                        if (subsubtopic.subtopics) {
+                            subsubtopic.subtopics.forEach((subsubsubtopic) => {
+                                if (subsubsubtopic.href === activeTopic) {
+                                    setLocation(topic.title + " • " + (subtopic.showInLocation === undefined ? subtopic.title + " • " : subtopic.showInLocation ? subtopic.title + " • " : "") + (subsubtopic.showInLocation === undefined ? subsubtopic.title + " • " : subsubtopic.showInLocation ? subsubtopic.title + " • " : "") + subsubsubtopic.title);
+                                }
+
+                                keys.push(subsubsubtopic.href)
+                            });
+                            return;
+                        }
+                        keys.push(subsubtopic.href)
+                    });
+                    return
+                }
+                keys.push(subtopic.href);
+            });
+        });
+
         setWindowWidth(window.innerWidth);
 
-        setSidebar(<Sidebar currentTopic={currentTopic}></Sidebar>)
+        setSidebar(<Sidebar></Sidebar>)
 
         const handleResize = () => {
             setWindowWidth(window.innerWidth);

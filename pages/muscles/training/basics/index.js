@@ -13,6 +13,6 @@ export default function TrainingBasics({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Training"} title={"Basics"} description={<span>Properly training is important to making progress in the gym. Utilizing all available processes can significantly increase gains, and make the experience overall more enjoyable and rewarding. Training properly can also avoid injuries and make sure that your body is staying healthy.</span>} content={content} currentTopic={"Muscles-Training-Basics"}></ContentPage>
+        <ContentPage title={"Basics"} description={<span>Properly training is important to making progress in the gym. Utilizing all available processes can significantly increase gains, and make the experience overall more enjoyable and rewarding. Training properly can also avoid injuries and make sure that your body is staying healthy.</span>} content={content}></ContentPage>
     )
 }

@@ -25,6 +25,6 @@ export default function MuscleBasics({}) {
     );
 
     return (
-        <ContentPage location={"Cardio"} title={"Basics"} description={<span>Cardio, short for cardiovascular exercise, refers to any exercise that increases your heart rate, breathing rate, and strengthens your heart and lungs. ​​Cardio exercises are an important part of a healthy lifestyle and can provide numerous health benefits, including improved cardiovascular health, weight loss, improved mood, and reduced risk of chronic diseases.</span>} currentTopic={"Cardio-Basics"} content={content}></ContentPage>
+        <ContentPage title={"Basics"} description={<span>Cardio, short for cardiovascular exercise, refers to any exercise that increases your heart rate, breathing rate, and strengthens your heart and lungs. ​​Cardio exercises are an important part of a healthy lifestyle and can provide numerous health benefits, including improved cardiovascular health, weight loss, improved mood, and reduced risk of chronic diseases.</span>} content={content}></ContentPage>
     )
 }

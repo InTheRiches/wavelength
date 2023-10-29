@@ -59,6 +59,6 @@ export default function BackMuscleFunctions({}) {
     )
 
     return (
-        <ContentPage location={""} title={""} content={content} currentTopic={"Muscles-Functions-Back"}></ContentPage>
+        <ContentPage title={""} content={content}></ContentPage>
     )
 }

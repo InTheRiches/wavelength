@@ -34,6 +34,6 @@ export default function DietBulking({}) {
     );
 
     return (
-        <ContentPage location={"Dieting"} title={"Bulking"} currentTopic={"Dieting-Bulking"}  description={<span>Bulking is a style of dieting typically utilized during the winter to gain large amounts of muscle, not worrying about fat. There are multiple ways to achieve a bulk, typically dirty / clean.</span>} content={content}></ContentPage>
+        <ContentPage title={"Bulking"} description={<span>Bulking is a style of dieting typically utilized during the winter to gain large amounts of muscle, not worrying about fat. There are multiple ways to achieve a bulk, typically dirty / clean.</span>} content={content}></ContentPage>
     )
 }

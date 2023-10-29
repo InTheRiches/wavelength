@@ -22,6 +22,6 @@ export default function LowerBackFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Core" title="Erector Spinae (Lower Back)" description={<span>The lower back muscles, commonly known as the erector spinae, are a group of muscles that run along the length of the spine on the posterior side. These muscles provide support and stability to the spine, assist in maintaining an upright posture, and play a crucial role in movements such as extension, lateral flexion, and rotation of the trunk.</span>} content={content} currentTopic={"Muscles-Functions-Core-Lower Back"}></ContentPage>
+        <ContentPage title="Erector Spinae (Lower Back)" description={<span>The lower back muscles, commonly known as the erector spinae, are a group of muscles that run along the length of the spine on the posterior side. These muscles provide support and stability to the spine, assist in maintaining an upright posture, and play a crucial role in movements such as extension, lateral flexion, and rotation of the trunk.</span>} content={content}></ContentPage>
     )
 }

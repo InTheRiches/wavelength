@@ -26,6 +26,7 @@ export default function Navigation({ progressBar = false }) {
     const handleScroll = () => {
       let percent = percentScrolled();
       percent = Math.ceil(percent);
+      if (percent > 100) percent = 100;
       setPercentScrolled(percent);
     };
 
@@ -86,7 +87,7 @@ export default function Navigation({ progressBar = false }) {
       </div> 
       : <></>}
       {progressBar && <div className={"h-1 pt-2"}>
-        <div className={"h-0.5 bg-cyan-accent " + (pScrolled === 100 ? "" : "rounded-sm")} style={{width: pScrolled + "%"}}></div>
+        <div className={"h-0.5 bg-cyan-accent max-w-screen " + (pScrolled === 100 ? "" : "rounded-sm")} style={{width: pScrolled + "%"}}></div>
       </div>}
     </div>
   )

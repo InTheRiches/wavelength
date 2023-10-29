@@ -22,6 +22,6 @@ export default function AbsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Core" title="Rectus Abdominis (Abs)" description={<span>The abs are a group of muscles in the front of the abdomen. They provide core stability, support posture, and enable movements like bending, twisting, and flexing the trunk. Strong abs are crucial for core strength and stability in various physical activities and sports.</span>} content={content} currentTopic={"Muscles-Functions-Core-Abs"}></ContentPage>
+        <ContentPage title="Rectus Abdominis (Abs)" description={<span>The abs are a group of muscles in the front of the abdomen. They provide core stability, support posture, and enable movements like bending, twisting, and flexing the trunk. Strong abs are crucial for core strength and stability in various physical activities and sports.</span>} content={content}></ContentPage>
     )
 }

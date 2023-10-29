@@ -36,6 +36,6 @@ export default function PerformancePreWorkout({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Performance"} title={"Pre-Workout"} description={"Pre-workout is a blend of numerous ingredients designed to increase blood flow (pump), energy, and recovery. They are often high in caffeine and other related stimulants, and some offer non-crash stimulants."} currentTopic={"Supplements-Performance-Pre Workout"} content={content}></ContentPage>
+        <ContentPage title={"Pre-Workout"} description={"Pre-workout is a blend of numerous ingredients designed to increase blood flow (pump), energy, and recovery. They are often high in caffeine and other related stimulants, and some offer non-crash stimulants."} content={content}></ContentPage>
     )
 }

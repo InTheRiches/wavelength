@@ -24,6 +24,6 @@ export default function PecsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Back"} title={"Posterior Deltoid (Rear Delt)"} description={<span>The rear deltoid, also known as the posterior deltoid, is a muscle located at the back of the shoulder. It plays a crucial role in various upper body movements and contributes to overall shoulder strength and stability.</span>} content={content} currentTopic={"Muscles-Functions-Back-Rear Delt"}></ContentPage>
+        <ContentPage title={"Posterior Deltoid (Rear Delt)"} description={<span>The rear deltoid, also known as the posterior deltoid, is a muscle located at the back of the shoulder. It plays a crucial role in various upper body movements and contributes to overall shoulder strength and stability.</span>} content={content}></ContentPage>
     )
 }

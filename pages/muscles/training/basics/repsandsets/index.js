@@ -51,6 +51,6 @@ export default function RepsAndSets({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Training • Basics"} title={"Reps and Sets"} description={<span>The basics of weight training are simple and crucial to building muscle. Understanding the basics of tracking movements and learning how to consistently perform the exercise in a repeatable manner is extremely important.</span>} content={content} currentTopic={"Muscles-Training-Basics-Reps / Sets"}></ContentPage>
+        <ContentPage title={"Reps and Sets"} description={<span>The basics of weight training are simple and crucial to building muscle. Understanding the basics of tracking movements and learning how to consistently perform the exercise in a repeatable manner is extremely important.</span>} content={content}></ContentPage>
     )
 }

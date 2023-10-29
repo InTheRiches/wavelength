@@ -30,6 +30,6 @@ export default function QuadsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Legs" title="Calves" description={<span>The calves, otherwise known as the gastrocnemius and soleus muscles, are essential for lower limb movement and functionality. They play a significant role in activities such as walking, running, jumping, and standing. The primary function of the calves is to generate the force necessary for ankle plantar flexion, which involves pointing the foot downwards, enabling us to push off the ground and propel ourselves forward during locomotion.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Quads"}></ContentPage>
+        <ContentPage title="Calves" description={<span>The calves, otherwise known as the gastrocnemius and soleus muscles, are essential for lower limb movement and functionality. They play a significant role in activities such as walking, running, jumping, and standing. The primary function of the calves is to generate the force necessary for ankle plantar flexion, which involves pointing the foot downwards, enabling us to push off the ground and propel ourselves forward during locomotion.</span>} content={content}></ContentPage>
     )
 }

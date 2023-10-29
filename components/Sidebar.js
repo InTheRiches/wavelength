@@ -42,10 +42,6 @@ function Sidebar({disable = true}) {
             "sidebar-collapsed-state"
         );
 
-        const storedScroll = localStorage.getItem(
-            "sidebar-scroll"
-        );
-
         if (storedState) {
             setCollapsed(JSON.parse(storedState));
         }
@@ -59,11 +55,6 @@ function Sidebar({disable = true}) {
         };
 
         calculateRemainingHeight();
-
-        const sidebar = document.getElementById("sidebar");
-
-        sidebar.scrollTop = parseInt(storedScroll);
-        console.log("setting scroll to " + storedScroll);
 
         const handleUnload = () => {
             localStorage.setItem('sidebar-scroll', sidebar.scrollTop.toString());
@@ -80,6 +71,17 @@ function Sidebar({disable = true}) {
             window.removeEventListener('wheel', handleUnload);
         };
     }, [window]);
+
+    useEffect(() => {
+        const storedScroll = localStorage.getItem(
+            "sidebar-scroll"
+        );
+
+        const sidebar = document.getElementById("sidebar");
+
+        sidebar.scrollTop = parseInt(storedScroll);
+        console.log("setting scroll to " + storedScroll);
+    }, [loaded]);
 
     return (
         <div className="flex flex-col h-full w-full max-w-1/5">

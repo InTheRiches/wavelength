@@ -35,6 +35,6 @@ export default function PerformanceBCAAs({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Muscle Gain"} title={"Whey Protein"} description={<span className={"text-lg mb-2"}>Whey protein is a type of protein derived from milk, which is commonly used as a dietary supplement to support muscle growth and recovery. It contains all of the essential amino acids, which are the building blocks of protein that cannot be produced by the body and must be obtained through food or supplements.</span>} currentTopic={"Supplements-Muscle Gain-Whey Protein"} content={content}></ContentPage>
+        <ContentPage title={"Whey Protein"} description={<span className={"text-lg mb-2"}>Whey protein is a type of protein derived from milk, which is commonly used as a dietary supplement to support muscle growth and recovery. It contains all of the essential amino acids, which are the building blocks of protein that cannot be produced by the body and must be obtained through food or supplements.</span>} content={content}></ContentPage>
     )
 }

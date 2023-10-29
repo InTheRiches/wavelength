@@ -34,6 +34,6 @@ export default function PerformanceBetaAlanine({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Performance"} title={"Beta-Alanine"} description={<span className={"text-lg mb-2"}>Beta-Alanine is the building block of carnosine, which buffers acid in muscles. Supplementing Beta-Alanine provides improved performance during high intensity training spanning 1-10 minutes.</span>} currentTopic={"Supplements-Performance-Beta Alanine"} content={content}></ContentPage>
+        <ContentPage title={"Beta-Alanine"} description={<span className={"text-lg mb-2"}>Beta-Alanine is the building block of carnosine, which buffers acid in muscles. Supplementing Beta-Alanine provides improved performance during high intensity training spanning 1-10 minutes.</span>} content={content}></ContentPage>
     )
 }

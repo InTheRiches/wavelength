@@ -35,6 +35,6 @@ export default function PerformanceBCAAs({}) {
     );
 
     return (
-        <ContentPage location={"Supplements • Performance"} title={"Nitrate"} description={<span className={"text-lg mb-2"}>Nitrate is a small molecule that appears to have impacts on cardiovascular health and blood pressure. Once consumed, nitrate converts to nitric oxide by various means.</span>} currentTopic={"Supplements-Performance-Nitrate"} content={content}></ContentPage>
+        <ContentPage title={"Nitrate"} description={<span className={"text-lg mb-2"}>Nitrate is a small molecule that appears to have impacts on cardiovascular health and blood pressure. Once consumed, nitrate converts to nitric oxide by various means.</span>} content={content}></ContentPage>
     )
 }

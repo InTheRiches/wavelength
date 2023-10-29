@@ -13,6 +13,6 @@ export default function SupplementBasics({}) {
     );
 
     return (
-        <ContentPage location={"Supplements"} title={"Basics"} description={<span className={"text-lg mb-2"}>Supplements are products that are designed to enhance physical performance throughout life, especially during exercise or athletic activities. There are several types of supplements available, each with its specific uses.</span>} currentTopic={"Supplements-Basics"} content={content}></ContentPage>
+        <ContentPage title={"Basics"} description={<span className={"text-lg mb-2"}>Supplements are products that are designed to enhance physical performance throughout life, especially during exercise or athletic activities. There are several types of supplements available, each with its specific uses.</span>} content={content}></ContentPage>
     )
 }

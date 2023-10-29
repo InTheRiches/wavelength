@@ -53,6 +53,6 @@ export default function DietBasics({}) {
     );
 
     return (
-        <ContentPage location={"Dieting"} title={"Basics"} currentTopic={"Dieting-Basics"}  description={<span>Exercising and building muscle is a multifaceted process that involves not only dedicated strength training but also <b className={openSansBold.className}>proper nutrition</b>. While exercise stimulates muscle growth, diet plays a fundamental role in providing the necessary nutrients and energy for this process.</span>} content={content}></ContentPage>
+        <ContentPage title={"Basics"} description={<span>Exercising and building muscle is a multifaceted process that involves not only dedicated strength training but also <b className={openSansBold.className}>proper nutrition</b>. While exercise stimulates muscle growth, diet plays a fundamental role in providing the necessary nutrients and energy for this process.</span>} content={content}></ContentPage>
     )
 }

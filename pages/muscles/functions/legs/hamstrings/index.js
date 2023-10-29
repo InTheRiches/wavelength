@@ -29,6 +29,6 @@ export default function QuadsFunction({}) {
     )
 
     return (
-        <ContentPage location="Muscles • Functions • Legs" title="Hamstrings" description={<span>The hamstring refers to a group of muscles located on the back of the thigh. It consists of three muscles: the biceps femoris, semitendinosus, and semimembranosus. The hamstring muscles are responsible for flexing the knee joint, extending the hip joint, and playing a significant role in activities such as running, jumping, and bending the knee.</span>} content={content} currentTopic={"Muscles-Functions-Legs-Hamstrings"}></ContentPage>
+        <ContentPage title="Hamstrings" description={<span>The hamstring refers to a group of muscles located on the back of the thigh. It consists of three muscles: the biceps femoris, semitendinosus, and semimembranosus. The hamstring muscles are responsible for flexing the knee joint, extending the hip joint, and playing a significant role in activities such as running, jumping, and bending the knee.</span>} content={content}></ContentPage>
     )
 }

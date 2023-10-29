@@ -18,6 +18,7 @@
           {
             "id": 1,
             "title": "Basics",
+            "showInLocation": false,
             "subtopics":  [
               { "id":  1, "title": "Reps / Sets", "href": "/muscles/training/basics/repsandsets" },
               { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
@@ -29,6 +30,7 @@
       {
         "id": 2,
         "title": "Specifics",
+        "showInLocation": false,
         "subtopics": [
           { "id": 0, "title": "Back", "subtopics": [
             { "id": 0, "title": "Teres", "href": "/muscles/functions/back/teres" },

@@ -53,6 +53,6 @@ export default function MuscleBasics({}) {
     );
 
     return (
-        <ContentPage location={"Muscles"} title={"Basics"} description={<span>Muscles are a type of tissue in our bodies that allow us to <b>move</b> and <b>carry</b> out physical activities. Think of muscles like rubber bands or ropes that are attached to our bones and can <b>contract</b>, or shorten, to pull the bones closer together, allowing us to move our bodies.</span>} currentTopic={"Muscles-Basics"} content={content}></ContentPage>
+        <ContentPage title={"Basics"} description={<span>Muscles are a type of tissue in our bodies that allow us to <b>move</b> and <b>carry</b> out physical activities. Think of muscles like rubber bands or ropes that are attached to our bones and can <b>contract</b>, or shorten, to pull the bones closer together, allowing us to move our bodies.</span>} content={content}></ContentPage>
     )
 }

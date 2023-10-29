@@ -24,6 +24,6 @@ export default function TrapsFunction({}) {
     )
 
     return (
-        <ContentPage location={"Muscles • Functions • Back"} title={"Infraspinatus"} description={<span>The infraspinatus is one of the four muscles that make up the [/muscles/functions/back/rotator-cuff,rotator cuff] in the shoulder. It is located on the **posterior** (back) aspect of the shoulder blade (scapula) and attaches to the greater tubercle of the humerus (upper arm bone). The infraspinatus works together with the other [/muscles/functions/back/rotator-cuff,rotator cuff] muscles to stabilize and control the movement of the shoulder joint.</span>} content={content} currentTopic={"Muscles-Functions-Back-Infraspinatus"}></ContentPage>
+        <ContentPage title={"Infraspinatus"} description={<span>The infraspinatus is one of the four muscles that make up the [/muscles/functions/back/rotator-cuff,rotator cuff] in the shoulder. It is located on the **posterior** (back) aspect of the shoulder blade (scapula) and attaches to the greater tubercle of the humerus (upper arm bone). The infraspinatus works together with the other [/muscles/functions/back/rotator-cuff,rotator cuff] muscles to stabilize and control the movement of the shoulder joint.</span>} content={content}></ContentPage>
     )
 }
