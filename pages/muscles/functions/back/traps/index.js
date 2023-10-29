@@ -1,5 +1,5 @@
 import Content from '@/components/Content'
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import ContentPage from '@/components/ContentPage';
 import { useRouter } from 'next/router';
 
@@ -14,10 +14,7 @@ export default function TrapsFunction({}) {
                 title="Location"
                 content={"The Trapezius is a large muscle located in the upper back and neck region. It is a triangular-shaped muscle that is divided into three heads: the upper, middle, and lower trapezius."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="traps"/>
-                <BackUpperBodySVG highlighted="traps"/>
-            </div>
+            <EntireBodyMap highlighted={"traps"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Trapezius"
                 id={"trapezius"}

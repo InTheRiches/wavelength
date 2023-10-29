@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 
 
 export default function PecsFunction({}) {
@@ -11,10 +11,7 @@ export default function PecsFunction({}) {
                 title="Location"
                 content={"The rhomboid muscles, consisting of the rhomboid major and rhomboid minor, are located in the upper back region between the shoulder blades. They span from the medial border of the scapulae (shoulder blades) to the spinous processes of the vertebrae in the thoracic spine (essentially the spine). Positioned deep beneath other muscles, they form a diamond-shaped area in the middle of the back, contributing to the overall musculature and structure of the upper back."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="rhomboids"/>
-                <BackUpperBodySVG highlighted="rhomboids"/>
-            </div>
+            <EntireBodyMap highlighted={"rhomboids"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Rhomboids"
                 id={"rhomboids"}

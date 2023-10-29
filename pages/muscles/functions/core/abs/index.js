@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -12,10 +12,7 @@ export default function AbsFunction({}) {
                 title="Location"
                 content={"The abdominal muscles, commonly known as the abs or the six-pack muscles, are located in the anterior (front) part of the abdominal region. They run vertically along the midline of the body, from the ribs down to the pubic bone. These muscles include the rectus abdominis and the transversus abdominis."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="abs"/>
-                <BackUpperBodySVG highlighted="abs"/>
-            </div>
+            <EntireBodyMap highlighted={"abs"}></EntireBodyMap>
             <Content
                 title="Rectus Abdominis"
                 id={"rectus-abdominis"}

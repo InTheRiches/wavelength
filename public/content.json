@@ -28,7 +28,7 @@
       },
       {
         "id": 2,
-        "title": "Muscles",
+        "title": "Specifics",
         "subtopics": [
           { "id": 0, "title": "Back", "subtopics": [
             { "id": 0, "title": "Teres", "href": "/muscles/functions/back/teres" },

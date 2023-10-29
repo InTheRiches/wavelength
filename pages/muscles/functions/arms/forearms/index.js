@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import React from "react";
 import {scroll} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
@@ -16,10 +16,7 @@ export default function TricepsFunction({}) {
                 title="Location"
                 content={`The flexor muscles are located on the **anterior** (inner) side of the forearm, running along the inner aspect. These muscles are responsible for **flexing the wrist and fingers**, enabling movements like bending the wrist downward and curling the fingers inward.-.-In contrast, the extensor muscles are situated on the **posterior** (outer) side of the forearm. They run along the outer aspect and are responsible for **extending the wrist and fingers**, allowing movements such as straightening the wrist and spreading the fingers apart.`}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="forearms"/>
-                <BackUpperBodySVG highlighted="forearms"/>
-            </div>
+            <EntireBodyMap highlighted={"forearms"}></EntireBodyMap>
             <Content
                 title="Flexor Muscles"
                 id={"flexor-muscles"}

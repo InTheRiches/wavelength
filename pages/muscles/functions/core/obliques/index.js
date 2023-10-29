@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -12,10 +12,7 @@ export default function ObliquesFunction({}) {
                 title="Location"
                 content={"The obliques, consisting of the **external obliques** and **internal obliques**, are located on the sides of the abdomen. The external obliques run **diagonally** from the lower ribs to the pelvis, forming a **V-shape** with the lower portion pointing inward. The internal obliques lie beneath the external obliques and have a similar diagonal orientation, forming an inverted V-shape with the upper portion pointing inward. Together, these muscles contribute to core stability, trunk rotation, and side-bending movements."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="obliques"/>
-                <BackUpperBodySVG highlighted="obliques"/>
-            </div>
+            <EntireBodyMap highlighted={"obliques"}></EntireBodyMap>
             <Content
                 title="Obliques"
                 id={"obliques"}

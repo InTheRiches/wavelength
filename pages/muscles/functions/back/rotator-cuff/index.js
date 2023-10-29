@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import React from "react";
 import {scroll} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
@@ -17,10 +17,7 @@ export default function PecsFunction({}) {
                 title="Location"
                 content={"The rotator cuff is a group of muscles and tendons located in the shoulder joint. It consists of four main muscles: the supraspinatus, [/muscles/functions/back/infraspinatus,infraspinatus], [/muscles/functions/back/teres,teres minor], and subscapularis. These muscles surround the head of the humerus (upper arm bone) and work together to stabilize and control the movement of the shoulder, providing strength and support during arm movements."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="delts"/>
-                <BackUpperBodySVG highlighted="rear-delts,teres,infraspinatus"/>
-            </div>
+            <EntireBodyMap highlighted={"delts"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Rotator Cuff"
                 id={"rotator-cuff"}

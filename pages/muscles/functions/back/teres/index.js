@@ -1,5 +1,5 @@
 import Content from '@/components/Content'
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import ContentPage from '@/components/ContentPage';
 import { useRouter } from 'next/router';
 
@@ -18,10 +18,7 @@ export default function TrapsFunction({}) {
                 id={"location"}
                 title="Location"
             ></Content>
-            <div className={"flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="teres"/>
-                <BackUpperBodySVG highlighted="teres"/>
-            </div>
+            <EntireBodyMap highlighted={"teres"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Teres Major/Minor"
                 id={"teres"}

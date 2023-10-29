@@ -2,8 +2,8 @@ import {useRouter} from "next/router";
 import {useEffect} from "react";
 import React from "react";
 
-export function EntireBodyMap({highlighted = ""}) {
-    const [isFront, setIsFront] = React.useState(true);
+export function EntireBodyMap({highlighted = "", backDefault = false}) {
+    const [isFront, setIsFront] = React.useState(!backDefault);
 
     return (
         <div className={"p-8 flex flex-col items-center"}>
@@ -16,13 +16,13 @@ export function EntireBodyMap({highlighted = ""}) {
                 </a>
             </div>
             <div className={"hidden min-[1024px]:max-[1290px]:sm:hidden sm:flex w-full h-full flex-row items-center justify-around"}>
-                <FrontFullBodySVG customID={"desktopFrontFullBodySVG"}/>
-                <BackFullBodySVG customID={"desktopBackFullBodySVG"}/>
+                <FrontFullBodySVG highlighted={highlighted} customID={"desktopFrontFullBodySVG"}/>
+                <BackFullBodySVG highlighted={highlighted} customID={"desktopBackFullBodySVG"}/>
             </div>
 
             <div className={"sm:hidden min-[1024px]:max-[1290px]:sm:flex w-full h-full flex flex-row items-center justify-around"}>
-                {isFront && <FrontFullBodySVG customID={"mobileFrontFullBodySVG"}/>}
-                {!isFront && <BackFullBodySVG customID={"mobileBackFullBodySVG"}/>}
+                {isFront && <FrontFullBodySVG highlighted={highlighted} customID={"mobileFrontFullBodySVG"}/>}
+                {!isFront && <BackFullBodySVG highlighted={highlighted} customID={"mobileBackFullBodySVG"}/>}
             </div>
         </div>
     )

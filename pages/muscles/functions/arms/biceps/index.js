@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import React from "react";
 import {scroll} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
@@ -16,10 +16,7 @@ export default function TricepsFunction({}) {
                 title="Location"
                 content={`The bicep is located in the anterior compartment of the upper arm. It runs along the front surface of the humerus bone and attaches at the shoulder joint and the radial tuberosity of the forearm (a small bump on the bone near your elbow joint), forming the visible "bulge" when the arm is flexed.`}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="biceps"/>
-                <BackUpperBodySVG highlighted="biceps"/>
-            </div>
+            <EntireBodyMap highlighted={"biceps"}></EntireBodyMap>
             <Content
                 title="Biceps Brachii"
                 id={"biceps-brachii"}

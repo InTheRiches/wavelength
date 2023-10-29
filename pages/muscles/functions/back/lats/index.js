@@ -1,6 +1,6 @@
 import {useRouter} from "next/router";
 import Content from "@/components/Content";
-import {BackUpperBodySVG, FrontUpperBodySVG} from "@/components/BodySVG";
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from "@/components/BodySVG";
 import ContentPage from "@/components/ContentPage";
 
 
@@ -14,10 +14,7 @@ export default function PecsFunction({}) {
                 title="Location"
                 content={"The lats are large muscles located on the sides of the upper back. They span from the lower portion of the spine, sacrum, and iliac crest, all the way up to the humerus (upper arm bone). The lats have a broad, fan-like shape that extends from the mid-back region towards the armpits, contributing to the overall musculature and structure of the back."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="lats"/>
-                <BackUpperBodySVG highlighted="lats"/>
-            </div>
+            <EntireBodyMap highlighted={"lats"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Latissimus Dorsi"
                 id={"latissimus-dorsi"}

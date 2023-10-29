@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -12,10 +12,7 @@ export default function LowerBackFunction({}) {
                 title="Location"
                 content={"The lower back muscles, or erector spinae muscles, are located on the posterior side of the torso, running parallel to the spine. They extend vertically along the length of the spine, from the base of the skull down to the pelvis. These muscles are positioned on both sides of the spine, forming the prominent muscle mass in the lower back region."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="lower-back"/>
-                <BackUpperBodySVG highlighted="lower-back"/>
-            </div>
+            <EntireBodyMap highlighted={"lower-back"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Erector Spinae"
                 id={"erector-spinae"}

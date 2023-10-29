@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -12,10 +12,7 @@ export default function PecsFunction({}) {
                 title="Location"
                 content={"The medial deltoid is located in the middle of the shoulder, on the **lateral** aspect of the upper arm. It forms the central portion of the deltoid muscle and is responsible for **abduction** of the arm at the shoulder joint.-.-The anterior deltoid is situated at the front of the shoulder, covering the **anterior** aspect of the upper arm. It originates from the outer third of the clavicle (collarbone) and inserts onto the deltoid tuberosity of the humerus. The anterior deltoid primarily functions to flex and internally rotate the arm at the shoulder joint."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="delts"/>
-                <BackUpperBodySVG highlighted="delts"/>
-            </div>
+            <EntireBodyMap highlighted={"delts"}></EntireBodyMap>
             <Content
                 title="Anterior Deltoids"
                 id={"anterior-deltoids"}

@@ -1,6 +1,6 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import React from "react";
 import {scroll} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
@@ -16,10 +16,7 @@ export default function TricepsFunction({}) {
                 title="Location"
                 content={`The triceps is located on the posterior side of the upper arm. It runs from the shoulder down to the elbow and covers the back of the humerus bone. The three heads of the triceps merge together to form a tendon that attaches to the ulna bone in the forearm.`}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="triceps"/>
-                <BackUpperBodySVG highlighted="triceps"/>
-            </div>
+            <EntireBodyMap highlighted={"triceps"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Triceps Brachii"
                 id={"triceps-brachii"}

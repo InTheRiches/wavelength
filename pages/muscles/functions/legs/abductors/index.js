@@ -1,6 +1,12 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackFullBodySVG, BackUpperBodySVG, FrontFullBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {
+    BackFullBodySVG,
+    BackUpperBodySVG,
+    EntireBodyMap,
+    FrontFullBodySVG,
+    FrontUpperBodySVG
+} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -13,10 +19,7 @@ export default function QuadsFunction({}) {
                 title="Location"
                 content={"The hip abductors are a group of muscles located in the hip region. They are situated on the lateral (outer) aspect of the hip and thigh. Specifically, the primary hip abductor muscles include the gluteus medius, gluteus minimus, and tensor fasciae latae, which span from the pelvis to the femur (thigh bone). These muscles contribute to the overall shape and structure of the hip and play a crucial role in hip stability and movement."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontFullBodySVG highlighted="glutes"/>
-                <BackFullBodySVG highlighted="glutes"/>
-            </div>
+            <EntireBodyMap highlighted={"glutes"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Hip Adbuctors"
                 id={"hip-abductors"}

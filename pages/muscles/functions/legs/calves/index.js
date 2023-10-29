@@ -1,6 +1,12 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackFullBodySVG, BackUpperBodySVG, FrontFullBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {
+    BackFullBodySVG,
+    BackUpperBodySVG,
+    EntireBodyMap,
+    FrontFullBodySVG,
+    FrontUpperBodySVG
+} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -14,10 +20,7 @@ export default function QuadsFunction({}) {
                 content={"\n" +
                     "The calves are located in the posterior (back) region of the lower leg. They are positioned superficially and can be seen as the prominent bulge when the leg is flexed. The calf muscles originate from the posterior aspect of the femur (thigh bone) and merge into the Achilles tendon, which attaches to the heel bone (calcaneus)."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontFullBodySVG highlighted="calves"/>
-                <BackFullBodySVG highlighted="calves"/>
-            </div>
+            <EntireBodyMap highlighted={"calves"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Calves"
                 id={"calves"}

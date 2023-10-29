@@ -1,6 +1,12 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackFullBodySVG, BackUpperBodySVG, FrontFullBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {
+    BackFullBodySVG,
+    BackUpperBodySVG,
+    EntireBodyMap,
+    FrontFullBodySVG,
+    FrontUpperBodySVG
+} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -13,10 +19,7 @@ export default function QuadsFunction({}) {
                 title="Location"
                 content={"The hip adductors are a group of muscles located on the inner side of the thigh. They run along the **medial** (inner) aspect of the femur bone, connecting the pelvis to the inner part of the thigh. These muscles originate from the pubic bone and insert onto various points along the femur bone, forming a **strong muscular chain** on the inner side of the hip and thigh."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontFullBodySVG highlighted="adductors"/>
-                <BackFullBodySVG highlighted="adductors"/>
-            </div>
+            <EntireBodyMap highlighted={"adductors"}></EntireBodyMap>
             <Content
                 title="Hip Adductors"
                 id={"hip-adductors"}

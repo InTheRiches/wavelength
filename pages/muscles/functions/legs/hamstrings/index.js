@@ -1,6 +1,12 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackFullBodySVG, BackUpperBodySVG, FrontFullBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {
+    BackFullBodySVG,
+    BackUpperBodySVG,
+    EntireBodyMap,
+    FrontFullBodySVG,
+    FrontUpperBodySVG
+} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -13,10 +19,7 @@ export default function QuadsFunction({}) {
                 title="Location"
                 content={"The hamstring muscles are located on the **posterior** (back) part of the thigh. They run along the back of the femur bone, starting from the hip and extending down to the knee joint. The hamstring muscles are positioned on the inner and outer sides of the back of the thigh and are easily palpable when flexing or extending the leg."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontFullBodySVG highlighted="hamstrings"/>
-                <BackFullBodySVG highlighted="hamstrings"/>
-            </div>
+            <EntireBodyMap highlighted={"hamstrings"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Hamstrings"
                 id={"hamstrings"}

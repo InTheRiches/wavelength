@@ -1,6 +1,6 @@
 import {useRouter} from "next/router";
 import Content from "@/components/Content";
-import {BackUpperBodySVG, FrontUpperBodySVG} from "@/components/BodySVG";
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from "@/components/BodySVG";
 import ContentPage from "@/components/ContentPage";
 
 
@@ -14,10 +14,7 @@ export default function PecsFunction({}) {
                 title="Location"
                 content={"The rear deltoids are located at the back of the shoulder. They are situated on the posterior aspect of the deltoid muscle group and specifically occupy the region behind the shoulder joint. When well-developed, the rear deltoids give the shoulders a rounded appearance from the back."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="rear-delt"/>
-                <BackUpperBodySVG highlighted="rear-delt"/>
-            </div>
+            <EntireBodyMap highlighted={"rear-delt"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Posterior Deltoid"
                 id={"posterior-deltoid"}

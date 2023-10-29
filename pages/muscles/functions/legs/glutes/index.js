@@ -1,6 +1,12 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackFullBodySVG, BackUpperBodySVG, FrontFullBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {
+    BackFullBodySVG,
+    BackUpperBodySVG,
+    EntireBodyMap,
+    FrontFullBodySVG,
+    FrontUpperBodySVG
+} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -13,10 +19,7 @@ export default function QuadsFunction({}) {
                 title="Location"
                 content={"The gluteal muscles are located in the **posterior** (back) region of the hip and buttocks. The gluteus maximus, the largest of the three gluteal muscles, is positioned superficially and forms the bulk of the buttocks. The gluteus medius and gluteus minimus lie deeper and are situated on the lateral (outer) side of the hip, beneath the gluteus maximus. They play a larger role in the movement of the [/muscles/functions/abductors,abductors] of the hip, and perform different movements than the gluteus maximus."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontFullBodySVG highlighted="glutes"/>
-                <BackFullBodySVG highlighted="glutes"/>
-            </div>
+            <EntireBodyMap highlighted={"glutes"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Gluteal Muscles"
                 id={"gluteal-muscles"}

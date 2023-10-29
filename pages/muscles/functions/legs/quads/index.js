@@ -1,6 +1,12 @@
 import Content from '@/components/Content'
 import ContentPage from '@/components/ContentPage';
-import {BackFullBodySVG, BackUpperBodySVG, FrontFullBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {
+    BackFullBodySVG,
+    BackUpperBodySVG,
+    EntireBodyMap,
+    FrontFullBodySVG,
+    FrontUpperBodySVG
+} from '@/components/BodySVG';
 import {scroll} from "@/components/ContentScroll";
 import React from "react";
 
@@ -13,10 +19,7 @@ export default function QuadsFunction({}) {
                 title="Location"
                 content={"The quadriceps muscles are located in the **anterior** (front) part of the thigh. They span the length of the femur bone and are positioned between the hip joint and the knee joint. The quadriceps are visible as a prominent muscle group on the front of the thigh, extending from the **pelvis** to the **knee**."}
             ></Content>
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontFullBodySVG highlighted="quads"/>
-                <BackFullBodySVG highlighted="quads"/>
-            </div>
+            <EntireBodyMap highlighted={"quads"}></EntireBodyMap>
             <Content
                 title="Quadriceps"
                 id={"quadriceps"}

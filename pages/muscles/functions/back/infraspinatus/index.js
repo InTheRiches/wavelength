@@ -1,5 +1,5 @@
 import Content from '@/components/Content'
-import {BackUpperBodySVG, FrontUpperBodySVG} from '@/components/BodySVG';
+import {BackUpperBodySVG, EntireBodyMap, FrontUpperBodySVG} from '@/components/BodySVG';
 import ContentPage from '@/components/ContentPage';
 import { useRouter } from 'next/router';
 
@@ -14,11 +14,7 @@ export default function TrapsFunction({}) {
                 title="Location"
                 content={"The infraspinatus muscle is situated on the posterior side of the shoulder blade, specifically on its **external surface**. It occupies the region below the spine of the scapula and extends from the medial border of the scapula to the greater tubercle of the humerus. When viewing the back of the shoulder, the infraspinatus can be seen as part of the musculature that contributes to the rounded appearance of the shoulder."}
             ></Content>
-
-            <div className={"p-8 flex justify-around items-center"}>
-                <FrontUpperBodySVG highlighted="infraspinatus"/>
-                <BackUpperBodySVG highlighted="infraspinatus"/>
-            </div>
+            <EntireBodyMap highlighted={"infraspinatus"} backDefault={true}></EntireBodyMap>
             <Content
                 title="Infraspinatus"
                 id={"infraspinatus"}
