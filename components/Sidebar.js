@@ -152,7 +152,7 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
 
 export function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
     return (
-        <div className={`mb-4 mr-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
+        <div className={`mb-4 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
             <div className="flex items-center mb-2 hover:cursor-pointer justify-between"
                  onClick={() => toggleCollapse(category)}>
                 <h2 className="font-bold text-lg lg:text-xl xl:text-1xl">{category.title}</h2>

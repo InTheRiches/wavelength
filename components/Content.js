@@ -114,7 +114,7 @@ export default function Content({id, title, content, bulletPoints}) {
 
         block.push(originalBlock);
 
-        return <span className={"text-slate-300"} key={index}>{block}</span>;
+        return <span className={"text-slate-700 dark:text-slate-300"} key={index}>{block}</span>;
     });
 
     const bullets = Object.values(bulletPoints).map((bullet) => {

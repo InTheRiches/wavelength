@@ -80,7 +80,7 @@ export default function Layout() {
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 `}> {/*  + openSans.className */}
             <div className={"absolute top-0 right-0 w-full h-full"}>
                 {loaded && (
-                    <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/landingPageBG.png"} className={"w-full h-full object-cover opacity-40 dark:opacity-20"} alt={""}></img>
+                    <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/testingLightModeBG.png"} className={"w-full h-full object-cover dark:opacity-60"} alt={""}></img>
                 )}
             </div>
 
@@ -88,29 +88,36 @@ export default function Layout() {
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
                     <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-20 xl:pl-32 flex justify-start flex-col h-full">
-                        <h1 className={"px-3 pt-3 xl:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-8xl max-[1920px]:text-8xl 3xl:text-9xl max-w-4xl pb-10 " +
+                        <h1 className={"px-3 pt-3 xl:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-9xl max-w-4xl pb-10 " +
                             "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
                             your physique with expert guidance.</h1>
-                        <p className="text-lg lg:text-xl xl:text-3xl text-slate-600 text-left max-w-3xl dark:text-slate-400 ml-1">A
-                            science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
-                                className={"text-cyan-accent"}>losing fat</a>, and getting <a
-                                className={"text-cyan-accent"}>stronger</a>, arranged to be understood and accessible by
-                            all.</p>
+                        <div className={"rounded-3xl bg-neutral-900 bg-opacity-60 dark:bg-opacity-80 border-1 border-cyan-accent p-5  xl:w-max"}>
+                            <p className="text-lg lg:text-xl xl:text-2xl text-slate-50 text-left max-w-3xl dark:text-slate-400 ml-1">A
+                                science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
+                                    className={"text-cyan-accent"}>losing fat</a>, and getting <a
+                                    className={"text-cyan-accent"}>stronger</a>, arranged to be understood and accessible by
+                                all.</p>
 
-                        <div className="mt-10 flex flex-row space-x-6 text-md h-12 ml-1">
-                            <a className="text-lg transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-slate-900 hover:bg-slate-700 dark:bg-cyan-accent hover:dark:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
-                               href="/getting-started/introduction">Get started<div className={"ml-2 rounded-full flex items-center justify-center w-10 h-10 bg-cyan-accent dark:bg-cyan-accent-dark"}>
-                                <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M15 19l-7-7 7-7"
-                                    />
-                                </svg>
-                            </div></a>
+                            <div className="mt-10 flex flex-row space-x-6 text-md h-12 ml-1">
+                                <a className="text-lg transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-cyan-accent hover:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
+                                   href="/getting-started/introduction">Get started<div className={"ml-2 rounded-full flex items-center justify-center w-10 h-10 bg-cyan-accent-dark"}>
+                                    <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M15 19l-7-7 7-7"
+                                        />
+                                    </svg>
+                                </div></a>
+                            </div>
                         </div>
                     </div>
+                    {/*{!isDarkMode &&*/}
+                    {/*    <div className={"w-full h-full flex justify-center"}>*/}
+                    {/*        <img src={"/images/temporary/testingLightModePng.png"} className={"aspect-[89/100] w-3/5 h-min"}></img>*/}
+                    {/*    </div>*/}
+                    {/*}*/}
                     {/*<div className={"hidden sm:block relative p-12 w-full sm:w-4/5 md:w-3/5 lg:w-1/2 h-full flex flex-col items-center"}>*/}
                     {/*    <img className={"2xl:w-5/6 lg:pt-24 w-min aspect-square object-cover landing-img-shadow"} src={"/kettlebell.png"}  alt={"Wavelength"}></img>*/}
                     {/*    /!*<div className={"h-full max-w-3xl mt-8"}>*!/*/}
@@ -127,11 +134,11 @@ export default function Layout() {
 
             </header>
 
-            <section className="max-w-7xl px-8 pt-10 sm:pt-15 md:pt-20 pb-14 border-t-2 dark:border-neutral-700"><h2
+            <section className="max-w-7xl px-8 pt-10 sm:pt-15 md:pt-20 pb-14 dark:border-t-2 dark:border-neutral-700"><h2
                 className="text-left sm:text-center text-slate-900 text-4xl font-extrabold sm:text-5xl dark:text-white">Understanding the
                 mechanics behind working out significantly increases effectiveness.</h2>
                 <figure>
-                    <blockquote><p className="text-left sm:text-center mt-6 max-w-3xl mx-auto text-lg lg:text-xl text-slate-900 dark:text-slate-500">During my
+                    <blockquote><p className="text-left sm:text-center mt-6 max-w-3xl mx-auto text-lg lg:text-xl text-slate-900 dark:text-slate-300">During my
                         fitness journey, I realized the importance of understanding the human anatomy and the underlying
                         science of muscle <a className={"text-cyan-accent"}>hypertrophy</a>. As my understanding of these
                         concepts grew, so did my <a className={"text-cyan-accent"}>efficiency</a> and <a
