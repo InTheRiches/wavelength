@@ -80,7 +80,7 @@ export default function Layout() {
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 `}> {/*  + openSans.className */}
             <div className={"absolute top-0 right-0 w-full h-full"}>
                 {loaded && (
-                    <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/testingLightModeBG.png"} className={"w-full h-full object-cover dark:opacity-60"} alt={""}></img>
+                    <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/lplmbg.jpg"} className={"w-full h-full object-cover dark:opacity-60"} alt={""}></img>
                 )}
             </div>
 
