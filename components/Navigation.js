@@ -3,9 +3,15 @@ import {useRouter} from "next/router";
 import {lobster} from "@/components/Fonts";
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/20/solid";
 import MobileSidebar from "@/components/MobileSidebar";
+import useDarkMode from "use-dark-mode";
+import {useLoaded} from "@/components/LoadedHook";
+import {percentScrolled} from "@/components/ContentScroll";
 
-export default function Navigation({dark, setDark}) {
+export default function Navigation({ progressBar = false }) {
+  const { value: isDarkMode, toggle: toggleDarkMode } = useDarkMode();
+  const [ pScrolled, setPercentScrolled ] = useState(0.0);
   const router = useRouter();
+  const loaded = useLoaded();
 
   const [windowWidth, setWindowWidth] = useState(640);
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +23,15 @@ export default function Navigation({dark, setDark}) {
         setWindowWidth(window.innerWidth);
     };
 
+    const handleScroll = () => {
+      let percent = percentScrolled();
+      percent = Math.ceil(percent);
+      setPercentScrolled(percent);
+    };
+
     // Attach the event listener
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
     // Clean up the event listener on component unmount
     return () => {
@@ -27,7 +40,7 @@ export default function Navigation({dark, setDark}) {
   }, []);
 
   return (
-    <div id="navigation" className={`sticky py-2 top-0 z-40 w-full ${router.pathname !== "/" ? "text-neutral-700" : "text-slate-50"} dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50`}>
+    <div id="navigation" className={`sticky pt-2 top-0 z-40 w-full ${router.pathname !== "/" ? "text-neutral-700" : "text-slate-50"} dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50`}>
       <div className="mx-auto px-2 sm:px-6 lg:px-8 w-full relative flex max-h-6v items-center justify-between">
         {router.pathname !== "/" && windowWidth < 1024 &&
           <div className="flex items-center">
@@ -51,10 +64,10 @@ export default function Navigation({dark, setDark}) {
           <button type="button" className="rounded-full p-1 text-gray-400 hover:text-cyan-accent">
             <span className="sr-only">Toggle Theme</span>
 
-            {!dark ? <svg onClick={setDark} xmlns="http://www.w3.org/2000/svg" fill={"none"} viewBox="0 0 24 24" strokeWidth="1.5" className="stroke-cyan-accent w-8 h-8 aspect-square">
+            {isDarkMode && loaded && <svg onClick={toggleDarkMode} xmlns="http://www.w3.org/2000/svg" fill={"none"} viewBox="0 0 24 24" strokeWidth="1.5" className="stroke-cyan-accent w-8 h-8 aspect-square">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-            </svg> :
-            <svg onClick={setDark} xmlns="http://www.w3.org/2000/svg" fill={"none"} viewBox="0 0 24 24" strokeWidth="1.5" className="stroke-cyan-accent w-9 h-9 aspect-square">
+            </svg>}
+            {!isDarkMode && loaded && <svg onClick={toggleDarkMode} xmlns="http://www.w3.org/2000/svg" fill={"none"} viewBox="0 0 24 24" strokeWidth="1.5" className="stroke-cyan-accent w-9 h-9 aspect-square">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
             </svg>}
 
@@ -72,6 +85,9 @@ export default function Navigation({dark, setDark}) {
           </div>
       </div> 
       : <></>}
+      {progressBar && <div className={"h-1 pt-2"}>
+        <div className={"h-0.5 bg-cyan-accent " + (pScrolled === 100 ? "" : "rounded-sm")} style={{width: pScrolled + "%"}}></div>
+      </div>}
     </div>
   )
 }

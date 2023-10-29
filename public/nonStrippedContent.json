@@ -24,9 +24,7 @@
             ]
           },
           { "id": 2, "title": "Strength", "href": "/muscles/training/strength"},
-          { "id": 3, "title": "Hypertrophy", "href": "/muscles/training/hypertrophy"},
-          { "id": 4, "title": "Cardio", "href": "/muscles/training/cardio" },
-          { "id": 5, "title": "Power", "href": "/muscles/training/power"}
+          { "id": 3, "title": "Hypertrophy", "href": "/muscles/training/hypertrophy"}
         ]
       },
       {

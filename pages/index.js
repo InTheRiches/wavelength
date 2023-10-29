@@ -91,7 +91,7 @@ export default function Layout() {
                         <h1 className={"px-3 pt-3 xl:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-9xl max-w-4xl pb-10 " +
                             "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
                             your physique with expert guidance.</h1>
-                        <div className={"rounded-3xl bg-neutral-900 bg-opacity-60 dark:bg-opacity-80 border-1 border-cyan-accent p-5  xl:w-max"}>
+                        <div className={"rounded-2xl bg-neutral-900 bg-opacity-60 dark:bg-opacity-80 border-1 border-cyan-accent p-5 xl:w-max"}>
                             <p className="text-lg lg:text-xl xl:text-2xl text-slate-50 text-left max-w-3xl dark:text-slate-400 ml-1">A
                                 science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
                                     className={"text-cyan-accent"}>losing fat</a>, and getting <a
