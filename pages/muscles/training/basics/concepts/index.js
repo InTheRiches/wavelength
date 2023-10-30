@@ -7,6 +7,17 @@ export default function Concepts({}) {
         <div className="w-full max-w-5xl flex-col">
             {/* Topics */}
             <Content
+                id={"terminology"}
+                title={"Terminology"}
+                bulletPoints={{
+                    "Repetition[/muscles/training/basics/repsandsets#reps-and-sets]": "A repetition, or rep for short, is a single movement of an exercise. For example, a single push up is one repetition. A rep is the most basic form of measurement in weight lifting.",
+                    "Set[/muscles/training/basics/repsandsets#reps-and-sets]": "A set is a group of repetitions. For example, a set would be 10 push ups performed in succession. If the reps were not performed in succession, it would typically not be a set.",
+                    "Weight": "Weight refers to the amount of resistance used in an exercise. This can be in the form of dumbbells, barbells, or even body weight.",
+                    "Volume[/muscles/training/basics/concepts#Volume]": "Volume refers to the total amount of work performed during a workout. It is a combination of the number of sets, repetitions, and weight or resistance used in an exercise.",
+                    "1RM": "1RM, or one rep max, is the maximum amount of weight you can lift for a single repetition of an exercise. It is used to determine the amount of weight you should use for a given exercise. It is important you accurately track this, and make sure you are at true muscular failure."
+                }}
+            ></Content>
+            <Content
                 id={"Volume"}
                 title={"Volume"}
                 content={"**Volume**, in the context of exercise, refers to the total amount of work performed during a workout. It is a combination of the number of sets, repetitions, and weight or resistance used in an exercise. Calculating volume helps you quantify the overall workload you're subjecting your muscles to, which can be useful for tracking progress and designing **effective** training programs.-.-To calculate volume, multiply the number of sets by the number of repetitions performed in each set, and then multiply that by the weight used. The formula for volume is:-.-`Volume = Sets × Repetitions × Weight`-.-For example, if you perform 3 sets of 10 repetitions of bench press with a weight of 50 pounds, the volume would be:-.-`Volume = 3 sets × 10 reps × 50 pounds = 1500 pounds`-.-Calculating volume can help you track your progress over time. By gradually increasing the volume, either by adding more sets, repetitions, or weight, you can apply the principle of progressive overload and stimulate muscle growth and adaptation. However, it's important to progress gradually and listen to your body to avoid **overtraining** and injuries."}
@@ -35,17 +46,6 @@ export default function Concepts({}) {
                 id={"finisher-set"}
                 title={"Intense Finisher Set"}
                 content={"Research suggests ([https://pubmed.ncbi.nlm.nih.gov/15574075/,Goto et al., 2004]) that performing a single set of an exercise of high reps (15-30) to complete muscular failure after your existing normal sets can significantly improve muscle growth. Goto et al. (2004) found that performing a single set of low-intensity and high-repetition exercise added immediately after the previous regimen without rest showed significantly larger increases in 1RM leg press, and muscular endurance of leg extension compared to just the original regimen. The muscle's **cross sectional area** (CSA, essentially the size of the muscle) also increased. This means that by adding this finisher set, you can significantly increase both muscular **strength and endurance**, as well as the muscle's size."}
-            ></Content>
-            <Content
-                id={"terminology"}
-                title={"Terminology"}
-                bulletPoints={{
-                    "Repetition[/muscles/training/basics/repsandsets#reps-and-sets]": "A repetition, or rep for short, is a single movement of an exercise. For example, a single push up is one repetition. A rep is the most basic form of measurement in weight lifting.",
-                    "Set[/muscles/training/basics/repsandsets#reps-and-sets]": "A set is a group of repetitions. For example, a set would be 10 push ups performed in succession. If the reps were not performed in succession, it would typically not be a set.",
-                    "Weight": "Weight refers to the amount of resistance used in an exercise. This can be in the form of dumbbells, barbells, or even body weight.",
-                    "Volume[/muscles/training/basics/concepts#Volume]": "Volume refers to the total amount of work performed during a workout. It is a combination of the number of sets, repetitions, and weight or resistance used in an exercise.",
-                    "1RM": "1RM, or one rep max, is the maximum amount of weight you can lift for a single repetition of an exercise. It is used to determine the amount of weight you should use for a given exercise. It is important you accurately track this, and make sure you are at true muscular failure."
-                }}
             ></Content>
         </div>
     )

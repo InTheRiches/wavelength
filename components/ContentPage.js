@@ -8,14 +8,6 @@ import ContentScroll, {scroll} from "@/components/ContentScroll";
 import useDarkMode from 'use-dark-mode';
 import topics from '/public/content.json';
 import MobileSidebar, {MobileHeaderListSidebar} from "@/components/MobileSidebar";
-// import {Open_Sans} from "next/font/google";
-
-// const openSans = Open_Sans({
-//     variable: '--font-open-sans',
-//     weight: '500',
-//     subsets: ['latin'],
-//     display: 'auto',
-// })
 
 export default function ContentPage({ title, description, content }) {
     const [windowWidth, setWindowWidth] = useState(640);
