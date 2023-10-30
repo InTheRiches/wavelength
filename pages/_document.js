@@ -4,13 +4,11 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
-                <script async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2701716227191721"
-                        crossOrigin="anonymous"></script>
+                <script src="//servedby.eleavers.com/ads/ads.php?t=MjkxNTM7MTk0OTY7aG9yaXpvbnRhbC5sZWFkZXJib2FyZA==&index=1"></script>
                 <link rel="stylesheet" href="/noflash.css"/>
                 <meta property="og:title" content="Wavelength"/>
                 <meta property="og:description" content="A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all."/>
-                <meta property="og:image" content="https://wavelength.fit/logo.png"/>
+                <meta property="og:image" content="https://wavelength.fit/images/logo.png"/>
                 <meta property="og:url" content="https://wavelength.fit"/>
                 <meta property="og:type" content="website"/>
             </Head>
