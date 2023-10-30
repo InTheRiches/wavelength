@@ -96,7 +96,8 @@
     "subtopics": [
       { "id": 1, "title": "Basics", "href": "/dieting/basics" },
       { "id": 2, "title": "Cutting", "href": "/dieting/cutting" },
-      { "id": 3, "title": "Bulking", "href": "/dieting/bulking" }
+      { "id": 3, "title": "Bulking", "href": "/dieting/bulking" },
+      { "id": 4, "title": "Vitamins", "href": "/dieting/vitamins" }
     ]
   },
   {
