@@ -10,6 +10,7 @@ export default function DietingVitamins({}) {
                 title={"Terminology"}
                 bulletPoints={{
                     "Macromineral": "A mineral that is required in relatively large quantities within the diet.",
+                    "Trace Mineral": "A mineral that is required within the diet, but not in large quantities."
                 }}
                 ></Content>
             <Content
