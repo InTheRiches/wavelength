@@ -88,10 +88,10 @@ export default function Layout() {
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
                     <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-20 xl:pl-32 flex justify-start flex-col h-full">
-                        <h1 className={"px-3 pt-3 xl:pt-24 max-[600px]:text-6xl min-[600px]:text-8xl min-[1100px]:text-9xl max-w-4xl pb-10 " +
+                        <h1 className={"px-3 pt-3 xl:pt-24 text-6xl min-[1100px]:text-7xl min-[1600px]:text-9xl sm:w-[36rem] xl:w-[56rem] pb-10 " +
                             "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
                             your physique with expert guidance.</h1>
-                        <div className={"rounded-2xl bg-neutral-900 bg-opacity-60 dark:bg-opacity-80 border-1 border-cyan-accent p-5 xl:w-max"}>
+                        <div className={"rounded-2xl bg-neutral-900 bg-opacity-60 dark:bg-opacity-80 border-1 border-cyan-accent p-3 xl:p-5 xl:w-max"}>
                             <p className="text-lg lg:text-xl xl:text-2xl text-slate-50 text-left max-w-3xl dark:text-slate-400 ml-1">A
                                 science based approach to <a className={"text-cyan-accent"}>building muscle</a>, <a
                                     className={"text-cyan-accent"}>losing fat</a>, and getting <a
