@@ -1,13 +1,10 @@
-import React, {useEffect} from 'react'
-import {Lobster, Open_Sans, Poppins} from 'next/font/google';
-import Navigation from '@/components/Navigation'
-import Footer from "@/components/Footer";
-import useDarkMode from 'use-dark-mode';
-import {getCookieValue} from "@/lib/util";
+import Navigation from "@/components/Navigation";
+import React, {useEffect} from "react";
+import useDarkMode from "use-dark-mode";
 import {getCookie, hasCookie} from "cookies-next";
 import {useLoaded} from "@/components/LoadedHook";
 
-export default function LandingPage() {
+export default function Testing() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const pageLoaded = useLoaded();
 
@@ -54,14 +51,14 @@ export default function LandingPage() {
     }, [isDarkMode]);
 
     return (
-        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-gray-50 dark:bg-neutral-900 `}> {/*  + openSans.className */}
+        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 `}> {/*  + openSans.className */}
             {/*<div className={"absolute top-0 right-0 w-full h-full"}>*/}
             {/*    {loaded && (*/}
             {/*        <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/lplmbg.jpg"} className={"w-full h-full object-cover dark:opacity-60"} alt={""}></img>*/}
             {/*    )}*/}
             {/*</div>*/}
 
-            <header className={"flex flex-col items-center w-full h-screen"}>
+            <header className={"flex flex-col items-center w-full h-screen bg-gray-50 dark:bg-neutral-900"}>
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
 
                 <section className="pt-12">
@@ -78,9 +75,9 @@ export default function LandingPage() {
 
                             <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9">
                                 <a href="/getting-started/introduction"
-                                   title=""
-                                   className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 dark:bg-cyan-accent dark:hover:bg-cyan-accent-light border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                                   role="button">
+                                    title=""
+                                    className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 dark:bg-cyan-accent dark:hover:bg-cyan-accent-light border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                                    role="button">
                                     Build your physique
                                 </a>
 
@@ -105,9 +102,9 @@ export default function LandingPage() {
                         </div>
                     </div>
 
-                    <div className="pb-12">
+                    <div className="pb-12 bg-gray-50 dark:bg-neutral-900">
                         <div className="relative">
-                            <div className="absolute inset-0 h-2/3"></div>
+                            <div className="absolute inset-0 h-2/3 bg-gray-50 dark:bg-neutral-900"></div>
                             <div className="relative mx-auto">
                                 <div className="lg:max-w-6xl lg:mx-auto">
                                     <img className="transform scale-110" src={isDarkMode && pageLoaded ? "/images/landingPageIllustrationDark.png" :"/images/landingPageIllustration.png"} alt="" />
@@ -117,7 +114,6 @@ export default function LandingPage() {
                     </div>
                 </section>
             </header>
-            <Footer></Footer>
         </div>
     )
 }

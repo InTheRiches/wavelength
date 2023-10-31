@@ -60,7 +60,7 @@ export default function Navigation({ progressBar = false }) {
           <div className="flex flex-shrink-0 items-center">
             <img className="h-10 w-10 rounded-full" src="/images/logo.png" alt="Wavelength"/>
           </div>
-          <a className={"ml-4 mb-1 text-4xl font-bold text-center hidden min-[1024px]:block  " + lobster.className}>wavelength</a>
+          <a className={"ml-4 mb-1 text-4xl font-bold text-gray-900 dark:text-slate-50 text-center hidden min-[1024px]:block  " + lobster.className}>wavelength</a>
         </div>
         <div className="flex items-center pr-2">
           <button type="button" className="rounded-full p-1 text-gray-400 hover:text-cyan-accent">

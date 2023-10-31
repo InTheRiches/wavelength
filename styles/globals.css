@@ -149,11 +149,11 @@ span:hover .tooltip {
   mask-position: bottom;
 }
 
-/*.uline {*/
-/*  background: linear-gradient(to right, #0ea5e9, #0ea5e9) no-repeat;*/
-/*  background-size: 100% 3px;*/
-/*  background-position: left bottom;*/
-/*}*/
+.uline {
+  background: linear-gradient(to right, #0ea5e9, #0ea5e9) no-repeat;
+  background-size: 100% 15px;
+  background-position: left bottom;
+}
 
 .main-grid {
   grid-template-columns: .75fr 2.25fr .75fr !important;
@@ -165,7 +165,12 @@ span:hover .tooltip {
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgb(249, 250, 251);
+  border-radius: 5px;
+}
+
+.dark *::-webkit-scrollbar-track {
+  background: rgb(23 23 23);
   border-radius: 5px;
 }
 

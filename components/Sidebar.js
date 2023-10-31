@@ -115,7 +115,7 @@ export function Topic({ topic, activeTopic }) {
              onClick={() => {
                  router.push(topic.href);
              }}>
-            <a className={`text-lg xl:text-xl ml-6`}>{topic.title}</a>
+            <a className={`text-lg ml-4`}>{topic.title}</a>
         </div>
     );
 }
@@ -128,7 +128,7 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
                  onClick={() => {
                      toggleCollapse(subcategory);
                  }}>
-                <a className={`text-lg xl:text-xl ml-6`}>{subcategory.title}</a>
+                <a className={`text-lg ml-4`}>{subcategory.title}</a>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-transform duration-100 ${
                     collapsed[subcategory.title + "-" + subcategory.id]
                         ? "-scale-y-100"
