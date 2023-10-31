@@ -57,7 +57,7 @@ export default function Navigation({ progressBar = false }) {
         }
         <div className="lg:left-0 flex items-center justify-center hover:cursor-pointer" onClick={() => router.push("/")}>
           <div className="flex flex-shrink-0 items-center">
-            <img className="h-10 w-10" src="/images/logo.png" alt="Wavelength"/>
+            <img className="h-10 w-10 rounded-full" src="/images/logo.png" alt="Wavelength"/>
           </div>
           <a className={"ml-4 mb-1 text-4xl font-bold text-center hidden min-[1024px]:block  " + lobster.className}>wavelength</a>
         </div>
