@@ -1,10 +1,17 @@
 import React, {useEffect} from 'react'
-import {Lobster, Open_Sans} from 'next/font/google';
+import {Lobster, Open_Sans, Poppins} from 'next/font/google';
 import Navigation from '@/components/Navigation'
 import Footer from "@/components/Footer";
 import useDarkMode from 'use-dark-mode';
 import {getCookieValue} from "@/lib/util";
 import {getCookie, hasCookie} from "cookies-next";
+
+const poppins = Poppins({
+    variable: '--font-poppins',
+    weight: '800',
+    subsets: ['latin'],
+    display: 'auto',
+})
 
 const lobster = Lobster({
     variable: '--font-lobster',
@@ -88,7 +95,7 @@ export default function Layout() {
                 <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
                 <div className={"flex flex-col lg:flex-row items-center w-full h-full z-10"}>
                     <div className="relative mx-6 md:w-4/5 lg:w-3/5 lg:pl-20 xl:pl-32 flex justify-start flex-col h-full">
-                        <h1 className={"px-3 pt-3 xl:pt-24 text-6xl min-[1100px]:text-7xl min-[1600px]:text-9xl sm:w-[36rem] xl:w-[56rem] pb-10 " +
+                        <h1 className={"px-3 pt-3 xl:pt-24 text-7xl min-[1200px]:text-8xl min-[1600px]:text-9xl sm:w-[36rem] xl:w-[56rem] pb-10 " +
                             "text-slate-900 font-extrabold tracking-tight text-left dark:text-white text-header-gradient " + lobster.className}>Transform
                             your physique with expert guidance.</h1>
                         <div className={"rounded-2xl bg-neutral-900 bg-opacity-60 dark:bg-opacity-80 border-1 border-cyan-accent p-3 xl:p-5 xl:w-max"}>
@@ -99,7 +106,7 @@ export default function Layout() {
                                 all.</p>
 
                             <div className="mt-10 flex flex-row space-x-6 text-md h-12 ml-1">
-                                <a className="text-lg transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-cyan-accent hover:bg-cyan-accent-light py-5 pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
+                                <a className="text-lg transition-all hover:shadow-button ease-in duration-200 hover:scale-105 rounded-full bg-cyan-accent hover:bg-cyan-accent-light py-3 pl-3 xl:py-5 xl:pl-5 pr-2 w-full sm:w-auto flex items-center justify-between text-white font-semibold focus:outline-none"
                                    href="/getting-started/introduction">Get started<div className={"ml-2 rounded-full flex items-center justify-center w-10 h-10 bg-cyan-accent-dark"}>
                                     <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path
