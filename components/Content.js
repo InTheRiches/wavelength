@@ -1,4 +1,4 @@
-import React from "react";
+óimport React from "react";
 import {useRouter} from "next/router";
 import {scroll} from "@/components/ContentScroll";
 
@@ -198,7 +198,7 @@ export default function Content({id, title, content, bulletPoints}) {
             </div>
             {text.length > 0 && <div className={`flex flex-col ${title ? "mt-4" : ""} min-[424px]:text-lg text-md`}>
                 {text.map((substring, index) => (
-                    <div className={`mb-6 indent-6 text-left sm:text-justify`} key={index}>{substring}</div>
+                    <div className={`mb-6 text-left sm:text-justify`} key={index}>{substring}</div>
                 ))}
             </div>}
             {bullets.length > 0 &&
