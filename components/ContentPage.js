@@ -1,13 +1,10 @@
 import Navigation from '@/components/Navigation'
-import Content from '@/components/Content'
 import Sidebar, { HeaderListSidebar } from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import React, {useEffect, useState} from "react";
 import {useRouter} from "next/router";
-import ContentScroll, {percentScrolled, scroll} from "@/components/ContentScroll";
 import useDarkMode from 'use-dark-mode';
 import topics from '/public/content.json';
-import MobileSidebar, {MobileHeaderListSidebar} from "@/components/MobileSidebar";
 
 export default function ContentPage({ title, description, content }) {
     const [windowWidth, setWindowWidth] = useState(640);
@@ -61,9 +58,9 @@ export default function ContentPage({ title, description, content }) {
             });
         });
 
-        setWindowWidth(window.innerWidth);
-
         setSidebar(<Sidebar></Sidebar>)
+
+        setWindowWidth(window.innerWidth);
 
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
