@@ -113,7 +113,7 @@ export default function LandingPage() {
                         </div>
                     </div>
                 </section>
-                <section className="relative py-10 bg-gray-50 sm:pt-16 lg:pt-24">
+                <section className="relative py-10 bg-gray-50 dark:bg-neutral-900 sm:pt-16 lg:pt-24">
                     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-3 gap-y-16 gap-x-12">
                             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
@@ -122,7 +122,7 @@ export default function LandingPage() {
                                     <h1 className={"ml-2 mb-1 text-4xl font-bold text-gray-900 dark:text-slate-50 text-left " + lobster.className}>wavelength</h1>
                                 </div>
 
-                                <p className="text-base leading-relaxed text-gray-600 mt-7 text-left">A free and open community driven company focused on delivering high quality fitness information to all.</p>
+                                <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 mt-7 text-left">A free and open community driven company focused on delivering high quality fitness information to all.</p>
 
                                 <ul className="flex items-center space-x-3 mt-9">
                                     <li>
@@ -174,11 +174,11 @@ export default function LandingPage() {
 
                                 <ul className="mt-6 space-y-4">
                                     <li>
-                                        <a href="/about" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> About </a>
+                                        <a href="/about" title="" className="flex text-base text-black transition-all dark:text-gray-400 duration-200 dark:hover:text-cyan-accent hover:text-cyan-accent focus:text-cyan-accent"> About </a>
                                     </li>
 
                                     <li>
-                                        <a href="/privacy" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy Policy </a>
+                                        <a href="/privacy" title="" className="flex text-base text-black transition-all dark:text-gray-400 duration-200 dark:hover:text-cyan-accent hover:text-cyan-accent focus:text-cyan-accent"> Privacy Policy </a>
                                     </li>
                                 </ul>
                             </div>
@@ -208,7 +208,7 @@ export default function LandingPage() {
 
                         <hr className="mt-16 mb-10 border-gray-200" />
 
-                        <p className="text-sm text-center text-gray-600">© Copyright 2023, All Rights Reserved by Wavelength</p>
+                        <p className="text-sm text-center text-gray-600 dark:text-gray-400">© Copyright 2023, All Rights Reserved by Wavelength</p>
                     </div>
                 </section>
             </header>

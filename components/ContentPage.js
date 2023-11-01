@@ -4,7 +4,7 @@ import Sidebar, { HeaderListSidebar } from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import React, {useEffect, useState} from "react";
 import {useRouter} from "next/router";
-import ContentScroll, {scroll} from "@/components/ContentScroll";
+import ContentScroll, {percentScrolled, scroll} from "@/components/ContentScroll";
 import useDarkMode from 'use-dark-mode';
 import topics from '/public/content.json';
 import MobileSidebar, {MobileHeaderListSidebar} from "@/components/MobileSidebar";
@@ -104,20 +104,20 @@ export default function ContentPage({ title, description, content }) {
     ContentScroll(sidebar);
 
     return (
-        <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 justify-center items-center "}> {/*  + openSans.className */}
+        <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
             <Navigation progressBar={true}></Navigation>
 
-            {sidebar ? <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl md:px-6 my-8 z-20">
+            {sidebar ? <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
                 {windowWidth >= 1024 ? sidebar : <></>}
-                <div onScrollCapture={() => handleScroll()} className={"px-6 sm:px-9 flex flex-col w-full h-full"}>
+                <div onScrollCapture={() => handleScroll()} className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[24rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-12">
                             <span className="text-cyan-accent mb-1 text-lg font-semibold">{location}</span>
-                            <span className="mb-10 inline-block text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</span>
+                            <span className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</span>
                             {description && <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify min-[424px]:text-lg text-md"}>
                                 {description}
                             </div>}
@@ -148,11 +148,10 @@ export default function ContentPage({ title, description, content }) {
                             </svg>
                         </button>
                     </div>
+                    <Footer></Footer>
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
             </div> : <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl h-screen md:px-6 my-8 z-20"></div>}
-
-            <Footer></Footer>
         </div>
     )
 }

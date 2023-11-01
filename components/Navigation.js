@@ -6,7 +6,6 @@ import MobileSidebar from "@/components/MobileSidebar";
 import useDarkMode from "use-dark-mode";
 import {useLoaded} from "@/components/LoadedHook";
 import {percentScrolled} from "@/components/ContentScroll";
-import {progress} from "@material-tailwind/react";
 
 export default function Navigation({ progressBar = false }) {
   const { value: isDarkMode, toggle: toggleDarkMode } = useDarkMode();
@@ -38,6 +37,7 @@ export default function Navigation({ progressBar = false }) {
     // Clean up the event listener on component unmount
     return () => {
         window.removeEventListener('resize', handleResize);
+        window.removeEventListener('scroll', handleScroll)
     };
   }, []);
 

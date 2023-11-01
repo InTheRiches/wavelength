@@ -56,19 +56,19 @@ function Sidebar({disable = true}) {
 
         calculateRemainingHeight();
 
-        const handleUnload = () => {
+        const handleScroll = () => {
             localStorage.setItem('sidebar-scroll', sidebar.scrollTop.toString());
             console.log("setting scrol to " + sidebar.scrollTop.toString());
 
             console.log(localStorage.getItem('sidebar-scroll'));
         };
 
-        window.addEventListener('wheel', handleUnload);
+        window.addEventListener('wheel', handleScroll);
         window.addEventListener('resize', calculateRemainingHeight);
 
         return () => {
             window.removeEventListener('resize', calculateRemainingHeight);
-            window.removeEventListener('wheel', handleUnload);
+            window.removeEventListener('wheel', handleScroll);
         };
     }, [window]);
 
@@ -198,8 +198,8 @@ export function HeaderListSidebar() {
     // ${h1List.length === index + 1 ? "" : "border-b-1.5"}
 
     return loaded ? (
-        <div className={"h-full max-w-1/5 w-full"}>
-            <div className='ml-4 fixed top-20 overflow-y-auto'>
+        <div className={"hidden xl:block"}>
+            <div className='ml-4 h-full max-w-1/5 min-w-[18rem] w-full fixed top-20 overflow-y-auto'>
                 <div className="text-lg font-bold mb-6">On this page</div>
                 <div>
                     {h1List.map((h1, index) => {
@@ -209,7 +209,7 @@ export function HeaderListSidebar() {
                                 <svg className={"w-1.5 h-1.5 mr-2 transition-colors duration-75"} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={"#cbd5e1"}>
                                     <circle cx="50" cy="50" r="50"/>
                                 </svg>
-                                <a className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75`}
+                                <a className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75 text-left`}
                                    onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
                             </div>
                         );

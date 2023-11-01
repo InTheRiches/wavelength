@@ -46,12 +46,14 @@ export default function ContentScroll(sidebar = "sidebar") {
         };
 
         window.addEventListener('beforeunload', handleUnload);
+        window.addEventListener("scroll", handleUnload)
 
         // Get the ID of the section to scroll to from the URL fragment identifier
         scroll();
 
         return () => {
             window.removeEventListener('beforeunload', handleUnload);
+            window.removeEventListener("scroll", handleUnload);
         };
     }, [sidebar]);
 }
