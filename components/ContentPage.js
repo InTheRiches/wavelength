@@ -100,8 +100,8 @@ export default function ContentPage({ title, description, content }) {
             }
         }
     };
-
-    ContentScroll(sidebar);
+    //
+    // ContentScroll(sidebar);
 
     return (
         <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
