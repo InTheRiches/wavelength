@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "41aa1c978c62b7db",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a5cbb560b5aa0ff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aef0d0446c630077",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dieting/basics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a53ee582eab4de97",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a289620e4abf9d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9c6e6451001f0c92",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "96e73e567ac273e1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f97708737d475f48",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "198980babd308e5c",
+    "type": "split",
+    "children": [
+      {
+        "id": "acf915a3f8152e62",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1297cf4622201340",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "dieting/basics.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0b06ba29f9518fdb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "dieting/basics.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2e7b1caab62b1d41",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1374c2cde902d709",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "dieting/basics.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "aef0d0446c630077",
+  "lastOpenFiles": [
+    "dieting/bulking.md",
+    "dieting/basics.md",
+    "dieting/basics.md~",
+    "dieting/basics.json~",
+    "dieting/basics.json",
+    "getting-started/introduction.md",
+    "dieting"
+  ]
+}

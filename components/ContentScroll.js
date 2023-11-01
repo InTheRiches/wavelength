@@ -66,14 +66,29 @@ export function percentScrolled() {
     return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
 }
 
-export function scroll() {
-    const hash = window.location.hash.substr(1);
+const getElementByIdAsync = id => new Promise(resolve => {
+    const getElement = () => {
+        const element = document.getElementById(id);
+        if(element) {
+            resolve(element);
+        } else {
+            requestAnimationFrame(getElement);
+        }
+    };
+    getElement();
+});
+
+export async function scroll() {
+    let hash = window.location.hash.substring(1);
     if (!hash) {
+        window.scrollTo({
+            top: 0
+        });
         return;
     }
 
     // Find the section element and scroll to it
-    const section = document.getElementById(hash + "x");
+    const section = await getElementByIdAsync(hash.substring(0, hash.length - 1));
     if (section) {
         const nav = document.getElementById('navigation');
         const navHeight = nav.getBoundingClientRect().height;

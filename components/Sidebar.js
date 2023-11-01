@@ -188,7 +188,8 @@ export function HeaderListSidebar() {
         h1Elements.forEach((element) => {
             const text = element.textContent;
             const id = element.id;
-            h1List.push(text + ":" + id.substring(0, id.length - 1));
+            console.log(id);
+            h1List.push(text + ":" + id.substring(0, id.length));
         });
 
         setH1List(h1List);
@@ -210,7 +211,7 @@ export function HeaderListSidebar() {
                                     <circle cx="50" cy="50" r="50"/>
                                 </svg>
                                 <a className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75 text-left`}
-                                   onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
+                                   onClick={() => router.push(`#${h1.split(":")[1]}` + "x").then(() => scroll())}>{h1.split(":")[0]}</a>
                             </div>
                         );
                     })}

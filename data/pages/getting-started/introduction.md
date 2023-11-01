@@ -1,5 +1,3 @@
-Weight lifting, also known as resistance training, is the process of lifting, pushing, and or pulling weights and resistance devices, resulting in an increase in muscle mass and strength, along with improvements in overall physical fitness.
-
 # Getting Started
 
 Welcome to the world of weightlifting! Whether you're a beginner looking to enhance your physical fitness or an experienced lifter seeking to fine-tune your technique, this guide aims to provide you with a solid foundation and general information to help you on your weightlifting journey. In addition to understanding the technical aspects of lifting, it's essential to grasp the broader concepts that contribute to a successful and enjoyable workout experience.
@@ -18,6 +16,6 @@ Things will come to you eventually, and you'll be surprised at how quickly you'l
 
 # Realistic Goals and Expectations
 
-The internet is filled with "6 minute 6 pack" videos that promise amazing results with little commitment. Unfortunately that isn't how weightlifting works. Understanding that you won't look like Dwayne Johnson after your first few workouts is important. It takes time to build an aesthetic physique, and you should set realistic expectations of yourself. The average person cannot achieve the body of Alex Eubank or David Laid. The commitment it takes to develop that body, not even mentioning the genetics that are in play, makes it unrealistic to achieve that physique.
+The internet is filled with **"6 minute 6 pack"** videos that promise amazing results with little commitment. Unfortunately that isn't how weightlifting works. Understanding that you won't look like Dwayne Johnson after your first few workouts is important. It takes time to build an aesthetic physique, and you should set realistic expectations of yourself. The average person cannot achieve the body of Alex Eubank or David Laid. The commitment it takes to develop that body, not even mentioning the genetics that are in play, makes it unrealistic to achieve that physique.
 
 Establishing clear and achievable goals is vital for motivation and tracking your progress. Set both short-term and long-term objectives, such as increasing the amount of weight lifted, improving endurance, or achieving specific body composition goals. Regularly assess your progress, keep a workout log, and celebrate milestones along the way to maintain your motivation and drive.

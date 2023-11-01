@@ -1,9 +1,6 @@
 import React, {useEffect} from 'react'
-import {Lobster, Open_Sans, Poppins} from 'next/font/google';
 import Navigation from '@/components/Navigation'
-import Footer from "@/components/Footer";
 import useDarkMode from 'use-dark-mode';
-import {getCookieValue} from "@/lib/util";
 import {getCookie, hasCookie} from "cookies-next";
 import {useLoaded} from "@/components/LoadedHook";
 import {lobster} from "@/components/Fonts";
