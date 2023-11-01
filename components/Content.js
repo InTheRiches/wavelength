@@ -172,7 +172,7 @@ export default function Content({id, title, content, bulletPoints}) {
                     }
 
                 }}
-                   className={"absolute -ml-8 flex items-center opacity-0 border-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-100 bg-neutral-700 rounded-md"}>
+                   className={"absolute -ml-8 flex items-center opacity-0 border-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-100 bg-neutral-500 bg-opacity-30 dark:bg-neutral-700 rounded-md"}>
                     <div className={"w-6 h-6 flex items-center justify-center stroke-white"}>
                         <svg width="12" height="12" fill="none" aria-hidden="true">
                             <path d="M3.75 1v10M8.25 1v10M1 3.75h10M1 8.25h10" strokeWidth="1.5"
@@ -183,7 +183,7 @@ export default function Content({id, title, content, bulletPoints}) {
                 <a onClick={() => {
                     navigator.clipboard.writeText(window.location.href.split('#')[0] + "#" + id);
                 }}
-                   className={"absolute -ml-14 flex items-center opacity-0 border-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-100 bg-neutral-700 rounded-md"}>
+                   className={"absolute -ml-14 flex items-center opacity-0 border-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-100 bg-neutral-500 bg-opacity-30 dark:bg-neutral-700 rounded-md"}>
                     <div className={"w-6 h-6 p-1.25 flex items-center justify-center"}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path

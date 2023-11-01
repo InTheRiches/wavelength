@@ -84,9 +84,9 @@ function Sidebar({disable = true}) {
     }, [loaded]);
 
     return (
-        <div className="flex flex-col h-[80vh] max-w-1/5">
+        <div className="flex flex-col max-w-1/5">
             <div id="sidebar" style={{maxHeight: remainingHeight + "px"}}
-                 className={`sidebar-taper pb-8 fixed w-[20rem] overflow-y-auto z-10 px-4 mt-15 pr-4 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
+                 className={`sidebar-taper pb-8 h-[90vh] fixed w-[20rem] overflow-y-auto z-10 px-4 mt-15 pr-4 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
                 {/*<div className="w-full bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 backdrop-blur dark:bg-neutral-900/50 sticky top-0 z-10 mb-6">*/}
                 {/*    <button className="w-full lg:flex border-1 border-slate-200 hover:border-cyan-accent border-opacity-50 hover:border-opacity-75 items-center text-sm leading-6 text-neutral-700 dark:text-slate-300 hover:dark:text-slate-50 hover:text-neutral-900 rounded-md shadow-sm py-1.5 pl-2 pr-3 transition-all duration-100 bg-transparent">*/}
                 {/*        <a>Search...</a>*/}
@@ -154,7 +154,7 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
 
 export function Category({ category, index, collapsed, activeTopic, toggleCollapse }) {
     return (
-        <div className={`mb-4 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
+        <div className={`mb-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
             <div className="flex items-center mb-2 hover:cursor-pointer justify-between"
                  onClick={() => toggleCollapse(category)}>
                 <h2 className="font-bold text-lg lg:text-xl xl:text-1xl">{category.title}</h2>
@@ -199,7 +199,7 @@ export function HeaderListSidebar() {
 
     return loaded ? (
         <div className={"h-full max-w-1/5 w-full"}>
-            <div className='ml-4 sticky top-20 overflow-y-auto'>
+            <div className='ml-4 fixed top-20 overflow-y-auto'>
                 <div className="text-lg font-bold mb-6">On this page</div>
                 <div>
                     {h1List.map((h1, index) => {
