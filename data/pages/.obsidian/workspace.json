@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dieting/basics.md",
+                "file": "muscles/basics.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "dieting/basics.md",
+                "file": "muscles/basics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "dieting/basics.md",
+                "file": "muscles/basics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dieting/basics.md"
+                "file": "muscles/basics.md"
               }
             }
           }
@@ -148,8 +148,14 @@
   },
   "active": "aef0d0446c630077",
   "lastOpenFiles": [
-    "dieting/bulking.md",
+    "muscles/training/hypertrophy.md",
     "dieting/basics.md",
+    "muscles/basics.md",
+    "muscles/training",
+    "dieting/bulking.md",
+    "muscles/basics.md~",
+    "muscles/basics.json",
+    "muscles",
     "dieting/basics.md~",
     "dieting/basics.json~",
     "dieting/basics.json",

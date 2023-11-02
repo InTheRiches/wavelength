@@ -186,7 +186,7 @@ export default function Page({headers, title, description, jsx}) {
     )
 }
 
-function analyzeMarkdown(modifiedLine, innerJSX) {
+function analyzeMarkdown(modifiedLine) {
     let pieces = [];
     const loadLinkData = (link) => {
         let match = linkRegex.exec(link);
@@ -234,7 +234,6 @@ function analyzeMarkdown(modifiedLine, innerJSX) {
         let linkIndex = i;
 
         while (piece.content.match(linkRegex)) {
-            console.log("piece: " + piece.content)
             let linkData = loadLinkData(piece.content);
 
             pieces.splice(linkIndex, 1);
@@ -323,10 +322,14 @@ export async function getServerSideProps(context) {
             }
 
             if (line.startsWith("> ")) {
+                let title = "Note"
+                if (line.match(/<([^<>]+)>/gm)) {
+                    title = /<([^<>]+)>/gm.exec(line)[1];
+                }
                 jsx.push({
                     "type": "info",
                     "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
-                    "title": "Note",
+                    "title": title,
                     "content": line.replace("> ", "")
                 });
                 return;
@@ -342,7 +345,7 @@ export async function getServerSideProps(context) {
                 return;
             }
 
-            const {pieces, modifiedLine} = analyzeMarkdown(line, innerJSX);
+            const {pieces, modifiedLine} = analyzeMarkdown(line);
 
             innerJSX = [...innerJSX, ...pieces];
 

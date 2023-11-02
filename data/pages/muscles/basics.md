@@ -11,13 +11,15 @@ Your muscle fibers consist of "**strings**" (technically called filaments) of mu
 
 This process requires **energy** in the form of ATP, and it continues as long as the muscle is receiving the signal to contract. So, when you move a muscle, the tiny strings inside the muscle fibers are grabbing and pulling on each other to make the whole muscle get **shorter** and perform movement.
 
-#   Muscle Growth
+# Muscle Growth
 
-Your body is built to adapt, and your muscles are no exception. When challenged through an activity like weightlifting, the muscles grow and strengthen to combat the new challenge and demand. When you exercise, your muscle fibers will often **tear** and break down.
+Your body is built to **adapt**, and your muscles are no exception. When challenged through an activity like weightlifting, the muscles grow and strengthen to combat the new challenge and demand. 
 
-This might sound bad, but it's actually a good thing! When these tiny fibers are damaged, it triggers a response from your body to **repair** and rebuild them **stronger**than before. This process is called muscle [hypertrophy](/muscles/training/hypertrophy) (hy·per·tro·phy), and it's how muscles grow.
+Lets use an extreme scenario to help understand why: You find yourself in the woods facing off against a bear. It starts chasing you, and the only way to escape is to climb a rock wall. By the time you reach the top, your muscles are **utterly exhausted and drained**. If you were just slightly weaker, you might not have made it up. And your muscles know that too. When they repair themselves, they will grow back stronger, and their intent is clear – to better equip you for the next time you rely on them to overcome a similar challenge.
 
-To support muscle growth, you need to give your body the right fuel and rest. Eating a balanced dieting that includes plenty of protein is important because protein helps to repair and build new muscle fibers. Getting enough sleep and rest is also crucial because it allows your body to **recover** and **rebuild** the muscles that were damaged during exercise.
+When you exercise, your muscle fibers will often **tear** and break down. This might sound bad, but it's actually a good thing! When these tiny fibers are damaged, it triggers a response (as described above) from your body to **repair** and rebuild them **stronger** than before. This process is called muscle [hypertrophy](/muscles/training/hypertrophy) (hy·per·tro·phy), and it's **how** muscles grow.
+
+To support muscle growth, you need to give your body the right fuel and rest. Eating a balanced [diet](/dieting/basics) that includes plenty of **protein** is important as protein helps to repair and build new muscle fibers. Getting enough sleep and rest is also crucial because it allows your body to **recover** and **rebuild** the muscles that were damaged during exercise.
 
 # Muscle Heads
 
@@ -29,7 +31,7 @@ For example, let's go back to the biceps muscle. The long head of the biceps att
 
 By working together, the different heads of a muscle can produce complex movements that require multiple joints to move. For example, when you lift a heavy object towards your shoulder, you're using both the long and short heads of the biceps to stabilize your shoulder joint and flex your elbow joint.
 
-> <ul className="list-inside list-disc lg:grid w-full mt-1"><li>Allow muscles to attach to different bones and produce complex movements</li><li>Can work together or independently to produce different movements</li><li>Help to stabilize joints in different ways</li><li>Provide a wider range of functional capabilities than a single muscle</li><li>Allow for greater precision in movement and force production</li><li>Can help to distribute force more evenly across a joint, reducing the risk of injury</li><li>Allow for greater muscle mass and strength in certain areas of the body where multiple heads are present.</li></ul>
+>  <Multiple "heads" on a muscle can work together or independently to produce different movements and functions. Here are a few examples:> <ul class="list-inside list-disc lg:grid w-full mt-1"><li>Allow muscles to attach to different bones and produce complex movements</li><li>Can work together or independently to produce different movements</li><li>Help to stabilize joints in different ways</li><li>Provide a wider range of functional capabilities than a single muscle</li><li>Allow for greater precision in movement and force production</li><li>Can help to distribute force more evenly across a joint, reducing the risk of injury</li><li>Allow for greater muscle mass and strength in certain areas of the body where multiple heads are present.</li></ul>
 
 # Soreness
 
