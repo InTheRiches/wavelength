@@ -10,6 +10,7 @@ import path from 'path';
 import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
+import { EntireBodyMap } from '@/components/BodySVG';
 
 export default function Page({headers, title, description, jsx}) {
     const router = useRouter();
@@ -43,25 +44,34 @@ export default function Page({headers, title, description, jsx}) {
 
         setProcessedJSX(jsx.map((item, i) => {
             if (item.type === "info") {
-                return <InformationBlock
-                    title={item.title}
-                    content={item.content}
-                    key={i}></InformationBlock>
+
             }
             if (item.type === "warning") {
-                return <WarningBlock
-                    title={item.title}
-                    content={item.content}
-                    key={i}></WarningBlock>
+                
             }
-            return React.createElement(item.type,
-                {key: i, id: item.id ? item.id : "", className: item.class},
-                item.JSX ? item.JSX.map((innerItem, j) => React.createElement(innerItem.type, {
-                    key: j,
-                    onClick: innerItem.url ? () => handleLinkClick(innerItem.url) : () => {
-                    },
-                    className: innerItem.class
-                }, innerItem.content)) : item.content)
+            switch(item.type) {
+                case "info":
+                    return <InformationBlock
+                        title={item.title}
+                        content={item.content}
+                        key={i}></InformationBlock>
+                case "warning":
+                    return <WarningBlock
+                        title={item.title}
+                        content={item.content}
+                        key={i}></WarningBlock>
+                case "EntireBodySvg":
+                    return <EntireBodyMap></EntireBodyMap>
+                default:
+                    return React.createElement(item.type,
+                        {key: i, id: item.id ? item.id : "", className: item.class},
+                        item.JSX ? item.JSX.map((innerItem, j) => React.createElement(innerItem.type, {
+                            key: j,
+                            onClick: innerItem.url ? () => handleLinkClick(innerItem.url) : () => {
+                            },
+                            className: innerItem.class
+                        }, innerItem.content)) : item.content);
+            }
         }));
 
         topics.forEach((topic) => {
@@ -299,6 +309,15 @@ export async function getServerSideProps(context) {
                     "id": text.replace(/ /g, '-').toLowerCase(),
                     "class": "min-[424px]:text-3xl text-2xl font-bold text-left flex items-center dark:text-slate-50 text-slate-900 mt-12",
                     "content": text
+                });
+                return;
+            }
+
+            if (line.startsWith('>EntireBodySvg')) {
+                jsx.push({
+                    "type": "EntireBodySvg",
+                    "class": "",
+                    "content": ""
                 });
                 return;
             }

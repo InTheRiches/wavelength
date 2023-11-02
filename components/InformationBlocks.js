@@ -10,8 +10,8 @@ export default function InformationBlock({ title, content }) {
                 </svg>
                 <div className={"w-full min-[424px]:text-lg"}>
                     <h4 className="font-bold text-left">{title}</h4>
-                    <div className="mt-1 text-left">
-                        {content}
+                    <div className="mt-1 text-left" dangerouslySetInnerHTML={{__html: content}}>
+
                     </div>
                 </div>
             </div>
