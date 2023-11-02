@@ -10,7 +10,7 @@ import path from 'path';
 import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
  
-export default function Page({ title, description, jsx }) {
+export default function Page({ headers, title, description, jsx }) {
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(640);
   const [sidebar, setSidebar] = useState(null);
@@ -18,7 +18,7 @@ export default function Page({ title, description, jsx }) {
   const [location, setLocation] = useState("");
   const [keys, setKeys] = useState([]);
 
-  const activeTopic = router.pathname;
+  const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
   const handleClick = (link) => {
     router.push({
@@ -34,9 +34,9 @@ export default function Page({ title, description, jsx }) {
     setProcessedJSX(jsx.map((item, i) => {
       if (item.type === "info") {
         return <InformationBlock
-          title={item.title}
-          content={item.content}
-          key={i}></InformationBlock>
+            title={item.title}
+            content={item.content}
+            key={i}></InformationBlock>
       }
       if (item.type === "warning") {
         return <WarningBlock
@@ -92,7 +92,7 @@ export default function Page({ title, description, jsx }) {
     return () => {
         window.removeEventListener('resize', handleResize);
     };
-  }, [])
+  }, [jsx]);
 
   return (
     <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
@@ -145,7 +145,7 @@ export default function Page({ title, description, jsx }) {
               </div>
               <Footer></Footer>
           </div>
-          {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
+          {windowWidth >= 1024 ? <HeaderListSidebar headers={headers}></HeaderListSidebar> : <></>}
       </div> : <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl h-screen md:px-6 my-8 z-20"></div>}
     </div>
   )
@@ -160,6 +160,7 @@ export async function getServerSideProps(context) {
     const mdContents = await fs.promises.readFile(directory + '/' + context.query.topic + '.md', 'utf8');
     const lines = mdContents.split('\n');
     let jsx = []
+    let headers = [];
 
     lines.forEach((line, i) => {
       let innerJSX = [];
@@ -167,7 +168,8 @@ export async function getServerSideProps(context) {
       if (line.startsWith('# ')) {
         const level = line.match(/^#+/)[0].length;
         const text = line.replace(/^#+/, '').trim();
-        console.log("text: " + text);
+
+        if (level === 1) headers.push(text + ":" + text.replace(" ", "-").toLowerCase())
 
         jsx.push({
           "type": "h" + level,
@@ -178,25 +180,25 @@ export async function getServerSideProps(context) {
         return;
       }
 
-      // if (line.startsWith("> ")) {
-      //   jsx.push({
-      //     "type": "info",
-      //     "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
-      //     "title": "Note",
-      //     "content": line.replace("> ", "")
-      //   });
-      //   return;
-      // }
-      //
-      // if (line.startsWith(">! ")) {
-      //   jsx.push({
-      //     "type": "warning",
-      //     "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
-      //     "title": "Warning",
-      //     "content": line.replace("> ", "")
-      //   });
-      //   return;
-      // }
+      if (line.startsWith("> ")) {
+        jsx.push({
+          "type": "info",
+          "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
+          "title": "Note",
+          "content": line.replace("> ", "")
+        });
+        return;
+      }
+
+      if (line.startsWith(">! ")) {
+        jsx.push({
+          "type": "warning",
+          "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
+          "title": "Warning",
+          "content": line.replace("> ", "")
+        });
+        return;
+      }
 
       let modifiedLine = line;
 
@@ -224,7 +226,6 @@ export async function getServerSideProps(context) {
 
       const loadLinkData = (link) => {
         let match = linkRegex.exec(link);
-        console.log(match);
         const hyperlink = match[0]; // the entire hyperlink (e.g. [Google](/google/muscles))
         const text = match[1]; // the name of the link (e.g. Google)
         const url = match[2]; // the URL of the link (e.g. /google/muscles)
@@ -278,6 +279,7 @@ export async function getServerSideProps(context) {
 
     return {
       props: {
+        headers: headers,
         description: json.description,
         title: json.title,
         jsx: jsx,
@@ -288,7 +290,10 @@ export async function getServerSideProps(context) {
 
     return {
       props: {
-        jsx: '',
+        headers: [],
+        description: "",
+        title: "An error occured, we are working on it :)",
+        jsx: [],
       },
     };
   }

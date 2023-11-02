@@ -11,8 +11,7 @@ const getNextKey = () => {
 
 function Sidebar({disable = true}) {
     const [loaded, setLoaded] = useState(false);
-
-    const activeTopic = window.location.pathname;
+    const router = useRouter();
 
     const [collapsed, setCollapsed] = useState(() => {
         const initialState = {};
@@ -58,9 +57,6 @@ function Sidebar({disable = true}) {
 
         const handleScroll = () => {
             localStorage.setItem('sidebar-scroll', sidebar.scrollTop.toString());
-            console.log("setting scrol to " + sidebar.scrollTop.toString());
-
-            console.log(localStorage.getItem('sidebar-scroll'));
         };
 
         window.addEventListener('wheel', handleScroll);
@@ -80,7 +76,6 @@ function Sidebar({disable = true}) {
         const sidebar = document.getElementById("sidebar");
 
         sidebar.scrollTop = parseInt(storedScroll);
-        console.log("setting scroll to " + storedScroll);
     }, [loaded]);
 
     return (
@@ -95,7 +90,7 @@ function Sidebar({disable = true}) {
 
                 {loaded &&
                     topics.map((topic, index) => (
-                        <Category category={topic} key={index} index={index} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse}/>
+                        <Category category={topic} key={index} index={index} collapsed={collapsed} activeTopic={router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"))} toggleCollapse={toggleCollapse}/>
                     ))
                 }
             </div>
@@ -113,7 +108,7 @@ export function Topic({ topic, activeTopic }) {
                      : 'text-neutral-700 dark:text-slate-300 border-neutral-200 dark:border-neutral-700'
              } flex items-center transition-all duration-200 hover:cursor-pointer hover:text-cyan-accent hover:dark:text-cyan-accent border-l-1 py-1`}
              onClick={() => {
-                 router.push(topic.href);
+                 router.push(topic.href).then(() => {});
              }}>
             <a className={`text-lg ml-4`}>{topic.title}</a>
         </div>
@@ -174,36 +169,16 @@ export function Category({ category, index, collapsed, activeTopic, toggleCollap
 }
 
 
-export function HeaderListSidebar() {
+export function HeaderListSidebar({ headers }) {
     const router = useRouter();
-
-    const [loaded, setLoaded] = useState(false);
-
-    const [h1List, setH1List] = useState([]);
-
-    useEffect(() => {
-        const h1Elements = document.querySelectorAll('.font-bold.text-left.flex.items-center');
-        const h1List = [];
-
-        h1Elements.forEach((element) => {
-            const text = element.textContent;
-            const id = element.id;
-            console.log(id);
-            h1List.push(text + ":" + id.substring(0, id.length));
-        });
-
-        setH1List(h1List);
-
-        setLoaded(true);
-    }, []);
     // ${h1List.length === index + 1 ? "" : "border-b-1.5"}
 
-    return loaded ? (
+    return (
         <div className={"hidden xl:block"}>
             <div className='ml-4 h-full max-w-1/5 min-w-[18rem] w-full fixed top-20 overflow-y-auto'>
                 <div className="text-lg font-bold mb-6">On this page</div>
                 <div>
-                    {h1List.map((h1, index) => {
+                    {headers.map((h1, index) => {
                         return (
                             <div key={index + 150} className="sidebar-header text-lg pb-3 flex flex-row w-fit items-center">
                                 {/*<div className={"w-2 h-2 mr-2 bg-neutral-500 rounded-full aspect-square"}></div>*/}
@@ -218,8 +193,7 @@ export function HeaderListSidebar() {
                 </div>
             </div>
         </div>
-
-    ) : (<></>);
+    );
 }
 
 export default Sidebar;

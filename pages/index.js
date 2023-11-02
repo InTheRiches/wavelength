@@ -7,18 +7,10 @@ import {lobster} from "@/components/Fonts";
 
 export default function LandingPage() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
-    const pageLoaded = useLoaded();
 
     const [loaded, setLoaded] = React.useState(false);
 
     useEffect(() => {
-        if (isDarkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        setLoaded(true);
-
         if (!hasCookie("accessToken") || !hasCookie("id"))
             return;
 
@@ -48,7 +40,15 @@ export default function LandingPage() {
         };
 
         loadUserData();
+    }, []);
 
+    useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        setLoaded(true);
     }, [isDarkMode]);
 
     return (
@@ -106,12 +106,12 @@ export default function LandingPage() {
 
                     <div className="pb-12">
                         <div className="relative mx-auto lg:max-w-6xl lg:mx-auto">
-                            <img className="transform scale-110" src={isDarkMode && pageLoaded ? "/images/landingPageIllustrationDark.png" :"/images/landingPageIllustration.png"} alt="" />
+                            <img className="transform scale-110" src={isDarkMode && loaded ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png"} alt="" />
                         </div>
                     </div>
                 </section>
                 <section className="relative py-10 bg-gray-50 dark:bg-neutral-900 sm:pt-16 lg:pt-24">
-                    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                    <div className="px-6 mx-auto sm:px-8 lg:px-12 max-w-7xl">
                         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-3 gap-y-16 gap-x-12">
                             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                                 <div className={"flex flex-row justify-start items-center"}>
