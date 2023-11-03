@@ -55,7 +55,7 @@ export default function Signup() {
     return (
         <div className="flex min-h-screen flex-col justify-center px-6 pb-24 lg:px-8 bg-white dark:bg-neutral-900">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img className="mx-auto h-12 w-auto hover:cursor-pointer" src="logo.png" alt="wavelength" onClick={(e) => {
+                <img className="mx-auto h-28 w-auto hover:cursor-pointer" src="/images/logo.png" alt="wavelength" onClick={(e) => {
                     e.preventDefault();
                     router.push("/");
                 }}/>
@@ -131,7 +131,7 @@ export default function Signup() {
                                         <input onChange={handleShowPasswordChange} id="showPassword" name="showPassword" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-cyan-accent focus:ring-0 "/>
                                     </div>
                                     <div className="text-sm leading-6">
-                                        <label htmlFor="showPassword" className="font-medium text-slate-50">Show password</label>
+                                        <label htmlFor="showPassword" className="font-medium dark:text-slate-50">Show password</label>
                                     </div>
                                 </div>
                             </label>

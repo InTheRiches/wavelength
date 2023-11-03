@@ -18,36 +18,6 @@ export default function Testing() {
         }
         setLoaded(true);
 
-        if (!hasCookie("accessToken") || !hasCookie("id"))
-            return;
-
-        const loadUserData = async () => {
-            const token = getCookie("accessToken");
-            const id = getCookie("id");
-
-            if (token && id) {
-                const response = await fetch('/api/user/login', {
-                    method: 'POST',
-                    body: JSON.stringify({id: id, accessToken: token}),
-                }).then(res => {
-                    if (res.ok || res.status !== 403) {
-                        res.json().then(json => {
-                            console.log(json);
-                        });
-
-                        return;
-                    }
-
-                    // error, do whatever to signal wrong information
-                    console.log("error")
-                });
-            }
-            console.log("token: " + token);
-            console.log("id: " + id);
-        };
-
-        loadUserData();
-
     }, [isDarkMode]);
 
     return (
