@@ -16,15 +16,15 @@
         "title": "Training",
         "subtopics": [
           {
-            "id": 1,
+            "id": 0,
             "title": "Basics",
             "showInLocation": false,
             "subtopics":  [
-              { "id":  1, "title": "Reps / Sets", "href": "/muscles/training/basics/repsandsets" },
+              { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/basics/reps-and-sets" },
               { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
             ]
           },
-          { "id": 2, "title": "Strength", "href": "/muscles/training/strength"}
+          { "id": 1, "title": "Strength", "href": "/muscles/training/strength"}
         ]
       },
       {

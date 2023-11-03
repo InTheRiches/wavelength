@@ -11,6 +11,7 @@ import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
 import { EntireBodyMap } from '@/components/BodySVG';
+import useReactPath from "@/components/useRoutePath";
 
 export default function Page({headers, title, description, jsx}) {
     const router = useRouter();
@@ -20,6 +21,7 @@ export default function Page({headers, title, description, jsx}) {
     const [location, setLocation] = useState("");
     const [keys, setKeys] = useState([]);
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
+    const path = useReactPath();
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
@@ -42,13 +44,26 @@ export default function Page({headers, title, description, jsx}) {
         setSidebar(<Sidebar></Sidebar>)
         setWindowWidth(window.innerWidth);
 
-        setProcessedJSX(jsx.map((item, i) => {
-            if (item.type === "info") {
+        const analyzeItem = (item) => {
+            if (item.url) {
+                return React.createElement(item.type,
+                    {
+                        key: item.id,
+                        id: item.id ? item.id : "",
+                        className: item.class,
+                        onClick: () => handleLinkClick(item.url)
+                    }, item.content);
+            }
+            return React.createElement(item.type,
+                {
+                    key: item.id,
+                    id: item.id ? item.id : "",
+                    className: item.class
+                },
+                item.JSX ? item.JSX.map(analyzeItem) : item.content);
+        }
 
-            }
-            if (item.type === "warning") {
-                
-            }
+        setProcessedJSX(jsx.map((item, i) => {
             switch(item.type) {
                 case "info":
                     return <InformationBlock
@@ -60,37 +75,34 @@ export default function Page({headers, title, description, jsx}) {
                         title={item.title}
                         content={item.content}
                         key={i}></WarningBlock>
+                case "jsx":
+                    return <div key={i} dangerouslySetInnerHTML={{__html: item.content}}></div>
                 case "EntireBodySvg":
                     return <EntireBodyMap></EntireBodyMap>
                 default:
-                    return React.createElement(item.type,
-                        {key: i, id: item.id ? item.id : "", className: item.class},
-                        item.JSX ? item.JSX.map((innerItem, j) => React.createElement(innerItem.type, {
-                            key: j,
-                            onClick: innerItem.url ? () => handleLinkClick(innerItem.url) : () => {
-                            },
-                            className: innerItem.class
-                        }, innerItem.content)) : item.content);
+                    return analyzeItem(item);
             }
         }));
 
         topics.forEach((topic) => {
             topic.subtopics.forEach((subtopic) => {
-                if (subtopic.href === activeTopic) {
-                    setLocation(topic.title + " • " + subtopic.title);
-                }
+                if (subtopic.href === activeTopic)
+                    setLocation(topic.title);
 
                 if (subtopic.subtopics) {
                     subtopic.subtopics.forEach((subsubtopic) => {
-                        if (subsubtopic.href === activeTopic) {
-                            setLocation(topic.title + " • " + subtopic.title + " • " + subsubtopic.title);
-                        }
+                        if (subsubtopic.href === activeTopic)
+                            setLocation(topic.title + " • "
+                                + (subtopic.showInLocation === undefined ? subtopic.title : subtopic.showInLocation ? " • " + subtopic.title : ""));
 
                         if (subsubtopic.subtopics) {
                             subsubtopic.subtopics.forEach((subsubsubtopic) => {
-                                if (subsubsubtopic.href === activeTopic) {
-                                    setLocation(topic.title + " • " + (subtopic.showInLocation === undefined ? subtopic.title + " • " : subtopic.showInLocation ? subtopic.title + " • " : "") + (subsubtopic.showInLocation === undefined ? subsubtopic.title + " • " : subsubtopic.showInLocation ? subsubtopic.title + " • " : "") + subsubsubtopic.title);
-                                }
+                                if (subsubsubtopic.href === activeTopic)
+                                    setLocation(
+                                        topic.title + " • "
+                                        + (subtopic.showInLocation === undefined ? subtopic.title : subtopic.showInLocation ? " • " + subtopic.title : "")
+                                        + (subsubtopic.showInLocation === undefined ? " • " + subsubtopic.title : subsubtopic.showInLocation ? " • " + subsubtopic.title : "")
+                                    );
 
                                 keys.push(subsubsubtopic.href)
                             });
@@ -104,6 +116,7 @@ export default function Page({headers, title, description, jsx}) {
             });
         });
 
+        console.log("scrolling");
         scroll();
 
         const handleResize = () => {
@@ -117,7 +130,7 @@ export default function Page({headers, title, description, jsx}) {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [jsx]);
+    }, [path]);
 
     return (
         <div
@@ -130,8 +143,7 @@ export default function Page({headers, title, description, jsx}) {
             {sidebar ?
                 <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
                     {windowWidth >= 1024 ? sidebar : <></>}
-                    <div onScrollCapture={() => handleScroll()}
-                         className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[24rem]"}>
+                    <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[24rem]"}>
                         {/* Page Header */}
                         <div className="w-full max-w-5xl flex-col">
                             <div className="flex flex-col mb-12">
@@ -185,25 +197,27 @@ export default function Page({headers, title, description, jsx}) {
         </div>
     )
 }
+const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+const loadLinkData = (link) => {
+    let match = linkRegex.exec(link);
+    const hyperlink = match[0]; // the entire hyperlink (e.g. [Google](/google/muscles))
+    const text = match[1]; // the name of the link (e.g. Google)
+    const url = match[2]; // the URL of the link (e.g. /google/muscles)
+    const startIndex = match.index; // the starting index of the hyperlink in the original string
+    const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
+
+    return {
+        match,
+        url,
+        text,
+        startIndex,
+        endIndex
+    }
+}
 
 function analyzeMarkdown(modifiedLine) {
     let pieces = [];
-    const loadLinkData = (link) => {
-        let match = linkRegex.exec(link);
-        const hyperlink = match[0]; // the entire hyperlink (e.g. [Google](/google/muscles))
-        const text = match[1]; // the name of the link (e.g. Google)
-        const url = match[2]; // the URL of the link (e.g. /google/muscles)
-        const startIndex = match.index; // the starting index of the hyperlink in the original string
-        const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
-
-        return {
-            match,
-            url,
-            text,
-            startIndex,
-            endIndex
-        }
-    }
 
     while (modifiedLine.includes("**")) {
         const boldStart = modifiedLine.indexOf("**");
@@ -224,8 +238,6 @@ function analyzeMarkdown(modifiedLine) {
 
         modifiedLine = modifiedLine.substring(boldEnd + 2);
     }
-
-    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
 
     // first loop through existing pieces and search for links
     pieces.forEach((piece, i) => {
@@ -256,6 +268,8 @@ function analyzeMarkdown(modifiedLine) {
             // adjust index to account for the new link
             linkIndex += 2;
         }
+
+        pieces[linkIndex] = piece;
     });
 
     while (modifiedLine.match(linkRegex)) {
@@ -285,17 +299,33 @@ function analyzeMarkdown(modifiedLine) {
 
 export async function getServerSideProps(context) {
     const root = process.cwd();
-    const directory = path.join(root, '/data/pages', context.query.category);
+
+    const category = context.query.slug[0];
+    const topic = context.query.slug[1];
+    const subtopic = context.query.slug[2] ? context.query.slug[2] : "";
+    const subsubtopic = context.query.slug[3] ? context.query.slug[3] : "";
+
+    const directory = path.join(root, '/data/pages', category);
 
     try {
         // Use fs.promises.readFile to read the file asynchronously on the server
-        const mdContents = await fs.promises.readFile(directory + '/' + context.query.topic + '.md', 'utf8');
+        const mdContents = await fs.promises.readFile(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.md', 'utf8');
         const lines = mdContents.split('\n');
         let jsx = []
         let headers = [];
+        let currentBulletPoints = [];
 
         lines.forEach((line, i) => {
             let innerJSX = [];
+
+            if (!line.startsWith("- ") && currentBulletPoints.length > 0) {
+                jsx.push({
+                    "type": "ul",
+                    "class": "block markerColor text-lg list-inside mt-6 list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full ml-4 text-left",
+                    "JSX": currentBulletPoints
+                });
+                currentBulletPoints = [];
+            }
 
             if (line.startsWith('# ')) {
                 const level = line.match(/^#+/)[0].length;
@@ -345,6 +375,90 @@ export async function getServerSideProps(context) {
                 return;
             }
 
+            if (line.startsWith(">code ")) {
+                jsx.push({
+                    "type": "jsx",
+                    "class": "",
+                    "content": line.replace(">code ", "")
+                });
+                return;
+            }
+
+            // add support for bullet points
+            if (line.startsWith("- ")) {
+                // look for bolded words, if so, that means it is the title, so add it to the list of bullet points
+                let title = {};
+                if (line.includes("**")) {
+                    const boldStart = line.indexOf("**");
+                    const boldEnd = line.indexOf("**", boldStart + 2);
+                    const bold = line.substring(boldStart + 2, boldEnd);
+
+                    let inner = [];
+
+                    console.log(bold)
+
+                    if (bold.match(linkRegex)) {
+                        const linkData = loadLinkData(bold)
+                        inner.push({
+                            "type": "span",
+                            "class": "",
+                            "content": bold.substring(0, linkData.startIndex)
+                        })
+
+                        inner.push({
+                            "type": "a",
+                            "class": "text-cyan-accent dark:text-link-text hover:cursor-pointer",
+                            "url": linkData.url,
+                            "content": linkData.text
+                        })
+
+                        inner.push({
+                            "type": "span",
+                            "class": "",
+                            "content": bold.substring(linkData.endIndex, bold.length)
+                        })
+                    }
+
+                    title = {
+                        "type": "span",
+                        "class": "block font-bold text-xl dark:text-slate-50 mb-1 w-full",
+                        "content": inner !== [] ? "" : bold
+                    }
+
+                    if (inner !== []) {
+                        title["JSX"] = inner;
+                    }
+
+                    console.log(title)
+
+                    line = line.substring(boldEnd + 2);
+                }
+
+                if (JSON.stringify(title) !== '{}') {
+                    currentBulletPoints.push({
+                        "type": "li",
+                        "class": "mb-8 pl-2 h-min",
+                        "JSX": [
+                            title,
+                            {
+                                "type": "p",
+                                "class": "inline",
+                                "content": line.replace("- ", "")
+                            }
+                        ]
+                    })
+                    return;
+                }
+
+                // if the current line is a bullet point, add it to the list of bullet points
+                currentBulletPoints.push({
+                    "type": "li",
+                    "class": "",
+                    "content": line.replace("- ", "")
+                });
+                return;
+            }
+
             const {pieces, modifiedLine} = analyzeMarkdown(line);
 
             innerJSX = [...innerJSX, ...pieces];
@@ -362,7 +476,7 @@ export async function getServerSideProps(context) {
             });
         });
 
-        const jsonContents = fs.readFileSync(directory + '/' + context.query.topic + '.json', 'utf-8');
+        const jsonContents = fs.readFileSync(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.json', 'utf-8');
         // Parse the JSON content into a JavaScript object
         const json = JSON.parse(jsonContents);
 

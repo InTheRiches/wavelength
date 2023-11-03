@@ -31,7 +31,14 @@ For example, let's go back to the biceps muscle. The long head of the biceps att
 
 By working together, the different heads of a muscle can produce complex movements that require multiple joints to move. For example, when you lift a heavy object towards your shoulder, you're using both the long and short heads of the biceps to stabilize your shoulder joint and flex your elbow joint.
 
->  <Multiple "heads" on a muscle can work together or independently to produce different movements and functions. Here are a few examples:> <ul class="list-inside list-disc lg:grid w-full mt-1"><li>Allow muscles to attach to different bones and produce complex movements</li><li>Can work together or independently to produce different movements</li><li>Help to stabilize joints in different ways</li><li>Provide a wider range of functional capabilities than a single muscle</li><li>Allow for greater precision in movement and force production</li><li>Can help to distribute force more evenly across a joint, reducing the risk of injury</li><li>Allow for greater muscle mass and strength in certain areas of the body where multiple heads are present.</li></ul>
+Multiple "heads" on a muscle can work together or independently to produce different movements and functions. Here are a few examples: 
+- Allow muscles to attach to different bones and produce complex movements
+- Can work together or independently to produce different movements
+- Helps to stabilize joints from multiple angles, and better supports your bone structure
+- Provide a wider range of functional capabilities than a single muscle
+- Allow for greater precision in movement and force production
+- Can help to distribute force more evenly across a joint, reducing the risk of injury
+- Allow for greater muscle mass and strength in certain areas of the body where multiple heads are present.
 
 # Soreness
 

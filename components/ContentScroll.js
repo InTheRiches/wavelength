@@ -81,9 +81,9 @@ const getElementByIdAsync = id => new Promise(resolve => {
 export async function scroll() {
     let hash = window.location.hash.substring(1);
     if (!hash) {
-        window.scrollTo({
-            top: 0
-        });
+        // window.scrollTo({
+        //     top: 0
+        // });
         return;
     }
 

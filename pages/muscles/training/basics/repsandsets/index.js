@@ -38,7 +38,7 @@ export default function RepsAndSets({}) {
             </div>
             {/* Topics */}
             <Content
-                id={"reps-and-sets"}
+                id={"reps-and-sets.json"}
                 title="Reps And Sets"
                 content='**Rep:** A repetition, or "rep" for short, is one **complete** movement of an exercise. For example, if you perform one bicep curl, that would be considered one rep of the exercise. Reps are typically numbered and tracked, and are often performed in a range of repetitions depending on the desired outcome. For example, lower reps (typically 1-5 reps) are often used for building [/muscles/training/strength,strength], while higher reps (10-15 reps or more) are used for achieving [/muscles/training/hypertrophy,hypertrophy] (muscle growth).-.-**Set:** A set on the other hand is a group of **consecutive** reps performed **without rest**. For example, if you do 10 bicep curls in a row without stopping, that would be considered one set of bicep curls. The number of sets performed for each exercise will depend on your fitness goals and training program. For example, if your goal is [/muscles/training/strength,strength], you may perform fewer sets of heavier weights, while if your goal is [/muscles/training/hypertrophy,hypertrophy], you may perform more sets of lighter weights.' // TODO - Add links for those styles of training (add links elsewhere, like for the supplements and diets for the training styles)
             ></Content>
