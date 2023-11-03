@@ -29,6 +29,6 @@ export default function PecsFunction({}) {
     )
 
     return (
-        <ContentPage title={"Pectoralis Major (Pectorals/Pecs)"} description={<span>The pectoral muscles are large, fan shaped muscles that reside on either side of the upper chest. Both muscles have two heads, the clavicular, and the sternocostal.</span>} content={content}></ContentPage>
+        <ContentPage title={"Pectoralis Major"} description={<span>The pectoral muscles are large, fan shaped muscles that reside on either side of the upper chest. They have two heads: clavicular and sternocostal.</span>} content={content}></ContentPage>
     )
 }
