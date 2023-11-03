@@ -11,7 +11,6 @@ import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
 import { EntireBodyMap } from '@/components/BodySVG';
-import useReactPath from "@/components/useRoutePath";
 
 export default function Page({headers, title, description, jsx}) {
     const router = useRouter();
@@ -21,7 +20,6 @@ export default function Page({headers, title, description, jsx}) {
     const [location, setLocation] = useState("");
     const [keys, setKeys] = useState([]);
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
-    const path = useReactPath();
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
@@ -116,7 +114,6 @@ export default function Page({headers, title, description, jsx}) {
             });
         });
 
-        console.log("scrolling");
         scroll();
 
         const handleResize = () => {
@@ -130,7 +127,7 @@ export default function Page({headers, title, description, jsx}) {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [path]);
+    }, [jsx]);
 
     return (
         <div
@@ -232,7 +229,7 @@ function analyzeMarkdown(modifiedLine) {
 
         pieces.push({
             "type": "p",
-            "class": "inline font-bold",
+            "class": "inline font-bold text-slate-900 dark:text-slate-50",
             "content": bold
         });
 
@@ -245,10 +242,11 @@ function analyzeMarkdown(modifiedLine) {
 
         let linkIndex = i;
 
+        if (piece.content.match(linkRegex))
+            pieces.splice(linkIndex, 1);
+
         while (piece.content.match(linkRegex)) {
             let linkData = loadLinkData(piece.content);
-
-            pieces.splice(linkIndex, 1);
 
             pieces.splice(linkIndex, 0, {
                 "type": "p",
@@ -269,7 +267,7 @@ function analyzeMarkdown(modifiedLine) {
             linkIndex += 2;
         }
 
-        pieces[linkIndex] = piece;
+        if (linkIndex !== i ) pieces.splice(linkIndex, 0, piece);
     });
 
     while (modifiedLine.match(linkRegex)) {
@@ -422,14 +420,14 @@ export async function getServerSideProps(context) {
                     title = {
                         "type": "span",
                         "class": "block font-bold text-xl dark:text-slate-50 mb-1 w-full",
-                        "content": inner !== [] ? "" : bold
-                    }
-
-                    if (inner !== []) {
-                        title["JSX"] = inner;
+                        "content": inner.length > 0 ? "" : bold
                     }
 
                     console.log(title)
+
+                    if (inner.length > 0) {
+                        title["JSX"] = inner;
+                    }
 
                     line = line.substring(boldEnd + 2);
                 }

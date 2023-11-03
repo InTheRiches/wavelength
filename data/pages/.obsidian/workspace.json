@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/training/basics/concepts.md",
+                "file": "dieting/vitamins.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/training/basics/concepts.md",
+                "file": "dieting/vitamins.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/training/basics/concepts.md",
+                "file": "dieting/vitamins.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/training/basics/concepts.md"
+                "file": "dieting/vitamins.md"
               }
             }
           }
@@ -146,24 +146,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9c6e6451001f0c92",
+  "active": "df1bb35e0e81de38",
   "lastOpenFiles": [
+    "dieting/vitamins.json~",
+    "dieting/vitamins.json",
+    "dieting/cutting.md",
+    "dieting/vitamins.md",
+    "dieting/bulking.md",
+    "dieting/cutting.json",
+    "getting-started/introduction.md",
     "muscles/basics.md",
-    "muscles/training/basics/reps-and-sets.md",
+    "dieting/basics.md",
+    "dieting/bulking.json~",
+    "dieting/bulking.json",
+    "muscles/training/basics/concepts.md~",
     "muscles/training/basics/concepts.md",
+    "muscles/training/basics/reps-and-sets.md",
     "muscles/training/basics/concepts.json",
     "dieting/delete me.html",
     "muscles/training/basics/reps-and-sets.json",
     "muscles/training/basics/reps-and-sets",
     "muscles/training/basics",
-    "muscles/training/hypertrophy.md",
-    "dieting/basics.md",
-    "muscles/training",
-    "dieting/bulking.md",
-    "muscles/basics.md~",
-    "muscles/basics.json",
-    "muscles",
-    "dieting/basics.md~",
-    "getting-started/introduction.md"
+    "muscles/training/hypertrophy.md"
   ]
 }
