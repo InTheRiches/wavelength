@@ -140,7 +140,7 @@ export default function Page({headers, title, description, jsx}) {
             {sidebar ?
                 <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
                     {windowWidth >= 1024 ? sidebar : <></>}
-                    <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[24rem]"}>
+                    <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
                         {/* Page Header */}
                         <div className="w-full max-w-5xl flex-col">
                             <div className="flex flex-col mb-12">
@@ -319,22 +319,36 @@ export async function getServerSideProps(context) {
             if (!line.startsWith("- ") && currentBulletPoints.length > 0) {
                 jsx.push({
                     "type": "ul",
-                    "class": "block markerColor text-lg list-inside mt-6 list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full ml-4 text-left",
+                    "class": "block markerColor text-lg list-inside list-disc lg:gap-x-16 gap-y-8 lg:grid lg:grid-cols-2 h-min w-full ml-4 text-left",
                     "JSX": currentBulletPoints
                 });
                 currentBulletPoints = [];
             }
 
-            if (line.startsWith('# ')) {
+            if (line.match(/^#+\s/)) {
                 const level = line.match(/^#+/)[0].length;
                 const text = line.replace(/^#+/, '').trim();
 
                 if (level === 1) headers.push(text + ":" + text.replace(" ", "-").toLowerCase())
 
+                let c = "font-bold text-left flex items-center dark:text-slate-50 text-slate-900 ";
+
+                switch(level) {
+                    case 1:
+                        c += "min-[424px]:text-3xl text-2xl mt-12 pb-3"
+                        break;
+                    case 2:
+                        c += "text-xl"
+                        break;
+                    case 3:
+                        c += "text-lg"
+                        break;
+                }
+
                 jsx.push({
                     "type": "h" + level,
                     "id": text.replace(/ /g, '-').toLowerCase(),
-                    "class": "min-[424px]:text-3xl text-2xl font-bold text-left flex items-center dark:text-slate-50 text-slate-900 mt-12",
+                    "class": c,
                     "content": text
                 });
                 return;
@@ -393,8 +407,6 @@ export async function getServerSideProps(context) {
 
                     let inner = [];
 
-                    console.log(bold)
-
                     if (bold.match(linkRegex)) {
                         const linkData = loadLinkData(bold)
                         inner.push({
@@ -423,8 +435,6 @@ export async function getServerSideProps(context) {
                         "content": inner.length > 0 ? "" : bold
                     }
 
-                    console.log(title)
-
                     if (inner.length > 0) {
                         title["JSX"] = inner;
                     }
@@ -435,7 +445,7 @@ export async function getServerSideProps(context) {
                 if (JSON.stringify(title) !== '{}') {
                     currentBulletPoints.push({
                         "type": "li",
-                        "class": "mb-8 pl-2 h-min",
+                        "class": "pl-2 h-min",
                         "JSX": [
                             title,
                             {

@@ -175,7 +175,7 @@ export function HeaderListSidebar({ headers }) {
 
     return (
         <div className={"hidden xl:block"}>
-            <div className='ml-4 h-full max-w-1/5 min-w-[18rem] w-full fixed top-20 overflow-y-auto'>
+            <div className='ml-8 h-full max-w-1/5 min-w-[18rem] w-full fixed top-20 overflow-y-auto'>
                 <div className="text-lg font-bold mb-6">On this page</div>
                 <div>
                     {headers.map((h1, index) => {

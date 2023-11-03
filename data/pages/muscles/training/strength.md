@@ -1,0 +1,15 @@
+# Basics
+Strength training is a very popular style of training. It primarily focuses on muscle strength over muscle mass, whereas hypertrophy athletes (body builders) would prefer the muscle mass. There are multiple ways to achieve this, which include sets closer to your 1RM and giving large breaks in between sets. Those training for strength are typically powerlifters and athletes. Instead of recruiting mass amounts of muscle fibers, strength athletes aim to optimize neural adaptations and improve neuromuscular efficiency.
+
+The neuromuscular system consists of neurons which transmit signals from the brain. When the brain sends a signal to your muscles, not all muscle fibers contract at the same time or with the same force. The brain can control which muscle fibers to activate depending on the task you're performing.
+
+When you start training and getting stronger, your neuromuscular system adapts and becomes more efficient. This means that your brain gets better at sending the right messages to the right muscle fibers. It learns how to coordinate and activate more muscle fibers simultaneously, generating more force.
+
+So, when strength athletes train to strengthen their neuromuscular system, they're essentially improving the communication between their brain, nerves, and muscles. This allows them to recruit more muscle fibers, coordinate their movements better, and generate greater force, leading to significant increases in strength without drastically increasing their muscle mass.
+
+# Reps, Sets, and Rest
+% of 1RM	Reps / Sets	Rest Times
+>85%
+3-6 / 1-3	1-3m
+
+When training for strength, it is important to focus on high intensity, low volume workouts. Typically, 3-5 sets of 3-6 reps above 85% of your 1RM is recommended. This intensity range challenges the neuromuscular system to adapt and improve maximal strength. The emphasis is on quality over quantity, focusing on good form and full range of motion. Rest times are typically around 1-3 minutes to allow for sufficient recovery between sets and ensure the ability to lift heavy with proper form. You can obviously change this to fit your needs, look into Reps and Sets for more information. This type of training helps you build maximal strength by challenging your muscles and central nervous system to handle heavy loads.
