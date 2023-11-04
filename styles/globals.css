@@ -215,3 +215,68 @@ span:hover .tooltip {
 .sidebar-header:hover a {
   color: rgba(14, 165, 233, 1);
 }
+
+@media (min-width: 424px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+}
+
+.dark h2 {
+  color: #f8fafc;
+}
+
+h2 {
+  font-size: 1.125rem;
+  color: #0f172a;
+}
+
+.dark h1 {
+  color: #f8fafc;
+}
+
+h1 {
+  font-weight: bold;
+  color: #0f172a;
+  line-height: 4rem;
+  font-size: 2.25rem;
+  margin-top: 3rem;
+}
+
+.dark strong {
+  color: white;
+}
+
+strong {
+  color: black;
+}
+
+@media (min-width: 424px) {
+  p,li,a {
+    font-size: 1.20rem !important;
+  }
+}
+
+@media (min-width: 640px) {
+  p {
+    text-align: justify !important;
+  }
+}
+
+ul {
+  margin-left: 1.2rem;
+}
+
+li {
+  list-style-type: disc;
+  margin-bottom: 0.75rem;
+}
+
+a,p,li {
+  font-size: 1rem;
+  text-align: left;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}

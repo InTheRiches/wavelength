@@ -10,9 +10,12 @@ import path from 'path';
 import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
-import { EntireBodyMap } from '@/components/BodySVG';
+import Markdown from "react-markdown";
+import {MDXRemote} from "next-mdx-remote";
+import {serialize} from "next-mdx-remote/serialize";
+import {EntireBodyMap} from "@/components/BodySVG";
 
-export default function Page({ headers, title, description, jsx, pageContents }) {
+export default function Page({ headers, title, description, markdown }) {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(640);
     const [sidebar, setSidebar] = useState(null);
@@ -41,46 +44,6 @@ export default function Page({ headers, title, description, jsx, pageContents })
     useEffect(() => {
         setSidebar(<Sidebar></Sidebar>)
         setWindowWidth(window.innerWidth);
-
-        const analyzeItem = (item) => {
-            if (item.url) {
-                return React.createElement(item.type,
-                    {
-                        key: item.id,
-                        id: item.id ? item.id : "",
-                        className: item.class,
-                        onClick: () => handleLinkClick(item.url)
-                    }, item.content);
-            }
-            return React.createElement(item.type,
-                {
-                    key: item.id,
-                    id: item.id ? item.id : "",
-                    className: item.class
-                },
-                item.JSX ? item.JSX.map(analyzeItem) : item.content);
-        }
-
-        setProcessedJSX(jsx.map((item, i) => {
-            switch(item.type) {
-                case "info":
-                    return <InformationBlock
-                        title={item.title}
-                        content={item.content}
-                        key={i}></InformationBlock>
-                case "warning":
-                    return <WarningBlock
-                        title={item.title}
-                        content={item.content}
-                        key={i}></WarningBlock>
-                case "jsx":
-                    return <div key={i} dangerouslySetInnerHTML={{__html: item.content}}></div>
-                case "EntireBodySvg":
-                    return <EntireBodyMap></EntireBodyMap>
-                default:
-                    return analyzeItem(item);
-            }
-        }));
 
         topics.forEach((topic) => {
             topic.subtopics.forEach((subtopic) => {
@@ -127,7 +90,11 @@ export default function Page({ headers, title, description, jsx, pageContents })
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [jsx]);
+    }, []);
+
+    const components = {
+        EntireBodyMap: (props) => <EntireBodyMap></EntireBodyMap>,
+    }
 
     return (
         <div
@@ -153,9 +120,7 @@ export default function Page({ headers, title, description, jsx, pageContents })
                                 </div>
                             </div>
                             <div className={"text-slate-700 dark:text-slate-300"}>
-                                {
-                                    processedJSX
-                                }
+                                <MDXRemote components={components} {...markdown} />
                             </div>
                         </div>
                         <div className={"w-full flex justify-around mt-4"}>
@@ -188,148 +153,11 @@ export default function Page({ headers, title, description, jsx, pageContents })
                         </div>
                         <Footer></Footer>
                     </div>
-                    {windowWidth >= 1024 ? <HeaderListSidebar headers={headers}></HeaderListSidebar> : <></>}
+                    {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
                 </div> : <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl h-screen md:px-6 my-8 z-20"></div>}
         </div>
     )
 }
-const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-
-const loadLinkData = (link) => {
-    let matches = [...link.matchAll(linkRegex)];
-    let linkData = [];
-
-    for (const match of matches) {
-        const hyperlink = match[0]; // the entire hyperlink (e.g. [Google](/google/muscles))
-        const text = match[1]; // the name of the link (e.g. Google)
-        const url = match[2]; // the URL of the link (e.g. /google/muscles)
-        const startIndex = match.index; // the starting index of the hyperlink in the original string
-        const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
-
-        linkData.push({
-            match,
-            url,
-            text,
-            startIndex,
-            endIndex
-        });
-    }
-
-    return linkData;
-}
-function analyzeMarkdown(modifiedLine) {
-    let pieces = [];
-
-    function processBold() {
-        const boldStart = modifiedLine.indexOf("**");
-        const boldEnd = modifiedLine.indexOf("**", boldStart + 2);
-        const bold = modifiedLine.substring(boldStart + 2, boldEnd);
-
-        pieces.push({
-            "type": "p",
-            "class": "inline",
-            "content": modifiedLine.substring(0, boldStart)
-        });
-
-        pieces.push({
-            "type": "p",
-            "class": "inline font-bold text-slate-900 dark:text-slate-50",
-            "content": bold
-        });
-
-        modifiedLine = modifiedLine.substring(boldEnd + 2);
-    }
-
-    function processLinks() {
-        pieces.forEach((piece, i) => {
-            if (piece.type !== "p") return;
-
-            let linkIndex = i;
-
-            if (piece.content.match(linkRegex))
-                pieces.splice(linkIndex, 1);
-
-            while (piece.content.match(linkRegex)) {
-                let linkDataArray = loadLinkData(piece.content);
-
-                for (const linkData of linkDataArray) {
-                    pieces.splice(linkIndex, 0, {
-                        "type": "p",
-                        "class": "inline",
-                        "content": piece.content.substring(0, linkData.startIndex)
-                    });
-
-                    pieces.splice(linkIndex + 1, 0, {
-                        "type": "a",
-                        "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
-                        "url": linkData.url,
-                        "content": linkData.text
-                    });
-
-                    linkIndex += 2; // Increment linkIndex for the next link
-                }
-
-                piece.content = piece.content.substring(linkDataArray[linkDataArray.length - 1].endIndex); // Update content to the remaining part
-            }
-
-            if (linkIndex !== i) pieces.splice(linkIndex, 0, piece);
-        });
-
-        while (modifiedLine.match(linkRegex)) {
-            let linkDataArray = loadLinkData(modifiedLine);
-
-            pieces.push({
-                "type": "p",
-                "class": "inline",
-                "content": modifiedLine.substring(0, linkDataArray[0].startIndex)
-            });
-
-            pieces.push({
-                "type": "a",
-                "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
-                "url": linkDataArray[0].url,
-                "content": linkDataArray[0].text
-            });
-
-            modifiedLine = modifiedLine.substring(linkDataArray[0].endIndex);
-        }
-    }
-
-    function processCode() {
-        while (modifiedLine.includes("`")) {
-            const codeStart = modifiedLine.indexOf("`");
-            const codeEnd = modifiedLine.indexOf("`", codeStart + 1);
-            const code = modifiedLine.substring(codeStart + 1, codeEnd);
-
-            pieces.push({
-                "type": "p",
-                "class": "inline",
-                "content": modifiedLine.substring(0, codeStart)
-            });
-
-            pieces.push({
-                "type": "code",
-                "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
-                "content": code
-            });
-
-            modifiedLine = modifiedLine.substring(codeEnd + 1);
-        }
-    }
-
-    while (modifiedLine.includes("**")) {
-        processBold();
-    }
-
-    processLinks();
-    processCode();
-
-    return {
-        pieces,
-        modifiedLine
-    };
-}
-
 export async function getServerSideProps(context) {
     const root = process.cwd();
 
@@ -342,183 +170,9 @@ export async function getServerSideProps(context) {
 
     try {
         // Use fs.promises.readFile to read the file asynchronously on the server
-        const mdContents = await fs.promises.readFile(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.md', 'utf8');
-        const lines = mdContents.split('\n');
-        let jsx = []
-        let headers = [];
-        let currentBulletPoints = [];
+        const mdContents = await fs.promises.readFile(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.mdx', 'utf8');
 
-        lines.forEach((line, i) => {
-            let innerJSX = [];
-
-            if (!line.startsWith("- ") && currentBulletPoints.length > 0) {
-                jsx.push({
-                    "type": "ul",
-                    "class": "block markerColor text-lg list-inside list-disc lg:gap-x-16 gap-y-8 lg:grid lg:grid-cols-2 h-min w-full ml-4 text-left",
-                    "JSX": currentBulletPoints
-                });
-                currentBulletPoints = [];
-            }
-
-            if (line.match(/^#+\s/)) {
-                const level = line.match(/^#+/)[0].length;
-                const text = line.replace(/^#+/, '').trim();
-
-                if (level === 1) headers.push(text + ":" + text.replace(" ", "-").toLowerCase())
-
-                let c = "font-bold text-left flex items-center dark:text-slate-50 text-slate-900 ";
-
-                switch(level) {
-                    case 1:
-                        c += "min-[424px]:text-3xl text-2xl mt-12 pb-3"
-                        break;
-                    case 2:
-                        c += "text-xl"
-                        break;
-                    case 3:
-                        c += "text-lg"
-                        break;
-                }
-
-                jsx.push({
-                    "type": "h" + level,
-                    "id": text.replace(/ /g, '-').toLowerCase() + 'x',
-                    "class": c,
-                    "content": text
-                });
-                return;
-            }
-
-            if (line.startsWith('>EntireBodySvg')) {
-                jsx.push({
-                    "type": "EntireBodySvg",
-                    "class": "",
-                    "content": ""
-                });
-                return;
-            }
-
-            if (line.startsWith("> ")) {
-                let title = "Note"
-                if (line.match(/<([^<>]+)>/gm)) {
-                    title = /<([^<>]+)>/gm.exec(line)[1];
-                }
-                jsx.push({
-                    "type": "info",
-                    "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
-                    "title": title,
-                    "content": line.replace("> ", "")
-                });
-                return;
-            }
-
-            if (line.startsWith(">! ")) {
-                jsx.push({
-                    "type": "warning",
-                    "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
-                    "title": "Warning",
-                    "content": line.replace(">! ", "")
-                });
-                return;
-            }
-
-            if (line.startsWith(">code ")) {
-                jsx.push({
-                    "type": "jsx",
-                    "class": "",
-                    "content": line.replace(">code ", "")
-                });
-                return;
-            }
-
-            // add support for bullet points
-            if (line.startsWith("- ")) {
-                // look for bolded words, if so, that means it is the title, so add it to the list of bullet points
-                let title = {};
-                if (line.includes("**")) {
-                    const boldStart = line.indexOf("**");
-                    const boldEnd = line.indexOf("**", boldStart + 2);
-                    const bold = line.substring(boldStart + 2, boldEnd);
-
-                    let inner = [];
-
-                    if (bold.match(linkRegex)) {
-                        const linkData = loadLinkData(bold)
-
-                        inner.push({
-                            "type": "span",
-                            "class": "",
-                            "content": bold.substring(0, linkData[0].startIndex)
-                        })
-
-                        inner.push({
-                            "type": "a",
-                            "class": "text-cyan-accent dark:text-link-text hover:cursor-pointer",
-                            "url": linkData[0].url,
-                            "content": linkData[0].text
-                        })
-
-                        inner.push({
-                            "type": "span",
-                            "class": "",
-                            "content": bold.substring(linkData[0].endIndex, bold.length)
-                        })
-                    }
-
-                    title = {
-                        "type": "span",
-                        "class": "block font-bold text-xl dark:text-slate-50 mb-1 w-full",
-                        "content": inner.length > 0 ? "" : bold
-                    }
-
-                    if (inner.length > 0) {
-                        title["JSX"] = inner;
-                    }
-
-                    line = line.substring(boldEnd + 2);
-                }
-
-                if (JSON.stringify(title) !== '{}') {
-                    currentBulletPoints.push({
-                        "type": "li",
-                        "class": "pl-2 h-min",
-                        "JSX": [
-                            title,
-                            {
-                                "type": "p",
-                                "class": "inline",
-                                "content": line.replace("- ", "")
-                            }
-                        ]
-                    })
-                    return;
-                }
-
-                // if the current line is a bullet point, add it to the list of bullet points
-                currentBulletPoints.push({
-                    "type": "li",
-                    "class": "",
-                    "content": line.replace("- ", "")
-                });
-                return;
-            }
-
-            const {pieces, modifiedLine} = analyzeMarkdown(line);
-
-            innerJSX = [...innerJSX, ...pieces];
-
-            innerJSX.push({
-                "type": "p",
-                "class": "inline",
-                "content": modifiedLine
-            });
-
-            jsx.push({
-                "type": "div",
-                "class": "min-[424px]:text-lg text-md mb-6 text-left sm:text-justify",
-                "JSX": innerJSX
-            });
-        });
+        const mdxSource = await serialize(mdContents)
 
         const jsonContents = fs.readFileSync(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.json', 'utf-8');
         // Parse the JSON content into a JavaScript object
@@ -526,11 +180,12 @@ export async function getServerSideProps(context) {
 
         return {
             props: {
-                headers: headers,
+                headers: [],
                 description: json.description,
                 title: json.title,
-                jsx: jsx,
-                pageContents: mdContents,
+                markdown: mdxSource,
+                // jsx: jsx,
+                // pageContents: mdContents,
             },
         };
     } catch (error) {
@@ -543,6 +198,7 @@ export async function getServerSideProps(context) {
                 title: "An error occured, we are working on it :)",
                 jsx: [],
                 pageContents: "",
+                markdown:""
             },
         };
     }

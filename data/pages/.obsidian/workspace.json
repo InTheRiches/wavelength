@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.md",
+                "file": "muscles/basics.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.md",
+                "file": "muscles/basics.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.md",
+                "file": "muscles/basics.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.md"
+                "file": "muscles/basics.mdx"
               }
             }
           }
@@ -148,8 +148,12 @@
   },
   "active": "6c619c1632712cdc",
   "lastOpenFiles": [
+    "getting-started/introduction.md",
+    "muscles/basics.mdx~",
+    "muscles/basics.md",
+    "muscles/basics.mdx",
+    "muscles/training/basics/reps-and-sets.md",
     "dieting/delete me.html~",
-    "muscles/training/basics/concepts.md",
-    "muscles/training/basics/reps-and-sets.md"
+    "muscles/training/basics/concepts.md"
   ]
 }

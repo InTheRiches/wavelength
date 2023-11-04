@@ -169,16 +169,28 @@ export function Category({ category, index, collapsed, activeTopic, toggleCollap
 }
 
 
-export function HeaderListSidebar({ headers }) {
+export function HeaderListSidebar() {
     const router = useRouter();
     // ${h1List.length === index + 1 ? "" : "border-b-1.5"}
+    const [headers, setHeaders] = useState([]);
+
+    useEffect(() => {
+        const headers = document.querySelectorAll("h1");
+        const h1List = [];
+        headers.forEach((header) => {
+            // give the header an id
+            header.id = header.innerText.replace(/\s/g, "-").toLowerCase() + "x";
+            h1List.push(header.innerText + ":" + header.id.substring(0, header.id.length - 1));
+        });
+        setHeaders(h1List);
+    }, []);
 
     return (
         <div className={"hidden xl:block"}>
             <div className='ml-8 h-full max-w-1/5 min-w-[18rem] w-full fixed top-20 overflow-y-auto'>
                 <div className="text-lg font-bold mb-6">On this page</div>
                 <div>
-                    {headers.map((h1, index) => {
+                    {headers && headers.map((h1, index) => {
                         return (
                             <div key={index + 150} className="sidebar-header text-lg pb-3 flex flex-row w-fit items-center">
                                 {/*<div className={"w-2 h-2 mr-2 bg-neutral-500 rounded-full aspect-square"}></div>*/}
