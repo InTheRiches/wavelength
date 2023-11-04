@@ -8,10 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/MarkdownRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/OldMarkdownRenderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MarkdownRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MarkdownRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/appearance.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/appearance.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/community-plugins.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/plugins/cmenu-plugin/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/plugins/cmenu-plugin/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/plugins/cmenu-plugin/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/dieting/delete me.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/dieting/delete me.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +208,7 @@
       <workItem from="1697403029131" duration="7005000" />
       <workItem from="1697676072822" duration="8575000" />
       <workItem from="1698087592464" duration="38018000" />
-      <workItem from="1699065564032" duration="5099000" />
+      <workItem from="1699065564032" duration="10145000" />
     </task>
     <servers />
   </component>

@@ -1,8 +1,9 @@
 import React from 'react';
 import {scroll} from "@/components/ContentScroll";
-import {router} from "next/client";
+import {useRouter} from 'next/router'
 
 const MarkdownRenderer = ({ markdownText }) => {
+    const router = useRouter();
     // Define regular expressions to match Markdown syntax
     const boldRegex = /\*\*(.*?)\*\*/g;
     const italicRegex = /\*(.*?)\*/g;
@@ -12,15 +13,7 @@ const MarkdownRenderer = ({ markdownText }) => {
     const lineBreakRegex = /\n/g;
     const bulletPointGroupRegex = /---(.*?)---/gms;
 
-    const handleLinkClick = (link) => {
-        router.push({
-            pathname: link.split("#")[0],
-            hash: link.split("#")[1]
-        }).then(() => scroll());
-    };
-
     const renderMarkdown = (text) => {
-
         text = text.replace(headerRegex, (match, level, headerText) => {
             const headerLevel = level.length;
 
@@ -41,24 +34,13 @@ const MarkdownRenderer = ({ markdownText }) => {
             return `<h${headerLevel} class='${c}'>${headerText}</h${headerLevel}>`;
         });
 
-        if (text.match(bulletPointGroupRegex)) {
-
-        }
-
         // Replace Markdown syntax with corresponding HTML tags
         let htmlText = text
             .replace(lineBreakRegex, '<br />')
             .replace(boldRegex, '<p class="inline font-bold text-slate-900 dark:text-slate-50">$1</p>')
             .replace(italicRegex, '<em>$1</em>')
-            .replace(codeRegex, '<code class="border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1">$1</code>');
-
-        if (htmlText.match(linkRegex)) {
-            htmlText = htmlText.replace(linkRegex, React.createElement("a", {
-                className: "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
-                onClick: () => handleLinkClick($2)
-            }, $1));
-        }
-
+            .replace(codeRegex, '<code class="border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1">$1</code>')
+            .replace(linkRegex, '<a class="inline text-cyan-accent dark:text-link-text" href="$2">$1</a>');
         // Render the HTML
         return <div className={"text-left sm:text-justify min-[424px]:text-lg text-md"} dangerouslySetInnerHTML={{ __html: htmlText }} />;
     };

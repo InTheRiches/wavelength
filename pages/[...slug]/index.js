@@ -11,7 +11,6 @@ import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
 import { EntireBodyMap } from '@/components/BodySVG';
-import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 export default function Page({ headers, title, description, jsx, pageContents }) {
     const router = useRouter();
@@ -154,10 +153,9 @@ export default function Page({ headers, title, description, jsx, pageContents })
                                 </div>
                             </div>
                             <div className={"text-slate-700 dark:text-slate-300"}>
-                                <MarkdownRenderer markdownText={pageContents}></MarkdownRenderer>
-                                {/*{*/}
-                                {/*    processedJSX*/}
-                                {/*}*/}
+                                {
+                                    processedJSX
+                                }
                             </div>
                         </div>
                         <div className={"w-full flex justify-around mt-4"}>
@@ -276,6 +274,25 @@ function analyzeMarkdown(modifiedLine) {
 
             if (linkIndex !== i) pieces.splice(linkIndex, 0, piece);
         });
+
+        while (modifiedLine.match(linkRegex)) {
+            let linkDataArray = loadLinkData(modifiedLine);
+
+            pieces.push({
+                "type": "p",
+                "class": "inline",
+                "content": modifiedLine.substring(0, linkDataArray[0].startIndex)
+            });
+
+            pieces.push({
+                "type": "a",
+                "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
+                "url": linkDataArray[0].url,
+                "content": linkDataArray[0].text
+            });
+
+            modifiedLine = modifiedLine.substring(linkDataArray[0].endIndex);
+        }
     }
 
     function processCode() {
@@ -312,131 +329,6 @@ function analyzeMarkdown(modifiedLine) {
         modifiedLine
     };
 }
-// function analyzeMarkdown(modifiedLine) {
-//     let pieces = [];
-//
-//     while (modifiedLine.includes("**")) {
-//         const boldStart = modifiedLine.indexOf("**");
-//         const boldEnd = modifiedLine.indexOf("**", boldStart + 2);
-//         const bold = modifiedLine.substring(boldStart + 2, boldEnd);
-//
-//         pieces.push({
-//             "type": "p",
-//             "class": "inline",
-//             "content": modifiedLine.substring(0, boldStart)
-//         });
-//
-//         pieces.push({
-//             "type": "p",
-//             "class": "inline font-bold text-slate-900 dark:text-slate-50",
-//             "content": bold
-//         });
-//
-//         modifiedLine = modifiedLine.substring(boldEnd + 2);
-//     }
-//
-//     // first loop through existing pieces and search for links
-//     pieces.forEach((piece, i) => {
-//         if (piece.type !== "p") return;
-//
-//         let linkIndex = i;
-//
-//         if (piece.content.match(linkRegex))
-//             pieces.splice(linkIndex, 1);
-//
-//         while (piece.content.match(linkRegex)) {
-//             let linkDataArray = loadLinkData(piece.content);
-//
-//             for (const linkData of linkDataArray) {
-//                 console.log(linkData.url)
-//                 pieces.splice(linkIndex, 0, {
-//                     "type": "p",
-//                     "class": "inline",
-//                     "content": piece.content.substring(0, linkData.startIndex)
-//                 });
-//
-//                 pieces.splice(linkIndex + 1, 0, {
-//                     "type": "a",
-//                     "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
-//                     "url": linkData.url,
-//                     "content": linkData.text
-//                 });
-//
-//                 linkIndex += 2; // Increment linkIndex for the next link
-//             }
-//
-//             piece.content = piece.content.substring(linkDataArray[linkDataArray.length - 1].endIndex); // Update content to the remaining part
-//         }
-//
-//         if (linkIndex !== i ) pieces.splice(linkIndex, 0, piece);
-//
-//         while(piece.content.includes("`") && piece.type === "p") {
-//             const codeStart = piece.content.indexOf("`");
-//             const codeEnd = piece.content.indexOf("`", codeStart + 1);
-//             const code = piece.content.substring(codeStart + 1, codeEnd);
-//
-//             pieces.push({
-//                 "type": "p",
-//                 "class": "inline",
-//                 "content": piece.content.substring(0, codeStart)
-//             });
-//
-//             pieces.push({
-//                 "type": "code",
-//                 "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
-//                 "content": code
-//             });
-//
-//             piece.content = piece.content.substring(codeEnd + 1);
-//         }
-//     });
-//
-//     while (modifiedLine.match(linkRegex)) {
-//         let linkDataArray = loadLinkData(modifiedLine);
-//
-//         for (const linkData of linkDataArray) {
-//             pieces.push({
-//                 "type": "p",
-//                 "class": "inline",
-//                 "content": modifiedLine.substring(0, linkData.startIndex)
-//             });
-//
-//             pieces.push({
-//                 "type": "a",
-//                 "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
-//                 "url": linkData.url,
-//                 "content": linkData.text
-//             });
-//
-//             modifiedLine = modifiedLine.substring(linkData.endIndex);
-//         }
-//     }
-//
-//     while(modifiedLine.includes("`")) {
-//         const codeStart = modifiedLine.indexOf("`");
-//         const codeEnd = modifiedLine.indexOf("`", codeStart + 1);
-//         const code = modifiedLine.substring(codeStart + 1, codeEnd);
-//
-//         pieces.push({
-//             "type": "p",
-//             "class": "inline",
-//             "content": modifiedLine.substring(0, codeStart)
-//         });
-//
-//         pieces.push({
-//             "type": "code",
-//             "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
-//             "content": code
-//         });
-//
-//         modifiedLine = modifiedLine.substring(codeEnd + 1);
-//     }
-//
-//     return {
-//         pieces,
-//         modifiedLine
-//     };
-// }
 
 export async function getServerSideProps(context) {
     const root = process.cwd();

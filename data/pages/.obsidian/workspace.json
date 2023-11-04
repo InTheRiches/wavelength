@@ -1,19 +1,19 @@
 {
   "main": {
-    "id": "41aa1c978c62b7db",
+    "id": "b2356566459f473b",
     "type": "split",
     "children": [
       {
-        "id": "f9c885f211f27a28",
+        "id": "c120eb3a62be15a8",
         "type": "tabs",
         "children": [
           {
-            "id": "df1bb35e0e81de38",
+            "id": "6c619c1632712cdc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/training/basics/concepts.md",
+                "file": "muscles/training/basics/reps-and-sets.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "a53ee582eab4de97",
+    "id": "dfcae6affb28fa25",
     "type": "split",
     "children": [
       {
-        "id": "6a289620e4abf9d4",
+        "id": "9d99b55622bf164b",
         "type": "tabs",
         "children": [
           {
-            "id": "9c6e6451001f0c92",
+            "id": "6c319024e12d06d7",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "96e73e567ac273e1",
+            "id": "bd8c443250317afe",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +58,7 @@
             }
           },
           {
-            "id": "f97708737d475f48",
+            "id": "7bf83c8fe173bdc9",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,20 +72,20 @@
     "width": 300
   },
   "right": {
-    "id": "198980babd308e5c",
+    "id": "e79416ea275daac1",
     "type": "split",
     "children": [
       {
-        "id": "acf915a3f8152e62",
+        "id": "feb86d85a2ec1814",
         "type": "tabs",
         "children": [
           {
-            "id": "1297cf4622201340",
+            "id": "0f121bc759114140",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/training/basics/concepts.md",
+                "file": "muscles/training/basics/reps-and-sets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +97,19 @@
             }
           },
           {
-            "id": "0b06ba29f9518fdb",
+            "id": "559f1292e00db277",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/training/basics/concepts.md",
+                "file": "muscles/training/basics/reps-and-sets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "2e7b1caab62b1d41",
+            "id": "5992e8f2d63bb504",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +120,12 @@
             }
           },
           {
-            "id": "1374c2cde902d709",
+            "id": "7b7f680c896855b5",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/training/basics/concepts.md"
+                "file": "muscles/training/basics/reps-and-sets.md"
               }
             }
           }
@@ -146,30 +146,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "df1bb35e0e81de38",
+  "active": "6c619c1632712cdc",
   "lastOpenFiles": [
-    "muscles/training/basics/reps-and-sets.md",
-    "muscles/training/strength.md",
-    "muscles/training/strength.json",
-    "dieting/vitamins.md",
-    "cardio/basics.json~",
-    "cardio/basics.json",
-    "cardio/basics.md",
-    "basics.md",
-    "cardio",
-    "cardio-basics.md",
+    "dieting/delete me.html~",
     "muscles/training/basics/concepts.md",
-    "getting-started/introduction.md",
-    "dieting/basics.md",
-    "dieting/bulking.md",
-    "dieting/cutting.md",
-    "dieting/vitamins.json~",
-    "dieting/vitamins.json",
-    "dieting/cutting.json",
-    "muscles/basics.md",
-    "dieting/bulking.json~",
-    "dieting/bulking.json",
-    "muscles/training/basics/concepts.md~",
-    "muscles/training/hypertrophy.md"
+    "muscles/training/basics/reps-and-sets.md"
   ]
 }
