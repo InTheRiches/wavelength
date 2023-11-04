@@ -94,6 +94,8 @@ export default function Page({ headers, title, description, markdown }) {
 
     const components = {
         EntireBodyMap: (props) => <EntireBodyMap></EntireBodyMap>,
+        InformationBlock: (props) => <InformationBlock {...props}></InformationBlock>,
+        WarningBlock: (props) => <WarningBlock {...props}></WarningBlock>,
     }
 
     return (
@@ -180,12 +182,9 @@ export async function getServerSideProps(context) {
 
         return {
             props: {
-                headers: [],
                 description: json.description,
                 title: json.title,
                 markdown: mdxSource,
-                // jsx: jsx,
-                // pageContents: mdContents,
             },
         };
     } catch (error) {
@@ -193,11 +192,8 @@ export async function getServerSideProps(context) {
 
         return {
             props: {
-                headers: [],
                 description: "",
                 title: "An error occured, we are working on it :)",
-                jsx: [],
-                pageContents: "",
                 markdown:""
             },
         };
