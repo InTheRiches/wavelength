@@ -11,9 +11,9 @@ import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
 import { EntireBodyMap } from '@/components/BodySVG';
-import useReactPath from "@/components/useRoutePath";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 
-export default function Page({headers, title, description, jsx}) {
+export default function Page({ headers, title, description, jsx, pageContents }) {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(640);
     const [sidebar, setSidebar] = useState(null);
@@ -21,8 +21,6 @@ export default function Page({headers, title, description, jsx}) {
     const [location, setLocation] = useState("");
     const [keys, setKeys] = useState([]);
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
-
-    const path = useReactPath();
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
@@ -156,11 +154,11 @@ export default function Page({headers, title, description, jsx}) {
                                 </div>
                             </div>
                             <div className={"text-slate-700 dark:text-slate-300"}>
-                                {
-                                    processedJSX
-                                }
+                                <MarkdownRenderer markdownText={pageContents}></MarkdownRenderer>
+                                {/*{*/}
+                                {/*    processedJSX*/}
+                                {/*}*/}
                             </div>
-
                         </div>
                         <div className={"w-full flex justify-around mt-4"}>
                             <button onClick={() => {
@@ -200,28 +198,31 @@ export default function Page({headers, title, description, jsx}) {
 const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
 
 const loadLinkData = (link) => {
-    let match = linkRegex.exec(link);
-    const hyperlink = match[0]; // the entire hyperlink (e.g. [Google](/google/muscles))
-    const text = match[1]; // the name of the link (e.g. Google)
-    const url = match[2]; // the URL of the link (e.g. /google/muscles)
-    const startIndex = match.index; // the starting index of the hyperlink in the original string
-    const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
+    let matches = [...link.matchAll(linkRegex)];
+    let linkData = [];
 
-    return {
-        match,
-        url,
-        text,
-        startIndex,
-        endIndex
+    for (const match of matches) {
+        const hyperlink = match[0]; // the entire hyperlink (e.g. [Google](/google/muscles))
+        const text = match[1]; // the name of the link (e.g. Google)
+        const url = match[2]; // the URL of the link (e.g. /google/muscles)
+        const startIndex = match.index; // the starting index of the hyperlink in the original string
+        const endIndex = startIndex + hyperlink.length; // the ending index of the hyperlink in the original string
+
+        linkData.push({
+            match,
+            url,
+            text,
+            startIndex,
+            endIndex
+        });
     }
-}
 
+    return linkData;
+}
 function analyzeMarkdown(modifiedLine) {
     let pieces = [];
 
-    console.log(modifiedLine)
-
-    while (modifiedLine.includes("**")) {
+    function processBold() {
         const boldStart = modifiedLine.indexOf("**");
         const boldEnd = modifiedLine.indexOf("**", boldStart + 2);
         const bold = modifiedLine.substring(boldStart + 2, boldEnd);
@@ -241,52 +242,52 @@ function analyzeMarkdown(modifiedLine) {
         modifiedLine = modifiedLine.substring(boldEnd + 2);
     }
 
-    // first loop through existing pieces and search for links
-    pieces.forEach((piece, i) => {
-        if (piece.type !== "p") return;
+    function processLinks() {
+        pieces.forEach((piece, i) => {
+            if (piece.type !== "p") return;
 
-        console.dir(piece)
+            let linkIndex = i;
 
-        let linkIndex = i;
+            if (piece.content.match(linkRegex))
+                pieces.splice(linkIndex, 1);
 
-        if (piece.content.match(linkRegex))
-            pieces.splice(linkIndex, 1);
+            while (piece.content.match(linkRegex)) {
+                let linkDataArray = loadLinkData(piece.content);
 
-        while (piece.content.match(linkRegex)) {
-            let linkData = loadLinkData(piece.content);
+                for (const linkData of linkDataArray) {
+                    pieces.splice(linkIndex, 0, {
+                        "type": "p",
+                        "class": "inline",
+                        "content": piece.content.substring(0, linkData.startIndex)
+                    });
 
-            pieces.splice(linkIndex, 0, {
-                "type": "p",
-                "class": "inline",
-                "content": piece.content.substring(0, linkData.startIndex)
-            });
+                    pieces.splice(linkIndex + 1, 0, {
+                        "type": "a",
+                        "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
+                        "url": linkData.url,
+                        "content": linkData.text
+                    });
 
-            pieces.splice(linkIndex + 1, 0, {
-                "type": "a",
-                "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
-                "url": linkData.url,
-                "content": linkData.text
-            });
+                    linkIndex += 2; // Increment linkIndex for the next link
+                }
 
-            piece.content = piece.content.substring(linkData.endIndex);
+                piece.content = piece.content.substring(linkDataArray[linkDataArray.length - 1].endIndex); // Update content to the remaining part
+            }
 
-            // adjust index to account for the new link
-            linkIndex += 2;
-        }
+            if (linkIndex !== i) pieces.splice(linkIndex, 0, piece);
+        });
+    }
 
-        if (linkIndex !== i ) pieces.splice(linkIndex, 0, piece);
-
-        while(piece.content.includes("`") && piece.type === "p") {
-            const codeStart = piece.content.indexOf("`");
-            const codeEnd = piece.content.indexOf("`", codeStart + 1);
-            const code = piece.content.substring(codeStart + 1, codeEnd);
-
-            console.log(code)
+    function processCode() {
+        while (modifiedLine.includes("`")) {
+            const codeStart = modifiedLine.indexOf("`");
+            const codeEnd = modifiedLine.indexOf("`", codeStart + 1);
+            const code = modifiedLine.substring(codeStart + 1, codeEnd);
 
             pieces.push({
                 "type": "p",
                 "class": "inline",
-                "content": piece.content.substring(0, codeStart)
+                "content": modifiedLine.substring(0, codeStart)
             });
 
             pieces.push({
@@ -295,54 +296,147 @@ function analyzeMarkdown(modifiedLine) {
                 "content": code
             });
 
-            piece.content = piece.content.substring(codeEnd + 1);
+            modifiedLine = modifiedLine.substring(codeEnd + 1);
         }
-    });
-
-    while (modifiedLine.match(linkRegex)) {
-        let linkData = loadLinkData(modifiedLine);
-
-        pieces.push({
-            "type": "p",
-            "class": "inline",
-            "content": modifiedLine.substring(0, linkData.startIndex)
-        });
-
-        pieces.push({
-            "type": "a",
-            "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
-            "url": linkData.url,
-            "content": linkData.text
-        });
-
-        modifiedLine = modifiedLine.substring(linkData.endIndex);
     }
 
-    while(modifiedLine.includes("`")) {
-        const codeStart = modifiedLine.indexOf("`");
-        const codeEnd = modifiedLine.indexOf("`", codeStart + 1);
-        const code = modifiedLine.substring(codeStart + 1, codeEnd);
-
-        pieces.push({
-            "type": "p",
-            "class": "inline",
-            "content": modifiedLine.substring(0, codeStart)
-        });
-
-        pieces.push({
-            "type": "code",
-            "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
-            "content": code
-        });
-
-        modifiedLine = modifiedLine.substring(codeEnd + 1);
+    while (modifiedLine.includes("**")) {
+        processBold();
     }
+
+    processLinks();
+    processCode();
 
     return {
         pieces,
         modifiedLine
     };
 }
+// function analyzeMarkdown(modifiedLine) {
+//     let pieces = [];
+//
+//     while (modifiedLine.includes("**")) {
+//         const boldStart = modifiedLine.indexOf("**");
+//         const boldEnd = modifiedLine.indexOf("**", boldStart + 2);
+//         const bold = modifiedLine.substring(boldStart + 2, boldEnd);
+//
+//         pieces.push({
+//             "type": "p",
+//             "class": "inline",
+//             "content": modifiedLine.substring(0, boldStart)
+//         });
+//
+//         pieces.push({
+//             "type": "p",
+//             "class": "inline font-bold text-slate-900 dark:text-slate-50",
+//             "content": bold
+//         });
+//
+//         modifiedLine = modifiedLine.substring(boldEnd + 2);
+//     }
+//
+//     // first loop through existing pieces and search for links
+//     pieces.forEach((piece, i) => {
+//         if (piece.type !== "p") return;
+//
+//         let linkIndex = i;
+//
+//         if (piece.content.match(linkRegex))
+//             pieces.splice(linkIndex, 1);
+//
+//         while (piece.content.match(linkRegex)) {
+//             let linkDataArray = loadLinkData(piece.content);
+//
+//             for (const linkData of linkDataArray) {
+//                 console.log(linkData.url)
+//                 pieces.splice(linkIndex, 0, {
+//                     "type": "p",
+//                     "class": "inline",
+//                     "content": piece.content.substring(0, linkData.startIndex)
+//                 });
+//
+//                 pieces.splice(linkIndex + 1, 0, {
+//                     "type": "a",
+//                     "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
+//                     "url": linkData.url,
+//                     "content": linkData.text
+//                 });
+//
+//                 linkIndex += 2; // Increment linkIndex for the next link
+//             }
+//
+//             piece.content = piece.content.substring(linkDataArray[linkDataArray.length - 1].endIndex); // Update content to the remaining part
+//         }
+//
+//         if (linkIndex !== i ) pieces.splice(linkIndex, 0, piece);
+//
+//         while(piece.content.includes("`") && piece.type === "p") {
+//             const codeStart = piece.content.indexOf("`");
+//             const codeEnd = piece.content.indexOf("`", codeStart + 1);
+//             const code = piece.content.substring(codeStart + 1, codeEnd);
+//
+//             pieces.push({
+//                 "type": "p",
+//                 "class": "inline",
+//                 "content": piece.content.substring(0, codeStart)
+//             });
+//
+//             pieces.push({
+//                 "type": "code",
+//                 "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
+//                 "content": code
+//             });
+//
+//             piece.content = piece.content.substring(codeEnd + 1);
+//         }
+//     });
+//
+//     while (modifiedLine.match(linkRegex)) {
+//         let linkDataArray = loadLinkData(modifiedLine);
+//
+//         for (const linkData of linkDataArray) {
+//             pieces.push({
+//                 "type": "p",
+//                 "class": "inline",
+//                 "content": modifiedLine.substring(0, linkData.startIndex)
+//             });
+//
+//             pieces.push({
+//                 "type": "a",
+//                 "class": "inline text-cyan-accent dark:text-link-text hover:cursor-pointer",
+//                 "url": linkData.url,
+//                 "content": linkData.text
+//             });
+//
+//             modifiedLine = modifiedLine.substring(linkData.endIndex);
+//         }
+//     }
+//
+//     while(modifiedLine.includes("`")) {
+//         const codeStart = modifiedLine.indexOf("`");
+//         const codeEnd = modifiedLine.indexOf("`", codeStart + 1);
+//         const code = modifiedLine.substring(codeStart + 1, codeEnd);
+//
+//         pieces.push({
+//             "type": "p",
+//             "class": "inline",
+//             "content": modifiedLine.substring(0, codeStart)
+//         });
+//
+//         pieces.push({
+//             "type": "code",
+//             "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
+//             "content": code
+//         });
+//
+//         modifiedLine = modifiedLine.substring(codeEnd + 1);
+//     }
+//
+//     return {
+//         pieces,
+//         modifiedLine
+//     };
+// }
 
 export async function getServerSideProps(context) {
     const root = process.cwd();
@@ -458,23 +552,24 @@ export async function getServerSideProps(context) {
 
                     if (bold.match(linkRegex)) {
                         const linkData = loadLinkData(bold)
+
                         inner.push({
                             "type": "span",
                             "class": "",
-                            "content": bold.substring(0, linkData.startIndex)
+                            "content": bold.substring(0, linkData[0].startIndex)
                         })
 
                         inner.push({
                             "type": "a",
                             "class": "text-cyan-accent dark:text-link-text hover:cursor-pointer",
-                            "url": linkData.url,
-                            "content": linkData.text
+                            "url": linkData[0].url,
+                            "content": linkData[0].text
                         })
 
                         inner.push({
                             "type": "span",
                             "class": "",
-                            "content": bold.substring(linkData.endIndex, bold.length)
+                            "content": bold.substring(linkData[0].endIndex, bold.length)
                         })
                     }
 
@@ -543,6 +638,7 @@ export async function getServerSideProps(context) {
                 description: json.description,
                 title: json.title,
                 jsx: jsx,
+                pageContents: mdContents,
             },
         };
     } catch (error) {
@@ -554,6 +650,7 @@ export async function getServerSideProps(context) {
                 description: "",
                 title: "An error occured, we are working on it :)",
                 jsx: [],
+                pageContents: "",
             },
         };
     }

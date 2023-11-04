@@ -8,7 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/MarkdownRenderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -50,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "backend-implementation",
     "javascript.nodejs.core.library.configured.version": "20.0.0",
     "javascript.nodejs.core.library.typings.version": "20.0.0",
     "last_opened_file_path": "D:/Unity/Projects/coach-phrog/pages/dieting",
@@ -194,6 +197,7 @@
       <workItem from="1697403029131" duration="7005000" />
       <workItem from="1697676072822" duration="8575000" />
       <workItem from="1698087592464" duration="38018000" />
+      <workItem from="1699065564032" duration="5099000" />
     </task>
     <servers />
   </component>
