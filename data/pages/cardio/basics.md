@@ -1,6 +1,3 @@
-# Basics
-Cardio, short for cardiovascular exercise, refers to any exercise that increases your heart rate, breathing rate, and strengthens your heart and lungs. ​​Cardio exercises are an important part of a healthy lifestyle and can provide numerous health benefits, including improved cardiovascular health, weight loss, improved mood, and reduced risk of chronic diseases.
-
 # What is Cardio?
 Cardio, short for **cardiovascular exercise**, refers to any exercise that increases your **heart rate**, **breathing rate**, and **strengthens** your heart and lungs. Cardio exercises are an important part of a healthy lifestyle and can provide numerous health benefits, including improved cardiovascular health, weight loss, improved mood, and reduced risk of chronic diseases.
 

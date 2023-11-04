@@ -11,6 +11,7 @@ import topics from "@/public/content.json";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
 import { EntireBodyMap } from '@/components/BodySVG';
+import useReactPath from "@/components/useRoutePath";
 
 export default function Page({headers, title, description, jsx}) {
     const router = useRouter();
@@ -20,6 +21,8 @@ export default function Page({headers, title, description, jsx}) {
     const [location, setLocation] = useState("");
     const [keys, setKeys] = useState([]);
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
+
+    const path = useReactPath();
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
@@ -216,6 +219,8 @@ const loadLinkData = (link) => {
 function analyzeMarkdown(modifiedLine) {
     let pieces = [];
 
+    console.log(modifiedLine)
+
     while (modifiedLine.includes("**")) {
         const boldStart = modifiedLine.indexOf("**");
         const boldEnd = modifiedLine.indexOf("**", boldStart + 2);
@@ -239,6 +244,8 @@ function analyzeMarkdown(modifiedLine) {
     // first loop through existing pieces and search for links
     pieces.forEach((piece, i) => {
         if (piece.type !== "p") return;
+
+        console.dir(piece)
 
         let linkIndex = i;
 
@@ -268,6 +275,28 @@ function analyzeMarkdown(modifiedLine) {
         }
 
         if (linkIndex !== i ) pieces.splice(linkIndex, 0, piece);
+
+        while(piece.content.includes("`") && piece.type === "p") {
+            const codeStart = piece.content.indexOf("`");
+            const codeEnd = piece.content.indexOf("`", codeStart + 1);
+            const code = piece.content.substring(codeStart + 1, codeEnd);
+
+            console.log(code)
+
+            pieces.push({
+                "type": "p",
+                "class": "inline",
+                "content": piece.content.substring(0, codeStart)
+            });
+
+            pieces.push({
+                "type": "code",
+                "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
+                "content": code
+            });
+
+            piece.content = piece.content.substring(codeEnd + 1);
+        }
     });
 
     while (modifiedLine.match(linkRegex)) {
@@ -287,6 +316,26 @@ function analyzeMarkdown(modifiedLine) {
         });
 
         modifiedLine = modifiedLine.substring(linkData.endIndex);
+    }
+
+    while(modifiedLine.includes("`")) {
+        const codeStart = modifiedLine.indexOf("`");
+        const codeEnd = modifiedLine.indexOf("`", codeStart + 1);
+        const code = modifiedLine.substring(codeStart + 1, codeEnd);
+
+        pieces.push({
+            "type": "p",
+            "class": "inline",
+            "content": modifiedLine.substring(0, codeStart)
+        });
+
+        pieces.push({
+            "type": "code",
+            "class": "border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1",
+            "content": code
+        });
+
+        modifiedLine = modifiedLine.substring(codeEnd + 1);
     }
 
     return {
@@ -347,7 +396,7 @@ export async function getServerSideProps(context) {
 
                 jsx.push({
                     "type": "h" + level,
-                    "id": text.replace(/ /g, '-').toLowerCase(),
+                    "id": text.replace(/ /g, '-').toLowerCase() + 'x',
                     "class": c,
                     "content": text
                 });

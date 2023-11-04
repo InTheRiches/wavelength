@@ -88,7 +88,7 @@ export async function scroll() {
     }
 
     // Find the section element and scroll to it
-    const section = await getElementByIdAsync(hash.substring(0, hash.length - 1));
+    const section = await getElementByIdAsync(hash.substring(0, hash.length) + "x");
     if (section) {
         const nav = document.getElementById('navigation');
         const navHeight = nav.getBoundingClientRect().height;
