@@ -11,7 +11,6 @@ import MobileSidebar, {MobileHeaderListSidebar} from "@/components/MobileSidebar
 
 export default function ContentPage({ title, description, content }) {
     const [windowWidth, setWindowWidth] = useState(640);
-    const [sidebar, setSidebar] = useState(null);
 
     const router = useRouter();
     const activeTopic = router.pathname;
@@ -63,10 +62,6 @@ export default function ContentPage({ title, description, content }) {
 
         setWindowWidth(window.innerWidth);
 
-        setSidebar(<Sidebar></Sidebar>)
-
-        console.log("setting Sidebar")
-
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
@@ -113,7 +108,7 @@ export default function ContentPage({ title, description, content }) {
             <Navigation progressBar={true}></Navigation>
 
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
-                {windowWidth >= 1024 && sidebar ? sidebar : <></>}
+                {windowWidth >= 1024 ? <Sidebar></Sidebar> : <></>}
                 <div onScrollCapture={() => handleScroll()} className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[24rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
@@ -154,6 +149,7 @@ export default function ContentPage({ title, description, content }) {
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
             </div>
+            <div id="ezoic-pub-ad-placeholder-104"></div>
         </div>
     )
 }
