@@ -65,6 +65,8 @@ export default function ContentPage({ title, description, content }) {
 
         setSidebar(<Sidebar></Sidebar>)
 
+        console.log("setting Sidebar")
+
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
@@ -110,8 +112,8 @@ export default function ContentPage({ title, description, content }) {
             {/*</div>*/}
             <Navigation progressBar={true}></Navigation>
 
-            {sidebar ? <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
-                {windowWidth >= 1024 ? sidebar : <></>}
+            <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
+                {windowWidth >= 1024 && sidebar ? sidebar : <></>}
                 <div onScrollCapture={() => handleScroll()} className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[24rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
@@ -151,7 +153,7 @@ export default function ContentPage({ title, description, content }) {
                     <Footer></Footer>
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
-            </div> : <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl h-screen md:px-6 my-8 z-20"></div>}
+            </div>
         </div>
     )
 }
