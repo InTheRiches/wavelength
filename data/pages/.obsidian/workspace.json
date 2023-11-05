@@ -148,12 +148,20 @@
   },
   "active": "6c619c1632712cdc",
   "lastOpenFiles": [
-    "getting-started/introduction.md",
-    "muscles/basics.mdx~",
-    "muscles/basics.md",
+    "dieting/basics.mdx",
+    "supplements/basics.mdx",
     "muscles/basics.mdx",
+    "supplements/basics.json~",
+    "supplements/basics.mdx~",
+    "supplements/basics.json",
+    "supplements",
+    "muscles/training/strength.mdx",
+    "muscles/training/hypertrophy.mdx",
+    "muscles/training/basics/reps-and-sets.mdx",
+    "muscles/training/basics/concepts.mdx",
+    "getting-started/introduction.md",
+    "muscles/basics.md",
     "muscles/training/basics/reps-and-sets.md",
-    "dieting/delete me.html~",
     "muscles/training/basics/concepts.md"
   ]
 }

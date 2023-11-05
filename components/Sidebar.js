@@ -2,6 +2,7 @@ import React, {useEffect, useState, useCallback} from 'react';
 import {useRouter} from "next/router";
 import topics from '/public/content.json';
 import {scroll} from "@/components/ContentScroll";
+import useReactPath from "@/components/useRoutePath";
 
 let key = 0;
 const getNextKey = () => {
@@ -110,7 +111,7 @@ export function Topic({ topic, activeTopic }) {
              onClick={() => {
                  router.push(topic.href).then(() => {});
              }}>
-            <a className={`text-lg ml-4`}>{topic.title}</a>
+            <span className={`text-lg ml-4`}>{topic.title}</span>
         </div>
     );
 }
@@ -123,7 +124,7 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
                  onClick={() => {
                      toggleCollapse(subcategory);
                  }}>
-                <a className={`text-lg ml-4`}>{subcategory.title}</a>
+                <span className={`text-lg ml-4`}>{subcategory.title}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-transform duration-100 ${
                     collapsed[subcategory.title + "-" + subcategory.id]
                         ? "-scale-y-100"
@@ -179,11 +180,13 @@ export function HeaderListSidebar() {
         const h1List = [];
         headers.forEach((header) => {
             // give the header an id
-            header.id = header.innerText.replace(/\s/g, "-").toLowerCase() + "x";
-            h1List.push(header.innerText + ":" + header.id.substring(0, header.id.length - 1));
+            h1List.push([
+                header.innerText,
+                header.id.substring(0, header.id.length - 1)
+            ]);
         });
         setHeaders(h1List);
-    }, []);
+    }, [router.asPath]);
 
     return (
         <div className={"hidden xl:block"}>
@@ -197,8 +200,8 @@ export function HeaderListSidebar() {
                                 <svg className={"w-1.5 h-1.5 mr-2 transition-colors duration-75"} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={"#cbd5e1"}>
                                     <circle cx="50" cy="50" r="50"/>
                                 </svg>
-                                <a className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75 text-left`}
-                                   onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
+                                <span className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75 text-left`}
+                                   onClick={() => router.push(`#${h1[1]}`).then(() => scroll())}>{h1[0]}</span>
                             </div>
                         );
                     })}

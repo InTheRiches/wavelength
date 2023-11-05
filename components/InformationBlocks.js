@@ -1,4 +1,6 @@
 export default function InformationBlock({ title, content }) {
+    if (!title)
+        title = "Note";
     return (
         <div>
             <div className="flex rounded-md border-1 border-sky-500 p-4 dark:bg-blue-500 dark:bg-opacity-5 text-sky-600 dark:text-sky-500 bg-blue-50"> {/* dark:bg-blue-500 */}
@@ -20,6 +22,8 @@ export default function InformationBlock({ title, content }) {
 }
 
 export function WarningBlock({ title, content }) {
+    if (!title)
+        title = "Warning";
     return (
         <div>
             <div className="flex rounded-md border-1 border-yellow-200 bg-yellow-50 dark:bg-black dark:bg-opacity-20 p-4 min-[424px]:text-md text-lg text-yellow-500 dark:text-yellow-200">

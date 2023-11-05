@@ -2,7 +2,6 @@ import path from "path";
 import fs from "fs";
 import {EntireBodyMap} from "@/components/BodySVG";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
-import {scroll} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
 
 export default async function OldMarkdownRenderer({slug}) {
@@ -131,13 +130,6 @@ export default async function OldMarkdownRenderer({slug}) {
             modifiedLine
         };
     }
-
-    const handleClick = (link) => {
-        router.push({
-            pathname: link.split("#")[0],
-            hash: link.split("#")[1]
-        }).then(() => scroll());
-    };
 
     try {
         // Use fs.promises.readFile to read the file asynchronously on the server

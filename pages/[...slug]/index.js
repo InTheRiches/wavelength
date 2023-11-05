@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation'
 import Sidebar, {HeaderListSidebar} from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import {scroll} from "@/components/ContentScroll";
+import {useMDXComponents} from "@/mdx-components";
 
 import fs from 'fs';
 import path from 'path';
@@ -92,12 +93,6 @@ export default function Page({ headers, title, description, markdown }) {
         };
     }, []);
 
-    const components = {
-        EntireBodyMap: (props) => <EntireBodyMap></EntireBodyMap>,
-        InformationBlock: (props) => <InformationBlock {...props}></InformationBlock>,
-        WarningBlock: (props) => <WarningBlock {...props}></WarningBlock>,
-    }
-
     return (
         <div
             className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
@@ -112,8 +107,8 @@ export default function Page({ headers, title, description, markdown }) {
                     <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
                         {/* Page Header */}
                         <div className="w-full max-w-5xl flex-col">
-                            <div className="flex flex-col mb-12">
-                                <span className="text-cyan-accent mb-1 text-lg font-semibold">{location}</span>
+                            <div className="flex flex-col mb-8">
+                                <span className="text-cyan-accent mb-1 text-lg lg:text-xl font-semibold">{location}</span>
                                 <span className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</span>
                                 <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify min-[424px]:text-lg text-md"}>
                                     <span>
@@ -122,7 +117,7 @@ export default function Page({ headers, title, description, markdown }) {
                                 </div>
                             </div>
                             <div className={"text-slate-700 dark:text-slate-300"}>
-                                <MDXRemote components={components} {...markdown} />
+                                <MDXRemote components={useMDXComponents()} {...markdown} />
                             </div>
                         </div>
                         <div className={"w-full flex justify-around mt-4"}>
