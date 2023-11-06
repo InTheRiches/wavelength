@@ -27,8 +27,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: white;
-
-  text-align: justify;
   text-justify: inter-word;
 }
 body.d {
@@ -184,12 +182,6 @@ span:hover .tooltip {
   background-color: #3fb1e7;
 }
 
-.text-header-gradient {
-  background: -webkit-linear-gradient(180deg, #0393ce, #95d3ed, #0393ce);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .landing-img-shadow {
   -webkit-filter: drop-shadow(5px 5px -5px #222);
   filter: drop-shadow(5px 5px -5px #222);
@@ -228,4 +220,8 @@ h2 {
 th,td {
   padding-bottom: .5rem;
   padding-top: .5rem;
+}
+
+li span {
+  text-align: left !important;
 }

@@ -38,7 +38,7 @@ export default function LandingPage() {
                         <div className="max-w-3xl mx-auto text-center">
                             <h1 className="hidden sm:block px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.</h1>
                             <h1 className="block sm:hidden px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to fitness, arranged to be understood and accessible by all.</h1>
-                            <p className="mt-5 text-4xl min-[412px]:text-5xl font-bold leading-tight text-gray-900 dark:text-slate-50 sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight font-pj">
+                            <p className="mt-3 2xl:mt-5 text-4xl min-[412px]:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj font-bold leading-tight text-gray-900 dark:text-slate-50">
                                 Transform your physique with
                                 <span className="ml-3 relative inline-flex">
                                     <span className="bg-cyan-accent blur-lg filter opacity-30 dark:hidden w-full h-full absolute inset-0"></span> {/* bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] */}
@@ -174,9 +174,7 @@ export default function LandingPage() {
                             {/*</div>*/}
                         </div>
 
-                        <hr className="mt-16 mb-10 border-gray-200" />
-
-                        <p className="text-sm text-center text-gray-600 dark:text-gray-400">© Copyright 2023, All Rights Reserved by Wavelength</p>
+                        <p className="text-sm mt-16 text-center text-gray-600 dark:text-gray-400">© Copyright 2023, All Rights Reserved by Wavelength</p>
                     </div>
                 </section>
             </header>

@@ -78,10 +78,17 @@
     "id": 4,
     "title": "Dieting",
     "subtopics": [
-      { "id": 1, "title": "Basics", "href": "/dieting/basics" },
+      { "id": 0, "title": "Basics", "href": "/dieting/basics" },
+      {
+        "id": 1, 
+        "title": "Nutrients", 
+        "subtopics": [
+          { "id": 0, "title": "Vitamins", "href": "/dieting/nutrients/vitamins" },
+          { "id": 1, "title": "Protein", "href": "/dieting/nutrients/protein" }
+        ]
+      },
       { "id": 2, "title": "Cutting", "href": "/dieting/cutting" },
-      { "id": 3, "title": "Bulking", "href": "/dieting/bulking" },
-      { "id": 4, "title": "Vitamins", "href": "/dieting/vitamins" }
+      { "id": 3, "title": "Bulking", "href": "/dieting/bulking" }
     ]
   },
   {
