@@ -1,18 +1,17 @@
 import React, {useEffect} from 'react'
-import {Lobster, Open_Sans, Poppins} from 'next/font/google';
 import Navigation from '@/components/Navigation'
-import Footer from "@/components/Footer";
 import useDarkMode from 'use-dark-mode';
-import {getCookieValue} from "@/lib/util";
 import {getCookie, hasCookie} from "cookies-next";
 import {useLoaded} from "@/components/LoadedHook";
 import {lobster} from "@/components/Fonts";
+import {loginUser} from "@/components/Authentication";
 
 export default function LandingPage() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
-    const pageLoaded = useLoaded();
 
     const [loaded, setLoaded] = React.useState(false);
+
+    const user = loginUser();
 
     useEffect(() => {
         if (isDarkMode) {
@@ -21,37 +20,6 @@ export default function LandingPage() {
             document.documentElement.classList.remove('dark');
         }
         setLoaded(true);
-
-        if (!hasCookie("accessToken") || !hasCookie("id"))
-            return;
-
-        const loadUserData = async () => {
-            const token = getCookie("accessToken");
-            const id = getCookie("id");
-
-            if (token && id) {
-                const response = await fetch('/api/user/login', {
-                    method: 'POST',
-                    body: JSON.stringify({id: id, accessToken: token}),
-                }).then(res => {
-                    if (res.ok || res.status !== 403) {
-                        res.json().then(json => {
-                            console.log(json);
-                        });
-
-                        return;
-                    }
-
-                    // error, do whatever to signal wrong information
-                    console.log("error")
-                });
-            }
-            console.log("token: " + token);
-            console.log("id: " + id);
-        };
-
-        loadUserData();
-
     }, [isDarkMode]);
 
     return (
@@ -70,10 +38,10 @@ export default function LandingPage() {
                         <div className="max-w-3xl mx-auto text-center">
                             <h1 className="hidden sm:block px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.</h1>
                             <h1 className="block sm:hidden px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to fitness, arranged to be understood and accessible by all.</h1>
-                            <p className="mt-5 text-4xl min-[412px]:text-5xl font-bold leading-tight text-gray-900 dark:text-slate-50 sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight font-pj">
+                            <p className="mt-3 2xl:mt-5 text-4xl min-[412px]:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj font-bold leading-tight text-gray-900 dark:text-slate-50">
                                 Transform your physique with
                                 <span className="ml-3 relative inline-flex">
-                                    <span className="bg-cyan-accent blur-lg filter opacity-30 dark:hidden w-full h-full absolute inset-0"></span> {/* bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] */}
+                                    <span className="bg-cyan-accent blur-lg filter opacity-40 dark:hidden w-full h-full absolute inset-0"></span> {/* bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] */}
                                     <span className={"relative " + (isDarkMode ? "uline" : "")}> expert guidance </span>
                                 </span>
                             </p>
@@ -109,12 +77,12 @@ export default function LandingPage() {
 
                     <div className="pb-12">
                         <div className="relative mx-auto lg:max-w-6xl lg:mx-auto">
-                            <img className="transform scale-110" src={isDarkMode && pageLoaded ? "/images/landingPageIllustrationDark.png" :"/images/landingPageIllustration.png"} alt="" />
+                            <img className="transform scale-110" src={isDarkMode && loaded ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png"} alt="" />
                         </div>
                     </div>
                 </section>
                 <section className="relative py-10 bg-gray-50 dark:bg-neutral-900 sm:pt-16 lg:pt-24">
-                    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                    <div className="px-6 mx-auto sm:px-8 lg:px-12 max-w-7xl">
                         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-3 gap-y-16 gap-x-12">
                             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                                 <div className={"flex flex-row justify-start items-center"}>
@@ -206,9 +174,7 @@ export default function LandingPage() {
                             {/*</div>*/}
                         </div>
 
-                        <hr className="mt-16 mb-10 border-gray-200" />
-
-                        <p className="text-sm text-center text-gray-600 dark:text-gray-400">© Copyright 2023, All Rights Reserved by Wavelength</p>
+                        <p className="text-sm mt-16 text-center text-gray-600 dark:text-gray-400">© Copyright 2023, All Rights Reserved by Wavelength</p>
                     </div>
                 </section>
             </header>

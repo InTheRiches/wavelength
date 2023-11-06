@@ -10,9 +10,11 @@ module.exports = {
     aspectRatio: false,
   },
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+      './mdx-components.js',
+      './pages/**/*.{js,ts,jsx,tsx,mdx}',
+      './data/pages/**/*.{md}',
+      './components/**/*.{js,ts,jsx,tsx,mdx}',
+      './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     boxShadow: {
@@ -67,6 +69,7 @@ module.exports = {
         "1xl": "1.375rem",
         "2.25xl": "1.625rem",
         "2.5xl": "1.75rem",
+        "1.5xl": "1.5rem",
       },
       gap: {
         "1vh": "1vh",

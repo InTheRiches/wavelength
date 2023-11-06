@@ -1,16 +1,14 @@
 import Navigation from '@/components/Navigation'
-import Content from '@/components/Content'
 import Sidebar, { HeaderListSidebar } from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import React, {useEffect, useState} from "react";
 import {useRouter} from "next/router";
-import ContentScroll, {percentScrolled, scroll} from "@/components/ContentScroll";
 import useDarkMode from 'use-dark-mode';
 import topics from '/public/content.json';
-import MobileSidebar, {MobileHeaderListSidebar} from "@/components/MobileSidebar";
 
 export default function ContentPage({ title, description, content }) {
     const [windowWidth, setWindowWidth] = useState(640);
+    const [sidebar, setSidebar] = useState(null);
 
     const router = useRouter();
     const activeTopic = router.pathname;
@@ -60,6 +58,8 @@ export default function ContentPage({ title, description, content }) {
             });
         });
 
+        setSidebar(<Sidebar></Sidebar>)
+
         setWindowWidth(window.innerWidth);
 
         const handleResize = () => {
@@ -107,8 +107,8 @@ export default function ContentPage({ title, description, content }) {
             {/*</div>*/}
             <Navigation progressBar={true}></Navigation>
 
-            <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
-                {windowWidth >= 1024 ? <Sidebar></Sidebar> : <></>}
+            {sidebar ? <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto xl:pr-[20rem]">
+                {windowWidth >= 1024 ? sidebar : <></>}
                 <div onScrollCapture={() => handleScroll()} className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[24rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
@@ -148,8 +148,7 @@ export default function ContentPage({ title, description, content }) {
                     <Footer></Footer>
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
-            </div>
-            <div id="ezoic-pub-ad-placeholder-104"></div>
+            </div> : <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl h-screen md:px-6 my-8 z-20"></div>}
         </div>
     )
 }

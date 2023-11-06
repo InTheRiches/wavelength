@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
+const withMDX = require('@next/mdx')()
+
 const nextConfig = {
+  pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
   reactStrictMode: true,
   // next.config.js
   serverRuntimeConfig: {
@@ -13,6 +16,6 @@ const nextConfig = {
       }
     ]
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = withMDX(nextConfig);

@@ -170,7 +170,6 @@ export default function Content({id, title, content, bulletPoints}) {
                     } else {
                         router.push(window.location.href + "#" + id).then(r => scroll());
                     }
-
                 }}
                    className={"absolute -ml-8 flex items-center opacity-0 border-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-100 bg-neutral-500 bg-opacity-30 dark:bg-neutral-700 rounded-md"}>
                     <div className={"w-6 h-6 flex items-center justify-center stroke-white"}>

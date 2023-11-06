@@ -16,15 +16,15 @@
         "title": "Training",
         "subtopics": [
           {
-            "id": 1,
+            "id": 0,
             "title": "Basics",
             "showInLocation": false,
             "subtopics":  [
-              { "id":  1, "title": "Reps / Sets", "href": "/muscles/training/basics/repsandsets" },
+              { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/basics/reps-and-sets" },
               { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
             ]
           },
-          { "id": 2, "title": "Strength", "href": "/muscles/training/strength"}
+          { "id": 1, "title": "Strength", "href": "/muscles/training/strength"}
         ]
       },
       {
@@ -33,35 +33,35 @@
         "showInLocation": false,
         "subtopics": [
           { "id": 0, "title": "Back", "subtopics": [
-            { "id": 0, "title": "Teres", "href": "/muscles/functions/back/teres" },
-            { "id": 1, "title": "Rhomboids", "href": "/muscles/functions/back/rhomboids" },
-            { "id": 2, "title": "Trapezius", "href": "/muscles/functions/back/traps" },
-            { "id": 3, "title": "Rotator Cuff", "href": "/muscles/functions/back/rotator-cuff" },
-            { "id": 4, "title": "Lats", "href": "/muscles/functions/back/lats" },
-            { "id": 5, "title": "Rear Delt", "href": "/muscles/functions/back/rear-delt" },
-            { "id":  6, "title": "Infraspinatus", "href": "/muscles/functions/back/infraspinatus" }
+            { "id": 0, "title": "Teres", "href": "/muscles/specifics/back/teres" },
+            { "id": 1, "title": "Rhomboids", "href": "/muscles/specifics/back/rhomboids" },
+            { "id": 2, "title": "Trapezius", "href": "/muscles/specifics/back/trapezius" },
+            { "id": 3, "title": "Rotator Cuff", "href": "/muscles/specifics/back/rotator-cuff" },
+            { "id": 4, "title": "Lats", "href": "/muscles/specifics/back/lats" },
+            { "id": 5, "title": "Posterior Deltoids", "href": "/muscles/specifics/back/posterior-delts" },
+            { "id":  6, "title": "Infraspinatus", "href": "/muscles/specifics/back/infraspinatus" }
           ] },
           { "id": 1, "title": "Chest", "subtopics": [
-            { "id": 0, "title": "Pecs", "href": "/muscles/functions/chest/pecs" },
-            { "id": 1, "title": "Delts", "href": "/muscles/functions/chest/delts" }
+            { "id": 0, "title": "Pecs", "href": "/muscles/specifics/chest/pecs" },
+            { "id": 1, "title": "Deltoids", "href": "/muscles/specifics/chest/deltoids" }
           ] },
           { "id": 2, "title": "Arms", "subtopics": [
-            { "id": 0, "title": "Biceps", "href": "/muscles/functions/arms/biceps" },
-            { "id": 1, "title": "Triceps", "href": "/muscles/functions/arms/triceps" },
-            { "id": 2, "title": "Forearms", "href": "/muscles/functions/arms/forearms" }
+            { "id": 0, "title": "Biceps", "href": "/muscles/specifics/arms/biceps" },
+            { "id": 1, "title": "Triceps", "href": "/muscles/specifics/arms/triceps" },
+            { "id": 2, "title": "Forearms", "href": "/muscles/specifics/arms/forearms" }
           ] },
           { "id": 3, "title": "Core", "subtopics": [
-            { "id": 0, "title": "Abs", "href": "/muscles/functions/core/abs" },
-            { "id": 1, "title": "Obliques", "href": "/muscles/functions/core/obliques" },
-            { "id": 2, "title": "Lower Back", "href": "/muscles/functions/core/lower-back" }
+            { "id": 0, "title": "Abs", "href": "/muscles/specifics/core/abs" },
+            { "id": 1, "title": "Obliques", "href": "/muscles/specifics/core/obliques" },
+            { "id": 2, "title": "Lower Back", "href": "/muscles/specifics/core/lower-back" }
           ] },
           { "id": 4, "title": "Legs", "subtopics": [
-            { "id": 0, "title": "Quads", "href": "/muscles/functions/legs/quads" },
-            { "id": 1, "title": "Hamstrings", "href": "/muscles/functions/legs/hamstrings" },
-            { "id": 2, "title": "Glutes", "href": "/muscles/functions/legs/glutes" },
-            { "id": 3, "title": "Adductors", "href": "/muscles/functions/legs/adductors" },
-            { "id": 4, "title": "Abductors", "href": "/muscles/functions/legs/abductors" },
-            { "id": 5, "title": "Calves", "href": "/muscles/functions/legs/calves" }
+            { "id": 0, "title": "Quads", "href": "/muscles/specifics/legs/quads" },
+            { "id": 1, "title": "Hamstrings", "href": "/muscles/specifics/legs/hamstrings" },
+            { "id": 2, "title": "Glutes", "href": "/muscles/specifics/legs/glutes" },
+            { "id": 3, "title": "Adductors", "href": "/muscles/specifics/legs/adductors" },
+            { "id": 4, "title": "Abductors", "href": "/muscles/specifics/legs/abductors" },
+            { "id": 5, "title": "Calves", "href": "/muscles/specifics/legs/calves" }
           ] }
         ]
       }
@@ -78,16 +78,24 @@
     "id": 4,
     "title": "Dieting",
     "subtopics": [
-      { "id": 1, "title": "Basics", "href": "/dieting/basics" },
+      { "id": 0, "title": "Basics", "href": "/dieting/basics" },
+      {
+        "id": 1, 
+        "title": "Nutrients", 
+        "subtopics": [
+          { "id": 0, "title": "Vitamins", "href": "/dieting/nutrients/vitamins" },
+          { "id": 1, "title": "Protein", "href": "/dieting/nutrients/protein" }
+        ]
+      },
       { "id": 2, "title": "Cutting", "href": "/dieting/cutting" },
-      { "id": 3, "title": "Bulking", "href": "/dieting/bulking" },
-      { "id": 4, "title": "Vitamins", "href": "/dieting/vitamins" }
+      { "id": 3, "title": "Bulking", "href": "/dieting/bulking" }
     ]
   },
   {
     "id": 5,
     "title": "Supplements",
     "subtopics": [
+      { "id": 1, "title": "Basics", "href": "/supplements/basics" },
       {
         "id": 2,
         "title": "Performance",
