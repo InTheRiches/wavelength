@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/basics.mdx",
+                "file": "muscles/specifics/back/rhomboids.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/basics.mdx",
+                "file": "muscles/specifics/back/rhomboids.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/basics.mdx",
+                "file": "muscles/specifics/back/rhomboids.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/basics.mdx"
+                "file": "muscles/specifics/back/rhomboids.mdx"
               }
             }
           }
@@ -148,17 +148,17 @@
   },
   "active": "6c619c1632712cdc",
   "lastOpenFiles": [
+    "muscles/specifics/back/teres.mdx",
+    "muscles/specifics/back/rhomboids.mdx",
+    "muscles/specifics/back/rhomboids.json",
+    "muscles/basics.mdx",
+    "muscles/specifics/back/teres.json",
+    "muscles/specifics/back",
+    "muscles/specifics",
     "dieting/basics.mdx",
     "supplements/basics.mdx",
-    "muscles/basics.mdx",
     "supplements/basics.json~",
     "supplements/basics.mdx~",
-    "supplements/basics.json",
-    "supplements",
-    "muscles/training/strength.mdx",
-    "muscles/training/hypertrophy.mdx",
-    "muscles/training/basics/reps-and-sets.mdx",
-    "muscles/training/basics/concepts.mdx",
     "getting-started/introduction.md",
     "muscles/basics.md",
     "muscles/training/basics/reps-and-sets.md",
