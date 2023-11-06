@@ -35,15 +35,15 @@
           { "id": 0, "title": "Back", "subtopics": [
             { "id": 0, "title": "Teres", "href": "/muscles/specifics/back/teres" },
             { "id": 1, "title": "Rhomboids", "href": "/muscles/specifics/back/rhomboids" },
-            { "id": 2, "title": "Trapezius", "href": "/muscles/specifics/back/traps" },
+            { "id": 2, "title": "Trapezius", "href": "/muscles/specifics/back/trapezius" },
             { "id": 3, "title": "Rotator Cuff", "href": "/muscles/specifics/back/rotator-cuff" },
             { "id": 4, "title": "Lats", "href": "/muscles/specifics/back/lats" },
-            { "id": 5, "title": "Rear Delt", "href": "/muscles/specifics/back/rear-delt" },
+            { "id": 5, "title": "Posterior Deltoids", "href": "/muscles/specifics/back/posterior-delts" },
             { "id":  6, "title": "Infraspinatus", "href": "/muscles/specifics/back/infraspinatus" }
           ] },
           { "id": 1, "title": "Chest", "subtopics": [
             { "id": 0, "title": "Pecs", "href": "/muscles/specifics/chest/pecs" },
-            { "id": 1, "title": "Delts", "href": "/muscles/specifics/chest/delts" }
+            { "id": 1, "title": "Deltoids", "href": "/muscles/specifics/chest/deltoids" }
           ] },
           { "id": 2, "title": "Arms", "subtopics": [
             { "id": 0, "title": "Biceps", "href": "/muscles/specifics/arms/biceps" },

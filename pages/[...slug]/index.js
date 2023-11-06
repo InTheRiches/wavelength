@@ -3,8 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Navigation from '@/components/Navigation'
 import Sidebar, {HeaderListSidebar} from "@/components/Sidebar";
 import Footer from "@/components/Footer";
-import {scroll} from "@/components/ContentScroll";
-import {useMDXComponents} from "@/mdx-components";
+import {useDescriptionComponents, useMDXComponents} from "@/mdx-components";
 
 import fs from 'fs';
 import path from 'path';
@@ -16,7 +15,7 @@ import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
 import {EntireBodyMap} from "@/components/BodySVG";
 
-export default function Page({ headers, title, description, markdown }) {
+export default function Page({ headers, title, description="", markdown="" }) {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(640);
     const [sidebar, setSidebar] = useState(null);
@@ -26,13 +25,6 @@ export default function Page({ headers, title, description, markdown }) {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
-
-    const handleLinkClick = (link) => {
-        router.push({
-            pathname: link.split("#")[0],
-            hash: link.split("#")[1]
-        }).then(() => scroll());
-    };
 
     useEffect(() => {
         if (isDarkMode) {
@@ -55,7 +47,7 @@ export default function Page({ headers, title, description, markdown }) {
                     subtopic.subtopics.forEach((subsubtopic) => {
                         if (subsubtopic.href === activeTopic)
                             setLocation(topic.title + " • "
-                                + (subtopic.showInLocation === undefined ? subtopic.title : subtopic.showInLocation ? " • " + subtopic.title : ""));
+                                + (subtopic.showInLocation === undefined ? subtopic.title : subtopic.showInLocation ? subtopic.title : ""));
 
                         if (subsubtopic.subtopics) {
                             subsubtopic.subtopics.forEach((subsubsubtopic) => {
@@ -63,7 +55,7 @@ export default function Page({ headers, title, description, markdown }) {
                                     setLocation(
                                         topic.title + " • "
                                         + (subtopic.showInLocation === undefined ? subtopic.title : subtopic.showInLocation ? " • " + subtopic.title : "")
-                                        + (subsubtopic.showInLocation === undefined ? " • " + subsubtopic.title : subsubtopic.showInLocation ? " • " + subsubtopic.title : "")
+                                        + (subsubtopic.showInLocation === undefined ? subsubtopic.title : subsubtopic.showInLocation ? " • " + subsubtopic.title : "")
                                     );
 
                                 keys.push(subsubsubtopic.href)
@@ -92,6 +84,8 @@ export default function Page({ headers, title, description, markdown }) {
             window.removeEventListener('resize', handleResize);
         };
     }, [router.asPath]);
+    //
+    // ContentScroll();
 
     return (
         <div
@@ -112,7 +106,7 @@ export default function Page({ headers, title, description, markdown }) {
                                 <span className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</span>
                                 <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify min-[424px]:text-lg text-md"}>
                                     <span>
-                                      {description}
+                                        <Markdown components={useDescriptionComponents()}>{description}</Markdown>
                                     </span>
                                 </div>
                             </div>

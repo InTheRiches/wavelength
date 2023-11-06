@@ -4,5 +4,8 @@ export default function handleClick(link, router) {
     router.push({
         pathname: link.split("#")[0],
         hash: link.split("#")[1]
-    }).then(() => scroll());
+    }).then(() => {
+        scroll();
+        console.log("scrolling to item");
+    });
 };

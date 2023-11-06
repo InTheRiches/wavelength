@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c120eb3a62be15a8",
+        "id": "4c494e378cbf15e9",
         "type": "tabs",
         "children": [
           {
-            "id": "6c619c1632712cdc",
+            "id": "3ea1d1d5a2dffcca",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/specifics/back/rhomboids.mdx",
+                "file": "supplements/performance/citrulline.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/specifics/back/rhomboids.mdx",
+                "file": "supplements/performance/citrulline.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/specifics/back/rhomboids.mdx",
+                "file": "supplements/performance/citrulline.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/specifics/back/rhomboids.mdx"
+                "file": "supplements/performance/citrulline.mdx"
               }
             }
           }
@@ -143,23 +143,25 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-import-json:JSON/CSV Importer": false
     }
   },
-  "active": "6c619c1632712cdc",
+  "active": "3ea1d1d5a2dffcca",
   "lastOpenFiles": [
-    "muscles/specifics/back/teres.mdx",
-    "muscles/specifics/back/rhomboids.mdx",
-    "muscles/specifics/back/rhomboids.json",
-    "muscles/basics.mdx",
-    "muscles/specifics/back/teres.json",
-    "muscles/specifics/back",
-    "muscles/specifics",
-    "dieting/basics.mdx",
-    "supplements/basics.mdx",
-    "supplements/basics.json~",
-    "supplements/basics.mdx~",
+    "supplements/performance/creatine.mdx",
+    "supplements/performance/bcaas.mdx",
+    "supplements/performance/citrulline.mdx",
+    "supplements/performance/citrulline.json~",
+    "supplements/performance/citrulline.json",
+    "supplements/performance/beta-alanine.mdx",
+    "supplements/performance/bcaas.json~",
+    "supplements/performance/bcaas.json",
+    "supplements/performance/pre-workout.mdx",
+    "supplements/performance/beta-alanine.json",
+    "supplements/performance/pre-workout.json~",
     "getting-started/introduction.md",
+    "muscles/specifics/back/rotator-cuff.md",
     "muscles/basics.md",
     "muscles/training/basics/reps-and-sets.md",
     "muscles/training/basics/concepts.md"

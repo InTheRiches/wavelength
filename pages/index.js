@@ -41,7 +41,7 @@ export default function LandingPage() {
                             <p className="mt-3 2xl:mt-5 text-4xl min-[412px]:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj font-bold leading-tight text-gray-900 dark:text-slate-50">
                                 Transform your physique with
                                 <span className="ml-3 relative inline-flex">
-                                    <span className="bg-cyan-accent blur-lg filter opacity-30 dark:hidden w-full h-full absolute inset-0"></span> {/* bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] */}
+                                    <span className="bg-cyan-accent blur-lg filter opacity-40 dark:hidden w-full h-full absolute inset-0"></span> {/* bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] */}
                                     <span className={"relative " + (isDarkMode ? "uline" : "")}> expert guidance </span>
                                 </span>
                             </p>

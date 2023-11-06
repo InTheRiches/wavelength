@@ -2,7 +2,6 @@ import React, {useEffect, useState, useCallback} from 'react';
 import {useRouter} from "next/router";
 import topics from '/public/content.json';
 import {scroll} from "@/components/ContentScroll";
-import useReactPath from "@/components/useRoutePath";
 
 let key = 0;
 const getNextKey = () => {
