@@ -225,3 +225,8 @@ th,td {
 li span {
   text-align: left !important;
 }
+
+.landing-page-img {
+  -webkit-filter: drop-shadow(0 0 15px rgba(18, 205, 237, 0.2));
+  filter: drop-shadow(0 0 15px rgba(18, 205, 237, 0.2));
+}

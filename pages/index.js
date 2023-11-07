@@ -75,11 +75,11 @@ export default function LandingPage() {
 
                     <div className="pb-12">
                         <div className="relative mx-auto lg:max-w-6xl lg:mx-auto">
-                            <img className="transform scale-110" src={isDarkMode && loaded ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png"} alt="" />
+                            <img className="transform scale-90 landing-page-img" src={isDarkMode && loaded ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png"} alt="" />
                         </div>
                     </div>
                 </section>
-                <section className="relative py-10 bg-gray-50 dark:bg-neutral-900 sm:pt-16 lg:pt-24">
+                <section className="relative py-10 sm:pt-16 lg:pt-24">
                     <div className="px-6 mx-auto sm:px-8 lg:px-12 max-w-7xl">
                         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-3 gap-y-16 gap-x-12">
                             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
