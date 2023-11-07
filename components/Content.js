@@ -12,7 +12,7 @@ export default function Content({id, title, content, bulletPoints}) {
         router.push({
             pathname: link.split("#")[0],
             hash: link.split("#")[1]
-        }).then(() => scrollPageToContent());
+        });
     };
 
     if (!bulletPoints) {
@@ -166,9 +166,9 @@ export default function Content({id, title, content, bulletPoints}) {
                 <a onClick={() => {
                     // copy the URL to the clipboard
                     if (window.location.href.includes("#")) {
-                        router.push(window.location.href.split("#")[0] + "#" + id).then(r => scrollPageToContent());
+                        router.push(window.location.href.split("#")[0] + "#" + id);
                     } else {
-                        router.push(window.location.href + "#" + id).then(r => scrollPageToContent());
+                        router.push(window.location.href + "#" + id);
                     }
                 }}
                    className={"absolute -ml-8 flex items-center opacity-0 border-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-100 bg-neutral-500 bg-opacity-30 dark:bg-neutral-700 rounded-md"}>

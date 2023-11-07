@@ -1,16 +1,14 @@
 import React, {useEffect} from 'react'
 import Navigation from '@/components/Navigation'
 import useDarkMode from 'use-dark-mode';
-import {getCookie, hasCookie} from "cookies-next";
-import {useLoaded} from "@/components/LoadedHook";
 import {lobster} from "@/components/Fonts";
 import {loginUser} from "@/components/Authentication";
+import {useRouter} from "next/router";
 
 export default function LandingPage() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
-
     const [loaded, setLoaded] = React.useState(false);
-
+    const router = useRouter();
     const user = loginUser();
 
     useEffect(() => {
@@ -91,6 +89,7 @@ export default function LandingPage() {
                                 </div>
 
                                 <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 mt-7 text-left">A free and open community driven company focused on delivering high quality fitness information to all.</p>
+                                <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 text-left">Contact us at: <strong className={"text-cyan-accent"}>riches@wavelength.fit</strong></p>
 
                                 <ul className="flex items-center space-x-3 mt-9">
                                     {/*<li>*/}

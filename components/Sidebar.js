@@ -199,8 +199,8 @@ export function HeaderListSidebar() {
                                 <svg className={"w-1.5 h-1.5 mr-2 transition-colors duration-75"} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={"#cbd5e1"}>
                                     <circle cx="50" cy="50" r="50"/>
                                 </svg>
-                                <span className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75 text-left`}
-                                   onClick={() => router.push(`#${h1[1]}`).then(() => scrollPageToContent())}>{h1[0]}</span>
+                                <span className={`w-full dark:border-neutral-300 border-neutral-600 hover:text-cyan-accent hover:dark:text-cyan-accent dark:text-slate-300 transition-colors duration-75 text-left`}
+                                   onClick={() => router.push(`#${h1[1]}`)}>{h1[0]}</span>
                             </div>
                         );
                     })}

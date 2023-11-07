@@ -74,7 +74,6 @@ function waitForElm(selector) {
 
         const observer = new MutationObserver(mutations => {
             if (document.querySelector(selector) && document.querySelector(selector).getBoundingClientRect().top !== 0) {
-                console.log(document.querySelector(selector).getBoundingClientRect().top)
                 observer.disconnect();
                 resolve(document.querySelector(selector));
             }
@@ -90,20 +89,21 @@ function waitForElm(selector) {
 export async function scrollPageToContent() {
     let hash = window.location.hash.substring(1);
 
-    console.log(hash)
     if (!hash) {
         return;
     }
 
-    console.log("looking for section: " + hash.substring(0, hash.length) + "x")
-
     waitForElm("#" + hash.substring(0, hash.length) + "x").then((section) => {
-        console.log("has section: " + section.getBoundingClientRect().top);
+        // TODO FIX THIS, AS WHEN IT SEARCHES FOR THE ELEMENT, THIS VALUE IS ABOVE 0, BUT THEN IT DOES IT AGAIN AND IT ISNT, WHICH MAKES IT NOT SCROLL
+        if (section.getBoundingClientRect().top === 0) {
+            console.log("not scrolling")
+            return;
+        }
+
         const nav = document.getElementById('navigation');
         const navHeight = nav.getBoundingClientRect().height;
         let sectionTop = section.getBoundingClientRect().top + window.scrollY - navHeight;
         sectionTop -= 20;
-        console.log("scrolling page: " + sectionTop + "px");
         window.scrollTo({
             top: sectionTop,
             behavior: 'smooth',
