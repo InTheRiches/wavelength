@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {useRouter} from "next/router";
 import topics from '/public/content.json';
-import {scroll} from "@/components/ContentScroll";
+import {scrollPageToContent} from "@/components/ContentScroll";
 
 let key = 0;
 const getNextKey = () => {
@@ -200,7 +200,7 @@ export function HeaderListSidebar() {
                                     <circle cx="50" cy="50" r="50"/>
                                 </svg>
                                 <span className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75 text-left`}
-                                   onClick={() => router.push(`#${h1[1]}`).then(() => scroll())}>{h1[0]}</span>
+                                   onClick={() => router.push(`#${h1[1]}`).then(() => scrollPageToContent())}>{h1[0]}</span>
                             </div>
                         );
                     })}

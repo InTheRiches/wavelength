@@ -49,7 +49,7 @@ export default function ContentScroll() {
         window.addEventListener("scroll", handleUnload)
 
         // Get the ID of the section to scroll to from the URL fragment identifier
-        scroll();
+        scrollPageToContent();
 
         return () => {
             window.removeEventListener('beforeunload', handleUnload);
@@ -66,34 +66,47 @@ export function percentScrolled() {
     return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
 }
 
-const getElementByIdAsync = id => new Promise(resolve => {
-    const getElement = () => {
-        const element = document.getElementById(id);
-        if(element) {
-            resolve(element);
-        } else {
-            requestAnimationFrame(getElement);
+function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
         }
-    };
-    getElement();
-});
 
-export async function scroll() {
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector) && document.querySelector(selector).getBoundingClientRect().top !== 0) {
+                console.log(document.querySelector(selector).getBoundingClientRect().top)
+                observer.disconnect();
+                resolve(document.querySelector(selector));
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
+
+export async function scrollPageToContent() {
     let hash = window.location.hash.substring(1);
+
+    console.log(hash)
     if (!hash) {
         return;
     }
 
-    // Find the section element and scroll to it
-    const section = await getElementByIdAsync(hash.substring(0, hash.length) + "x");
-    if (section) {
+    console.log("looking for section: " + hash.substring(0, hash.length) + "x")
+
+    waitForElm("#" + hash.substring(0, hash.length) + "x").then((section) => {
+        console.log("has section: " + section.getBoundingClientRect().top);
         const nav = document.getElementById('navigation');
         const navHeight = nav.getBoundingClientRect().height;
         let sectionTop = section.getBoundingClientRect().top + window.scrollY - navHeight;
         sectionTop -= 20;
+        console.log("scrolling page: " + sectionTop + "px");
         window.scrollTo({
             top: sectionTop,
             behavior: 'smooth',
         });
-    }
+    });
 }

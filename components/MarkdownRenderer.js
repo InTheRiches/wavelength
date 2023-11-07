@@ -1,5 +1,5 @@
 import React from 'react';
-import {scroll} from "@/components/ContentScroll";
+import {scrollPageToContent} from "@/components/ContentScroll";
 import {useRouter} from 'next/router'
 
 const MarkdownRenderer = ({ markdownText }) => {

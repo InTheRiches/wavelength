@@ -1,4 +1,4 @@
-import {scroll} from "@/components/ContentScroll";
+import {scrollPageToContent} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
 import handleClick from "@/components/HandleClick";
 

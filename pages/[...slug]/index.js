@@ -8,12 +8,11 @@ import {useDescriptionComponents, useMDXComponents} from "@/mdx-components";
 import fs from 'fs';
 import path from 'path';
 import topics from "@/public/content.json";
-import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import useDarkMode from "use-dark-mode";
 import Markdown from "react-markdown";
 import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
-import {EntireBodyMap} from "@/components/BodySVG";
+import {scrollPageToContent} from "@/components/ContentScroll";
 
 export default function Page({ headers, title, description="", markdown="" }) {
     const router = useRouter();
@@ -33,6 +32,8 @@ export default function Page({ headers, title, description="", markdown="" }) {
             document.documentElement.classList.remove('dark');
         }
     }, [isDarkMode]);
+
+    scrollPageToContent();
 
     useEffect(() => {
         setSidebar(<Sidebar></Sidebar>)
@@ -69,8 +70,6 @@ export default function Page({ headers, title, description="", markdown="" }) {
                 keys.push(subtopic.href);
             });
         });
-
-        scroll();
 
         const handleResize = () => {
             setWindowWidth(window.innerWidth);

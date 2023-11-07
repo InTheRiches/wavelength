@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/router";
 import topics from '/public/content.json';
-import {scroll} from "@/components/ContentScroll";
+import {scrollPageToContent} from "@/components/ContentScroll";
 import {Category} from "@/components/Sidebar";
 
 function MobileSidebar({ currentTopic }) {
@@ -93,7 +93,7 @@ export function MobileHeaderListSidebar() {
                     {h1List.map((h1, index) => {
                         return (
                             <div key={index+150} className="text-lg mb-3">
-                                <a className="hover:text-cyan-accent dark:hover:text-cyan-accent dark:text-slate-300 transition-colors duration-75 hover:cursor-pointer" onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scroll())}>{h1.split(":")[0]}</a>
+                                <a className="hover:text-cyan-accent dark:hover:text-cyan-accent dark:text-slate-300 transition-colors duration-75 hover:cursor-pointer" onClick={() => router.push(`#${h1.split(":")[1]}`).then(() => scrollPageToContent())}>{h1.split(":")[0]}</a>
                             </div>
                         );
                     })}
