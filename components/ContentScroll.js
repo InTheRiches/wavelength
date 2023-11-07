@@ -93,10 +93,12 @@ export async function scrollPageToContent() {
         return;
     }
 
-    waitForElm("#" + hash.substring(0, hash.length) + "x").then((section) => {
+    const section = document.getElementById(hash.substring(0, hash.length) + "x");
+
+    if (section) {
         // TODO FIX THIS, AS WHEN IT SEARCHES FOR THE ELEMENT, THIS VALUE IS ABOVE 0, BUT THEN IT DOES IT AGAIN AND IT ISNT, WHICH MAKES IT NOT SCROLL
         if (section.getBoundingClientRect().top === 0) {
-            console.log("not scrolling")
+            console.log("not scrolling");
             return;
         }
 
@@ -108,5 +110,5 @@ export async function scrollPageToContent() {
             top: sectionTop,
             behavior: 'smooth',
         });
-    });
+    }
 }

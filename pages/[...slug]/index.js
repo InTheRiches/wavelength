@@ -94,57 +94,57 @@ export default function Page({ headers, title, description="", markdown="" }) {
             {/*</div>*/}
             <Navigation progressBar={true}></Navigation>
 
-            {sidebar ?
-                <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
-                    {windowWidth >= 1024 ? sidebar : <></>}
-                    <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
-                        {/* Page Header */}
-                        <div className="w-full max-w-5xl flex-col">
-                            <div className="flex flex-col mb-8">
-                                <span className="text-cyan-accent mb-1 text-lg lg:text-xl font-semibold">{location}</span>
-                                <span className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</span>
-                                <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify min-[424px]:text-lg text-md"}>
-                                    <span>
-                                        <Markdown components={useDescriptionComponents()}>{description}</Markdown>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className={"text-slate-700 dark:text-slate-300"}>
-                                <MDXRemote components={useMDXComponents()} {...markdown} />
+
+            <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
+                {windowWidth >= 1024 ? sidebar : <></>}
+                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
+                    {/* Page Header */}
+                    <div className="w-full max-w-5xl flex-col">
+                        <div className="flex flex-col mb-8">
+                            <span className="text-cyan-accent mb-1 text-lg lg:text-xl font-semibold">{location}</span>
+                            <span className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</span>
+                            <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify min-[424px]:text-lg text-md"}>
+                                <span>
+                                    <Markdown components={useDescriptionComponents()}>{description}</Markdown>
+                                </span>
                             </div>
                         </div>
-                        <div className={"w-full flex justify-around mt-4"}>
-                            <button onClick={() => {
-                                const url = new URL(window.location.href);
-
-                                const index = keys.indexOf(url.pathname);
-                                if (index > 0)
-                                    router.push(keys[index - 1]);
-                            }}
-                                    className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700">
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M15 19l-7-7 7-7"/>
-                                </svg>
-                            </button>
-                            <button onClick={() => {
-                                const url = new URL(window.location.href);
-
-                                const index = keys.indexOf(url.pathname);
-                                if (index < keys.length - 1)
-                                    router.push(keys[index + 1]);
-                            }}
-                                    className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700">
-                                <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
-                                </svg>
-                            </button>
+                        <div className={"text-slate-700 dark:text-slate-300"}>
+                            <MDXRemote components={useMDXComponents()} {...markdown} />
                         </div>
-                        <Footer></Footer>
                     </div>
-                    {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
-                </div> : <div className="main-grid lg:grid lg:gap-8 lg:grid-cols-3 max-w-screen-4xl h-screen md:px-6 my-8 z-20"></div>}
+                    <div className={"w-full flex justify-around mt-4"}>
+                        <button onClick={() => {
+                            const url = new URL(window.location.href);
+
+                            const index = keys.indexOf(url.pathname);
+                            if (index > 0)
+                                router.push(keys[index - 1]);
+                        }}
+                                className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                      d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button onClick={() => {
+                            const url = new URL(window.location.href);
+
+                            const index = keys.indexOf(url.pathname);
+                            if (index < keys.length - 1)
+                                router.push(keys[index + 1]);
+                        }}
+                                className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700">
+                            <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <Footer></Footer>
+                </div>
+                {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
+            </div>
         </div>
     )
 }
