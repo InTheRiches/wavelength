@@ -86,8 +86,8 @@ function waitForElm(selector) {
     });
 }
 
-export async function scrollPageToContent() {
-    let hash = window.location.hash.substring(1);
+export async function scrollPageToContent(hash) {
+    // let hash = window.location.hash.substring(1);
 
     if (!hash) {
         return;

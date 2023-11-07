@@ -33,7 +33,7 @@ export default function Page({ headers, title, description="", markdown="" }) {
         }
     }, [isDarkMode]);
 
-    scrollPageToContent();
+    scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
 
     useEffect(() => {
         setSidebar(<Sidebar></Sidebar>)
