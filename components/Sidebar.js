@@ -195,7 +195,7 @@ export function HeaderListSidebar() {
                 <div>
                     {headers && headers.map((h1, index) => {
                         return (
-                            <div key={index + 150} className="sidebar-header min-[1350px]:text-lg text-base pb-3 flex flex-row w-fit items-center">
+                            <div key={index + 150} className="sidebar-header text-lg pb-3 flex flex-row w-fit items-center">
                                 {/*<div className={"w-2 h-2 mr-2 bg-neutral-500 rounded-full aspect-square"}></div>*/}
                                 <svg className={"w-1.5 h-1.5 mr-2 transition-colors duration-75"} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={"#cbd5e1"}>
                                     <circle cx="50" cy="50" r="50"/>
