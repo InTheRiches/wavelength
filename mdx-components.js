@@ -34,9 +34,9 @@ export function useDescriptionComponents(components) {
   const router = useRouter();
 
   return {
-    p: ({ children }) => <p className={"text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-lg text-md text-left sm:text-justify"}>{children}</p>,
+    p: ({ children }) => <p className={"text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left sm:text-justify"}>{children}</p>,
     strong: ({ children }) => <strong className={"text-slate-700 dark:text-slate-50"}>{children}</strong>,
-    a: ({ children, ...props }) => <a className={"text-cyan-accent min-[424px]:text-lg text-md hover:cursor-pointer"} onClick={() => handleClick(props.href, router)}>{children}</a>,
+    a: ({ children, ...props }) => <a className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} onClick={() => handleClick(props.href, router)}>{children}</a>,
     ...components
   }
   // Allows customizing built-in components, e.g. to add styling.
