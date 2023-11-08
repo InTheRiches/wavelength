@@ -75,7 +75,7 @@ export default function LandingPage() {
 
                     <div className="pb-12">
                         <div className="relative mx-auto lg:max-w-6xl lg:mx-auto">
-                            <img className="transform scale-90 landing-page-img" src={isDarkMode && loaded ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png"} alt="" />
+                            <img className="transform scale-90 landing-page-img dark:rounded-none rounded-xl" src={isDarkMode && loaded ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png"} alt="" />
                         </div>
                     </div>
                 </section>
