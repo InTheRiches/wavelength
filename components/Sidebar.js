@@ -111,7 +111,7 @@ export function Topic({ topic, activeTopic }) {
              onClick={() => {
                  router.push(topic.href).then(() => {});
              }}>
-            <span className={`text-lg ml-4`}>{topic.title}</span>
+            <span className={`min-[1350px]:text-lg text-base ml-4`}>{topic.title}</span>
         </div>
     );
 }
@@ -124,7 +124,7 @@ export function SubCategory({ subcategory, collapsed, activeTopic, toggleCollaps
                  onClick={() => {
                      toggleCollapse(subcategory);
                  }}>
-                <span className={`text-lg ml-4`}>{subcategory.title}</span>
+                <span className={`min-[1350px]:text-lg text-base ml-4`}>{subcategory.title}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-transform duration-100 ${
                     collapsed[subcategory.title + "-" + subcategory.id]
                         ? "-scale-y-100"
@@ -195,7 +195,7 @@ export function HeaderListSidebar() {
                 <div>
                     {headers && headers.map((h1, index) => {
                         return (
-                            <div key={index + 150} className="sidebar-header text-lg pb-3 flex flex-row w-fit items-center">
+                            <div key={index + 150} className="sidebar-header min-[1350px]:text-lg text-base pb-3 flex flex-row w-fit items-center">
                                 {/*<div className={"w-2 h-2 mr-2 bg-neutral-500 rounded-full aspect-square"}></div>*/}
                                 <svg className={"w-1.5 h-1.5 mr-2 transition-colors duration-75"} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={"#cbd5e1"}>
                                     <circle cx="50" cy="50" r="50"/>
