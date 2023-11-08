@@ -75,6 +75,16 @@
     ]
   },
   {
+    "id": 3,
+    "title": "Recovery",
+    "subtopics": [
+      { "id": 0, "title": "Sleep", "href": "/recovery/sleep" },
+      { "id": 1, "title": "Rest Set Periods", "href": "/recovery/rest-set-periods" },
+      { "id": 2, "title": "Rest Days", "href": "/recovery/rest-days" },
+      { "id": 3, "title": "Active Recovery", "href": "/recovery/active-recovery" }
+    ]
+  },
+  {
     "id": 4,
     "title": "Dieting",
     "subtopics": [
