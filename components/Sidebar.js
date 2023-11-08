@@ -56,6 +56,7 @@ function Sidebar({disable = true}) {
         calculateRemainingHeight();
 
         const handleScroll = () => {
+            const sidebar = document.getElementById("sidebar");
             localStorage.setItem('sidebar-scroll', sidebar.scrollTop.toString());
         };
 

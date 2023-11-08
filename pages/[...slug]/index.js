@@ -78,6 +78,8 @@ export default function Page({ headers, title, description="", markdown="" }) {
         // Attach the event listener
         window.addEventListener('resize', handleResize);
 
+        // document.body.innerHTML += '<script type="text/javascript">amzn_assoc_tracking_id = "wavelengthfit-20";amzn_assoc_ad_mode = "manual";amzn_assoc_ad_type = "smart";amzn_assoc_marketplace = "amazon";amzn_assoc_region = "US";amzn_assoc_design = "enhanced_links";amzn_assoc_asins = "B099KRBL53";amzn_assoc_placement = "adunit";amzn_assoc_linkid = "e0116679c401973183af6b6a6aa3bf06";</script><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>';
+
         // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
