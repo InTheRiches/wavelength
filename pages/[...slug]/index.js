@@ -25,6 +25,8 @@ export default function Page({ headers, title, description="", markdown="" }) {
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
+    console.log(description)
+
     useEffect(() => {
         if (isDarkMode) {
             document.documentElement.classList.add('dark');
@@ -106,11 +108,13 @@ export default function Page({ headers, title, description="", markdown="" }) {
                             <span className="text-cyan-accent mb-1 text-lg lg:text-xl font-semibold">{location}</span>
                             <span className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</span>
                             <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify"}>
-                                <Markdown components={useDescriptionComponents()}>{description}</Markdown>
+                                <span>
+                                    <Markdown components={useDescriptionComponents()}>{description}</Markdown>
+                                </span>
                             </div>
                         </div>
                         <div className={"text-slate-700 dark:text-slate-300"}>
-                            <MDXRemote components={useMDXComponents()} {...markdown} />
+                            {markdown !== "" && <MDXRemote components={useMDXComponents()} {...markdown} />}
                         </div>
                     </div>
                     <div className={"w-full flex justify-around mt-4"}>
@@ -182,7 +186,7 @@ export async function getServerSideProps(context) {
             props: {
                 description: "",
                 title: "An error occured, we are working on it :)",
-                markdown:""
+                markdown: ""
             },
         };
     }
