@@ -25,8 +25,6 @@ export default function Page({ headers, title, description="", markdown="" }) {
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
-    console.log(description)
-
     useEffect(() => {
         if (isDarkMode) {
             document.documentElement.classList.add('dark');
