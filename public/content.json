@@ -78,7 +78,8 @@
     "id": 3,
     "title": "Recovery",
     "subtopics": [
-      { "id": 0, "title": "Sleep", "href": "/recovery/sleep" }
+      { "id":  0, "title":  "Basics", "href":  "/recovery/basics"},
+      { "id": 1, "title": "Sleep", "href": "/recovery/sleep" }
     ]
   },
   {
