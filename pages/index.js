@@ -3,13 +3,12 @@ import Navigation from '@/components/Navigation'
 import useDarkMode from 'use-dark-mode';
 import {lobster} from "@/components/Fonts";
 import {loginUser} from "@/components/Authentication";
-import {useRouter} from "next/router";
+import {useLoaded} from "@/components/LoadedHook";
 
 export default function LandingPage() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
-    const [loaded, setLoaded] = React.useState(false);
-    const router = useRouter();
     const user = loginUser();
+    const loaded = useLoaded();
 
     useEffect(() => {
         if (isDarkMode) {
@@ -17,7 +16,6 @@ export default function LandingPage() {
         } else {
             document.documentElement.classList.remove('dark');
         }
-        setLoaded(true);
     }, [isDarkMode]);
 
     return (
@@ -29,7 +27,7 @@ export default function LandingPage() {
             {/*</div>*/}
 
             <header className={"flex flex-col items-center w-full h-screen"}>
-                <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
+                <Navigation user={user}></Navigation>
 
                 <section className="pt-12">
                     <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -40,7 +38,7 @@ export default function LandingPage() {
                                 Transform your physique with
                                 <span className="ml-3 relative inline-flex">
                                     <span className="bg-cyan-accent blur-lg filter opacity-40 dark:hidden w-full h-full absolute inset-0"></span> {/* bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] */}
-                                    <span className={"relative " + (isDarkMode ? "uline" : "")}> expert guidance </span>
+                                    <span className={"relative " + (loaded && isDarkMode ? "uline" : "")}> expert guidance </span>
                                 </span>
                             </p>
 
@@ -75,7 +73,7 @@ export default function LandingPage() {
 
                     <div className="pb-12">
                         <div className="relative mx-auto lg:max-w-6xl lg:mx-auto">
-                            <img className="transform scale-90 landing-page-img dark:rounded-none rounded-xl" src={isDarkMode && loaded ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png"} alt="" />
+                            <img className="transform scale-90 landing-page-img dark:rounded-none rounded-xl" src={loaded ? isDarkMode ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png" : "/images/landingPageIllustrationBlank.png"} alt="" />
                         </div>
                     </div>
                 </section>

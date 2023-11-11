@@ -1,14 +1,10 @@
 import {
     findUserByAccessToken,
     findUserByEmail,
-    findUserById, findUserByRefreshToken,
-    findUserByToken,
-    findUserWithEmailAndPassword,
-    genuuid,
-    insertUser, loginUserWithEmailAndPassword
+    findUserByRefreshToken,
+    loginUserWithEmailAndPassword
 } from '@/lib/db';
 import { getMongoDb } from '@/lib/mongodb';
-import {genToken} from "@/pages/api/user";
 import Cookies from 'cookies'
 
 export default async function handler(req, res) {
@@ -32,31 +28,33 @@ export default async function handler(req, res) {
                 .status(403)
                 .json({error: {message: 'The password is incorrect.'}});
         }
+
         cookies.set("refreshToken", user.refreshToken, {
             httpOnly: true,
             sameSite: 'lax',
         });
 
-        return res.status(200).json({ user: { ...user, refreshToken: undefined } });
+        cookies.set("clientSecret", user.clientSecret, {
+            httpOnly: true,
+            sameSite: 'lax',
+        });
+
+        return res.status(200).json({ user: { ...user, refreshToken: undefined, clientSecret: undefined } });
     }
 
     if (parsedBody.accessToken) {
-        console.log("access token: " + parsedBody.accessToken);
-
-        const user = await findUserByAccessToken(db, parsedBody.id, parsedBody.accessToken);
+        let user = await findUserByAccessToken(db, parsedBody.id, parsedBody.accessToken);
         if (!user) {
-            console.log("user not found")
-            return res.status(403).json({ error: { error: "An error occurred. (developer testing, user not found)" }});
-        }
-        if (user.accessToken === undefined) {
-            console.log("access token expired and is undefined")
 
             const refreshToken = cookies.get('refreshToken')
             const clientSecret = cookies.get("clientSecret")
 
             if (refreshToken) {
-                await findUserByRefreshToken(db, refreshToken, parsedBody.id, clientSecret);
+                user = await findUserByRefreshToken(db, refreshToken, parsedBody.id, clientSecret);
             }
+
+            if (!user)
+                return res.status(403).json({ error: { error: "An error occurred. (developer testing, user not found)" }});
         }
         return res.status(200).json({ user: user })
     }

@@ -1,0 +1,157 @@
+import xml.etree.ElementTree as ET
+
+def create_sitemap_entry(parent, data):
+    for item in data:
+        if 'href' in item:
+            url = ET.SubElement(parent, 'url')
+            loc = ET.SubElement(url, 'loc')
+            priority = ET.SubElement(url, 'priority')
+            priority.text = "0.8"
+            loc.text = "https://www.wavelength.fit" + item['href']
+        if 'subtopics' in item:
+            create_sitemap_entry(parent, item['subtopics'])
+
+sitemap = ET.Element('urlset')
+sitemap.set('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+
+# Your JSON data
+data = [
+         {
+           "id": 0,
+           "title": "Getting Started",
+           "subtopics": [
+             { "id": 0, "title":  "Introduction", "href":  "/getting-started/introduction"}
+           ]
+         },
+         {
+           "id": 1,
+           "title": "Muscles",
+           "subtopics": [
+             { "id": 0, "title": "Basics", "href": "/muscles/basics" },
+             {
+               "id": 1,
+               "title": "Training",
+               "subtopics": [
+                 {
+                   "id": 0,
+                   "title": "Basics",
+                   "showInLocation": False,
+                   "subtopics":  [
+                     { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/basics/reps-and-sets" },
+                     { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
+                   ]
+                 },
+                 { "id": 1, "title": "Strength", "href": "/muscles/training/strength"}
+               ]
+             },
+             {
+               "id": 2,
+               "title": "Specifics",
+               "showInLocation": False,
+               "subtopics": [
+                 { "id": 0, "title": "Back", "subtopics": [
+                   { "id": 0, "title": "Teres", "href": "/muscles/specifics/back/teres" },
+                   { "id": 1, "title": "Rhomboids", "href": "/muscles/specifics/back/rhomboids" },
+                   { "id": 2, "title": "Trapezius", "href": "/muscles/specifics/back/trapezius" },
+                   { "id": 3, "title": "Rotator Cuff", "href": "/muscles/specifics/back/rotator-cuff" },
+                   { "id": 4, "title": "Lats", "href": "/muscles/specifics/back/lats" },
+                   { "id": 5, "title": "Posterior Deltoids", "href": "/muscles/specifics/back/posterior-delts" },
+                   { "id":  6, "title": "Infraspinatus", "href": "/muscles/specifics/back/infraspinatus" }
+                 ] },
+                 { "id": 1, "title": "Chest", "subtopics": [
+                   { "id": 0, "title": "Pecs", "href": "/muscles/specifics/chest/pecs" },
+                   { "id": 1, "title": "Deltoids", "href": "/muscles/specifics/chest/deltoids" }
+                 ] },
+                 { "id": 2, "title": "Arms", "subtopics": [
+                   { "id": 0, "title": "Biceps", "href": "/muscles/specifics/arms/biceps" },
+                   { "id": 1, "title": "Triceps", "href": "/muscles/specifics/arms/triceps" },
+                   { "id": 2, "title": "Forearms", "href": "/muscles/specifics/arms/forearms" }
+                 ] },
+                 { "id": 3, "title": "Core", "subtopics": [
+                   { "id": 0, "title": "Abs", "href": "/muscles/specifics/core/abs" },
+                   { "id": 1, "title": "Obliques", "href": "/muscles/specifics/core/obliques" },
+                   { "id": 2, "title": "Lower Back", "href": "/muscles/specifics/core/lower-back" }
+                 ] },
+                 { "id": 4, "title": "Legs", "subtopics": [
+                   { "id": 0, "title": "Quads", "href": "/muscles/specifics/legs/quads" },
+                   { "id": 1, "title": "Hamstrings", "href": "/muscles/specifics/legs/hamstrings" },
+                   { "id": 2, "title": "Glutes", "href": "/muscles/specifics/legs/glutes" },
+                   { "id": 3, "title": "Adductors", "href": "/muscles/specifics/legs/adductors" },
+                   { "id": 4, "title": "Abductors", "href": "/muscles/specifics/legs/abductors" },
+                   { "id": 5, "title": "Calves", "href": "/muscles/specifics/legs/calves" }
+                 ] }
+               ]
+             }
+           ]
+         },
+         {
+           "id": 2,
+           "title": "Cardio",
+           "subtopics": [
+             { "id": 0, "title": "Basics", "href": "/cardio/basics"}
+           ]
+         },
+         {
+           "id": 3,
+           "title": "Recovery",
+           "subtopics": [
+             { "id":  0, "title":  "Basics", "href":  "/recovery/basics"},
+             { "id": 1, "title": "Sleep", "href": "/recovery/sleep" }
+           ]
+         },
+         {
+           "id": 4,
+           "title": "Dieting",
+           "subtopics": [
+             { "id": 0, "title": "Basics", "href": "/dieting/basics" },
+             {
+               "id": 1,
+               "title": "Nutrients",
+               "subtopics": [
+                 { "id": 0, "title": "Vitamins", "href": "/dieting/nutrients/vitamins" },
+                 { "id": 1, "title": "Protein", "href": "/dieting/nutrients/protein" }
+               ]
+             },
+             { "id": 2, "title": "Cutting", "href": "/dieting/cutting" },
+             { "id": 3, "title": "Bulking", "href": "/dieting/bulking" }
+           ]
+         },
+         {
+           "id": 5,
+           "title": "Supplements",
+           "subtopics": [
+             { "id": 1, "title": "Basics", "href": "/supplements/basics" },
+             {
+               "id": 2,
+               "title": "Performance",
+               "subtopics": [
+                 { "id": 1, "title": "Creatine", "href": "/supplements/performance/creatine" },
+                 { "id": 2, "title": "Pre Workout", "href": "/supplements/performance/pre-workout" },
+                 { "id": 3, "title": "Beta Alanine", "href": "/supplements/performance/beta-alanine" },
+                 { "id": 4, "title": "BCAAs", "href": "/supplements/performance/bcaas" },
+                 { "id": 6, "title": "Citrulline", "href": "/supplements/performance/citrulline" }
+               ]},
+             {
+               "id": 3,
+               "title": "Muscle Gain",
+               "subtopics": [
+                 {
+                   "id": 1,
+                   "title": "Whey Protein",
+                   "href": "/supplements/muscle-gain/whey-protein"
+                 },
+                 {
+                   "id": 3,
+                   "title": "Glutamine",
+                   "href": "/supplements/muscle-gain/glutamine"
+                 }
+               ]
+             }
+           ]
+         }
+       ]
+
+create_sitemap_entry(sitemap, data)
+
+tree = ET.ElementTree(sitemap)
+tree.write('sitemap.xml', encoding='utf-8', xml_declaration=True)
