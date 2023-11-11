@@ -1,4 +1,4 @@
-import {Fragment, useEffect, useState} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import {useRouter} from "next/router";
 import {lobster} from "@/components/Fonts";
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/20/solid";
@@ -7,13 +7,13 @@ import useDarkMode from "use-dark-mode";
 import {useLoaded} from "@/components/LoadedHook";
 import {percentScrolled} from "@/components/ContentScroll";
 
-export default function Navigation({ progressBar = false }) {
+export default function Navigation({ progressBar = false, user }) {
   const { value: isDarkMode, toggle: toggleDarkMode } = useDarkMode();
   const [ pScrolled, setPercentScrolled ] = useState(0.0);
   const router = useRouter();
   const loaded = useLoaded();
 
-  const [windowWidth, setWindowWidth] = useState(640);
+  const [windowWidth, setWindowWidth] = useState(1024);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Navigation({ progressBar = false }) {
           </div>
           <a className={"ml-4 mb-1 text-4xl font-bold text-gray-900 dark:text-slate-50 text-center hidden min-[424px]:block  " + lobster.className}>wavelength</a>
         </div>
-        <div className="flex items-center pr-2">
+        <div className="flex items-center">
           <button type="button" className="rounded-full p-1 text-gray-400 hover:text-cyan-accent">
             <span className="sr-only">Toggle Theme</span>
 
@@ -75,6 +75,28 @@ export default function Navigation({ progressBar = false }) {
 
             {/*<svg onClick={setDark} className="w-8 h-8 fill-slate-700 dark:fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path stroke="white" d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>*/}
           </button>
+          {user.length !== 0 && user.notSignedIn &&
+            <div>
+              <div className="ml-6 relative inline-flex group">
+                <div
+                    className="absolute transitiona-all duration-500 opacity-0 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-md group-hover:opacity-40 dark:group-hover:opacity-70 group-hover:-inset-1 group-hover:duration-100 animate-tilt"></div>
+
+                <a href="/login" title=""
+                   className="z-20 px-5 py-2 bg-slate-50 dark:bg-neutral-900 rounded-xl text-lg font-medium text-gray-900 dark:text-slate-50 transition-all duration-200 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Login </a>
+              </div>
+              <div className="ml-6 relative inline-flex group">
+                <div className="absolute transitiona-all duration-500 opacity-0 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-md group-hover:opacity-40 dark:group-hover:opacity-70 group-hover:-inset-1 group-hover:duration-100 animate-tilt"></div>
+
+                <a href="/signup" title="" className="z-20 px-5 py-2 bg-slate-50 dark:bg-neutral-900 rounded-xl text-lg font-medium text-gray-900 dark:text-slate-50 transition-all duration-200 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Join Community </a>
+              </div>
+            </div>
+            }
+          {
+            user.length !== 0 && !user.notSignedIn &&
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} className="ml-6 stroke-cyan-accent w-9 h-9">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+          }
         </div>
       </div>
       {isOpen && windowWidth < 1024 ?

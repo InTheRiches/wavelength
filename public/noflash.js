@@ -8,9 +8,8 @@
     const classNameLight = '';
 
     function setClassOnDocumentBody(darkMode) {
-        document.documentElement.classList.add(darkMode ? "dark" : classNameLight);
-        document.body.classList.add(darkMode ? "d" : classNameLight);
-        document.body.classList.add(darkMode ? "dark-mode" : classNameLight);
+        document.documentElement.classList.add(darkMode ? "dark" : "light");
+
 
         // document.body.classList.remove(darkMode ? "d" : classNameLight);
         // document.body.classList.remove(darkMode ? "dark-mode" : classNameLight);

@@ -3,6 +3,7 @@ import useDarkMode from "use-dark-mode";
 import React, {useEffect} from "react";
 import {toast} from "react-toastify";
 import {setCookie} from "cookies-next";
+import {loginUser} from "@/components/Authentication";
 
 export default function Login() {
     const router = useRouter();
@@ -23,7 +24,7 @@ export default function Login() {
     return (
         <div className="flex min-h-screen flex-col justify-center px-6 pb-24 lg:px-8 bg-white dark:bg-neutral-900">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img className="mx-auto h-10 w-auto hover:cursor-pointer" src="logo.png" alt="Your Company" onClick={(e) => {
+                <img className="mx-auto h-28 w-auto hover:cursor-pointer" src="/images/logo.png" alt="Your Company" onClick={(e) => {
                     e.preventDefault();
                     router.push("/");
                 }}/>
@@ -34,13 +35,15 @@ export default function Login() {
                 <form className="space-y-6" onSubmit={async (e) => {
                     e.preventDefault();
 
+                    console.log("logging in");
+
                     try {
                         const reqBody = {
                             email: emailRef.current.value,
                             password: passwordRef.current.value,
                         }
 
-                        const response = await fetch('/api/user/login', {
+                        await fetch('/api/user/login', {
                             method: 'POST',
                             body: JSON.stringify(reqBody),
                         }).then(res => {
@@ -49,14 +52,13 @@ export default function Login() {
                                     setCookie("accessToken", json.user.accessToken);
                                     setCookie("id", json.user.id);
 
-                                    console.log("account found with token " + json.user.refreshToken);
-                                    // await router.replace('/');
+                                    await router.replace('/');
                                 });
 
                                 return;
                             }
 
-                            // error, do whatever to signal wrong information
+                            // TODO error, do whatever to signal wrong information
                         });
                     } catch (e) {
                         toast.error(e.message);
