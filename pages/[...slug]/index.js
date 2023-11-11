@@ -1,10 +1,10 @@
+'use client';
 import {useRouter} from 'next/router'
 import React, {useEffect, useState} from 'react';
 import Navigation from '@/components/Navigation'
 import Sidebar, {HeaderListSidebar} from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import {useDescriptionComponents, useMDXComponents} from "@/mdx-components";
-
 import fs from 'fs';
 import path from 'path';
 import topics from "@/public/content.json";
@@ -13,17 +13,21 @@ import Markdown from "react-markdown";
 import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
 import {scrollPageToContent} from "@/components/ContentScroll";
+import {loginUser} from "@/components/Authentication";
 
 export default function Page({ headers, title, description="", markdown="" }) {
     const router = useRouter();
-    const [windowWidth, setWindowWidth] = useState(640);
+    const [windowWidth, setWindowWidth] = useState(1024);
     const [sidebar, setSidebar] = useState(null);
     const [processedJSX, setProcessedJSX] = useState(null);
-    const [location, setLocation] = useState("");
+    const [location, setLocation] = useState("Location");
     const [keys, setKeys] = useState([]);
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
+    const user = loginUser();
 
     const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
+
+    scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
 
     useEffect(() => {
         if (isDarkMode) {
@@ -33,9 +37,11 @@ export default function Page({ headers, title, description="", markdown="" }) {
         }
     }, [isDarkMode]);
 
-    scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
-
     useEffect(() => {
+        if (title === 'error') {
+            router.push('/404');
+        }
+
         setSidebar(<Sidebar></Sidebar>)
         setWindowWidth(window.innerWidth);
 
@@ -94,7 +100,7 @@ export default function Page({ headers, title, description="", markdown="" }) {
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
-            <Navigation progressBar={true}></Navigation>
+            <Navigation user={user} progressBar={true}></Navigation>
 
 
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
@@ -178,12 +184,10 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
-        console.error('Error reading file:', error);
-
         return {
             props: {
                 description: "",
-                title: "An error occured, we are working on it :)",
+                title: "error",
                 markdown: ""
             },
         };

@@ -10,6 +10,7 @@ module.exports = {
     aspectRatio: false,
   },
   content: [
+      './pages/404.js',
       './mdx-components.js',
       './pages/**/*.{js,ts,jsx,tsx,mdx}',
       './data/pages/**/*.{md}',

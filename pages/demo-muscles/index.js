@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import useDarkMode from 'use-dark-mode';
 import {getCookie, hasCookie} from "cookies-next";
 import {BackFullBodySVG, FrontFullBodySVG} from "@/components/BodySVG";
+import {loginUser} from "@/components/Authentication";
 
 const lobster = Lobster({
     variable: '--font-lobster',
@@ -22,6 +23,7 @@ const openSans = Open_Sans({
 
 export default function Layout() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
+    const user = loginUser();
 
     useEffect(() => {
         if (isDarkMode) {
@@ -51,7 +53,7 @@ export default function Layout() {
             </div>
 
             <header className={"flex flex-col items-center w-full h-screen z-20"}>
-                <Navigation dark={isDarkMode} setDark={toggleDarkMode}></Navigation>
+                <Navigation user={user}></Navigation>
                 <div className={"flex flex-col h-full w-full p-8"}>
                     <div className={"w-full h-full flex flex-row"}>
                         <div className={"h-full w-1/4"}>
