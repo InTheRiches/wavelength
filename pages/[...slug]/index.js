@@ -38,6 +38,10 @@ export default function Page({ headers, title, description="", markdown="" }) {
     }, [isDarkMode]);
 
     useEffect(() => {
+        if (title === 'error') {
+            router.push('/404');
+        }
+
         setSidebar(<Sidebar></Sidebar>)
         setWindowWidth(window.innerWidth);
 
@@ -180,12 +184,10 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
-        console.error('Error reading file:', error);
-
         return {
             props: {
                 description: "",
-                title: "An error occured, we are working on it :)",
+                title: "error",
                 markdown: ""
             },
         };
