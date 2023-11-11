@@ -5,20 +5,22 @@ import React from "react";
 import BulletPoints from "@/components/BulletPoints";
 import handleClick from "@/components/HandleClick";
 import {useRouter} from "next/router";
+import Link from "next/link";
 
 export function useMDXComponents(components) {
   const router = useRouter();
 
   return {
+    Link: (props) => <Link {...props}></Link>,
     EntireBodyMap: (props) => <EntireBodyMap {...props}></EntireBodyMap>,
     InformationBlock: (props) => <InformationBlock {...props}></InformationBlock>,
     WarningBlock: (props) => <WarningBlock {...props}></WarningBlock>,
-    h1: ({ children }) => <h1 id={children.replace(/\s/g, "-").toLowerCase() + "x"} className={"font-bold text-slate-900 dark:text-slate-50 min-[424px]:text-[1.875rem] text-2xl mt-12 mb-4"}>{children}</h1>,
-    h2: ({ children }) => <h2 className={"font-bold text-slate-900 dark:text-slate-50 text-[1.4rem]"}>{children}</h2>,
+    h1: ({ children }) => <span id={children.replace(/\s/g, "-").toLowerCase() + "x"} className={"customh1s font-bold text-slate-900 dark:text-slate-50 min-[424px]:text-[1.875rem] text-2xl mt-12 mb-4 leading-10 block"}>{children}</span>,
+    h2: ({ children }) => <span className={"font-bold text-slate-900 dark:text-slate-50 text-[1.4rem]"}>{children}</span>,
     p: ({ children }) => <p className={"text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left sm:text-justify mb-6"}>{children}</p>,
     span: ({ children }) => <span className={"text-slate-800 dark:text-slate-50 min-[424px]:text-md min-[1350px]:text-lg text-base text-left sm:text-justify"}>{children}</span>,
     strong: ({ children }) => <strong className={"text-slate-700 dark:text-slate-50"}>{children}</strong>,
-    a: ({ children, ...props }) => <a className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} onClick={() => handleClick(props.href, router)}>{children}</a>,
+    a: ({ children, ...props }) => <Link className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} href={props.href}>{children}</Link>,
     code: ({ children }) => <code className="border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1 mb-4">{children}</code>,
     BulletPoints: (props) => <BulletPoints {...props}></BulletPoints>,
     ...components
@@ -36,7 +38,7 @@ export function useDescriptionComponents(components) {
   return {
     p: ({ children }) => <p className={"text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left sm:text-justify"}>{children}</p>,
     strong: ({ children }) => <strong className={"text-slate-700 dark:text-slate-50"}>{children}</strong>,
-    a: ({ children, ...props }) => <a className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} onClick={() => handleClick(props.href, router)}>{children}</a>,
+    a: ({ children, ...props }) => <Link className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} href={props.href}>{children}</Link>,
     ...components
   }
   // Allows customizing built-in components, e.g. to add styling.

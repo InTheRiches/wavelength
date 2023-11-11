@@ -8,7 +8,7 @@ export default function BulletPoints({bulletPoints}) {
     const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
 
     return (
-        <ul className="markerColor sm:ml-0 ml-3 min-[424px]:text-lg text-md list-outside mt-6 list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full">
+        <ul className="markerColor sm:ml-0 ml-3 min-[424px]:text-lg text-md list-outside list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full">
             {
                 bulletPoints.map((bulletPoint, index) => {
                     return (

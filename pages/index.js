@@ -4,6 +4,7 @@ import useDarkMode from 'use-dark-mode';
 import {lobster} from "@/components/Fonts";
 import {loginUser} from "@/components/Authentication";
 import {useLoaded} from "@/components/LoadedHook";
+import Image from "next/image";
 
 export default function LandingPage() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
@@ -38,7 +39,7 @@ export default function LandingPage() {
                                 Transform your physique with
                                 <span className="ml-3 relative inline-flex">
                                     <span className="bg-cyan-accent blur-lg filter opacity-40 dark:hidden w-full h-full absolute inset-0"></span> {/* bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] */}
-                                    <span className={"relative " + (loaded && isDarkMode ? "uline" : "")}> expert guidance </span>
+                                    <span className={"relative dark:underline dark:decoration-cyan-accent"}> expert guidance </span>
                                 </span>
                             </p>
 
@@ -71,9 +72,22 @@ export default function LandingPage() {
                         </div>
                     </div>
 
-                    <div className="pb-12">
+                    <div className="pb-12 mt-10">
                         <div className="relative mx-auto lg:max-w-6xl lg:mx-auto">
-                            <img className="transform scale-90 landing-page-img dark:rounded-none rounded-xl" src={loaded ? isDarkMode ? "/images/landingPageIllustrationDark.png" : "/images/landingPageIllustration.png" : "/images/landingPageIllustrationBlank.png"} alt="" />
+                            <Image
+                                className="hidden dark:block landing-page-img rounded-xl"
+                                width={1584}
+                                height={955}
+                                src={"/images/landingPageIllustrationDark.png"}
+                                alt="get some glasses nerd"
+                            />
+                            <Image
+                                className={"block dark:hidden landing-page-img rounded-xl"}
+                                width={1584}
+                                height={955}
+                                src={"/images/landingPageIllustration.png"}
+                                alt={"get some glasses nerd"}
+                            />
                         </div>
                     </div>
                 </section>
