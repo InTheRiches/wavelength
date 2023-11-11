@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {useRouter} from "next/router";
 import topics from '/public/content.json';
-import {scrollPageToContent} from "@/components/ContentScroll";
+import Link from "next/link";
 
 let key = 0;
 const getNextKey = () => {
@@ -107,11 +107,8 @@ export function Topic({ topic, activeTopic }) {
                  activeTopic === topic.href
                      ? 'text-cyan-accent border-cyan-accent'
                      : 'text-neutral-700 dark:text-slate-300 border-neutral-200 dark:border-neutral-700'
-             } flex items-center transition-all duration-200 hover:cursor-pointer hover:text-cyan-accent hover:dark:text-cyan-accent border-l-1 py-1`}
-             onClick={() => {
-                 router.push(topic.href).then(() => {});
-             }}>
-            <span className={`min-[1350px]:text-lg text-base ml-4`}>{topic.title}</span>
+             } flex items-center transition-all duration-200 hover:cursor-pointer hover:text-cyan-accent hover:dark:text-cyan-accent border-l-1 py-1`}>
+            <Link href={topic.href} className={`min-[1350px]:text-lg text-base ml-4`}>{topic.title}</Link>
         </div>
     );
 }
