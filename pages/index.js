@@ -79,14 +79,14 @@ export default function LandingPage() {
                                 width={1584}
                                 height={955}
                                 src={"/images/landingPageIllustrationDark.png"}
-                                alt="get some glasses nerd"
+                                alt="Wavelength Demo Image"
                             />
                             <Image
                                 className={"block dark:hidden landing-page-img rounded-xl"}
                                 width={1584}
                                 height={955}
                                 src={"/images/landingPageIllustration.png"}
-                                alt={"get some glasses nerd"}
+                                alt={"Wavelength Demo Image"}
                             />
                         </div>
                     </div>
@@ -96,7 +96,7 @@ export default function LandingPage() {
                         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-3 gap-y-16 gap-x-12">
                             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                                 <div className={"flex flex-row justify-start items-center"}>
-                                    <img className="w-auto h-9" src="/images/logo.png" alt=""/>
+                                    <img className="w-auto h-9" src="/images/logo.png" alt="Wavelength Logo"/>
                                     <h1 className={"ml-2 mb-1 text-4xl font-bold text-gray-900 dark:text-slate-50 text-left " + lobster.className}>wavelength</h1>
                                 </div>
 

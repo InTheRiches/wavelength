@@ -43,7 +43,7 @@ export function useBulletPointComponents(hangingIndent, components) {
   return {
     p: ({ children }) => <p className={(hangingIndent ? "indent-[-2rem] ml-6 " : "") + "text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left"}>{children}</p>,
     strong: ({ children }) => <strong className={"text-slate-700 dark:text-slate-50"}>{children}</strong>,
-    a: ({ children, ...props }) => <Link className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} href={props.href}>{children}</Link>,
+    a: ({ children, ...props }) => <Link className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} style={{ overflowWrap: "anywhere" }} href={props.href}>{children}</Link>,
     ...components
   }
 }

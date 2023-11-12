@@ -6,6 +6,7 @@ import MobileSidebar from "@/components/MobileSidebar";
 import useDarkMode from "use-dark-mode";
 import {useLoaded} from "@/components/LoadedHook";
 import {percentScrolled} from "@/components/ContentScroll";
+import Image from "next/image";
 
 export default function Navigation({ progressBar = false, user }) {
   const { value: isDarkMode, toggle: toggleDarkMode } = useDarkMode();
@@ -58,7 +59,7 @@ export default function Navigation({ progressBar = false, user }) {
         }
         <div className="lg:left-0 flex items-center justify-center hover:cursor-pointer" onClick={() => router.push("/")}>
           <div className="flex flex-shrink-0 items-center">
-            <img className="h-10 w-10 rounded-full" src="/images/logo.png" alt="Wavelength"/>
+            <Image className="h-10 w-10 rounded-full" src="/images/logo.png" alt="Wavelength" width={686} height={686}/>
           </div>
           <a className={"ml-4 mb-1 text-4xl font-bold text-gray-900 dark:text-slate-50 text-center hidden min-[424px]:block  " + lobster.className}>wavelength</a>
         </div>

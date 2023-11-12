@@ -1,4 +1,3 @@
-'use client';
 import {useRouter} from 'next/router'
 import React, {useEffect, useState} from 'react';
 import Navigation from '@/components/Navigation'
@@ -20,7 +19,10 @@ export default function Page({ headers, title, description="", markdown="", acti
     const [windowWidth, setWindowWidth] = useState(1024);
     const [processedJSX, setProcessedJSX] = useState(null);
     const [location, setLocation] = useState("Location");
+
     const [keys, setKeys] = useState([]);
+    const [content, setContent] = useState([]);
+
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const user = loginUser();
 
@@ -56,16 +58,18 @@ export default function Page({ headers, title, description="", markdown="", acti
                                         + (subtopic.showInLocation === undefined ? subtopic.title : subtopic.showInLocation ? " • " + subtopic.title : "")
                                         + (subsubtopic.showInLocation === undefined ? subsubtopic.title : subsubtopic.showInLocation ? " • " + subsubtopic.title : "")
                                     );
-
-                                keys.push(subsubsubtopic.href)
+                                if (!keys.includes(subsubsubtopic.href)) keys.push(subsubsubtopic.href);
+                                content.push(subsubsubtopic.title);
                             });
                             return;
                         }
-                        keys.push(subsubtopic.href)
+                        if (!keys.includes(subsubtopic.href)) keys.push(subsubtopic.href);
+                        content.push(subsubtopic.title);
                     });
                     return
                 }
-                keys.push(subtopic.href);
+                if (!keys.includes(subtopic.href)) keys.push(subtopic.href);
+                content.push(subtopic.title);
             });
         });
 
@@ -81,8 +85,8 @@ export default function Page({ headers, title, description="", markdown="", acti
             window.removeEventListener('resize', handleResize);
         };
     }, [router.asPath]);
-    //
-    // ContentScroll();
+
+    const index = 0;
 
     return (
         <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
@@ -111,13 +115,10 @@ export default function Page({ headers, title, description="", markdown="", acti
                     </div>
                     <div className={"w-full flex justify-around mt-4"}>
                         <button onClick={() => {
-                            const url = new URL(window.location.href);
-
-                            const index = keys.indexOf(url.pathname);
                             if (index > 0)
                                 router.push(keys[index - 1]);
                         }}
-                                className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700">
+                                className={(keys.indexOf(activeTopic) > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light " : "bg-gray-700 hover:bg-gray-600 ") + "transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full text-white flex items-center justify-center"}>
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -125,14 +126,11 @@ export default function Page({ headers, title, description="", markdown="", acti
                             </svg>
                         </button>
                         <button onClick={() => {
-                            const url = new URL(window.location.href);
-
-                            const index = keys.indexOf(url.pathname);
-                            if (index < keys.length - 1)
-                                router.push(keys[index + 1]);
-                        }}
-                                className="transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full bg-cyan-accent text-white flex items-center justify-center hover:bg-cyan-accent-light focus:outline-none focus:bg-gray-700">
-                            <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            if (keys.indexOf(activeTopic) < keys.length - 1)
+                                router.push(keys[keys.indexOf(activeTopic) + 1]);
+                        }} className={(keys.indexOf(activeTopic) < keys.length-1 ? "bg-cyan-accent hover:bg-cyan-accent-light " : "bg-gray-700 hover:bg-gray-600 ") + "px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center justify-center"}>
+                            {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
+                            <svg className="w-6 h-6 -scale-x-100 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
                             </svg>
                         </button>
@@ -171,7 +169,7 @@ export async function getServerSideProps(context) {
                 description: json.description,
                 title: json.title,
                 markdown: mdxSource,
-                activeTopic: route
+                activeTopic: route,
             },
         };
     } catch (error) {
