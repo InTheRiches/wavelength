@@ -1,14 +1,16 @@
 import {scrollPageToContent} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
 import handleClick, {openInNewTab} from "@/components/HandleClick";
+import {useBulletPointComponents, useDescriptionComponents} from "@/mdx-components";
+import Markdown from "react-markdown";
 
-export default function BulletPoints({bulletPoints}) {
+export default function BulletPoints({bulletPoints, columns = 2, hangingIndent = false}) {
     const router = useRouter();
     // link regex
     const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
 
     return (
-        <ul className="markerColor sm:ml-0 ml-3 min-[424px]:text-lg text-md list-outside mt-6 list-disc lg:gap-x-16 lg:grid lg:grid-cols-2 h-min w-full">
+        <ul className={`markerColor sm:ml-0 ml-3 min-[424px]:text-lg text-md list-outside list-disc lg:gap-x-16 lg:grid lg:grid-cols-${columns} h-min w-full`}>
             {
                 bulletPoints.map((bulletPoint, index) => {
                     return (
@@ -29,7 +31,7 @@ export default function BulletPoints({bulletPoints}) {
                                     </span>
 
                                     : bulletPoint.title }</strong>}
-                            <span>{bulletPoint.description}</span>
+                            <Markdown components={useBulletPointComponents(hangingIndent)}>{bulletPoint.description}</Markdown>
                         </li>
                     )
                 })
