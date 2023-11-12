@@ -4,6 +4,7 @@ import React, {useEffect} from "react";
 import {toast} from "react-toastify";
 import {setCookie} from "cookies-next";
 import {loginUser} from "@/components/Authentication";
+import Head from 'next/head';
 
 export default function Login() {
     const router = useRouter();
@@ -23,6 +24,10 @@ export default function Login() {
 
     return (
         <div className="flex min-h-screen flex-col justify-center px-6 pb-24 lg:px-8 bg-white dark:bg-neutral-900">
+            <Head>
+                <link rel="canonical" href={"https://www.wavelength.fit/login"} />
+            </Head>
+
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img className="mx-auto h-28 w-auto hover:cursor-pointer" src="/images/logo.png" alt="Your Company" onClick={(e) => {
                     e.preventDefault();

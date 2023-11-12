@@ -28,7 +28,8 @@
               { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
             ]
           },
-          { "id": 1, "title": "Strength", "href": "/muscles/training/strength"}
+          { "id": 1, "title": "Strength", "href": "/muscles/training/strength" },
+          { "id": 2, "title":  "Hypertrophy", "href": "/muscles/training/hypertrophy" }
         ]
       },
       {

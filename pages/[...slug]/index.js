@@ -13,6 +13,7 @@ import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
 import {scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/Authentication";
+import Head from 'next/head';
 
 export default function Page({ headers, title, description="", markdown="", activeTopic }) {
     const router = useRouter();
@@ -94,6 +95,10 @@ export default function Page({ headers, title, description="", markdown="", acti
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
             <Navigation user={user} progressBar={true}></Navigation>
+
+            <Head>
+                <link rel="canonical" href={"https://www.wavelength.fit" + activeTopic} />
+            </Head>
 
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
                 {windowWidth >= 1024 ? <Sidebar activeTopic={activeTopic}></Sidebar> : <></>}

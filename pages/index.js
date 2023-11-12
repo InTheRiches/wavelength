@@ -5,6 +5,7 @@ import {lobster} from "@/components/Fonts";
 import {loginUser} from "@/components/Authentication";
 import {useLoaded} from "@/components/LoadedHook";
 import Image from "next/image";
+import Head from 'next/head';
 
 export default function LandingPage() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
@@ -27,14 +28,18 @@ export default function LandingPage() {
             {/*    )}*/}
             {/*</div>*/}
 
+            <Head>
+                <link rel="canonical" href={"https://www.wavelength.fit/"} />
+            </Head>
+
             <header className={"flex flex-col items-center w-screen h-screen"}>
                 <Navigation user={user}></Navigation>
 
                 <section className="pt-12">
                     <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         <div className="max-w-3xl mx-auto text-center">
-                            <h1 className="hidden sm:block px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.</h1>
-                            <h1 className="block sm:hidden px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to fitness, arranged to be understood and accessible by all.</h1>
+                            <h2 className="hidden sm:block px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.</h2>
+                            <h2 className="block sm:hidden px-6 text-lg text-gray-600 dark:text-gray-400 font-inter">A science based approach to fitness, arranged to be understood and accessible by all.</h2>
                             <p className="mt-3 2xl:mt-5 text-4xl min-[412px]:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj font-bold leading-tight text-gray-900 dark:text-slate-50">
                                 Transform your physique with
                                 <span className="ml-3 relative inline-flex">
@@ -80,6 +85,7 @@ export default function LandingPage() {
                                 height={955}
                                 src={"/images/landingPageIllustrationDark.png"}
                                 alt="Wavelength Demo Image"
+                                priority={true}
                             />
                             <Image
                                 className={"block dark:hidden landing-page-img rounded-xl"}
@@ -87,6 +93,7 @@ export default function LandingPage() {
                                 height={955}
                                 src={"/images/landingPageIllustration.png"}
                                 alt={"Wavelength Demo Image"}
+                                priority={true}
                             />
                         </div>
                     </div>
@@ -97,7 +104,7 @@ export default function LandingPage() {
                             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                                 <div className={"flex flex-row justify-start items-center"}>
                                     <img className="w-auto h-9" src="/images/logo.png" alt="Wavelength Logo"/>
-                                    <h1 className={"ml-2 mb-1 text-4xl font-bold text-gray-900 dark:text-slate-50 text-left " + lobster.className}>wavelength</h1>
+                                    <span className={"ml-2 mb-1 text-4xl font-bold text-gray-900 dark:text-slate-50 text-left " + lobster.className}>wavelength</span>
                                 </div>
 
                                 <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 mt-7 text-left">A free and open community driven company focused on delivering high quality fitness information to all.</p>

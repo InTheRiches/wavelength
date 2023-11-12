@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react'
 import {Lobster, Open_Sans} from 'next/font/google';
 import Navigation from '@/components/Navigation'
-import Footer from "@/components/Footer";
 import useDarkMode from 'use-dark-mode';
 import {getCookie, hasCookie} from "cookies-next";
 import {BackFullBodySVG, FrontFullBodySVG} from "@/components/BodySVG";
 import {loginUser} from "@/components/Authentication";
+import Head from 'next/head';
 
 const lobster = Lobster({
     variable: '--font-lobster',
@@ -48,6 +48,10 @@ export default function Layout() {
 
     return (
         <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-white dark:bg-neutral-900 ` + openSans.className}>
+            <Head>
+                <link rel="canonical" href={"https://www.wavelength.fit/demo-muscles"} />
+            </Head>
+
             <div className={"absolute top-0 right-0 w-full h-full z-10"}>
                 <img src={"/images/backgrounds/landingPageBG.png"} className={"w-full h-full object-cover opacity-50 dark:opacity-20"}></img>
             </div>
