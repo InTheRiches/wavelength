@@ -2,6 +2,7 @@
   {
     "id": 0,
     "title": "Getting Started",
+    "url": "/getting-started",
     "subtopics": [
       { "id": 0, "title":  "Introduction", "href":  "/getting-started/introduction"}
     ]
@@ -9,16 +10,19 @@
   {
     "id": 1,
     "title": "Muscles",
+    "url": "/muscles",
     "subtopics": [
       { "id": 0, "title": "Basics", "href": "/muscles/basics" },
       {
         "id": 1,
         "title": "Training",
+        "url": "/muscles/training",
         "subtopics": [
           {
             "id": 0,
             "title": "Basics",
             "showInLocation": false,
+            "url": "/muscles/training/basics",
             "subtopics":  [
               { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/basics/reps-and-sets" },
               { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
@@ -31,8 +35,9 @@
         "id": 2,
         "title": "Specifics",
         "showInLocation": false,
+        "url": "/muscles/specifics",
         "subtopics": [
-          { "id": 0, "title": "Back", "subtopics": [
+          { "id": 0, "title": "Back", "url": "/muscles/specifics/back", "subtopics": [
             { "id": 0, "title": "Teres", "href": "/muscles/specifics/back/teres" },
             { "id": 1, "title": "Rhomboids", "href": "/muscles/specifics/back/rhomboids" },
             { "id": 2, "title": "Trapezius", "href": "/muscles/specifics/back/trapezius" },
@@ -41,21 +46,21 @@
             { "id": 5, "title": "Posterior Deltoids", "href": "/muscles/specifics/back/posterior-delts" },
             { "id":  6, "title": "Infraspinatus", "href": "/muscles/specifics/back/infraspinatus" }
           ] },
-          { "id": 1, "title": "Chest", "subtopics": [
+          { "id": 1, "title": "Chest", "url": "/muscles/specifics/chest", "subtopics": [
             { "id": 0, "title": "Pecs", "href": "/muscles/specifics/chest/pecs" },
             { "id": 1, "title": "Deltoids", "href": "/muscles/specifics/chest/deltoids" }
           ] },
-          { "id": 2, "title": "Arms", "subtopics": [
+          { "id": 2, "title": "Arms", "url": "/muscles/specifics/arms", "subtopics": [
             { "id": 0, "title": "Biceps", "href": "/muscles/specifics/arms/biceps" },
             { "id": 1, "title": "Triceps", "href": "/muscles/specifics/arms/triceps" },
             { "id": 2, "title": "Forearms", "href": "/muscles/specifics/arms/forearms" }
           ] },
-          { "id": 3, "title": "Core", "subtopics": [
+          { "id": 3, "title": "Core", "url": "/muscles/specifics/core", "subtopics": [
             { "id": 0, "title": "Abs", "href": "/muscles/specifics/core/abs" },
             { "id": 1, "title": "Obliques", "href": "/muscles/specifics/core/obliques" },
             { "id": 2, "title": "Lower Back", "href": "/muscles/specifics/core/lower-back" }
           ] },
-          { "id": 4, "title": "Legs", "subtopics": [
+          { "id": 4, "title": "Legs", "url": "/muscles/specifics/legs", "subtopics": [
             { "id": 0, "title": "Quads", "href": "/muscles/specifics/legs/quads" },
             { "id": 1, "title": "Hamstrings", "href": "/muscles/specifics/legs/hamstrings" },
             { "id": 2, "title": "Glutes", "href": "/muscles/specifics/legs/glutes" },
@@ -70,6 +75,7 @@
   {
     "id": 2,
     "title": "Cardio",
+    "url": "/cardio",
     "subtopics": [
       { "id": 0, "title": "Basics", "href": "/cardio/basics"}
     ]
@@ -77,6 +83,7 @@
   {
     "id": 3,
     "title": "Recovery",
+    "url": "/recovery",
     "subtopics": [
       { "id":  0, "title":  "Basics", "href":  "/recovery/basics"},
       { "id": 1, "title": "Sleep", "href": "/recovery/sleep" }
@@ -85,11 +92,13 @@
   {
     "id": 4,
     "title": "Dieting",
+    "url": "/dieting",
     "subtopics": [
       { "id": 0, "title": "Basics", "href": "/dieting/basics" },
       {
         "id": 1, 
-        "title": "Nutrients", 
+        "title": "Nutrients",
+        "url": "/dieting/nutrients",
         "subtopics": [
           { "id": 0, "title": "Vitamins", "href": "/dieting/nutrients/vitamins" },
           { "id": 1, "title": "Protein", "href": "/dieting/nutrients/protein" }
@@ -102,11 +111,13 @@
   {
     "id": 5,
     "title": "Supplements",
+    "url": "/supplements",
     "subtopics": [
       { "id": 1, "title": "Basics", "href": "/supplements/basics" },
       {
         "id": 2,
         "title": "Performance",
+        "url": "/supplements/performance",
         "subtopics": [
           { "id": 1, "title": "Creatine", "href": "/supplements/performance/creatine" },
           { "id": 2, "title": "Pre Workout", "href": "/supplements/performance/pre-workout" },
@@ -117,6 +128,7 @@
       {
         "id": 3,
         "title": "Muscle Gain",
+        "url": "/supplements/muscle-gain",
         "subtopics": [
           {
             "id": 1,

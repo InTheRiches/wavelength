@@ -15,17 +15,14 @@ import {serialize} from "next-mdx-remote/serialize";
 import {scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/Authentication";
 
-export default function Page({ headers, title, description="", markdown="" }) {
+export default function Page({ headers, title, description="", markdown="", activeTopic }) {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(1024);
-    const [sidebar, setSidebar] = useState(null);
     const [processedJSX, setProcessedJSX] = useState(null);
     const [location, setLocation] = useState("Location");
     const [keys, setKeys] = useState([]);
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const user = loginUser();
-
-    const activeTopic = router.asPath.substring(0, router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#"));
 
     scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
 
@@ -38,11 +35,6 @@ export default function Page({ headers, title, description="", markdown="" }) {
     }, [isDarkMode]);
 
     useEffect(() => {
-        if (title === 'error') {
-            router.push('/404');
-        }
-
-        setSidebar(<Sidebar></Sidebar>)
         setWindowWidth(window.innerWidth);
 
         topics.forEach((topic) => {
@@ -84,8 +76,6 @@ export default function Page({ headers, title, description="", markdown="" }) {
         // Attach the event listener
         window.addEventListener('resize', handleResize);
 
-        // document.body.innerHTML += '<script type="text/javascript">amzn_assoc_tracking_id = "wavelengthfit-20";amzn_assoc_ad_mode = "manual";amzn_assoc_ad_type = "smart";amzn_assoc_marketplace = "amazon";amzn_assoc_region = "US";amzn_assoc_design = "enhanced_links";amzn_assoc_asins = "B099KRBL53";amzn_assoc_placement = "adunit";amzn_assoc_linkid = "e0116679c401973183af6b6a6aa3bf06";</script><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>';
-
         // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -95,16 +85,14 @@ export default function Page({ headers, title, description="", markdown="" }) {
     // ContentScroll();
 
     return (
-        <div
-            className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
+        <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
             <Navigation user={user} progressBar={true}></Navigation>
 
-
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
-                {windowWidth >= 1024 ? sidebar : <></>}
+                {windowWidth >= 1024 ? <Sidebar activeTopic={activeTopic}></Sidebar> : <></>}
                 <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
@@ -159,6 +147,8 @@ export default function Page({ headers, title, description="", markdown="" }) {
 export async function getServerSideProps(context) {
     const root = process.cwd();
 
+    const route = "/" + context.query.slug.join("/");
+
     const category = context.query.slug[0];
     const topic = context.query.slug[1];
     const subtopic = context.query.slug[2] ? context.query.slug[2] : "";
@@ -181,15 +171,13 @@ export async function getServerSideProps(context) {
                 description: json.description,
                 title: json.title,
                 markdown: mdxSource,
+                activeTopic: route
             },
         };
     } catch (error) {
+        console.log(error);
         return {
-            props: {
-                description: "",
-                title: "error",
-                markdown: ""
-            },
+            notFound: true,
         };
     }
 }
