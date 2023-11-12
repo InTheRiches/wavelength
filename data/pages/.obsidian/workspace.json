@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "supplements/performance/pre-workout.mdx",
+                "file": "muscles/specifics/back/rotator-cuff.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "supplements/performance/pre-workout.mdx",
+                "file": "muscles/specifics/back/rotator-cuff.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "supplements/performance/pre-workout.mdx",
+                "file": "muscles/specifics/back/rotator-cuff.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "supplements/performance/pre-workout.mdx"
+                "file": "muscles/specifics/back/rotator-cuff.mdx"
               }
             }
           }
@@ -149,18 +149,18 @@
   },
   "active": "3ea1d1d5a2dffcca",
   "lastOpenFiles": [
+    "muscles/specifics/back/infraspinatus.mdx",
+    "muscles/specifics/back/rotator-cuff.mdx",
+    "muscles/specifics/back/teres.mdx",
+    "muscles/specifics/back/posterior-delts.mdx",
+    "muscles/training/strength.mdx",
+    "muscles/training/basics/concepts.mdx",
+    "muscles/training/basics/reps-and-sets.mdx",
+    "supplements/performance/pre-workout.mdx",
     "muscles/training/basics/reps-and-sets.mdx~",
     "recovery/basics.md",
     "recovery/basics.mdx",
     "recovery/basics.json",
-    "supplements/performance/pre-workout.mdx",
-    "recovery/sleep.mdx",
-    "recovery/sleep.json",
-    "recovery",
-    "supplements/performance/pre-workout.mdx~",
-    "supplements/performance/creatine.mdx",
-    "supplements/performance/citrulline.mdx",
-    "supplements/performance/bcaas.mdx",
     "getting-started/introduction.md",
     "muscles/specifics/back/rotator-cuff.md",
     "muscles/basics.md",

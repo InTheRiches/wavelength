@@ -20,14 +20,14 @@ export default function LandingPage() {
     }, [isDarkMode]);
 
     return (
-        <div className={`flex flex-col min-h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-gray-50 dark:bg-neutral-900 overflow-x-hidden `}> {/*  + openSans.className */}
+        <div className={`flex flex-col min-h-screen h-screen text-slate-900 dark:text-slate-50 justify-center items-center bg-gray-50 dark:bg-neutral-900 overflow-x-hidden `}> {/*  + openSans.className */}
             {/*<div className={"absolute top-0 right-0 w-full h-full"}>*/}
             {/*    {loaded && (*/}
             {/*        <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/lplmbg.jpg"} className={"w-full h-full object-cover dark:opacity-60"} alt={""}></img>*/}
             {/*    )}*/}
             {/*</div>*/}
 
-            <header className={"flex flex-col items-center w-full h-screen"}>
+            <header className={"flex flex-col items-center w-screen h-screen"}>
                 <Navigation user={user}></Navigation>
 
                 <section className="pt-12">

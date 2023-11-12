@@ -13,8 +13,8 @@ const getNextKey = () => {
 function Sidebar ({ activeTopic }) {
     return (
         <div className="flex flex-col max-w-1/5">
-            <div id="sidebar" style={{maxHeight: 500 + "px"}}
-                 className={`sidebar-taper pb-8 h-[90vh] fixed w-[20rem] overflow-y-auto z-10 px-4 mt-15 pr-4 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
+            <div id="sidebar" style={{height: "calc(100vh - 72px)"}}
+                 className={`sidebar-taper pb-8 fixed w-[20rem] overflow-y-auto z-10 px-4 mt-15 pr-4 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
                 {/*<div className="w-full bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 backdrop-blur dark:bg-neutral-900/50 sticky top-0 z-10 mb-6">*/}
                 {/*    <button className="w-full lg:flex border-1 border-slate-200 hover:border-cyan-accent border-opacity-50 hover:border-opacity-75 items-center text-sm leading-6 text-neutral-700 dark:text-slate-300 hover:dark:text-slate-50 hover:text-neutral-900 rounded-md shadow-sm py-1.5 pl-2 pr-3 transition-all duration-100 bg-transparent">*/}
                 {/*        <a>Search...</a>*/}
@@ -133,7 +133,7 @@ export function Topic({ topic, activeTopic }) {
 }
 
 export function SubCategory({ subcategory, activeTopic }) {
-    const [collasped, toggleCollapse] = Collapsible(true);
+    const [collasped, toggleCollapse] = Collapsible(!activeTopic.includes(subcategory.url));
 
     return (
         <div key={getNextKey()} className={`flex flex-col`}>
@@ -154,7 +154,7 @@ export function SubCategory({ subcategory, activeTopic }) {
                     <div className="ml-8">
                         {subcategory.subtopics.map((subtopic) => (
                             subtopic.subtopics ? (
-                                <SubCategory key={getNextKey()} subcategory={subtopic}></SubCategory>
+                                <SubCategory key={getNextKey()} activeTopic={activeTopic} subcategory={subtopic}></SubCategory>
                             ) : <Topic topic={subtopic} activeTopic={activeTopic} key={getNextKey()}/>
                         ))}
                     </div>

@@ -8,22 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Collapsible.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/BulletPoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/BulletPoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Content.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ContentPage.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/specifics/back/rotator-cuff.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/specifics/back/rotator-cuff.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/strength.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/strength.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mdx-components.js" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/404.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/content.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/content.json" afterDir="false" />
     </list>
     <list id="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" name="Changes by admin" comment="">
       <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,40 +43,9 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/components/Sidebar.js">
       <ranges>
-        <range start1="4" end1="4" start2="4" end2="5" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="11" end1="81" start2="12" end2="13" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="83" end1="84" start2="15" end2="16" changelist="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" />
-        <range start1="91" end1="96" start2="23" end2="27" changelist="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" />
-        <range start1="100" end1="100" start2="31" end2="121" changelist="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" />
-        <range start1="102" end1="104" start2="123" end2="123" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="115" end1="116" start2="134" end2="137" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="120" end1="123" start2="141" end2="142" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="125" end1="126" start2="144" end2="145" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="133" end1="134" start2="152" end2="153" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="137" end1="138" start2="156" end2="157" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="147" end1="148" start2="166" end2="169" changelist="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" />
-        <range start1="151" end1="152" start2="172" end2="173" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="153" end1="154" start2="174" end2="175" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="157" end1="158" start2="178" end2="179" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="160" end1="161" start2="181" end2="182" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="175" end1="176" start2="196" end2="197" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="177" end1="177" start2="198" end2="199" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/pages/[...slug]/index.js">
-      <ranges>
-        <range start1="17" end1="18" start2="17" end2="18" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="20" end1="21" start2="20" end2="20" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="26" end1="28" start2="25" end2="25" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="40" end1="45" start2="37" end2="37" changelist="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" />
-        <range start1="86" end1="88" start2="78" end2="78" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="97" end1="99" start2="87" end2="88" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="104" end1="105" start2="93" end2="93" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="106" end1="107" start2="94" end2="95" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="160" end1="160" start2="148" end2="150" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="183" end1="183" start2="173" end2="174" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="186" end1="186" start2="177" end2="178" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
-        <range start1="187" end1="192" start2="179" end2="180" changelist="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" />
+        <range start1="15" end1="17" start2="15" end2="17" changelist="8bfb2ec9-7211-4cdf-9f89-5d3cb472c5bb" />
+        <range start1="135" end1="136" start2="135" end2="136" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
+        <range start1="156" end1="157" start2="156" end2="157" changelist="be896b55-8482-4c8d-bd71-8dfc312afe18" />
       </ranges>
     </file>
   </component>

@@ -8,8 +8,6 @@ import {useRouter} from "next/router";
 import Link from "next/link";
 
 export function useMDXComponents(components) {
-  const router = useRouter();
-
   return {
     Link: (props) => <Link {...props}></Link>,
     EntireBodyMap: (props) => <EntireBodyMap {...props}></EntireBodyMap>,
@@ -33,17 +31,19 @@ export function useMDXComponents(components) {
 }
 
 export function useDescriptionComponents(components) {
-  const router = useRouter();
-
   return {
     p: ({ children }) => <p className={"text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left sm:text-justify"}>{children}</p>,
     strong: ({ children }) => <strong className={"text-slate-700 dark:text-slate-50"}>{children}</strong>,
     a: ({ children, ...props }) => <Link className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} href={props.href}>{children}</Link>,
     ...components
   }
-  // Allows customizing built-in components, e.g. to add styling.
-  // return {
-  //   h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
-  //   ...components,
-  // }
+}
+
+export function useBulletPointComponents(hangingIndent, components) {
+  return {
+    p: ({ children }) => <p className={(hangingIndent ? "indent-[-2rem] ml-6 " : "") + "text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left"}>{children}</p>,
+    strong: ({ children }) => <strong className={"text-slate-700 dark:text-slate-50"}>{children}</strong>,
+    a: ({ children, ...props }) => <Link className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} href={props.href}>{children}</Link>,
+    ...components
+  }
 }
