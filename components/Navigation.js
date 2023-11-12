@@ -44,8 +44,8 @@ export default function Navigation({ progressBar = false, user }) {
   return (
     <div id="navigation" className={`sticky pt-2 ${!progressBar ? "pb-2" : ""} top-0 z-40 w-full ${router.pathname !== "/" ? "text-neutral-700" : "text-slate-50"} dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50`}>
       <div className="mx-auto px-3 sm:px-6 lg:px-8 w-full relative flex max-h-6v items-center justify-between">
-        {router.pathname !== "/" && windowWidth < 1024 &&
-          <div className="flex items-center">
+        {router.pathname !== "/" &&
+          <div className="lg:hidden flex items-center">
             <div onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 dark:text-slate-500 hover:cursor-pointer">
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
@@ -76,7 +76,7 @@ export default function Navigation({ progressBar = false, user }) {
             {/*<svg onClick={setDark} className="w-8 h-8 fill-slate-700 dark:fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path stroke="white" d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>*/}
           </button>
           {user.length !== 0 && user.notSignedIn &&
-            <div>
+            <div className={"lg:block hidden"}> {/* TODO MAKE THIS SHOW ON MOBILE SO PEOPLE CAN LOGIN */}
               <div className="ml-6 relative inline-flex group">
                 <div
                     className="absolute transitiona-all duration-500 opacity-0 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-md group-hover:opacity-40 dark:group-hover:opacity-70 group-hover:-inset-1 group-hover:duration-100 animate-tilt"></div>
@@ -93,7 +93,7 @@ export default function Navigation({ progressBar = false, user }) {
             }
           {
             user.length !== 0 && !user.notSignedIn &&
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} className="ml-6 stroke-cyan-accent w-9 h-9">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} className="lg:block hidden ml-6 stroke-cyan-accent w-9 h-9"> {/* TODO MAKE THIS SHOW ON MOBILE SO PEOPLE CAN SEE THEIR ACCOUNT */}
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
           }
