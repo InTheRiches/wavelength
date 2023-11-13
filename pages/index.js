@@ -77,7 +77,7 @@ export default function LandingPage() {
                         </div>
                     </div>
 
-                    <div className="pb-12 mt-10">
+                    <div className="pb-12 mt-10 px-12">
                         <div className="relative mx-auto lg:max-w-6xl lg:mx-auto">
                             <Image
                                 className="hidden dark:block landing-page-img rounded-xl"
