@@ -11,8 +11,6 @@ export default function Document() {
                 <meta property="og:image" content="https://wavelength.fit/images/logo.png"/>
                 <meta property="og:url" content="https://www.wavelength.fit"/>
                 <meta property="og:type" content="website"/>
-
-                <title>Wavelength</title>
             </Head>
             <body>
                 <script src={"/noflash.js"}></script>
