@@ -9,6 +9,8 @@ export default function App({ Component, pageProps }) {
       <>
           <Head>
               <title>Wavelength</title>
+              <script>window.msAdsQueue = window.msAdsQueue || [];</script>
+              <script async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></script>
           </Head>
       <MDXProvider>
           <Component {...pageProps} />
