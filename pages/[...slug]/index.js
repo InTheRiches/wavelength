@@ -92,7 +92,7 @@ export default function Page({ title, description="", markdown="", activeTopic }
         <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
             <NextSeo
                 title={"Wavelength | " + title}
-                description={description}
+                // description={description}
                 keywords={"weightlifting, muscles, muscle functions, muscle locations"}
                 canonical={"https://www.wavelength.fit" + activeTopic}
             />
