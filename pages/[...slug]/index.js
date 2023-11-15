@@ -99,6 +99,8 @@ export default function Page({ headers, title, description="", markdown="", acti
             <Head>
                 <link rel="canonical" href={"https://www.wavelength.fit" + activeTopic} />
                 <title>Wavelength | {title}</title>
+                <meta name="description" content={description}></meta>
+                <meta name="keywords" content="weightlifting, muscles, muscle functions, muscle locations"></meta>
             </Head>
 
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
