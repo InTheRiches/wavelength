@@ -7,6 +7,15 @@ import {useLoaded} from "@/components/LoadedHook";
 import Image from "next/image";
 import Head from 'next/head';
 
+export async function generateMetadata({}, parent) {
+    return {
+        metadataBase: new URL("https://www.wavelength.fit/"),
+        title: "Wavelength",
+        description: "A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.",
+        keywords: "weightlifting, muscles, muscle functions, muscle locations",
+    }
+}
+
 export default function LandingPage() {
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const user = loginUser();

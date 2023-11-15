@@ -8,7 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MarkdownRenderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/OldMarkdownRenderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Scrambler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +206,7 @@
       <workItem from="1699297704846" duration="321000" />
       <workItem from="1699813570907" duration="3599000" />
       <workItem from="1699904227119" duration="3641000" />
-      <workItem from="1700012965568" duration="363000" />
+      <workItem from="1700012965568" duration="1388000" />
     </task>
     <servers />
   </component>

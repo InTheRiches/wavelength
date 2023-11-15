@@ -15,10 +15,9 @@ import {scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/Authentication";
 import Head from 'next/head';
 
-export default function Page({ headers, title, description="", markdown="", activeTopic }) {
+export default function Page({ title, description="", markdown="", activeTopic }) {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(1024);
-    const [processedJSX, setProcessedJSX] = useState(null);
     const [location, setLocation] = useState("Location");
 
     const [keys, setKeys] = useState([]);
@@ -96,13 +95,6 @@ export default function Page({ headers, title, description="", markdown="", acti
             {/*</div>*/}
             <Navigation user={user} progressBar={true}></Navigation>
 
-            <Head>
-                <link rel="canonical" href={"https://www.wavelength.fit" + activeTopic} />
-                <title>Wavelength | {title}</title>
-                <meta name="description" content={description}></meta>
-                <meta name="keywords" content="weightlifting, muscles, muscle functions, muscle locations"></meta>
-            </Head>
-
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
                 {windowWidth >= 1024 ? <Sidebar activeTopic={activeTopic}></Sidebar> : <></>}
                 <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
@@ -150,6 +142,16 @@ export default function Page({ headers, title, description="", markdown="", acti
         </div>
     )
 }
+
+export async function generateMetadata({ title, description="", markdown="", activeTopic }, parent) {
+    return {
+        metadataBase: new URL("https://www.wavelength.fit" + activeTopic),
+        title: "Wavelength | " + title,
+        description: description,
+        keywords: "weightlifting, muscles, muscle functions, muscle locations",
+    }
+}
+
 export async function getServerSideProps(context) {
     const root = process.cwd();
 
