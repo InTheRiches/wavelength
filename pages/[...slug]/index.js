@@ -13,7 +13,7 @@ import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
 import {scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/Authentication";
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 export default function Page({ title, description="", markdown="", activeTopic }) {
     const router = useRouter();
@@ -90,6 +90,13 @@ export default function Page({ title, description="", markdown="", activeTopic }
 
     return (
         <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
+            <NextSeo
+                title={"Wavelength | " + title}
+                description={description}
+                keywords={"weightlifting, muscles, muscle functions, muscle locations"}
+                canonical={"https://www.wavelength.fit" + activeTopic}
+            />
+
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
@@ -141,15 +148,6 @@ export default function Page({ title, description="", markdown="", activeTopic }
             </div>
         </div>
     )
-}
-
-export async function generateMetadata({ title, description="", markdown="", activeTopic }, parent) {
-    return {
-        metadataBase: new URL("https://www.wavelength.fit" + activeTopic),
-        title: "Wavelength | " + title,
-        description: description,
-        keywords: "weightlifting, muscles, muscle functions, muscle locations",
-    }
 }
 
 export async function getServerSideProps(context) {
