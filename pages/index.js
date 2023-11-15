@@ -30,6 +30,7 @@ export default function LandingPage() {
 
             <Head>
                 <link rel="canonical" href={"https://www.wavelength.fit/"} />
+                <title>Wavelength</title>
             </Head>
 
             <header className={"flex flex-col items-center w-screen h-screen"}>

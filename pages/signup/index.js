@@ -57,6 +57,7 @@ export default function Signup() {
         <div className="flex min-h-screen flex-col justify-center px-6 pb-24 lg:px-8 bg-white dark:bg-neutral-900">
             <Head>
                 <link rel="canonical" href={"https://www.wavelength.fit/signup"} />
+                <title>Wavelength | Signup</title>
             </Head>
 
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
