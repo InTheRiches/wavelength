@@ -7,7 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="" />
+    <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/hypertrophy.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/hypertrophy.mdx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +204,7 @@
       <workItem from="1699813570907" duration="3599000" />
       <workItem from="1699904227119" duration="3641000" />
       <workItem from="1700012965568" duration="2083000" />
-      <workItem from="1700090962154" duration="545000" />
+      <workItem from="1700090962154" duration="1501000" />
     </task>
     <servers />
   </component>
