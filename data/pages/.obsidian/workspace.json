@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx",
+                "file": "plans/starter.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx",
+                "file": "plans/starter.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx",
+                "file": "plans/starter.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx"
+                "file": "plans/starter.mdx"
               }
             }
           }
@@ -149,8 +149,9 @@
   },
   "active": "29bae73a356a6b7a",
   "lastOpenFiles": [
-    "muscles/training/hypertrophy.mdx",
     "muscles/training/basics/reps-and-sets.mdx",
+    "plans/starter.mdx",
+    "muscles/training/hypertrophy.mdx",
     "plans/Starter.mdx",
     "plans/plans.mdx",
     "muscles/training/hypertrophy.json",
@@ -160,7 +161,6 @@
     "recovery/basics.mdx",
     "cardio/basics.mdx",
     "muscles/basics.mdx",
-    "muscles/specifics/back/rotator-cuff.mdx",
     "recovery/basics.md",
     "getting-started/introduction.md",
     "muscles/specifics/back/rotator-cuff.md",
