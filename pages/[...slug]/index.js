@@ -14,6 +14,9 @@ import {serialize} from "next-mdx-remote/serialize";
 import {scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/Authentication";
 import { NextSeo } from 'next-seo';
+import Script from "next/script";
+import Head from "next/head";
+import AdBlock from "@/components/AdBlock";
 
 export default function Page({ title, description="", markdown="", activeTopic }) {
     const router = useRouter();
@@ -97,6 +100,9 @@ export default function Page({ title, description="", markdown="", activeTopic }
                 canonical={"https://www.wavelength.fit" + activeTopic}
             />
 
+            <Script strategy={"beforeInteractive"}>window.msAdsQueue = window.msAdsQueue || [];</Script>
+            <Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></Script>
+
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
@@ -117,6 +123,7 @@ export default function Page({ title, description="", markdown="", activeTopic }
                             </div>
                         </div>
                         <div className={"text-slate-700 dark:text-slate-300"}>
+                            <AdBlock id={"ms-ad-971707729"}/>
                             {markdown !== "" && <MDXRemote components={useMDXComponents()} {...markdown} />}
                         </div>
                     </div>
