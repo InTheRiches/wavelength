@@ -1,11 +1,14 @@
 import {Html, Head, Main, NextScript} from 'next/document'
 import Script from "next/script";
+import React from "react";
 
 export default function Document() {
     return (
         <Html lang="en">
             <Head>
                 <script src={"/noflash.js"}></script>
+                <script>window.msAdsQueue = window.msAdsQueue || [];</script>
+                <script async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></script>
                 <meta property="og:title" content="Wavelength"/>
                 <meta property="og:description" content="A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all."/>
                 <meta property="og:image" content="https://wavelength.fit/images/logo.png"/>

@@ -11,7 +11,7 @@ import {NextSeo} from "next-seo";
 export async function generateMetadata({}, parent) {
     return {
         metadataBase: new URL("https://www.wavelength.fit/"),
-        title: "Wavelength",
+        title: "Wavelength Fitness",
         description: "A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.",
         keywords: "weightlifting, muscles, muscle functions, muscle locations",
     }
