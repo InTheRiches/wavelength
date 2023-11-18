@@ -7,8 +7,6 @@ export default function Document() {
         <Html lang="en">
             <Head>
                 <script src={"/noflash.js"}></script>
-                <script>window.msAdsQueue = window.msAdsQueue || [];</script>
-                <script async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></script>
                 <meta property="og:title" content="Wavelength"/>
                 <meta property="og:description" content="A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all."/>
                 <meta property="og:image" content="https://wavelength.fit/images/logo.png"/>
@@ -17,6 +15,8 @@ export default function Document() {
             </Head>
             <body>
                 <Script src="//servedby.eleavers.com/ads/ads.php?t=MjkxNTM7MTk0OTY7aG9yaXpvbnRhbC5sZWFkZXJib2FyZA==&index=1"/>
+                <Script strategy={"beforeInteractive"}>{"window.msAdsQueue = window.msAdsQueue || [];"}</Script>
+                <Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321808&publisherId=253109271" crossOrigin="anonymous"></Script>
                 <Main/>
                 <NextScript/>
             </body>
