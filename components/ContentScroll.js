@@ -26,19 +26,6 @@ export default function ContentScroll() {
             window.scrollTo(0, scrollPosition);
         }
 
-        // const element = document.getElementById("sidebar");
-        // if (element) {
-        //     const scrollPosition = parseInt(localStorage.getItem('sidebarScrollPosition')) || 0;
-        //     console.log(scrollPosition)
-        //
-        //     // Scroll to the stored position
-        //     element.scrollTo({
-        //         top: scrollPosition,
-        //         behavior: "smooth"
-        //     });
-        // }
-
-        // Save the current scroll position to localStorage on unload
         const handleUnload = () => {
             localStorage.setItem('scrollPosition', window.scrollY.toString());
             // localStorage.setItem("sidebarScrollPosition", element.scrollTop.toString());
@@ -66,28 +53,8 @@ export function percentScrolled() {
     return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
 }
 
-function waitForElm(selector) {
-    return new Promise(resolve => {
-        if (document.querySelector(selector)) {
-            return resolve(document.querySelector(selector));
-        }
-
-        const observer = new MutationObserver(mutations => {
-            if (document.querySelector(selector) && document.querySelector(selector).getBoundingClientRect().top !== 0) {
-                observer.disconnect();
-                resolve(document.querySelector(selector));
-            }
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    });
-}
-
 export async function scrollPageToContent(hash) {
-    // let hash = window.location.hash.substring(1);
+    console.log("scrollPageToContent");
 
     if (!hash) {
         return;
@@ -96,9 +63,7 @@ export async function scrollPageToContent(hash) {
     const section = document.getElementById(hash.substring(0, hash.length) + "x");
 
     if (section) {
-        // TODO FIX THIS, AS WHEN IT SEARCHES FOR THE ELEMENT, THIS VALUE IS ABOVE 0, BUT THEN IT DOES IT AGAIN AND IT ISNT, WHICH MAKES IT NOT SCROLL
         if (section.getBoundingClientRect().top === 0) {
-            console.log("not scrolling");
             return;
         }
 

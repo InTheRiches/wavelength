@@ -22,17 +22,33 @@ export default function Page({ title, description="", markdown="", activeTopic }
 
     const [keys, setKeys] = useState([]);
     const [content, setContent] = useState([]);
+    const [showScrollUpButton, setShowScrollUpButton] = useState(false);
 
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const user = loginUser();
 
-    scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
-
     useEffect(() => {
+        scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
+        
         if (isDarkMode) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
+        }
+
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setShowScrollUpButton(true);
+            } else {
+                setShowScrollUpButton(false);
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
         }
     }, [isDarkMode]);
 
@@ -137,7 +153,7 @@ export default function Page({ title, description="", markdown="", activeTopic }
                                 router.push(keys[keys.indexOf(activeTopic) + 1]);
                         }} className={(keys.indexOf(activeTopic) < keys.length-1 ? "bg-cyan-accent hover:bg-cyan-accent-light " : "bg-gray-700 hover:bg-gray-600 ") + "px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center justify-center"}>
                             {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
-                            <svg className="w-6 h-6 -scale-x-100 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
                             </svg>
                         </button>
@@ -146,6 +162,18 @@ export default function Page({ title, description="", markdown="", activeTopic }
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
             </div>
+
+            <button onClick={() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }} className={(showScrollUpButton ? "" : "opacity-0 hover:cursor-auto ") + "bg-cyan-accent hover:bg-cyan-accent-light px-3 z-20 transition-all fixed bottom-8 right-8 ml-4 hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex flex-col items-center justify-center"}>
+                {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
+                <svg className={"w-6 h-6"} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+                </svg>
+            </button>
         </div>
     )
 }
