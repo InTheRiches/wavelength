@@ -4,10 +4,9 @@ import topics from '/public/content.json';
 import {scrollPageToContent} from "@/components/ContentScroll";
 import {Category} from "@/components/Sidebar";
 
-function MobileSidebar({ currentTopic }) {
+function MobileSidebar({ activeTopic }) {
     const [loaded, setLoaded] = useState(false);
     const router = useRouter();
-    const activeTopic = router.pathname;
 
     const [collapsed, setCollapsed] = useState(() => {
         const initialState = {};
@@ -37,18 +36,6 @@ function MobileSidebar({ currentTopic }) {
     //     });
     // }, [loaded]);
 
-    const toggleCollapse = (topic) => {
-        const newValue = !collapsed[topic.title + "-" + topic.id];
-
-        setCollapsed({ ...collapsed, [topic.title + "-" + topic.id]: newValue });
-
-        // save the new state to LocalStorage
-        window.localStorage.setItem(
-            "mobile-sidebar-collapsed-state",
-            JSON.stringify({ ...collapsed, [topic.title + "-" + topic.id]: newValue })
-        );
-    };
-
     return (
         <div className={`mt-15 text-neutral-900 dark:text-slate-50`}>
             {/*<button className="hidden w-full lg:flex border-1 border-slate-200 hover:border-cyan-accent border-opacity-50 hover:border-opacity-75 items-center text-sm leading-6 text-neutral-700 dark:text-slate-300 hover:dark:text-slate-50 hover:text-neutral-900 rounded-md shadow-sm py-1.5 pl-2 pr-3 mb-6 transition-all duration-100 bg-transparent">*/}
@@ -56,7 +43,7 @@ function MobileSidebar({ currentTopic }) {
             {/*</button>*/}
             {loaded &&
                 topics.map((topic, index) => (
-                    <Category category={topic} key={index} index={index} collapsed={collapsed} activeTopic={activeTopic} toggleCollapse={toggleCollapse}/>
+                    <Category category={topic} key={index} index={index} activeTopic={activeTopic}/>
                 ))
             }
         </div>

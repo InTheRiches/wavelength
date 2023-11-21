@@ -106,7 +106,7 @@ export default function Page({ title, description="", markdown="", activeTopic }
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
-            <Navigation user={user} progressBar={true}></Navigation>
+            <Navigation activeTopic={activeTopic} user={user} progressBar={true}></Navigation>
 
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
                 {windowWidth >= 1024 ? <Sidebar activeTopic={activeTopic}></Sidebar> : <></>}

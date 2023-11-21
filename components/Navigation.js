@@ -8,7 +8,7 @@ import {useLoaded} from "@/components/LoadedHook";
 import {percentScrolled} from "@/components/ContentScroll";
 import Image from "next/image";
 
-export default function Navigation({ progressBar = false, user }) {
+export default function Navigation({ activeTopic, progressBar = false, user }) {
   const { value: isDarkMode, toggle: toggleDarkMode } = useDarkMode();
   const [ pScrolled, setPercentScrolled ] = useState(0.0);
   const router = useRouter();
@@ -16,6 +16,10 @@ export default function Navigation({ progressBar = false, user }) {
 
   const [windowWidth, setWindowWidth] = useState(1024);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [router.asPath]);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -106,7 +110,7 @@ export default function Navigation({ progressBar = false, user }) {
               <div className={"w-full flex flex-row justify-end"}>
                 <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="hover:cursor-pointer block mb-2 h-6 w-6" aria-hidden="true" />
               </div>
-              <MobileSidebar></MobileSidebar>
+              <MobileSidebar activeTopic={activeTopic}></MobileSidebar>
           </div>
       </div> 
       : <></>}
