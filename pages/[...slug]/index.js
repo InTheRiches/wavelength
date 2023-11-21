@@ -152,6 +152,21 @@ export default function Page({ title, description="", markdown="", activeTopic }
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
             </div>
+<<<<<<< Updated upstream
+=======
+
+            <button onClick={() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }} className={(showScrollUpButton ? "" : "opacity-0 hover:cursor-auto ") + "min-[1350px]:hidden bg-cyan-accent hover:bg-cyan-accent-light px-3 z-20 transition-all fixed bottom-8 right-8 ml-4 hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex flex-col items-center justify-center"}>
+                {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
+                <svg className={"w-6 h-6"} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+                </svg>
+            </button>
+>>>>>>> Stashed changes
         </div>
     )
 }

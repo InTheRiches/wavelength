@@ -7,9 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
     </list>
+=======
+    <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -201,10 +205,15 @@
       <workItem from="1699813570907" duration="3599000" />
       <workItem from="1699904227119" duration="3641000" />
       <workItem from="1700012965568" duration="2083000" />
+<<<<<<< Updated upstream
       <workItem from="1700090962154" duration="2137000" />
       <workItem from="1700164630874" duration="396000" />
       <workItem from="1700271267365" duration="2617000" />
       <workItem from="1700347371862" duration="703000" />
+=======
+      <workItem from="1700090962154" duration="1501000" />
+      <workItem from="1700532695374" duration="778000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
