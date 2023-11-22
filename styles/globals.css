@@ -228,3 +228,15 @@ li span {
   -webkit-filter: drop-shadow(0 0 15px rgba(18, 205, 237, 0.2));
   filter: drop-shadow(0 0 15px rgba(18, 205, 237, 0.2));
 }
+
+.full-width {
+  width: 100% !important;
+}
+
+.myTable tbody tr > *:nth-child(1) { width:40%; }
+.myTable tbody tr > *:nth-child(2) { width:30%; }
+.myTable tbody tr > *:nth-child(3) { width:30%; }
+
+.myTable thead tr > *:nth-child(1) { width:40%; }
+.myTable thead tr > *:nth-child(2) { width:30%; }
+.myTable thead tr > *:nth-child(3) { width:30%; }
