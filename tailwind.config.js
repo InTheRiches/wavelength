@@ -17,6 +17,11 @@ module.exports = {
       './components/**/*.{js,ts,jsx,tsx,mdx}',
       './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+      "lg:grid-cols-2",
+      "lg:grid-cols-1",
+      "lg:grid-cols-3",
+  ],
   theme: {
     boxShadow: {
       'button': "0 5px 15px -3px rgb(0 0 0 / .4), 0 4px 6px -4px rgb(0 0 0 / 0.1);",

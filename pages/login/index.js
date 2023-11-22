@@ -41,8 +41,6 @@ export default function Login() {
                 <form className="space-y-6" onSubmit={async (e) => {
                     e.preventDefault();
 
-                    console.log("logging in");
-
                     try {
                         const reqBody = {
                             email: emailRef.current.value,
