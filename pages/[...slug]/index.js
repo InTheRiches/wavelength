@@ -18,7 +18,7 @@ import Script from "next/script";
 import Head from "next/head";
 import AdBlock from "@/components/AdBlock";
 
-export default function Page({ title, description="", markdown="", activeTopic }) {
+export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(1024);
     const [location, setLocation] = useState("Location");
@@ -29,10 +29,6 @@ export default function Page({ title, description="", markdown="", activeTopic }
 
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const user = loginUser();
-
-    useEffect(() => {
-        scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
-    }, [router.asPath]);
 
     useEffect(() => {
         if (isDarkMode) {
@@ -58,6 +54,7 @@ export default function Page({ title, description="", markdown="", activeTopic }
     }, [isDarkMode]);
 
     useEffect(() => {
+        scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
         setWindowWidth(window.innerWidth);
 
         topics.forEach((topic) => {
@@ -168,7 +165,7 @@ export default function Page({ title, description="", markdown="", activeTopic }
                     </div>
                     <Footer></Footer>
                 </div>
-                {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
+                {windowWidth >= 1024 ? <HeaderListSidebar headers={headers}></HeaderListSidebar> : <></>}
             </div>
             <button onClick={() => {
                 window.scrollTo({
@@ -201,6 +198,17 @@ export async function getServerSideProps(context) {
         // Use fs.promises.readFile to read the file asynchronously on the server
         const mdContents = await fs.promises.readFile(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.mdx', 'utf8');
 
+        // find headers in markdown
+        const regex = /#{1,6} .*/g;
+        const headersReg = mdContents.match(regex);
+        // send those headers to the page
+        const headers = [];
+        if (headersReg) {
+            headersReg.forEach((header) => {
+                headers.push([header.substring(2), header.substring(2).replace(/\s/g, "-").toLowerCase()]);
+            });
+        }
+
         const mdxSource = await serialize(mdContents)
 
         const jsonContents = fs.readFileSync(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.json', 'utf-8');
@@ -213,6 +221,7 @@ export async function getServerSideProps(context) {
                 title: json.title,
                 markdown: mdxSource,
                 activeTopic: route,
+                headers: headers
             },
         };
     } catch (error) {

@@ -4,6 +4,7 @@ import topics from '/public/content.json';
 import Link from "next/link";
 import Collapsible from "@/components/Collapsible";
 import path from "path";
+import {scrollPageToContent} from "@/components/ContentScroll";
 
 let key = 0;
 const getNextKey = () => {
@@ -88,25 +89,12 @@ export function Category({ category, index, activeTopic }) {
 }
 
 
-export function HeaderListSidebar() {
+export function HeaderListSidebar({ headers }) {
     const router = useRouter();
 
-    const [headers, setHeaders] = useState([]);
     const [showScrollUpButton, setShowScrollUpButton] = useState(false);
 
     useEffect(() => {
-        const headers = Array.from(document.getElementsByClassName("customh1s"));
-        const h1List = [];
-
-        headers.forEach((header) => {
-            // give the header an id
-            h1List.push([
-                header.innerText,
-                header.id.substring(0, header.id.length - 1)
-            ]);
-        });
-        setHeaders(h1List);
-
         const handleScroll = () => {
             if (window.scrollY > 100) {
                 setShowScrollUpButton(true);
@@ -135,8 +123,13 @@ export function HeaderListSidebar() {
                                 <svg className={"w-1.5 h-1.5 mr-2 transition-colors duration-75"} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={"#cbd5e1"}>
                                     <circle cx="50" cy="50" r="50"/>
                                 </svg>
-                                <span className={`w-full dark:border-neutral-300 border-neutral-600 hover:text-cyan-accent hover:dark:text-cyan-accent dark:text-slate-300 transition-colors duration-75 text-left`}
-                                   onClick={() => router.push(`#${h1[1]}`)}>{h1[0]}</span>
+                                <span className={`w-full dark:border-neutral-300 border-neutral-600 dark:text-slate-300 transition-colors duration-75 text-left`}
+                                   onClick={() => {
+                                       // if the hash is already in the URL, then we need to scroll to it
+                                        if (window.location.hash === `#${h1[1]}`)
+                                            scrollPageToContent(h1[1])
+                                       else router.push(`#${h1[1]}`)
+                                   }}>{h1[0]}</span>
                             </div>
                         );
                     })}

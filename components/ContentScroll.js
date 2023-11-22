@@ -54,8 +54,6 @@ export function percentScrolled() {
 }
 
 export async function scrollPageToContent(hash) {
-    console.log("scrollPageToContent");
-
     if (!hash) {
         return;
     }

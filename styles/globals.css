@@ -202,8 +202,8 @@ span:hover .tooltip {
   cursor: pointer;
 }
 
-.sidebar-header:hover a {
-  color: rgba(14, 165, 233, 1);
+.sidebar-header:hover span {
+  color: rgba(14, 165, 233, 1) !important;
 }
 
 .dark h2 {
