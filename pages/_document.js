@@ -1,5 +1,6 @@
 import {Html, Head, Main, NextScript} from 'next/document'
 import Script from "next/script";
+import React from "react";
 
 export default function Document() {
     return (
@@ -14,6 +15,8 @@ export default function Document() {
             </Head>
             <body>
                 <Script src="//servedby.eleavers.com/ads/ads.php?t=MjkxNTM7MTk0OTY7aG9yaXpvbnRhbC5sZWFkZXJib2FyZA==&index=1"/>
+                <Script strategy={"beforeInteractive"}>{"window.msAdsQueue = window.msAdsQueue || [];"}</Script>
+                <Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321808&publisherId=253109271" crossOrigin="anonymous"></Script>
                 <Main/>
                 <NextScript/>
             </body>

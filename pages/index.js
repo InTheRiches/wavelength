@@ -6,11 +6,12 @@ import {loginUser} from "@/components/Authentication";
 import {useLoaded} from "@/components/LoadedHook";
 import Image from "next/image";
 import Head from 'next/head';
+import {NextSeo} from "next-seo";
 
 export async function generateMetadata({}, parent) {
     return {
         metadataBase: new URL("https://www.wavelength.fit/"),
-        title: "Wavelength",
+        title: "Wavelength Fitness",
         description: "A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.",
         keywords: "weightlifting, muscles, muscle functions, muscle locations",
     }
@@ -36,6 +37,13 @@ export default function LandingPage() {
             {/*        <img src={isDarkMode ? "/images/backgrounds/landingPageGym.jpg" : "/images/backgrounds/lplmbg.jpg"} className={"w-full h-full object-cover dark:opacity-60"} alt={""}></img>*/}
             {/*    )}*/}
             {/*</div>*/}
+
+            <NextSeo
+                title={"Wavelength"}
+                canonical={"https://www.wavelength.fit/"}
+                description={"A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all."}
+                keywords={"weightlifting, muscles, muscle functions, muscle locations"}
+            />
 
             <Head>
                 <link rel="canonical" href={"https://www.wavelength.fit/"} />
@@ -170,7 +178,7 @@ export default function LandingPage() {
 
                                 <ul className="mt-6 space-y-4">
                                     <li>
-                                        <a href="/about" title="" className="flex text-base text-black transition-all dark:text-gray-400 duration-200 dark:hover:text-cyan-accent hover:text-cyan-accent focus:text-cyan-accent"> About </a>
+                                        <a href="#" title="" className="flex text-base text-black transition-all dark:text-gray-400 duration-200 dark:hover:text-cyan-accent hover:text-cyan-accent focus:text-cyan-accent"> About </a>
                                     </li>
 
                                     <li>

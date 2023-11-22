@@ -14,6 +14,9 @@ import {serialize} from "next-mdx-remote/serialize";
 import {scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/Authentication";
 import { NextSeo } from 'next-seo';
+import Script from "next/script";
+import Head from "next/head";
+import AdBlock from "@/components/AdBlock";
 
 export default function Page({ title, description="", markdown="", activeTopic }) {
     const router = useRouter();
@@ -113,10 +116,13 @@ export default function Page({ title, description="", markdown="", activeTopic }
                 canonical={"https://www.wavelength.fit" + activeTopic}
             />
 
+            {/*<Script strategy={"beforeInteractive"}>window.msAdsQueue = window.msAdsQueue || [];</Script>*/}
+            {/*<Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></Script>*/}
+
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
             {/*</div>*/}
-            <Navigation user={user} progressBar={true}></Navigation>
+            <Navigation activeTopic={activeTopic} user={user} progressBar={true}></Navigation>
 
             <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
                 {windowWidth >= 1024 ? <Sidebar activeTopic={activeTopic}></Sidebar> : <></>}
@@ -162,13 +168,12 @@ export default function Page({ title, description="", markdown="", activeTopic }
                 </div>
                 {windowWidth >= 1024 ? <HeaderListSidebar></HeaderListSidebar> : <></>}
             </div>
-
             <button onClick={() => {
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
-            }} className={(showScrollUpButton ? "" : "opacity-0 hover:cursor-auto ") + "bg-cyan-accent hover:bg-cyan-accent-light px-3 z-20 transition-all fixed bottom-8 right-8 ml-4 hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex flex-col items-center justify-center"}>
+            }} className={(showScrollUpButton ? "" : "opacity-0 hover:cursor-auto ") + "min-[1350px]:hidden bg-cyan-accent hover:bg-cyan-accent-light px-3 z-20 transition-all fixed bottom-8 right-8 ml-4 hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex flex-col items-center justify-center"}>
                 {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
                 <svg className={"w-6 h-6"} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
