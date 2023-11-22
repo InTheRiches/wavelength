@@ -32,7 +32,9 @@ export default function Page({ title, description="", markdown="", activeTopic }
 
     useEffect(() => {
         scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
-        
+    }, [router.asPath]);
+
+    useEffect(() => {
         if (isDarkMode) {
             document.documentElement.classList.add('dark');
         } else {
