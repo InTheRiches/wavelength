@@ -23,7 +23,6 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-
     const handleResize = () => {
         setWindowWidth(window.innerWidth);
     };
@@ -34,6 +33,8 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
       if (percent > 100) percent = 100;
       setPercentScrolled(percent);
     };
+
+    handleScroll();
 
     // Attach the event listener
     window.addEventListener('resize', handleResize);

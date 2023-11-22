@@ -114,8 +114,8 @@ export function HeaderListSidebar({ headers }) {
     return (
         <div className={"hidden min-[1350px]:block"}>
             <div className='ml-8 h-full max-w-1/5 min-w-[18rem] w-full fixed top-20 overflow-y-auto'>
-                <div className="text-lg font-bold mb-6">On this page</div>
-                <div>
+                <div className={(headers.length === 0 ? "hidden " : "") + "text-lg font-bold mb-6"}>On this page</div>
+                <div className={headers.length === 0 ? "hidden " : ""}>
                     {headers && headers.map((h1, index) => {
                         return (
                             <div key={index + 150} className="sidebar-header text-lg pb-3 flex flex-row w-fit items-center">

@@ -150,7 +150,14 @@
     "title": "Plans",
     "url": "/plans",
     "subtopics": [
-      { "id": 0, "title": "Starter", "href": "/plans/starter" }
+      {
+        "id": 0,
+        "title": "Starter",
+        "url": "/plans/starter",
+        "subtopics": [
+          { "id": 2, "title": "PPL Intermediate", "href": "/plans/starter/ppl-intermediate" }
+        ]
+      }
     ]
   }
 ]

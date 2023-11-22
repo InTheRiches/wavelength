@@ -14,6 +14,14 @@ export default function Document() {
                 <meta property="og:type" content="website"/>
             </Head>
             <body>
+                <Script strategy={"beforeInteractive"} async src="https://www.googletagmanager.com/gtag/js?id=G-5376MG73KY"></Script>
+                <Script strategy={"beforeInteractive"}>
+                    {`window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+    
+                    gtag('config', 'G-5376MG73KY');`}
+                </Script>
                 <Script src="//servedby.eleavers.com/ads/ads.php?t=MjkxNTM7MTk0OTY7aG9yaXpvbnRhbC5sZWFkZXJib2FyZA==&index=1"/>
                 <Script strategy={"beforeInteractive"}>{"window.msAdsQueue = window.msAdsQueue || [];"}</Script>
                 <Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321808&publisherId=253109271" crossOrigin="anonymous"></Script>
