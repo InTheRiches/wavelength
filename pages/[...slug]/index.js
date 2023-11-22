@@ -143,10 +143,9 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                     </div>
                     <div className={"w-full flex justify-around mt-4"}>
                         <button onClick={() => {
-                            if (index > 0)
-                                router.push(keys[index - 1]);
-                        }}
-                                className={(keys.indexOf(activeTopic) > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light " : "bg-gray-700 hover:bg-gray-600 ") + "transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full text-white flex items-center justify-center"}>
+                            if (keys.indexOf(activeTopic) < keys.length - 1)
+                                router.push(keys[keys.indexOf(activeTopic) - 1]);
+                        }} className={(keys.indexOf(activeTopic) > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light " : "bg-gray-700 hover:bg-gray-600 ") + "transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full text-white flex items-center justify-center"}>
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
