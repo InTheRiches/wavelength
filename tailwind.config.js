@@ -13,7 +13,7 @@ module.exports = {
       './pages/404.js',
       './mdx-components.js',
       './pages/**/*.{js,ts,jsx,tsx,mdx}',
-      './data/pages/**/*.md',
+      './data/pages/**/*.mdx',
       './components/**/*.{js,ts,jsx,tsx,mdx}',
       './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],

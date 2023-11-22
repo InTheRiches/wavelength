@@ -21,6 +21,8 @@ export function useMDXComponents(components) {
     a: ({ children, ...props }) => <Link className={"text-cyan-accent min-[424px]:text-md min-[1350px]:text-lg text-base hover:cursor-pointer"} href={props.href}>{children}</Link>,
     code: ({ children }) => <code className="border-1 border-cyan-accent flex flex-col p-2 bg-neutral-500 bg-opacity-5 rounded-md indent-1 mb-4">{children}</code>,
     BulletPoints: (props) => <BulletPoints {...props}></BulletPoints>,
+    ul: ({ children }) => <ul className={"mb-8"}>{children}</ul>,
+    li: ({ children }) => <li className={"text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left mb-4"}>{children}</li>,
     ...components
   }
   // Allows customizing built-in components, e.g. to add styling.

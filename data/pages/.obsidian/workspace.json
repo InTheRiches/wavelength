@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx",
+                "file": "plans/starter.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx",
+                "file": "plans/starter.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx",
+                "file": "plans/starter.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/training/basics/reps-and-sets.mdx"
+                "file": "plans/starter.mdx"
               }
             }
           }
@@ -149,7 +149,6 @@
   },
   "active": "29bae73a356a6b7a",
   "lastOpenFiles": [
-    "plans/starter.mdx",
     "plans/Starter.mdx",
     "muscles/training/basics/reps-and-sets.mdx",
     "muscles/training/hypertrophy.mdx",
