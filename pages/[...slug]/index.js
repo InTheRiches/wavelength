@@ -123,7 +123,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
             {/*</div>*/}
             <Navigation activeTopic={activeTopic} user={user} progressBar={true}></Navigation>
 
-            <div className="flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]">
+            <div className={`flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto ${headers.length > 0 ? "min-[1350px]:pr-[20rem]" : ""}`}>
                 {windowWidth >= 1024 ? <Sidebar activeTopic={activeTopic}></Sidebar> : <></>}
                 <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
                     {/* Page Header */}
