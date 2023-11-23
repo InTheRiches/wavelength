@@ -152,6 +152,11 @@
     "subtopics": [
       {
         "id": 0,
+        "title": "Basics",
+        "href": "/plans/basics"
+      },
+      {
+        "id": 1,
         "title": "Starter",
         "url": "/plans/starter",
         "subtopics": [

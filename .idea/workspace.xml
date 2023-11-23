@@ -8,14 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/pages/plans/starter/ppl-intermediate.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pages/plans/starter/ppl-intermediate.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/WorkoutTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/plans/starter.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/plans/starter.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/plans/starter.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/plans/basics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/plans/starter.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/plans/basics.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/plans/starter/ppl-intermediate.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/plans/starter/ppl-intermediate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/plans/starter/ppl-intermediate.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/plans/starter/ppl-intermediate.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mdx-components.js" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/content.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/content.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +209,7 @@
       <workItem from="1699813570907" duration="3599000" />
       <workItem from="1699904227119" duration="3641000" />
       <workItem from="1700012965568" duration="2083000" />
-      <workItem from="1700665803646" duration="1994000" />
+      <workItem from="1700665803646" duration="6124000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,7 @@ import BulletPoints from "@/components/BulletPoints";
 import handleClick from "@/components/HandleClick";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import WorkoutTable from "@/components/WorkoutTable";
 
 export function useMDXComponents(components) {
   return {
@@ -13,6 +14,7 @@ export function useMDXComponents(components) {
     EntireBodyMap: (props) => <EntireBodyMap {...props}></EntireBodyMap>,
     InformationBlock: (props) => <InformationBlock {...props}></InformationBlock>,
     WarningBlock: (props) => <WarningBlock {...props}></WarningBlock>,
+    WorkoutTable: (props) => <WorkoutTable {...props}></WorkoutTable>,
     h1: ({ children }) => <span id={children.replace(/\s/g, "-").toLowerCase() + "x"} className={"customh1s font-bold text-slate-900 dark:text-slate-50 min-[424px]:text-[1.875rem] text-2xl mt-12 mb-4 leading-10 block"}>{children}</span>,
     h2: ({ children }) => <span className={"font-bold text-slate-900 dark:text-slate-50 text-[1.4rem]"}>{children}</span>,
     p: ({ children }) => <p className={"text-slate-700 dark:text-slate-300 font-normal min-[424px]:text-md min-[1350px]:text-lg text-base text-left sm:text-justify mb-6"}>{children}</p>,
