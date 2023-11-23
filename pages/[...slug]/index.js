@@ -17,6 +17,7 @@ import { NextSeo } from 'next-seo';
 import Script from "next/script";
 import Head from "next/head";
 import AdBlock from "@/components/AdBlock";
+import {useLoaded} from "@/components/LoadedHook";
 
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
@@ -26,6 +27,8 @@ export default function Page({ title, description="", markdown="", activeTopic, 
     const [keys, setKeys] = useState([]);
     const [content, setContent] = useState([]);
     const [showScrollUpButton, setShowScrollUpButton] = useState(false);
+
+    const loaded = useLoaded();
 
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const user = loginUser();
@@ -138,15 +141,6 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                             </div>
                         </div>
                         <div className={"text-slate-700 dark:text-slate-300"}>
-                            <div id="ms-ad-1745148403"></div>
-                            <Script strategy={"afterInteractive"}>
-                                {`window.msAdsQueue.push(() => {
-                                window.pubCenterSdk.render({
-                                    adUnitId: "1745148403",
-                                    elementId: "ms-ad-1745148403"
-                                });
-                            });`}
-                            </Script>
                             {markdown !== "" && <MDXRemote components={useMDXComponents()} {...markdown} />}
                         </div>
                     </div>
