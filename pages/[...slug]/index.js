@@ -138,6 +138,15 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                             </div>
                         </div>
                         <div className={"text-slate-700 dark:text-slate-300"}>
+                            <div id="ms-ad-1745148403"></div>
+                            <Script strategy={"afterInteractive"}>
+                                {`window.msAdsQueue.push(() => {
+                                window.pubCenterSdk.render({
+                                    adUnitId: "1745148403",
+                                    elementId: "ms-ad-1745148403"
+                                });
+                            });`}
+                            </Script>
                             {markdown !== "" && <MDXRemote components={useMDXComponents()} {...markdown} />}
                         </div>
                     </div>
