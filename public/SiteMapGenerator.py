@@ -37,11 +37,11 @@ data = [
                    "title": "Basics",
                    "showInLocation": False,
                    "subtopics":  [
-                     { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/basics/reps-and-sets" },
-                     { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
+                     { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/info/reps-and-sets" },
+                     { "id":  1, "title": "Concepts", "href": "/muscles/training/info/concepts" }
                    ]
                  },
-                 { "id": 1, "title": "Strength", "href": "/muscles/training/strength"}
+                 { "id": 1, "title": "Strength", "href": "/muscles/training/styles/strength"}
                ]
              },
              {

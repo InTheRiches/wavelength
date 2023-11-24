@@ -20,11 +20,11 @@
             "title": "Basics",
             "subtopics":  [
               { "id":  1, "title": "Reps / Sets", "href": "/muscles/training/basics/repsandsets" },
-              { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
+              { "id":  1, "title": "Concepts", "href": "/muscles/training/info/concepts" }
             ]
           },
-          { "id": 2, "title": "Strength", "href": "/muscles/training/strength"},
-          { "id": 3, "title": "Hypertrophy", "href": "/muscles/training/hypertrophy"}
+          { "id": 2, "title": "Strength", "href": "/muscles/training/styles/strength"},
+          { "id": 3, "title": "Hypertrophy", "href": "/muscles/training/styles/hypertrophy"}
         ]
       },
       {

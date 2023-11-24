@@ -59,7 +59,7 @@ export default function Login() {
                                     await router.replace('/');
                                 });
 
-                                return;
+
                             }
 
                             // TODO error, do whatever to signal wrong information

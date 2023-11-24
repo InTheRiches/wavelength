@@ -45761,7 +45761,7 @@ var Scope3 = class {
             if (declarator.init)
               this.initialised_declarations.add(name2);
           });
-          ;
+
         };
         node2.declarations.forEach(handle_declarator);
       }
@@ -62010,7 +62010,7 @@ var IFrameProtocol = class {
   globalListen(listener) {
     if (typeof listener !== "function") {
       return () => {
-        return;
+
       };
     }
     const listenerId = this.globalListenersCount;
@@ -62023,7 +62023,7 @@ var IFrameProtocol = class {
   channelListen(listener) {
     if (typeof listener !== "function") {
       return () => {
-        return;
+
       };
     }
     const listenerId = this.channelListenersCount;

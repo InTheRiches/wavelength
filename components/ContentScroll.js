@@ -1,49 +1,46 @@
-import {useRouter} from "next/router";
-import {useEffect} from "react";
-
-export default function ContentScroll() {
-    useEffect(() => {
-        const handleHashChange = () => {
-            const hash = window.location.hash;
-            // Do something with the new hash, such as scrolling to an element with that ID
-        };
-
-        window.addEventListener('hashchange', handleHashChange);
-        handleHashChange();
-
-        return () => {
-            window.removeEventListener('hashchange', handleHashChange);
-        };
-    }, []);
-
-    useEffect(() => {
-        // Get the scroll position from localStorage, or default to 0
-        const scrollHREF = localStorage.getItem('lastHREF') || "";
-        if (window.location.href === scrollHREF) {
-            const scrollPosition = Number(localStorage.getItem('scrollPosition')) || 0;
-
-            // Scroll to the stored position
-            window.scrollTo(0, scrollPosition);
-        }
-
-        const handleUnload = () => {
-            localStorage.setItem('scrollPosition', window.scrollY.toString());
-            // localStorage.setItem("sidebarScrollPosition", element.scrollTop.toString());
-            localStorage.setItem('lastHREF', window.location.href);
-        };
-
-        window.addEventListener('beforeunload', handleUnload);
-        window.addEventListener("scroll", handleUnload)
-
-        // Get the ID of the section to scroll to from the URL fragment identifier
-        scrollPageToContent();
-
-        return () => {
-            window.removeEventListener('beforeunload', handleUnload);
-            window.removeEventListener("scroll", handleUnload);
-        };
-    }, []);
-}
+// export default function ContentScroll() {
+//     useEffect(() => {
+//         const handleHashChange = () => {
+//             const hash = window.location.hash;
+//             // Do something with the new hash, such as scrolling to an element with that ID
+//         };
+//
+//         window.addEventListener('hashchange', handleHashChange);
+//         handleHashChange();
+//
+//         return () => {
+//             window.removeEventListener('hashchange', handleHashChange);
+//         };
+//     }, []);
+//
+//     useEffect(() => {
+//         // Get the scroll position from localStorage, or default to 0
+//         const scrollHREF = localStorage.getItem('lastHREF') || "";
+//         if (window.location.href === scrollHREF) {
+//             const scrollPosition = Number(localStorage.getItem('scrollPosition')) || 0;
+//
+//             // Scroll to the stored position
+//             window.scrollTo(0, scrollPosition);
+//         }
+//
+//         const handleUnload = () => {
+//             localStorage.setItem('scrollPosition', window.scrollY.toString());
+//             // localStorage.setItem("sidebarScrollPosition", element.scrollTop.toString());
+//             localStorage.setItem('lastHREF', window.location.href);
+//         };
+//
+//         window.addEventListener('beforeunload', handleUnload);
+//         window.addEventListener("scroll", handleUnload)
+//
+//         // Get the ID of the section to scroll to from the URL fragment identifier
+//         scrollPageToContent();
+//
+//         return () => {
+//             window.removeEventListener('beforeunload', handleUnload);
+//             window.removeEventListener("scroll", handleUnload);
+//         };
+//     }, []);
+// }
 
 export function percentScrolled() {
     const h = document.documentElement,

@@ -11,12 +11,8 @@
             "id": "29bae73a356a6b7a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "plans/starter.mdx",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "plans/starter.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "plans/starter.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "plans/starter.mdx"
-              }
+              "state": {}
             }
           }
         ]
@@ -149,17 +141,19 @@
   },
   "active": "29bae73a356a6b7a",
   "lastOpenFiles": [
-    "plans/Starter.mdx",
-    "muscles/training/basics/reps-and-sets.mdx",
-    "muscles/training/hypertrophy.mdx",
-    "plans/plans.mdx",
-    "muscles/training/hypertrophy.json",
+    "muscles/training/styles/strength.json",
+    "muscles/training/styles/strength.mdx",
+    "muscles/training/styles/hypertrophy.mdx",
+    "muscles/training/styles/hypertrophy.json",
+    "muscles/training/styles",
+    "muscles/training/info/reps-and-sets.mdx",
+    "muscles/training/info/reps-and-sets.json",
+    "muscles/training/info/concepts.mdx",
+    "muscles/training/info/concepts.json",
+    "muscles/training/info",
+    "muscles/training/basics.mdx",
+    "muscles/growth.md",
     "().md",
-    "muscles/training/strength.mdx",
-    "muscles/training/basics/concepts.mdx",
-    "recovery/basics.mdx",
-    "cardio/basics.mdx",
-    "muscles/basics.mdx",
     "recovery/basics.md",
     "getting-started/introduction.md",
     "muscles/specifics/back/rotator-cuff.md",

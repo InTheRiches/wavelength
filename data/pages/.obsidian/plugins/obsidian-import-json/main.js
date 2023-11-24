@@ -4109,9 +4109,9 @@ var require_source_map_generator = __commonJS({
         throw new Error("original.line and original.column are not numbers -- you probably meant to omit the original mapping entirely and only map the generated position. If so, pass null for the original mapping instead of an object with empty or null values.");
       }
       if (aGenerated && "line" in aGenerated && "column" in aGenerated && aGenerated.line > 0 && aGenerated.column >= 0 && !aOriginal && !aSource && !aName) {
-        return;
+
       } else if (aGenerated && "line" in aGenerated && "column" in aGenerated && aOriginal && "line" in aOriginal && "column" in aOriginal && aGenerated.line > 0 && aGenerated.column >= 0 && aOriginal.line > 0 && aOriginal.column >= 0 && aSource) {
-        return;
+
       } else {
         throw new Error("Invalid mapping: " + JSON.stringify({
           generated: aGenerated,
@@ -13432,7 +13432,7 @@ var require_class_utils = __commonJS({
       return val ? Array.isArray(val) ? val : [val] : [];
     };
     cu.noop = function noop() {
-      return;
+
     };
     cu.identity = function identity(val) {
       return val;
@@ -14663,9 +14663,9 @@ var require_source_map_generator2 = __commonJS({
         throw new Error("original.line and original.column are not numbers -- you probably meant to omit the original mapping entirely and only map the generated position. If so, pass null for the original mapping instead of an object with empty or null values.");
       }
       if (aGenerated && "line" in aGenerated && "column" in aGenerated && aGenerated.line > 0 && aGenerated.column >= 0 && !aOriginal && !aSource && !aName) {
-        return;
+
       } else if (aGenerated && "line" in aGenerated && "column" in aGenerated && aOriginal && "line" in aOriginal && "column" in aOriginal && aGenerated.line > 0 && aGenerated.column >= 0 && aOriginal.line > 0 && aOriginal.column >= 0 && aSource) {
-        return;
+
       } else {
         throw new Error("Invalid mapping: " + JSON.stringify({
           generated: aGenerated,

@@ -107,8 +107,6 @@ export default function Page({ title, description="", markdown="", activeTopic, 
         };
     }, [router.asPath]);
 
-    const index = 0;
-
     return (
         <div className={"flex flex-col min-h-screen bg-gray-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-200 items-center "}> {/*  + openSans.className */}
             <NextSeo
@@ -201,7 +199,7 @@ export async function getServerSideProps(context) {
         const mdContents = await fs.promises.readFile(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.mdx', 'utf8');
 
         // find headers in markdown
-        const regex = /#{1,6} .*/g;
+        const regex = /^# .*/gm;
         const headersReg = mdContents.match(regex);
         // send those headers to the page
         const headers = [];

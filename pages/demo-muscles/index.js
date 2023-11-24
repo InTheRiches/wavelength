@@ -33,7 +33,7 @@ export default function Layout() {
         }
 
         if (!hasCookie("accessToken") || !hasCookie("id"))
-            return;
+
     }, [isDarkMode]);
 
     // useEffect(() => {

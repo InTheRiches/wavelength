@@ -12,24 +12,32 @@
     "title": "Muscles",
     "url": "/muscles",
     "subtopics": [
-      { "id": 0, "title": "Basics", "href": "/muscles/basics" },
+      { "id": 0, "title": "Growth", "href": "/muscles/growth" },
       {
         "id": 1,
         "title": "Training",
         "url": "/muscles/training",
         "subtopics": [
+          { "id": 0, "title": "Basics", "href": "/muscles/training/basics" },
           {
-            "id": 0,
-            "title": "Basics",
+            "id": 1,
+            "title": "Info",
             "showInLocation": false,
-            "url": "/muscles/training/basics",
+            "url": "/muscles/training/info",
             "subtopics":  [
-              { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/basics/reps-and-sets" },
-              { "id":  1, "title": "Concepts", "href": "/muscles/training/basics/concepts" }
+              { "id":  0, "title": "Reps / Sets", "href": "/muscles/training/info/reps-and-sets" },
+              { "id":  1, "title": "Concepts", "href": "/muscles/training/info/concepts" }
             ]
           },
-          { "id": 1, "title": "Strength", "href": "/muscles/training/strength" },
-          { "id": 2, "title":  "Hypertrophy", "href": "/muscles/training/hypertrophy" }
+          {
+            "id": 2,
+            "title": "Styles",
+            "url": "/muscles/training/styles",
+            "subtopics": [
+              { "id": 0, "title": "Strength", "href": "/muscles/training/styles/strength" },
+              { "id": 1, "title":  "Hypertrophy", "href": "/muscles/training/styles/hypertrophy" }
+            ]
+          }
         ]
       },
       {
