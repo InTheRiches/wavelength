@@ -31,9 +31,6 @@ export default function Layout() {
         } else {
             document.documentElement.classList.remove('dark');
         }
-
-        if (!hasCookie("accessToken") || !hasCookie("id"))
-
     }, [isDarkMode]);
 
     // useEffect(() => {
