@@ -8,47 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/pages/muscles/growth.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pages/muscles/growth.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/concepts.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/concepts.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/reps-and-sets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/reps-and-sets.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ContentScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ContentScroll.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/plugins/cmenu-plugin/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/plugins/cmenu-plugin/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/plugins/mdx/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/plugins/mdx/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/plugins/obsidian-import-json/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/plugins/obsidian-import-json/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/dieting/delete me.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/dieting/delete me.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/dieting/nutrients/vitamins.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/dieting/nutrients/vitamins.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/basics.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/basics.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/specifics/arms/triceps.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/specifics/arms/triceps.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/concepts.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics/reps-and-sets.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/hypertrophy.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/styles/hypertrophy.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/hypertrophy.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/styles/hypertrophy.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/strength.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/styles/strength.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/strength.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/styles/strength.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/plans/basics.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/plans/basics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/plans/basics.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/plans/basics.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/genuuid.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/genuuid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/demo-muscles/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/demo-muscles/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Manrunning.psd" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/temporary/Manrunning.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/SiteMapGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/SiteMapGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/content.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/content.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manRunningLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/temporary/manRunningLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/nonStrippedContent.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/nonStrippedContent.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +206,7 @@
       <workItem from="1700012965568" duration="2083000" />
       <workItem from="1700665803646" duration="10230000" />
       <workItem from="1700783163697" duration="4492000" />
-      <workItem from="1700836848659" duration="5211000" />
+      <workItem from="1700836848659" duration="8509000" />
     </task>
     <servers />
   </component>

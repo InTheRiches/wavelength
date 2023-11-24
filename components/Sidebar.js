@@ -4,7 +4,8 @@ import topics from '/public/content.json';
 import Link from "next/link";
 import Collapsible from "@/components/Collapsible";
 import path from "path";
-import {scrollPageToContent} from "@/components/ContentScroll";
+import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
+import {useLoaded} from "@/components/LoadedHook";
 
 let key = 0;
 const getNextKey = () => {
@@ -14,7 +15,7 @@ const getNextKey = () => {
 
 function Sidebar ({ activeTopic }) {
     return (
-        <div className="flex flex-col max-w-1/5">
+        <div className="hidden flex-col max-w-1/5 lg:flex">
             <div id="sidebar" style={{height: "calc(100vh - 72px)"}}
                  className={`sidebar-taper pb-8 fixed w-[20rem] overflow-y-auto z-10 px-4 mt-15 pr-4 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
                 {/*<div className="w-full bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 backdrop-blur dark:bg-neutral-900/50 sticky top-0 z-10 mb-6">*/}
@@ -44,7 +45,7 @@ export function Topic({ topic, activeTopic }) {
     );
 }
 export function SubCategory({ subcategory, activeTopic }) {
-    const [collasped, toggleCollapse] = Collapsible(!activeTopic.includes(subcategory.url));
+    const [collapsed, toggleCollapse] = Collapsible(!activeTopic.includes(subcategory.url));
 
     return (
         <div key={getNextKey()} className={`flex flex-col`}>
@@ -52,7 +53,7 @@ export function SubCategory({ subcategory, activeTopic }) {
                  className={`text-neutral-700 dark:text-slate-300 flex items-center transition-all duration-200 hover:cursor-pointer py-1 text-xl hover:text-cyan-accent hover:dark:text-cyan-accent justify-start`}
                  onClick={() => toggleCollapse()}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 -left-2.5 relative transition-transform duration-100 ${
-                    !collasped
+                    !collapsed
                         ? "-scale-y-100"
                         : "scale-y-100"}`}>
                     <path strokeLinecap="round" strokeLinejoin="round"
@@ -61,7 +62,7 @@ export function SubCategory({ subcategory, activeTopic }) {
                 <span className={`min-[424px]:text-lg text-base ml-1`}>{subcategory.title}</span>
             </div>
             <div className={"border-l-1 border-neutral-200 dark:border-neutral-700"}>
-                <div className={(collasped ? "hidden " : "") + "ml-8"}>
+                <div className={(collapsed ? "hidden " : "") + "ml-8"}>
                     {subcategory.subtopics.map((subtopic) => (
                         subtopic.subtopics ? (
                             <SubCategory key={getNextKey()} activeTopic={activeTopic} subcategory={subtopic}></SubCategory>
@@ -92,25 +93,6 @@ export function Category({ category, index, activeTopic }) {
 export function HeaderListSidebar({ headers }) {
     const router = useRouter();
 
-    const [showScrollUpButton, setShowScrollUpButton] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setShowScrollUpButton(true);
-            } else {
-                setShowScrollUpButton(false);
-            }
-        }
-        window.addEventListener('scroll', handleScroll);
-
-        handleScroll();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    }, [router.asPath]);
-
     return (
         <div className={"hidden min-[1350px]:block"}>
             <div className='ml-8 h-full max-w-1/5 min-w-[18rem] w-full fixed top-20 overflow-y-auto'>
@@ -135,17 +117,7 @@ export function HeaderListSidebar({ headers }) {
                     })}
                 </div>
 
-                <button onClick={() => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-                }} className={(showScrollUpButton ? "" : "opacity-0 hover:cursor-auto ") + "bg-cyan-accent hover:bg-cyan-accent-light px-3 z-20 transition-all absolute bottom-32 ml-4 left-0 hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex flex-col items-center justify-center"}>
-                    {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
-                    <svg className={"w-6 h-6"} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
-                    </svg>
-                </button>
+                <ScrollButton positioning={"absolute left-0 bottom-32 hidden min-[1350px]:flex"}></ScrollButton>
             </div>
         </div>
     );

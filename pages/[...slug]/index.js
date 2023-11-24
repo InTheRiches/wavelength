@@ -11,7 +11,7 @@ import useDarkMode from "use-dark-mode";
 import Markdown from "react-markdown";
 import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
-import {scrollPageToContent} from "@/components/ContentScroll";
+import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/Authentication";
 import { NextSeo } from 'next-seo';
 import Script from "next/script";
@@ -21,14 +21,10 @@ import {useLoaded} from "@/components/LoadedHook";
 
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
-    const [windowWidth, setWindowWidth] = useState(1024);
     const [location, setLocation] = useState("Location");
 
     const [keys, setKeys] = useState([]);
     const [content, setContent] = useState([]);
-    const [showScrollUpButton, setShowScrollUpButton] = useState(false);
-
-    const loaded = useLoaded();
 
     const {value: isDarkMode, toggle: toggleDarkMode} = useDarkMode();
     const user = loginUser();
@@ -39,26 +35,10 @@ export default function Page({ title, description="", markdown="", activeTopic, 
         } else {
             document.documentElement.classList.remove('dark');
         }
-
-        const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setShowScrollUpButton(true);
-            } else {
-                setShowScrollUpButton(false);
-            }
-        }
-        window.addEventListener('scroll', handleScroll);
-
-        handleScroll();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
     }, [isDarkMode]);
 
     useEffect(() => {
         scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
-        setWindowWidth(window.innerWidth);
 
         topics.forEach((topic) => {
             topic.subtopics.forEach((subtopic) => {
@@ -93,18 +73,6 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                 content.push(subtopic.title);
             });
         });
-
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-
-        // Attach the event listener
-        window.addEventListener('resize', handleResize);
-
-        // Clean up the event listener on component unmount
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
     }, [router.asPath]);
 
     return (
@@ -125,8 +93,8 @@ export default function Page({ title, description="", markdown="", activeTopic, 
             <Navigation activeTopic={activeTopic} user={user} progressBar={true}></Navigation>
 
             <div className={`flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto ${headers.length > 0 ? "min-[1350px]:pr-[20rem]" : ""}`}>
-                {windowWidth >= 1024 ? <Sidebar activeTopic={activeTopic}></Sidebar> : <></>}
-                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[21rem] xl:ml-[24rem]"}>
+                <Sidebar activeTopic={activeTopic}></Sidebar>
+                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[16rem] xl:ml-[18rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-8">
@@ -165,19 +133,9 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                     </div>
                     <Footer></Footer>
                 </div>
-                {windowWidth >= 1024 ? <HeaderListSidebar headers={headers}></HeaderListSidebar> : <></>}
+                <HeaderListSidebar headers={headers}></HeaderListSidebar>
             </div>
-            <button onClick={() => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            }} className={(showScrollUpButton ? "" : "opacity-0 hover:cursor-auto ") + "min-[1350px]:hidden bg-cyan-accent hover:bg-cyan-accent-light px-3 z-20 transition-all fixed bottom-8 right-8 ml-4 hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex flex-col items-center justify-center"}>
-                {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
-                <svg className={"w-6 h-6"} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
-                </svg>
-            </button>
+            <ScrollButton positioning={"bottom-8 right-8 fixed min-[1350px]:hidden flex"}></ScrollButton>
         </div>
     )
 }

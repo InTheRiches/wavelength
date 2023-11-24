@@ -42,6 +42,9 @@
 //     }, []);
 // }
 
+import path from "path";
+import React, {useEffect} from "react";
+
 export function percentScrolled() {
     const h = document.documentElement,
         b = document.body,
@@ -71,4 +74,39 @@ export async function scrollPageToContent(hash) {
             behavior: 'smooth',
         });
     }
+}
+
+export function ScrollButton({ positioning }) {
+    const [showScrollUpButton, setShowScrollUpButton] = React.useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setShowScrollUpButton(true);
+            } else {
+                setShowScrollUpButton(false);
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
+    return (
+        <button onClick={() => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }} className={(showScrollUpButton ? "" : "opacity-0 hover:cursor-auto ") + `bg-cyan-accent hover:bg-cyan-accent-light px-3 z-20 transition-all ${positioning} ml-4 hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex-col items-center justify-center`}>
+            {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
+            <svg className={"w-6 h-6"} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+            </svg>
+        </button>
+    )
 }
