@@ -11,8 +11,12 @@
             "id": "29bae73a356a6b7a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "muscles/training/styles/strength.mdx",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "muscles/training/styles/strength.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "muscles/training/styles/strength.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "muscles/training/styles/strength.mdx"
+              }
             }
           }
         ]
@@ -141,12 +149,12 @@
   },
   "active": "29bae73a356a6b7a",
   "lastOpenFiles": [
+    "muscles/training/info/reps-and-sets.mdx",
     "muscles/training/styles/strength.json",
     "muscles/training/styles/strength.mdx",
     "muscles/training/styles/hypertrophy.mdx",
     "muscles/training/styles/hypertrophy.json",
     "muscles/training/styles",
-    "muscles/training/info/reps-and-sets.mdx",
     "muscles/training/info/reps-and-sets.json",
     "muscles/training/info/concepts.mdx",
     "muscles/training/info/concepts.json",

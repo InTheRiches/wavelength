@@ -37,9 +37,9 @@ export function Topic({ topic, activeTopic }) {
     return (
         <div className={`${
                  activeTopic === topic.href
-                     ? 'text-cyan-accent'
-                     : 'text-neutral-700 dark:text-slate-300'
-             } flex items-center transition-all duration-200 py-1`}>
+                     ? 'text-cyan-accent border-cyan-accent'
+                     : 'text-neutral-700 dark:text-slate-300 border-neutral-200 dark:border-neutral-700'
+             } flex items-center transition-all duration-200 py-1 border-l-1 pl-6`}>
             <Link href={topic.href} className={`hover:cursor-pointer hover:text-cyan-accent hover:dark:text-cyan-accent min-[424px]:text-lg text-base`}>{topic.title}</Link>
         </div>
     );
@@ -50,19 +50,19 @@ export function SubCategory({ subcategory, activeTopic }) {
     return (
         <div key={getNextKey()} className={`flex flex-col`}>
             <div key={getNextKey()}
-                 className={`text-neutral-700 dark:text-slate-300 flex items-center transition-all duration-200 hover:cursor-pointer py-1 text-xl hover:text-cyan-accent hover:dark:text-cyan-accent justify-start`}
+                 className={`text-neutral-700 dark:text-slate-300 flex items-center transition-all duration-200 hover:cursor-pointer py-1 text-xl hover:text-cyan-accent hover:dark:text-cyan-accent justify-start border-l-1 border-neutral-200 dark:border-neutral-700 pl-6`}
                  onClick={() => toggleCollapse()}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 -left-2.5 relative transition-transform duration-100 ${
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`w-5 h-5 transition-transform duration-100 ${
                     !collapsed
                         ? "-scale-y-100"
                         : "scale-y-100"}`}>
                     <path strokeLinecap="round" strokeLinejoin="round"
                           d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
                 </svg>
-                <span className={`min-[424px]:text-lg text-base ml-1`}>{subcategory.title}</span>
+                <span className={`min-[424px]:text-lg text-base ml-2`}>{subcategory.title}</span>
             </div>
-            <div className={"border-l-1 border-neutral-200 dark:border-neutral-700"}>
-                <div className={(collapsed ? "hidden " : "") + "ml-8"}>
+            <div className={"border-l-1 border-neutral-200 dark:border-neutral-700 pl-[0.625rem]"}>
+                <div className={(collapsed ? "hidden " : "") + "ml-6"}>
                     {subcategory.subtopics.map((subtopic) => (
                         subtopic.subtopics ? (
                             <SubCategory key={getNextKey()} activeTopic={activeTopic} subcategory={subtopic}></SubCategory>
@@ -76,8 +76,8 @@ export function SubCategory({ subcategory, activeTopic }) {
 
 export function Category({ category, index, activeTopic }) {
     return (
-        <div className={`mb-2 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
-            <div className="flex items-center mb-2 hover:cursor-pointer justify-between">
+        <div className={`mb-4 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
+            <div className="flex items-center hover:cursor-pointer justify-between">
                 <h2 className="font-bold text-1xl">{category.title}</h2>
             </div>
             <div>
