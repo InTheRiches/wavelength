@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react'
 import {Lobster, Open_Sans} from 'next/font/google';
-import Navigation from '@/components/Navigation'
+import Navigation from '@/components/primary/Navigation'
 import useDarkMode from 'use-dark-mode';
 import {getCookie, hasCookie} from "cookies-next";
-import {BackFullBodySVG, FrontFullBodySVG} from "@/components/BodySVG";
-import {loginUser} from "@/components/Authentication";
+import {BackFullBodySVG, FrontFullBodySVG} from "@/components/primary/BodySVG";
+import {loginUser} from "@/components/backend/Authentication";
 import Head from 'next/head';
 
 const lobster = Lobster({

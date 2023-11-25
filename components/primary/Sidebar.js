@@ -2,7 +2,7 @@ import React, {useEffect, useState, useCallback} from 'react';
 import {useRouter} from "next/router";
 import topics from '/public/content.json';
 import Link from "next/link";
-import Collapsible from "@/components/Collapsible";
+import Collapsible from "@/components/primary/Collapsible";
 import path from "path";
 import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import {useLoaded} from "@/components/LoadedHook";
@@ -17,7 +17,7 @@ function Sidebar ({ activeTopic }) {
     return (
         <div className="hidden flex-col max-w-1/5 lg:flex">
             <div id="sidebar" style={{height: "calc(100vh - 72px)"}}
-                 className={`sidebar-taper pb-8 fixed w-[20rem] overflow-y-auto z-10 px-4 mt-15 pr-4 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
+                 className={`sidebar-taper pb-8 fixed w-[18rem] overflow-y-auto z-10 pl-4 mt-15 text-neutral-900 dark:text-slate-50 hidden sm:flex flex-col`}>
                 {/*<div className="w-full bg-white/50 supports-backdrop-blur:bg-cyan-accent/95 backdrop-blur dark:bg-neutral-900/50 sticky top-0 z-10 mb-6">*/}
                 {/*    <button className="w-full lg:flex border-1 border-slate-200 hover:border-cyan-accent border-opacity-50 hover:border-opacity-75 items-center text-sm leading-6 text-neutral-700 dark:text-slate-300 hover:dark:text-slate-50 hover:text-neutral-900 rounded-md shadow-sm py-1.5 pl-2 pr-3 transition-all duration-100 bg-transparent">*/}
                 {/*        <a>Search...</a>*/}
@@ -61,8 +61,8 @@ export function SubCategory({ subcategory, activeTopic }) {
                 </svg>
                 <span className={`min-[424px]:text-lg text-base ml-2`}>{subcategory.title}</span>
             </div>
-            <div className={"border-l-1 border-neutral-200 dark:border-neutral-700 pl-[0.625rem]"}>
-                <div className={(collapsed ? "hidden " : "") + "ml-6"}>
+            <div className={"border-l-1 border-neutral-200 dark:border-neutral-700 "}>
+                <div className={collapsed ? "hidden " : "ml-[2.125rem]"}>
                     {subcategory.subtopics.map((subtopic) => (
                         subtopic.subtopics ? (
                             <SubCategory key={getNextKey()} activeTopic={activeTopic} subcategory={subtopic}></SubCategory>

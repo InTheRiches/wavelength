@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/training/styles/strength.mdx",
+                "file": "supplements/performance/creatine.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/training/styles/strength.mdx",
+                "file": "supplements/performance/creatine.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/training/styles/strength.mdx",
+                "file": "supplements/performance/creatine.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/training/styles/strength.mdx"
+                "file": "supplements/performance/creatine.mdx"
               }
             }
           }
@@ -149,17 +149,17 @@
   },
   "active": "29bae73a356a6b7a",
   "lastOpenFiles": [
+    "supplements/performance/pre-workout.mdx~",
+    "supplements/performance/creatine.mdx~",
+    "muscles/training/styles/strength.mdx",
     "muscles/training/info/reps-and-sets.mdx",
     "muscles/training/styles/strength.json",
-    "muscles/training/styles/strength.mdx",
     "muscles/training/styles/hypertrophy.mdx",
     "muscles/training/styles/hypertrophy.json",
     "muscles/training/styles",
     "muscles/training/info/reps-and-sets.json",
     "muscles/training/info/concepts.mdx",
     "muscles/training/info/concepts.json",
-    "muscles/training/info",
-    "muscles/training/basics.mdx",
     "muscles/growth.md",
     "().md",
     "recovery/basics.md",

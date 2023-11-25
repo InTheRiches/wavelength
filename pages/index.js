@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
-import Navigation from '@/components/Navigation'
+import Navigation from '@/components/primary/Navigation'
 import useDarkMode from 'use-dark-mode';
 import {lobster} from "@/components/Fonts";
-import {loginUser} from "@/components/Authentication";
+import {loginUser} from "@/components/backend/Authentication";
 import {useLoaded} from "@/components/LoadedHook";
 import Image from "next/image";
 import Head from 'next/head';

@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router'
 import React, {useEffect, useState} from 'react';
-import Navigation from '@/components/Navigation'
-import Sidebar, {HeaderListSidebar} from "@/components/Sidebar";
+import Navigation from '@/components/primary/Navigation'
+import Sidebar, {HeaderListSidebar} from "@/components/primary/Sidebar";
 import Footer from "@/components/Footer";
 import {useDescriptionComponents, useMDXComponents} from "@/mdx-components";
 import fs from 'fs';
@@ -12,7 +12,7 @@ import Markdown from "react-markdown";
 import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
 import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
-import {loginUser} from "@/components/Authentication";
+import {loginUser} from "@/components/backend/Authentication";
 import { NextSeo } from 'next-seo';
 import Script from "next/script";
 import Head from "next/head";
@@ -94,7 +94,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
 
             <div className={`flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto ${headers.length > 0 ? "min-[1350px]:pr-[20rem]" : ""}`}>
                 <Sidebar activeTopic={activeTopic}></Sidebar>
-                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[16rem] xl:ml-[18rem]"}>
+                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[17rem] xl:ml-[19rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-8">
@@ -183,6 +183,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
+        console.log(error);
         return {
             notFound: true,
         };

@@ -8,8 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/ProductCarousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/backend/Authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BodySVG.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/BodySVG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BulletPoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/BulletPoints.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Collapsible.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/Collapsible.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MobileSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/MobileSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/WorkoutTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/WorkoutTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/supplements/performance/creatine.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/supplements/performance/creatine.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/supplements/performance/pre-workout.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/supplements/performance/pre-workout.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mdx-components.js" beforeDir="false" afterPath="$PROJECT_DIR$/mdx-components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/demo-muscles/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/demo-muscles/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,11 +103,11 @@
       <recent name="D:\Unity\Projects\coach-phrog\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Unity\Projects\coach-phrog\components\primary" />
+      <recent name="D:\Unity\Projects\coach-phrog\components\backend" />
       <recent name="D:\Unity\Projects\coach-phrog\data\pages\muscles\training\styles" />
       <recent name="D:\Unity\Projects\coach-phrog\data\pages\muscles\training" />
       <recent name="D:\Unity\Projects\coach-phrog\public\images\temporary" />
-      <recent name="D:\Unity\Projects\coach-phrog\public" />
-      <recent name="D:\Unity\Projects\coach-phrog\public\images\backgrounds" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -204,7 +220,7 @@
       <workItem from="1700012965568" duration="2083000" />
       <workItem from="1700665803646" duration="10230000" />
       <workItem from="1700783163697" duration="4492000" />
-      <workItem from="1700836848659" duration="9945000" />
+      <workItem from="1700836848659" duration="17908000" />
     </task>
     <servers />
   </component>

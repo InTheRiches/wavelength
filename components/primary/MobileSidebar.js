@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/router";
 import topics from '/public/content.json';
 import {scrollPageToContent} from "@/components/ContentScroll";
-import {Category} from "@/components/Sidebar";
+import {Category} from "@/components/primary/Sidebar";
 
 function MobileSidebar({ activeTopic }) {
     const [loaded, setLoaded] = useState(false);

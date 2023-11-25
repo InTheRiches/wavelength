@@ -1,7 +1,8 @@
-import {scrollPageToContent} from "@/components/ContentScroll";
 import {useRouter} from "next/router";
 import handleClick, {openInNewTab} from "@/components/HandleClick";
-import {useBulletPointComponents, useDescriptionComponents} from "@/mdx-components";
+import {useBulletPointComponents} from "@/mdx-components";
+import {MDXRemote} from "next-mdx-remote";
+import React from "react";
 import Markdown from "react-markdown";
 
 export default function BulletPoints({bulletPoints, columns = 2, hangingIndent = false}) {
@@ -13,6 +14,8 @@ export default function BulletPoints({bulletPoints, columns = 2, hangingIndent =
         <ul className={`markerColor sm:ml-0 ml-3 min-[424px]:text-lg text-md list-outside list-disc lg:gap-x-16 lg:grid lg:grid-cols-${columns} h-min w-full`}>
             {
                 bulletPoints.map((bulletPoint, index) => {
+                    console.log(bulletPoint.description);
+
                     return (
                         <li key={index} className="mb-8 pl-2 h-min">
                             {bulletPoint.title && <strong className="block dark:text-slate-50 mb-1 min-[424px]:text-xl text-lg">{
@@ -31,6 +34,7 @@ export default function BulletPoints({bulletPoints, columns = 2, hangingIndent =
                                     </span>
 
                                     : bulletPoint.title }</strong>}
+
                             <Markdown components={useBulletPointComponents(hangingIndent)}>{bulletPoint.description}</Markdown>
                         </li>
                     )

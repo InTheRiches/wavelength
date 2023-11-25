@@ -1,16 +1,18 @@
 // This file is required to use @next/mdx in the `app` directory.
-import {EntireBodyMap} from "@/components/BodySVG";
+import {EntireBodyMap} from "@/components/primary/BodySVG";
 import InformationBlock, {WarningBlock} from "@/components/InformationBlocks";
 import React from "react";
-import BulletPoints from "@/components/BulletPoints";
+import BulletPoints from "@/components/primary/BulletPoints";
 import handleClick from "@/components/HandleClick";
 import {useRouter} from "next/router";
 import Link from "next/link";
-import WorkoutTable from "@/components/WorkoutTable";
+import WorkoutTable from "@/components/primary/WorkoutTable";
+import ProductCarousel from "@/components/ProductCarousel";
 
 export function useMDXComponents(components) {
   return {
     Link: (props) => <Link {...props}></Link>,
+    ProductCarousel: (props) => <ProductCarousel {...props}></ProductCarousel>,
     EntireBodyMap: (props) => <EntireBodyMap {...props}></EntireBodyMap>,
     InformationBlock: (props) => <InformationBlock {...props}></InformationBlock>,
     WarningBlock: (props) => <WarningBlock {...props}></WarningBlock>,

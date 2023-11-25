@@ -2,7 +2,7 @@ import React, {Fragment, useEffect, useState} from 'react'
 import {useRouter} from "next/router";
 import {lobster} from "@/components/Fonts";
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/20/solid";
-import MobileSidebar from "@/components/MobileSidebar";
+import MobileSidebar from "@/components/primary/MobileSidebar";
 import useDarkMode from "use-dark-mode";
 import {useLoaded} from "@/components/LoadedHook";
 import {percentScrolled} from "@/components/ContentScroll";
