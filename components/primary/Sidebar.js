@@ -59,7 +59,7 @@ export function SubCategory({ subcategory, activeTopic }) {
                     <path strokeLinecap="round" strokeLinejoin="round"
                           d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
                 </svg>
-                <span className={`min-[424px]:text-lg text-base ml-2`}>{subcategory.title}</span>
+                <span className={`min-[424px]:text-lg text-base ml-3`}>{subcategory.title}</span>
             </div>
             <div className={"border-l-1 border-neutral-200 dark:border-neutral-700 "}>
                 <div className={collapsed ? "hidden " : "ml-[2.125rem]"}>
