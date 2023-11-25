@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ProductCarousel({ products }) {
     return (
-        <div className="grid grid-cols-2 overflow-x-auto scrollbar-hide mb-5 gap-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 overflow-x-auto scrollbar-hide mb-5 gap-y-4">
             {products.map((product) => (
                 <div className="flex flex-col items-center p-10 hover:z-50">
                     <img src={product.image} alt="" className="h-52 w-52 rounded-xl drop-shadow-xl bg-white py-1 border-4 border-white object-contain mb-6" />

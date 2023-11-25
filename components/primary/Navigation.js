@@ -36,16 +36,6 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
 
     handleScroll();
 
-    const handleClick = (e) => {
-      console.log(e.target.closest('#toggleSidebar'));
-      if (e.target.closest('#sidebar') === null && e.target.closest('#toggleSidebar') === null) {
-        setIsOpen(false);
-        console.log("closing")
-      }
-    }
-
-    document.addEventListener('click', handleClick);
-
     // Attach the event listener
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
@@ -54,7 +44,6 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
     return () => {
         window.removeEventListener('resize', handleResize);
         window.removeEventListener('scroll', handleScroll)
-        document.removeEventListener('click', handleClick);
     };
   }, []);
 
@@ -115,14 +104,17 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
         </div>
       </div>
       {isOpen && windowWidth < 1024 ?
-      <div id={"sidebar"} className={"fixed inset-0 z-50 block max-w-[calc(100%-3rem)]"}>
-          <div className={"overflow-y-scroll relative flex flex-col bg-gray-50 dark:bg-neutral-900 w-80 pl-6 pr-3 pb-6 pt-3 h-screen border-r-1 border-cyan-accent"}>
+      <div id={"sidebar"} className={"fixed inset-0 z-50 w-full h-screen flex flex-row"}>
+          <div className={"overflow-y-scroll relative flex flex-col bg-gray-50 dark:bg-neutral-900 max-w-[calc(100%-3rem)] w-96 pl-6 pr-3 pb-6 pt-3 h-screen border-r-1 border-cyan-accent"}>
               <div className={"w-full flex flex-row justify-end"}>
-                <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="hover:cursor-pointer block mb-2 h-6 w-6" aria-hidden="true" />
+                <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="hover:cursor-pointer block mt-2 h-6 w-6" aria-hidden="true" />
               </div>
               <MobileSidebar activeTopic={activeTopic}></MobileSidebar>
           </div>
-      </div> 
+        <div onClick={() => {
+          if (isOpen) setIsOpen(false);
+        }} className={"w-full h-full"}></div>
+      </div>
       : <></>}
       {progressBar && <div className={"h-1 pt-2"}>
         <div className={"h-0.5 bg-cyan-accent max-w-screen " + (pScrolled === 100 ? "" : "rounded-sm")} style={{width: pScrolled + "%"}}></div>
