@@ -77,7 +77,7 @@ export function SubCategory({ subcategory, activeTopic }) {
 export function Category({ category, index, activeTopic }) {
     return (
         <div className={`mb-4 ${index === 0 ? "mt-1" : ""}`} key={getNextKey()}>
-            <div className="flex items-center hover:cursor-pointer justify-between">
+            <div className="flex items-center justify-between">
                 <h2 className="font-bold text-1xl">{category.title}</h2>
             </div>
             <div>

@@ -36,6 +36,16 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
 
     handleScroll();
 
+    const handleClick = (e) => {
+      console.log(e.target.closest('#toggleSidebar'));
+      if (e.target.closest('#sidebar') === null && e.target.closest('#toggleSidebar') === null) {
+        setIsOpen(false);
+        console.log("closing")
+      }
+    }
+
+    document.addEventListener('click', handleClick);
+
     // Attach the event listener
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
@@ -44,6 +54,7 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
     return () => {
         window.removeEventListener('resize', handleResize);
         window.removeEventListener('scroll', handleScroll)
+        document.removeEventListener('click', handleClick);
     };
   }, []);
 
@@ -51,15 +62,13 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
     <div id="navigation" className={`sticky pt-2 ${!progressBar ? "pb-2" : ""} top-0 z-40 w-full ${router.pathname !== "/" ? "text-neutral-700" : "text-slate-50"} dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50`}>
       <div className="mx-auto px-3 sm:px-6 lg:px-8 w-full relative flex max-h-6v items-center justify-between">
         {router.pathname !== "/" &&
-          <div className="lg:hidden flex items-center">
-            <div onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 dark:text-slate-500 hover:cursor-pointer">
-              <span className="sr-only">Open main menu</span>
-              {isOpen ? (
-                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-              )}
-            </div>
+          <div id={"toggleSidebar"} onClick={() => setIsOpen(!isOpen)} className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 dark:text-slate-500 hover:cursor-pointer">
+            <span className="sr-only">Open main menu</span>
+            {isOpen ? (
+                <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+            ) : (
+                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+            )}
           </div>
         }
         <div className="lg:left-0 flex items-center justify-center hover:cursor-pointer" onClick={() => router.push("/")}>
@@ -106,8 +115,8 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
         </div>
       </div>
       {isOpen && windowWidth < 1024 ?
-      <div className={"fixed inset-0 z-50 block"}>
-          <div className={"overflow-y-scroll relative flex flex-col bg-gray-50 dark:bg-neutral-900 w-80 max-w-[calc(100%-3rem)] pl-6 pr-3 pb-6 pt-3 h-screen border-r-1 border-cyan-accent"}>
+      <div id={"sidebar"} className={"fixed inset-0 z-50 block max-w-[calc(100%-3rem)]"}>
+          <div className={"overflow-y-scroll relative flex flex-col bg-gray-50 dark:bg-neutral-900 w-80 pl-6 pr-3 pb-6 pt-3 h-screen border-r-1 border-cyan-accent"}>
               <div className={"w-full flex flex-row justify-end"}>
                 <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="hover:cursor-pointer block mb-2 h-6 w-6" aria-hidden="true" />
               </div>

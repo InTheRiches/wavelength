@@ -170,7 +170,8 @@
         "subtopics": [
           { "id": 0, "title": "UL Intermediate", "href": "/plans/starter/ul-intermediate" },
           { "id": 1, "title": "PPL Intermediate", "href": "/plans/starter/ppl-intermediate" },
-          { "id": 2, "title": "Calisthenics Intermediate", "href": "/plans/starter/cali-intermediate" }
+          { "id": 2, "title": "Calisthenics Intermediate", "href": "/plans/starter/cali-intermediate" },
+          { "id": 3, "title": "PPLxUL Intermediate", "href": "/plans/starter/pplxul-intermediate" }
         ]
       }
     ]
