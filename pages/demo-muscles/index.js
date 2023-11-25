@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {Lobster, Open_Sans} from 'next/font/google';
 import Navigation from '@/components/primary/Navigation'
-import useDarkMode from 'use-dark-mode';
+import useDarkMode from "@/components/useDarkMode/use-dark-mode"
 import {getCookie, hasCookie} from "cookies-next";
 import {BackFullBodySVG, FrontFullBodySVG} from "@/components/primary/BodySVG";
 import {loginUser} from "@/components/backend/Authentication";
