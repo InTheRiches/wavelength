@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import Navigation from '@/components/primary/Navigation'
-import useDarkMode from 'use-dark-mode';
+import useDarkMode from "@/components/useDarkMode/use-dark-mode"
 import {lobster} from "@/components/Fonts";
 import {loginUser} from "@/components/backend/Authentication";
 import {useLoaded} from "@/components/LoadedHook";

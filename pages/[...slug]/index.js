@@ -7,17 +7,13 @@ import {useDescriptionComponents, useMDXComponents} from "@/mdx-components";
 import fs from 'fs';
 import path from 'path';
 import topics from "@/public/content.json";
-import useDarkMode from "use-dark-mode";
+import useDarkMode from "@/components/useDarkMode/use-dark-mode"
 import Markdown from "react-markdown";
 import {MDXRemote} from "next-mdx-remote";
 import {serialize} from "next-mdx-remote/serialize";
 import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/backend/Authentication";
 import { NextSeo } from 'next-seo';
-import Script from "next/script";
-import Head from "next/head";
-import AdBlock from "@/components/AdBlock";
-import {useLoaded} from "@/components/LoadedHook";
 
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();

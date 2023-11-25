@@ -3,7 +3,7 @@ import {useRouter} from "next/router";
 import {lobster} from "@/components/Fonts";
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/20/solid";
 import MobileSidebar from "@/components/primary/MobileSidebar";
-import useDarkMode from "use-dark-mode";
+import useDarkMode from "@/components/useDarkMode/use-dark-mode"
 import {useLoaded} from "@/components/LoadedHook";
 import {percentScrolled} from "@/components/ContentScroll";
 import Image from "next/image";

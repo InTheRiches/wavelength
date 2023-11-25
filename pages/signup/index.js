@@ -1,5 +1,5 @@
 import {useRouter} from "next/router";
-import useDarkMode from "use-dark-mode";
+import useDarkMode from "@/components/useDarkMode/use-dark-mode"
 import React, {useEffect, useState} from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import { setCookie } from "cookies-next";

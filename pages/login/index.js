@@ -1,9 +1,8 @@
 import {useRouter} from "next/router";
-import useDarkMode from "use-dark-mode";
+import useDarkMode from "@/components/useDarkMode/use-dark-mode"
 import React, {useEffect} from "react";
 import {toast} from "react-toastify";
 import {setCookie} from "cookies-next";
-import {loginUser} from "@/components/backend/Authentication";
 import Head from 'next/head';
 
 export default function Login() {
