@@ -138,7 +138,6 @@ export default function Page({ title, description="", markdown="", activeTopic, 
 
 export async function getServerSideProps(context) {
     const root = process.cwd();
-
     const route = "/" + context.query.slug.join("/");
 
     const category = context.query.slug[0];
@@ -150,7 +149,7 @@ export async function getServerSideProps(context) {
 
     try {
         // Use fs.promises.readFile to read the file asynchronously on the server
-        const mdContents = await fs.promises.readFile(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.mdx', 'utf8');
+        let mdContents = await fs.promises.readFile(directory + '/' + topic + (subtopic === "" ? "" : "/" + subtopic) + (subsubtopic === "" ? "" : "/" + subsubtopic) + '.mdx', 'utf8');
 
         // find headers in markdown
         const regex = /^# .*/gm;
@@ -162,6 +161,23 @@ export async function getServerSideProps(context) {
                 headers.push([header.substring(2), header.substring(2).replace(/\s/g, "-").toLowerCase()]);
             });
         }
+
+        const dictionary = {
+            "hypertrophy": "Hypertrophy denotes the growth and enlargement of muscle fibers, resulting from resistance training or strength exercises.",
+            "mechanical tension": "Mechanical tension is the force induced on your muscles that tries to stretch them during exercise."
+        }
+
+        // look for any words in the dictionary and replace them with the definition
+        Object.keys(dictionary).forEach((key) => {
+            const regex = new RegExp(`(?:[a-zA-Z,. ]|^)${key}(?:[,. ]|$)`, 'g');
+            while(mdContents.match(regex)) {
+                const match = mdContents.match(regex)[0];
+
+                console.log(`${match.substring(0, 2)}<Definition text="${match.substring(1, match.length-1)}" definition="${dictionary[key]}"></Definition>${match.substring(match.length-1)}`)
+
+                mdContents = mdContents.replace(regex, `${match.substring(0, 1)}<Definition text="${match.substring(1, match.length-1)}" definition="${dictionary[key]}"></Definition>${match.substring(match.length-1)}`);
+            }
+        });
 
         const mdxSource = await serialize(mdContents)
 

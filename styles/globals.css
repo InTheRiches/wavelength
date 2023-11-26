@@ -22,6 +22,11 @@
   --dark-diagram-fill: rgba(21, 21, 21, 0.8);
   --dark-diagram-high-outline: rgba(14, 165, 233, 1);
   --dark-diagram-high-fill: rgba(14, 165, 233, .7);
+
+  --rt-color-white: #f8fafc;
+  --rt-color-dark: #0a0a0a;
+  --rt-transition-show-delay: 0.15s;
+  --rt-transition-closing-delay: 0.15s;
 }
 
 body {
@@ -240,3 +245,79 @@ li span {
 .myTable thead tr > *:nth-child(1) { width:40%; }
 .myTable thead tr > *:nth-child(2) { width:30%; }
 .myTable thead tr > *:nth-child(3) { width:15%; }
+
+
+
+
+
+
+.core-styles-module_tooltip__3vRRp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  will-change: opacity;
+  text-align: left;
+
+  box-shadow: 0 10px 50px -12px rgb(0 0 0 / 0.30);
+}
+
+.core-styles-module_fixed__pcSol {
+  position: fixed;
+}
+
+.core-styles-module_arrow__cvMwQ {
+  position: absolute;
+  background: inherit;
+
+  border: #0ea5e9 solid 1px
+}
+
+.core-styles-module_noArrow__xock6 {
+  display: none;
+}
+
+.core-styles-module_clickable__ZuTTB {
+  pointer-events: auto;
+}
+
+.core-styles-module_show__Nt9eE {
+  opacity: 1;
+  transition: opacity var(--rt-transition-show-delay) ease-out;
+}
+
+.core-styles-module_closing__sGnxF {
+  opacity: 0;
+  transition: opacity var(--rt-transition-closing-delay) ease-in;
+}
+
+/** end - core styles **/
+
+.styles-module_tooltip__mnnfp {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 90%;
+  width: fit-content;
+  max-width: 16rem;
+}
+
+.styles-module_arrow__K0L3T {
+  width: 8px;
+  height: 8px;
+}
+
+[class*='react-tooltip__place-top'] > .styles-module_arrow__K0L3T {
+  transform: rotate(45deg);
+}
+
+[class*='react-tooltip__place-right'] > .styles-module_arrow__K0L3T {
+  transform: rotate(135deg);
+}
+
+[class*='react-tooltip__place-bottom'] > .styles-module_arrow__K0L3T {
+  transform: rotate(225deg);
+}
+
+[class*='react-tooltip__place-left'] > .styles-module_arrow__K0L3T {
+  transform: rotate(315deg);
+}
