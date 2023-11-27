@@ -14,8 +14,7 @@ export default function BulletPoints({bulletPoints, columns = 2, hangingIndent =
         <ul className={`markerColor sm:ml-0 ml-3 min-[424px]:text-lg text-md list-outside list-disc lg:gap-x-16 lg:grid lg:grid-cols-${columns} h-min w-full`}>
             {
                 bulletPoints.map((bulletPoint, index) => {
-                    console.log(bulletPoint.description);
-
+                    console.log(bulletPoint.description)
                     return (
                         <li key={index} className="mb-8 pl-2 h-min">
                             {bulletPoint.title && <strong className="block dark:text-slate-50 mb-1 min-[424px]:text-xl text-lg">{

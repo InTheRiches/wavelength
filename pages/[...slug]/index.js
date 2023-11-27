@@ -164,20 +164,39 @@ export async function getServerSideProps(context) {
 
         const dictionary = {
             "hypertrophy": "Hypertrophy denotes the growth and enlargement of muscle fibers, resulting from resistance training or strength exercises.",
-            "mechanical tension": "Mechanical tension is the force induced on your muscles that tries to stretch them during exercise."
+            "mechanical tension": "Mechanical tension is the force induced on your muscles that tries to stretch them during exercise.",
+            "rep": "A repetition of a single movement of an exercise.",
+            "set": "A set is a group of repetitions of an exercise.",
+        }
+        //
+        // // look for any words in the dictionary and replace them with the definition
+        // Object.keys(dictionary).forEach((key) => {
+        //     const regex = new RegExp(`(?:[a-zA-Z,. ]|^)${key}(?:[,. ]|$)`, 'g');
+        //     while(mdContents.match(regex)) {
+        //         const match = mdContents.match(regex)[0];
+        //
+        //         mdContents = mdContents.replace(regex, `${match.substring(0, 1)}<Definition text='${match.substring(1, match.length-1)}' definition='${dictionary[key]}'></Definition>${match.substring(match.length-1)}`);
+        //     }
+        // });
+
+        const sections = mdContents.split(/(<BulletPoints[\s\S]*?\/>)/);
+
+        // Process sections outside BulletPoints
+        for (let i = 0; i < sections.length; i++) {
+            if (sections[i].includes('<BulletPoints')) {
+                continue;
+            }
+
+            Object.keys(dictionary).forEach((key) => {
+                const regex = new RegExp(`(?:[,. ]|^)${key}(?:[,. ]|$)`, 'g');
+                sections[i] = sections[i].replace(regex, (match) => {
+                    return `${match.substring(0, 1)}<Definition text='${match.substring(1, match.length - 1)}' definition='${dictionary[key]}'></Definition>${match.substring(match.length - 1)}`;
+                });
+            });
         }
 
-        // look for any words in the dictionary and replace them with the definition
-        Object.keys(dictionary).forEach((key) => {
-            const regex = new RegExp(`(?:[a-zA-Z,. ]|^)${key}(?:[,. ]|$)`, 'g');
-            while(mdContents.match(regex)) {
-                const match = mdContents.match(regex)[0];
-
-                console.log(`${match.substring(0, 2)}<Definition text="${match.substring(1, match.length-1)}" definition="${dictionary[key]}"></Definition>${match.substring(match.length-1)}`)
-
-                mdContents = mdContents.replace(regex, `${match.substring(0, 1)}<Definition text="${match.substring(1, match.length-1)}" definition="${dictionary[key]}"></Definition>${match.substring(match.length-1)}`);
-            }
-        });
+        // Join the sections back together
+        mdContents = sections.join('');
 
         const mdxSource = await serialize(mdContents)
 

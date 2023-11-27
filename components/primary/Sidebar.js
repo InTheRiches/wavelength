@@ -39,7 +39,7 @@ export function Topic({ topic, activeTopic }) {
                  activeTopic === topic.href
                      ? 'text-cyan-accent border-cyan-accent'
                      : 'text-neutral-700 dark:text-slate-300 border-neutral-200 dark:border-neutral-700'
-             } flex items-center transition-all duration-200 py-1 border-l-1 pl-6`}>
+             } flex items-center transition-all duration-200 py-1 border-l-1 pl-7`}>
             <Link href={topic.href} className={`hover:cursor-pointer hover:text-cyan-accent hover:dark:text-cyan-accent min-[424px]:text-lg text-base`}>{topic.title}</Link>
         </div>
     );
@@ -59,7 +59,7 @@ export function SubCategory({ subcategory, activeTopic }) {
                     <path strokeLinecap="round" strokeLinejoin="round"
                           d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
                 </svg>
-                <span className={`min-[424px]:text-lg text-base ml-3`}>{subcategory.title}</span>
+                <span className={`min-[424px]:text-lg text-base ml-2`}>{subcategory.title}</span>
             </div>
             <div className={"border-l-1 border-neutral-200 dark:border-neutral-700 "}>
                 <div className={collapsed ? "hidden " : "ml-[2.125rem]"}>
