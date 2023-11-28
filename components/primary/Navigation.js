@@ -105,7 +105,7 @@ export default function Navigation({ activeTopic, progressBar = false, user }) {
       </div>
       {isOpen && windowWidth < 1024 ?
       <div id={"sidebar"} className={"fixed inset-0 z-50 w-full h-screen flex flex-row"}>
-          <div className={"overflow-y-scroll relative flex flex-col bg-gray-50 dark:bg-neutral-900 max-w-[calc(100%-3rem)] w-96 pl-6 pr-3 pb-6 pt-3 h-screen border-r-1 border-cyan-accent"}>
+          <div className={"overflow-y-scroll relative flex flex-col bg-gray-50 dark:bg-neutral-900 w-[28rem] pl-6 pr-3 pb-6 pt-3 h-screen border-r-1 border-cyan-accent"}>
               <div className={"w-full flex flex-row justify-end"}>
                 <XMarkIcon onClick={() => setIsOpen(!isOpen)} className="hover:cursor-pointer block mt-2 h-6 w-6" aria-hidden="true" />
               </div>
