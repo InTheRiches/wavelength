@@ -117,7 +117,7 @@ export function HeaderListSidebar({ headers }) {
                     })}
                 </div>
                 <div className={"mt-10 bg-white border-1 border-neutral-900 dark:bg-neutral-800 px-4 py-3 max-w-[16rem] rounded-xl flex flex-col"}>
-                    Seeing ads? Ads are off by default with the Wavelength Plus, but you can turn them off for free by clicking the button below. Remember, ads are how Wavelength stays free, consider leaving them on if you enjoy the content!
+                    Seeing ads? Ads are off by default with Wavelength Plus, but you can turn them off for free by clicking the button below. Remember, ads are how Wavelength stays free, consider leaving them on if you enjoy the content!
                     <button className={"bg-cyan-accent w-full rounded-xl py-1 text-white mt-4"} onClick={() => {
                         window.localStorage.setItem("ads", "false");
                         window.location.reload();
