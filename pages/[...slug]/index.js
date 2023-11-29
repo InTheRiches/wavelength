@@ -80,6 +80,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                 keywords={"weightlifting, muscles, muscle functions, muscle locations"}
                 canonical={"https://www.wavelength.fit" + activeTopic}
             />
+            <Script strategy={"beforeInteractive"} src="https://alwingulla.com/88/tag.min.js" data-zone="24552" async data-cfasync="false"></Script>
 
             {/*<Script strategy={"beforeInteractive"}>window.msAdsQueue = window.msAdsQueue || [];</Script>*/}
             {/*<Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></Script>*/}
