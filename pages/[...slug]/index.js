@@ -82,6 +82,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
             />
             {/*<Script strategy={"beforeInteractive"} src="https://alwingulla.com/88/tag.min.js" data-zone="24552" async data-cfasync="false"></Script>*/}
             {/*<Script strategy={"beforeInteractive"} async="async" data-cfasync="false" src="//thubanoa.com/1?z=6682067"></Script>*/}
+            <Script strategy={"beforeInteractive"} src="https://couwhivu.com/4/6682075"></Script>
 
             {/*<Script strategy={"beforeInteractive"}>window.msAdsQueue = window.msAdsQueue || [];</Script>*/}
             {/*<Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></Script>*/}
