@@ -1,5 +1,4 @@
 export default function WorkoutTable({ workout }) {
-    console.dir(workout);
     return (
         <div className="mb-8 h-min">
             <span className={"font-bold text-slate-900 dark:text-slate-50 text-[1.4rem]"}>{workout.title}</span>
@@ -12,9 +11,9 @@ export default function WorkoutTable({ workout }) {
                             <th className="py-4 text-left">Sets</th>
                         </tr>
                     </thead>
-                    <tbody> {
+                    <tbody>{
                         workout.exercises.map((piece, index) =>
-                            <tr className={index !== workout.exercises.length-1 ? "border-b-1 border-neutral-700" : ""}>
+                            <tr key={index} className={index !== workout.exercises.length-1 ? "border-b-1 border-neutral-700" : ""}>
                                 <td style={{ paddingRight: "1rem" }} className={"py-2 flex-row flex full-width items-center"}>{piece.name}{piece.optional ? <div className={"w-fit h-fit mt-1 ml-2 rounded-xl border-1 border-sky-500 py-0.5 px-2 dark:bg-blue-500 dark:bg-opacity-5 text-sky-600 dark:text-sky-500 bg-blue-50 text-sm"}>OPTIONAL</div> : <></>}</td>
                                 <td className={"py-2"}>{piece.reps === "FAILURE" ? <div className={"relative -left-2 w-fit h-fit rounded-xl border-1 border-red-500 py-0.5 px-2 dark:bg-red-500 dark:bg-opacity-5 text-red-600 dark:text-red-500 bg-red-50 text-sm"}>FAILURE</div> : piece.reps}</td>
                                 <td className={"py-2"}>{piece.sets}</td>

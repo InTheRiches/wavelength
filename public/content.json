@@ -168,11 +168,13 @@
         "title": "Starter",
         "url": "/plans/starter",
         "subtopics": [
-          { "id": 0, "title": "UL Intermediate", "href": "/plans/starter/ul-intermediate" },
+          { "id": 0, "title": "Full Body Novice", "href": "/plans/starter/full-body-novice"},
           { "id": 1, "title": "PPL Beginner", "href": "/plans/starter/ppl-beginner"},
           { "id": 2, "title": "PPL Intermediate", "href": "/plans/starter/ppl-intermediate" },
-          { "id": 3, "title": "Calisthenics Intermediate", "href": "/plans/starter/cali-intermediate" },
-          { "id": 4, "title": "PPLxUL Intermediate", "href": "/plans/starter/pplxul-intermediate" }
+          { "id": 3, "title": "UL Beginner", "href": "/plans/starter/ul-beginner"},
+          { "id": 4, "title": "UL Intermediate", "href": "/plans/starter/ul-intermediate" },
+          { "id": 5, "title": "Calisthenics Intermediate", "href": "/plans/starter/cali-intermediate" },
+          { "id": 6, "title": "PPLxUL Intermediate", "href": "/plans/starter/pplxul-intermediate" }
         ]
       }
     ]

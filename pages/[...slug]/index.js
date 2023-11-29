@@ -99,7 +99,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
             {/*</div>*/}
             <Navigation activeTopic={activeTopic} user={user} progressBar={true}></Navigation>
 
-            <div className={`flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto ${headers.length > 0 ? "min-[1350px]:pr-[20rem]" : ""}`}>
+            <div className={`flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]`}>
                 <Sidebar activeTopic={activeTopic}></Sidebar>
                 <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[17rem] xl:ml-[19rem]"}>
                     {/* Page Header */}
@@ -128,9 +128,9 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                     </div>
                     <div className={"w-full flex justify-around mt-4"}>
                         <button onClick={() => {
-                            if (keys.indexOf(activeTopic) < keys.length - 1)
+                            if (keys.indexOf(activeTopic) > 0)
                                 router.push(keys[keys.indexOf(activeTopic) - 1]);
-                        }} className={(keys.indexOf(activeTopic) > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light " : "bg-gray-700 hover:bg-gray-600 ") + "transition-all hover:shadow-button ease-in duration-200 hover:scale-105 w-12 h-12 rounded-full text-white flex items-center justify-center"}>
+                        }} className={(keys.indexOf(activeTopic) > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light hover:shadow-button hover:scale-105 " : "bg-gray-700 hover:cursor-not-allowed ") + "transition-all ease-in duration-200 w-12 h-12 rounded-full text-white flex items-center justify-center"}>
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -140,7 +140,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                         <button onClick={() => {
                             if (keys.indexOf(activeTopic) < keys.length - 1)
                                 router.push(keys[keys.indexOf(activeTopic) + 1]);
-                        }} className={(keys.indexOf(activeTopic) < keys.length-1 ? "bg-cyan-accent hover:bg-cyan-accent-light " : "bg-gray-700 hover:bg-gray-600 ") + "px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center justify-center"}>
+                        }} className={(keys.indexOf(activeTopic) < keys.length-1 ? "bg-cyan-accent hover:bg-cyan-accent-light hover:shadow-button hover:scale-105 " : "bg-gray-700 hover:cursor-not-allowed ") + "transition-all ease-in duration-200 w-12 h-12 rounded-full text-white flex items-center justify-center"}>
                             {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
                             <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
