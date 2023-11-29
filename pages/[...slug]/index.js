@@ -19,6 +19,7 @@ import Script from "next/script";
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
     const [location, setLocation] = useState("Location");
+    const [ads, setAds] = useState(false);
 
     const [keys, setKeys] = useState([]);
     const [content, setContent] = useState([]);
@@ -33,6 +34,16 @@ export default function Page({ title, description="", markdown="", activeTopic, 
             document.documentElement.classList.remove('dark');
         }
     }, [isDarkMode]);
+
+    useEffect(() => {
+        if (window) {
+            if (window.localStorage.getItem("ads")) {
+                setAds(window.localStorage.getItem("ads") === "true");
+            }
+            else
+                setAds(true);
+        }
+    });
 
     useEffect(() => {
         scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
@@ -80,12 +91,8 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                 keywords={"weightlifting, muscles, muscle functions, muscle locations"}
                 canonical={"https://www.wavelength.fit" + activeTopic}
             />
-            {/*<Script strategy={"beforeInteractive"} src="https://alwingulla.com/88/tag.min.js" data-zone="24552" async data-cfasync="false"></Script>*/}
-            {/*<Script strategy={"beforeInteractive"} async="async" data-cfasync="false" src="//thubanoa.com/1?z=6682067"></Script>*/}
-            <Script strategy={"beforeInteractive"} src="https://couwhivu.com/4/6682075"></Script>
-
-            {/*<Script strategy={"beforeInteractive"}>window.msAdsQueue = window.msAdsQueue || [];</Script>*/}
-            {/*<Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321781&publisherId=253109271" crossOrigin="anonymous"></Script>*/}
+            {ads && <Script strategy={"afterInteractive"} src="https://glimtors.net/pfe/current/tag.min.js?z=6682094" data-cfasync="false" async></Script>}
+            {ads && <Script strategy={"afterInteractive"}>{`(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('agaenteitor.com',6682078,document.createElement('script'))`}</Script>}
 
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
@@ -102,20 +109,20 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                             <h1 className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</h1>
                             <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify"}>
                                 <span>
-                                    <div id="ms-ad-1745148403"></div>
-                                    <Script strategy={"afterInteractive"}>
-                                        {`window.msAdsQueue.push(() => {
-                                            window.pubCenterSdk.render({
-                                                adUnitId: "1745148403",
-                                                elementId: "ms-ad-1745148403"
-                                            });
-                                        });`}
-                                    </Script>
                                     <Markdown components={useDescriptionComponents()}>{description}</Markdown>
                                 </span>
                             </div>
                         </div>
                         <div className={"text-slate-700 dark:text-slate-300"}>
+                            <div id="ms-ad-1745148403"></div>
+                            <Script strategy={"afterInteractive"}>
+                                {`window.msAdsQueue.push(() => {
+                                            window.pubCenterSdk.render({
+                                                adUnitId: "1745148403",
+                                                elementId: "ms-ad-1745148403"
+                                            });
+                                        });`}
+                            </Script>
                             {markdown !== "" && <MDXRemote components={useMDXComponents()} {...markdown} />}
                         </div>
                     </div>
