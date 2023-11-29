@@ -14,6 +14,7 @@ import {serialize} from "next-mdx-remote/serialize";
 import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/backend/Authentication";
 import { NextSeo } from 'next-seo';
+import Script from "next/script";
 
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
@@ -98,6 +99,15 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                             <h1 className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</h1>
                             <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify"}>
                                 <span>
+                                    <div id="ms-ad-1745148403"></div>
+                                    <Script strategy={"afterInteractive"}>
+                                        {`window.msAdsQueue.push(() => {
+                                            window.pubCenterSdk.render({
+                                                adUnitId: "1745148403",
+                                                elementId: "ms-ad-1745148403"
+                                            });
+                                        });`}
+                                    </Script>
                                     <Markdown components={useDescriptionComponents()}>{description}</Markdown>
                                 </span>
                             </div>
