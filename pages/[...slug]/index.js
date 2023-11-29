@@ -2,7 +2,7 @@ import {useRouter} from 'next/router'
 import React, {useEffect, useState} from 'react';
 import Navigation from '@/components/primary/Navigation'
 import Sidebar, {HeaderListSidebar} from "@/components/primary/Sidebar";
-import Footer from "@/components/Footer";
+import Footer, {ContentFooter} from "@/components/Footer";
 import {useDescriptionComponents, useMDXComponents} from "@/mdx-components";
 import fs from 'fs';
 import path from 'path';
@@ -14,6 +14,7 @@ import {serialize} from "next-mdx-remote/serialize";
 import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/backend/Authentication";
 import { NextSeo } from 'next-seo';
+import Script from "next/script";
 
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
@@ -127,7 +128,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                             </svg>
                         </button>
                     </div>
-                    <Footer></Footer>
+                    <ContentFooter></ContentFooter>
                 </div>
                 <HeaderListSidebar headers={headers}></HeaderListSidebar>
             </div>

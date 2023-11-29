@@ -8,9 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/programs/creator/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/primary/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/programs/creator/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/programs/creator/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;definition-implementation&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ProgramCreator&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.0.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.0.0&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Unity/Projects/coach-phrog/components/useDarkMode&quot;,
@@ -208,7 +209,8 @@
       <workItem from="1700836848659" duration="22305000" />
       <workItem from="1700923348268" duration="8720000" />
       <workItem from="1701036064122" duration="4697000" />
-      <workItem from="1701112730254" duration="6594000" />
+      <workItem from="1701112730254" duration="7398000" />
+      <workItem from="1701198558389" duration="5302000" />
     </task>
     <servers />
   </component>

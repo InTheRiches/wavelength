@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "muscles/growth.mdx",
+                "file": "muscles/training/info/reps-and-sets.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "muscles/growth.mdx",
+                "file": "muscles/training/info/reps-and-sets.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "muscles/growth.mdx",
+                "file": "muscles/training/info/reps-and-sets.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "muscles/growth.mdx"
+                "file": "muscles/training/info/reps-and-sets.mdx"
               }
             }
           }
@@ -149,6 +149,7 @@
   },
   "active": "29bae73a356a6b7a",
   "lastOpenFiles": [
+    "muscles/growth.mdx",
     "supplements/performance/creatine.mdx",
     "plans/starter/pplxul-intermediate.mdx~",
     "plans/starter/pplxul-intermediate.json",
@@ -159,7 +160,6 @@
     "muscles/training/info/reps-and-sets.mdx",
     "muscles/training/styles/strength.json",
     "muscles/training/styles/hypertrophy.mdx",
-    "muscles/training/styles/hypertrophy.json",
     "muscles/growth.md",
     "().md",
     "recovery/basics.md",
