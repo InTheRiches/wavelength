@@ -51,7 +51,7 @@ export default function BulletPoints({bulletPoints, columns = 2, hangingIndent =
             {/*            </svg>*/}
             {/*        </span>*/}
             {/*    </strong>*/}
-            {/*    <span>A repetition, or rep for short, is a single movement of an exercise. For example, a single push up is one repetition. A rep is the most basic form of measurement in weight lifting.</span>*/}
+            {/*    <span>A repetition, or rep for short, is a single movement of an exercise. For example, a single push up is one repetition. A rep is the most basic form of measurement in weightlifting.</span>*/}
             {/*</li>*/}
             {/*<li className="mb-8 pl-2 h-min">*/}
             {/*    <strong className="text-xl dark:text-slate-50 mb-1">*/}

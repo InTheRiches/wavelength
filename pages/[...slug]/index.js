@@ -19,7 +19,7 @@ import Script from "next/script";
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
     const [location, setLocation] = useState("Location");
-    const [ads, setAds] = useState(false);
+    const [ads, setAds] = useState(true);
 
     const [keys, setKeys] = useState([]);
     const [content, setContent] = useState([]);
@@ -34,16 +34,6 @@ export default function Page({ title, description="", markdown="", activeTopic, 
             document.documentElement.classList.remove('dark');
         }
     }, [isDarkMode]);
-
-    useEffect(() => {
-        if (window) {
-            if (window.localStorage.getItem("ads")) {
-                setAds(window.localStorage.getItem("ads") === "true");
-            }
-            else
-                setAds(true);
-        }
-    });
 
     useEffect(() => {
         scrollPageToContent(router.asPath.substring(router.asPath.indexOf("#") === -1 ? router.asPath.length : router.asPath.indexOf("#") + 1));
@@ -149,7 +139,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                     </div>
                     <Footer></Footer>
                 </div>
-                <HeaderListSidebar headers={headers}></HeaderListSidebar>
+                <HeaderListSidebar setAds={setAds} ads={ads} headers={headers}></HeaderListSidebar>
             </div>
             <ScrollButton positioning={"bottom-8 right-8 fixed min-[1350px]:hidden flex"}></ScrollButton>
         </div>
