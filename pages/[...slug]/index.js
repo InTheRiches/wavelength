@@ -166,18 +166,13 @@ export async function getServerSideProps(context) {
             "hypertrophy": "Hypertrophy denotes the growth and enlargement of muscle fibers, resulting from resistance training or strength exercises.",
             "mechanical tension": "Mechanical tension is the force induced on your muscles that tries to stretch them during exercise.",
             "rep": "A repetition of a single movement of an exercise.",
+            "reps": "A repetition of a single movement of an exercise.",
             "set": "A set is a group of repetitions of an exercise.",
+            "sets": "A set is a group of repetitions of an exercise.",
+            "weightlifting": "Blah blah blah"
         }
-        //
-        // // look for any words in the dictionary and replace them with the definition
-        // Object.keys(dictionary).forEach((key) => {
-        //     const regex = new RegExp(`(?:[a-zA-Z,. ]|^)${key}(?:[,. ]|$)`, 'g');
-        //     while(mdContents.match(regex)) {
-        //         const match = mdContents.match(regex)[0];
-        //
-        //         mdContents = mdContents.replace(regex, `${match.substring(0, 1)}<Definition text='${match.substring(1, match.length-1)}' definition='${dictionary[key]}'></Definition>${match.substring(match.length-1)}`);
-        //     }
-        // });
+
+        let usedWords = [];
 
         const sections = mdContents.split(/(<BulletPoints[\s\S]*?\/>)/);
 
@@ -188,10 +183,23 @@ export async function getServerSideProps(context) {
             }
 
             Object.keys(dictionary).forEach((key) => {
-                const regex = new RegExp(`(?:[,. ]|^)${key}(?:[,. ]|$)`, 'g');
-                sections[i] = sections[i].replace(regex, (match) => {
-                    return `${match.substring(0, 1)}<Definition text='${match.substring(1, match.length - 1)}' definition='${dictionary[key]}'></Definition>${match.substring(match.length - 1)}`;
+                if (usedWords.includes(key)) return;
+
+                const regex = new RegExp(`(?:[,. ]|^)${key}(?:[,.;: ]|$)`, 'g');
+
+                if (!sections[i].match(regex)) return;
+
+                const match = sections[i].match(regex);
+                // use the match to replace the word with the definition
+                sections[i] = sections[i].replace(match[0], (match) => {
+                    return match.replace(key, `<Definition text='${match.substring(0, match.length-1)}' definition="${dictionary[key]}">${key}</Definition>`);
                 });
+
+                // sections[i] = sections[i].replace(regex, (match) => {
+                //     return `${match.substring(0, 1)}<Definition text='${match.substring(1, match.length - 1)}' definition='${dictionary[key]}'></Definition>${match.substring(match.length - 1)}`;
+                // });
+
+                usedWords.push(key)
             });
         }
 
