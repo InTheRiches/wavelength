@@ -9,15 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/primary/BulletPoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/BulletPoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/primary/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/getting-started/introduction.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/getting-started/introduction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/info/concepts.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/concepts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/info/concepts.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/concepts.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/info/reps-and-sets.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/reps-and-sets.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/styles/strength.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/styles/strength.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/[...slug]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/[...slug]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/styles/hypertrophy.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/styles/hypertrophy.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +208,7 @@
       <workItem from="1700923348268" duration="2202000" />
       <workItem from="1701284853657" duration="1947000" />
       <workItem from="1701291498541" duration="1464000" />
+      <workItem from="1701381091635" duration="619000" />
     </task>
     <servers />
   </component>
