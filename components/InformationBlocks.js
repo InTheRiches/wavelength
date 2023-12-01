@@ -32,8 +32,8 @@ export function WarningBlock({ title, content }) {
                 </svg>
                 <div className={"w-full"}>
                     <h4 className="font-bold text-left">{title}</h4>
-                    <div className="mt-1 text-left">
-                        {content}
+                    <div className="mt-1 text-left min-[424px]:text-md text-lg text-yellow-500 dark:text-yellow-200"  dangerouslySetInnerHTML={{__html: content}}>
+
                     </div>
                 </div>
             </div>
