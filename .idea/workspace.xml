@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/components/InformationBlocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/InformationBlocks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/specifics/back/rotator-cuff.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/specifics/back/rotator-cuff.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/primary/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/primary/Sidebar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +208,8 @@
       <workItem from="1700923348268" duration="2202000" />
       <workItem from="1701284853657" duration="1947000" />
       <workItem from="1701291498541" duration="1464000" />
-      <workItem from="1701381091635" duration="945000" />
+      <workItem from="1701381091635" duration="1716000" />
+      <workItem from="1701546110562" duration="624000" />
     </task>
     <servers />
   </component>
