@@ -19,7 +19,7 @@ import Script from "next/script";
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
     const [location, setLocation] = useState("Location");
-    const [ads, setAds] = useState(true);
+    const [ads, setAds] = useState(false);
 
     const [keys, setKeys] = useState([]);
     const [content, setContent] = useState([]);
