@@ -48,7 +48,7 @@ export default function Navigation({ activeTopic = "", progressBar = false, user
   }, []);
 
   return (
-    <div id="navigation" className={`sticky pt-2 ${!progressBar ? "pb-2" : ""} top-0 z-40 w-full ${router.pathname !== "/" ? "text-neutral-700" : "text-slate-50"} dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50`}>
+    <div id="navigation" className={`w-screen sticky pt-2 ${!progressBar ? "pb-2" : ""} top-0 z-40 w-full ${router.pathname !== "/" ? "text-neutral-700" : "text-slate-50"} dark:text-slate-50 border-b-1 border-neutral-700 backdrop-blur flex-none lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-transparent supports-backdrop-blur:bg-cyan-accent/95 dark:bg-neutral-900/50`}>
       <div className="mx-auto px-3 sm:px-6 lg:px-8 w-full relative flex max-h-6v items-center justify-between">
         {router.pathname !== "/" && activeTopic !== "" &&
           <div id={"toggleSidebar"} onClick={() => setIsOpen(!isOpen)} className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 dark:text-slate-500 hover:cursor-pointer">
