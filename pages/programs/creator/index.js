@@ -240,7 +240,7 @@ function ExerciseInput({ exercises, setExercises, currentDay, showExerciseSelect
                     {exercises.map((e, index) => (
                         <div key={index}
                              className={`flex flex-row justify-around ${index > 0 && "border-t-1 border-neutral-900 mt-2 pt-1"}`}>
-                                <button onClick={() => showExerciseSelector(index, currentDay)} className={`rounded-lg px-2 py-1 overflow-wrap w-1/3 border-1 ${e.exercise === "" ? "border-red-400 hover:bg-red-100" : "border-gray-300 hover:bg-gray-200"} duration-200 transition  ${index > 0 && "mt-1"}`}>
+                                <button onClick={() => showExerciseSelector(index, currentDay)} className={`rounded-lg bg-white px-2 py-1 overflow-wrap w-1/3 border-1 ${e.exercise === "" ? "border-red-400 hover:bg-red-100" : "border-gray-300 hover:bg-gray-200"} duration-200 transition  ${index > 0 && "mt-1"}`}>
                                     {e.exercise === '' ? 'Select Exercise' : e.exercise.name}
                                 </button>
                             <input
@@ -248,14 +248,14 @@ function ExerciseInput({ exercises, setExercises, currentDay, showExerciseSelect
                                 value={e.reps || ''}
                                 onChange={(e) => setReps(index, e.target.value)}
                                 placeholder="Reps"
-                                className={`${error && e.reps === null ? "border-1 border-red-400" : "border-none"} rounded-lg focus:ring-0 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
+                                className={`border-1 ${error && e.reps === null ? "border-red-400" : "border-gray-300"} rounded-lg focus:ring-0 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
                             />
                             <input
                                 type="number"
                                 value={e.sets || ''}
                                 onChange={(e) => setSets(index, e.target.value)}
                                 placeholder="Sets"
-                                className={`${error && e.sets === null ? "border-1 border-red-400" : "border-none"} rounded-lg focus:ring-0 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
+                                className={`border-1 ${error && e.sets === null ? "border-red-400" : "border-gray-300"} rounded-lg focus:ring-0 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
                             />
                         </div>
                     ))}
