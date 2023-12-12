@@ -5,8 +5,10 @@ import Footer from "@/components/Footer";
 import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import useDarkMode from "@/components/useDarkMode/use-dark-mode";
 import {loginUser} from "@/components/backend/Authentication";
+import exerciseJson from "@/data/exercises_new.json";
+import ExerciseSelector from "@/components/programs/ExerciseSelector";
 
-export default function ProgramCreator({}) {
+export default function ProgramCreator({ exercises }) {
     const [selectedSplit, setSelectedSplit] = useState("")
     const [page, setPage] = useState(0)
     const [workout, setWorkout] = useState({}); // Store workout data
@@ -58,11 +60,11 @@ export default function ProgramCreator({}) {
                     <h2 className={"text-2xl font-bold mb-3 w-full text-left"}>Program Completion</h2>
                     <div className={"flex flex-col"}>
                         {steps.map((step, index) => (
-                            <a className={`${page > index ? "text-neutral-900" : "text-zinc-400"} duration-200 transition-all font-bold text-xl px-4 py-3 rounded-lg items-center inline-flex hover:bg-gray-100 hover:cursor-pointer`}>
+                            <a key={index} className={`${page > index ? "text-neutral-900" : "text-zinc-400"} duration-200 transition-all font-bold text-xl px-4 py-3 rounded-lg items-center inline-flex hover:bg-gray-100 hover:cursor-pointer`}>
                                 {page > index ? <svg className="w-5 h-5 mr-3 text-cyan-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                                 </svg> :
-                                    <svg className="w-5 h-5 mr-3 text-zinc-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <svg className="w-5 h-5 mr-3 text-zinc-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>}
                                 {step}
@@ -86,6 +88,7 @@ export default function ProgramCreator({}) {
 
                     {page === 1 && (
                         <WorkoutBuilder
+                            exercises={exercises}
                             selectedSplit={selectedSplit}
                             workout={workout}
                             setWorkout={setWorkout}
@@ -161,49 +164,40 @@ function determineDaysInSplit(selectedSplit) {
     }
 }
 
-function WorkoutBuilder({ selectedSplit, workout, setWorkout }) {
-    // const moveNextDay = () => {
-    //     if (currentDay + 1 < daysInSplit) {
-    //         setWorkout({ ...workout, [currentDay]: exercises });
-    //         //
-    //         setExercises([{ exercise: '', sets: null, reps: null }, { exercise: '', sets: null, reps: null }, { exercise: '', sets: null, reps: null }])
-    //
-    //         setCurrentDay(currentDay + 1);
-    //     } else {
-    //         // Workout building is complete
-    //         // You may want to perform some action here, like saving the workout
-    //         console.log('Workout Building Complete!', workout);
-    //     }
-    // };
-    //
-    // const moveLastDay = () => {
-    //     if (currentDay > 0) {
-    //         setWorkout({ ...workout, [currentDay]: exercises });
-    //
-    //         // get yesterday's exercises
-    //         console.log(workout[currentDay - 1]);
-    //         setExercises(workout[currentDay-1] || [{ exercise: '', sets: null, reps: null }])
-    //         console.log(exercises)
-    //
-    //         setCurrentDay(currentDay - 1);
-    //
-    //     }
-    // };
+function WorkoutBuilder({ exercises, selectedSplit, workout, setWorkout }) {
+    const [selectedExerciseIndex, setSelectedExerciseIndex] = useState(null);
+    const [selectedExerciseDay, setSelectedExerciseDay] = useState(null);
 
     const setExercises = (exercises, currentDay) => {
         setWorkout({ ...workout, [currentDay]: exercises });
     }
 
+    const setSelectedExercise = (index, currentDay, exercise) => {
+        const updatedExercises = [...workout[currentDay]];
+        updatedExercises[index].exercise = exercise;
+
+        setExercises(updatedExercises, currentDay);
+
+        setSelectedExerciseIndex(null);
+        setSelectedExerciseDay(null);
+    }
+
+    const showExerciseSelector = (index, currentDay) => {
+        setSelectedExerciseIndex(index);
+        setSelectedExerciseDay(currentDay);
+    }
+
     return (
         <div className={"grid grid-cols-2 gap-10"}>
             {Object.entries(workout).map(([key, value]) =>
-                <ExerciseInput exercises={value} currentDay={key} setExercises={setExercises} />
+                <ExerciseInput key={key} showExerciseSelector={showExerciseSelector} exercises={value} currentDay={key} setExercises={setExercises} />
             )}
+            {selectedExerciseIndex !== null && <ExerciseSelector selectedExerciseDay={selectedExerciseDay} setSelectedExercise={setSelectedExercise} exercises={exercises} selectedExerciseIndex={selectedExerciseIndex}></ExerciseSelector>}
         </div>
     );
 }
 
-function ExerciseInput({ exercises, setExercises, currentDay }) {
+function ExerciseInput({ exercises, setExercises, currentDay, showExerciseSelector }) {
     const [error, setError] = useState(true);
 
     const handleAddExercise = () => {
@@ -240,18 +234,15 @@ function ExerciseInput({ exercises, setExercises, currentDay }) {
 
     return (
         <div className={"flex justify-center w-full"}>
-            <div className={"flex items-start flex-col w-fit"}>
+            <div className={"flex items-start flex-col"}>
                 <h1 className={"text-3xl font-bold mb-5 text-left"}>Day {parseInt(currentDay) + 1}</h1>
                 <div className={"border-1 border-neutral-900 rounded-lg px-2 py-2 mb-5"}>
                     {exercises.map((e, index) => (
-                        <div key={index} className={`w-fit flex flex-row justify-around ${index > 0 && "border-t-1 border-neutral-900 mt-2 pt-1"}`}>
-                            <input
-                                type="text"
-                                value={e.exercise || ''}
-                                onChange={(e) => setExercise(index, e.target.value)}
-                                placeholder="Exercise"
-                                className={`${error && e.exercise.length < 1 ? "border-1 border-red-400" : "border-none"} rounded-lg focus:ring-0 px-2 py-1 w-1/3 ${index > 0 && "mt-1"}`}
-                            />
+                        <div key={index}
+                             className={`flex flex-row justify-around ${index > 0 && "border-t-1 border-neutral-900 mt-2 pt-1"}`}>
+                                <button onClick={() => showExerciseSelector(index, currentDay)} className={`rounded-lg px-2 py-1 overflow-wrap w-1/3 border-1 ${e.exercise === "" ? "border-red-400 hover:bg-red-100" : "border-gray-300 hover:bg-gray-200"} duration-200 transition  ${index > 0 && "mt-1"}`}>
+                                    {e.exercise === '' ? 'Select Exercise' : e.exercise.name}
+                                </button>
                             <input
                                 type="number"
                                 value={e.reps || ''}
@@ -284,4 +275,12 @@ function ExerciseInput({ exercises, setExercises, currentDay }) {
             </div>
         </div>
     );
+}
+
+export async function getServerSideProps(context) {
+    return {
+        props: {
+            exercises: exerciseJson.exercises
+        }
+    }
 }
