@@ -52,55 +52,57 @@ export default function ProgramCreator({ exercises }) {
     }
 
     return (
-        <div className={"flex flex-col items-center w-full min-h-screen bg-slate-50 dark:bg-neutral-900"}>
-            <Navigation/>
+        <div className={"flex flex-col justify-between items-center w-full min-h-screen bg-slate-50 dark:bg-neutral-900"}>
+            <div className={"w-full"}>
+                <Navigation/>
 
-            <div className={"flex flex-row justify-between items-start w-full min-h-screen h-fit max-w-screen-3xl px-10 mt-64 text-neutral-900 dark:text-slate-50"}>
-                <div className='h-full max-w-[22rem] min-w-[8rem] w-full overflow-y-auto flex justify-start flex-col'>
-                    <h2 className={"text-2xl font-bold mb-3 w-full text-left"}>Program Completion</h2>
-                    <div className={"flex flex-col"}>
-                        {steps.map((step, index) => (
-                            <a key={index} className={`${page > index ? "text-neutral-900" : "text-zinc-400"} duration-200 transition-all font-bold text-xl px-4 py-3 rounded-lg items-center inline-flex hover:bg-gray-100 hover:cursor-pointer`}>
-                                {page > index ? <svg className="w-5 h-5 mr-3 text-cyan-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                                </svg> :
-                                    <svg className="w-5 h-5 mr-3 text-zinc-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>}
-                                {step}
-                            </a>
-                        ))}
+                <div className={"flex flex-row justify-between items-start w-full h-fit max-w-screen-3xl px-10 mt-64 text-neutral-900 dark:text-slate-50"}>
+                    <div className='h-full max-w-[22rem] min-w-[8rem] w-full overflow-y-auto flex justify-start flex-col'>
+                        <h2 className={"text-2xl font-bold mb-3 w-full text-left"}>Program Completion</h2>
+                        <div className={"flex flex-col"}>
+                            {steps.map((step, index) => (
+                                <a key={index} className={`${page > index ? "text-neutral-900" : "text-zinc-400"} duration-200 transition-all font-bold text-xl px-4 py-3 rounded-lg items-center inline-flex hover:bg-gray-100 hover:cursor-pointer`}>
+                                    {page > index ? <svg className="w-5 h-5 mr-3 text-cyan-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                        </svg> :
+                                        <svg className="w-5 h-5 mr-3 text-zinc-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>}
+                                    {step}
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                <div className={"flex flex-row items-center justify-center"}>
-                    <button onClick={() => handleLast()} className={(page > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center mr-16"}>
-                        {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
+                    <div className={"flex flex-row items-center justify-center"}>
+                        <button onClick={() => handleLast()} className={(page > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center mr-16"}>
+                            {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
 
-                    {page === 0 &&
-                        <SplitSelector
-                            selectedSplit={selectedSplit}
-                            setSelectedSplit={setSelectedSplit}/>
-                    }
+                        {page === 0 &&
+                            <SplitSelector
+                                selectedSplit={selectedSplit}
+                                setSelectedSplit={setSelectedSplit}/>
+                        }
 
-                    {page === 1 && (
-                        <WorkoutBuilder
-                            exercises={exercises}
-                            selectedSplit={selectedSplit}
-                            workout={workout}
-                            setWorkout={setWorkout}
-                        />
-                    )}
+                        {page === 1 && (
+                            <WorkoutBuilder
+                                exercises={exercises}
+                                selectedSplit={selectedSplit}
+                                workout={workout}
+                                setWorkout={setWorkout}
+                            />
+                        )}
 
-                    <button onClick={() => handleNext()} className={((page === 0 && selectedSplit === "") ? "bg-gray-700 hover:bg-gray-600 " : "bg-cyan-accent hover:bg-cyan-accent-light ") + "px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center ml-16"}>
-                        {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
-                        <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
+                        <button onClick={() => handleNext()} className={((page === 0 && selectedSplit === "") ? "bg-gray-700 hover:bg-gray-600 " : "bg-cyan-accent hover:bg-cyan-accent-light ") + "px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center ml-16"}>
+                            {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
+                            <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
             <Footer/>
