@@ -52,7 +52,7 @@ export default function ProgramCreator({ exercises }) {
     }
 
     return (
-        <div className={"flex flex-col items-center w-screen min-h-screen bg-slate-50 dark:bg-neutral-900"}>
+        <div className={"flex flex-col items-center min-h-screen bg-slate-50 dark:bg-neutral-900"}>
             <Navigation/>
             <div className={"flex flex-col justify-between items-center w-full"}>
                 <div className={"flex flex-row justify-between items-start w-full h-full mt-64 px-10 text-neutral-900 dark:text-slate-50 max-w-screen-3xl mb-24"}>
@@ -82,7 +82,7 @@ export default function ProgramCreator({ exercises }) {
                     </div>
                     <div className={"mt-56 flex items-center"}>
                         <button onClick={() => handleLast()}
-                                className={(page > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center mr-16"}>
+                                className={(page > 0 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " px-3 transition-all hover:shadow-button ease-in duration-200 h-12 rounded-full text-white flex items-center mr-16"}>
                             {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -107,8 +107,7 @@ export default function ProgramCreator({ exercises }) {
                         )}
                     </div>
                     <div className={"mt-56 flex items-center"}>
-                        <button onClick={() => handleNext()}
-                                className={((page === 0 && selectedSplit === "") ? "bg-gray-700 hover:bg-gray-600 " : "bg-cyan-accent hover:bg-cyan-accent-light ") + "px-3 transition-all hover:shadow-button ease-in duration-200 hover:scale-105 h-12 rounded-full text-white flex items-center ml-16"}>
+                        <button onClick={() => handleNext()} className={((page === 0 && selectedSplit === "") ? "bg-gray-700 hover:bg-gray-600 " : "bg-cyan-accent hover:bg-cyan-accent-light ") + "px-3 transition-all hover:shadow-button ease-in duration-200 h-12 rounded-full text-white flex items-center ml-16"}>
                             {/* TODO IMPLEMENT THIS <span className={"ml-1 min-[424px]:text-lg text-base"}>{content[keys.indexOf(activeTopic) + 1]}</span>*/}
                             <svg className="w-6 h-6 -scale-x-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -195,6 +194,25 @@ function determineDaysInSplit(selectedSplit) {
     }
 }
 
+function determineDayNamesInSplit(selectedSplit) {
+    switch (selectedSplit) {
+        case 'push-pull-legs':
+            return ['Push Day', 'Pull Day', 'Leg Day'];
+        case 'ul':
+            return ['Upper Day', 'Lower Day'];
+        case 'pplxul':
+            return ['Push Day', 'Pull Day', 'Leg Day', 'Upper Day', 'Lower Day'];
+        case 'full':
+            return ['Full Body Day'];
+        case 'four-day':
+            return ['Day 1', 'Day 2', 'Day 3', 'Day 4'];
+        case 'five-day':
+            return ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'];
+        default:
+            return [];
+    }
+}
+
 function WorkoutBuilder({exercises, selectedSplit, workout, setWorkout}) {
     const [selectedExerciseIndex, setSelectedExerciseIndex] = useState(null);
     const [selectedExerciseDay, setSelectedExerciseDay] = useState(null);
@@ -228,7 +246,8 @@ function WorkoutBuilder({exercises, selectedSplit, workout, setWorkout}) {
                                    exercisesForDay={value}
                                    currentDay={key}
                                    exercises={exercises}
-                                   setExercisesForDay={setExercises}/>
+                                   setExercisesForDay={setExercises}
+                                   dayName={determineDayNamesInSplit(selectedSplit)[key]}/>
                 )}
                 {selectedExerciseIndex !== null &&
                     <ExerciseSelector selectedExerciseDay={selectedExerciseDay}
@@ -242,7 +261,7 @@ function WorkoutBuilder({exercises, selectedSplit, workout, setWorkout}) {
     )
 }
 
-function ExerciseInput({exercisesForDay, setExercisesForDay, exercises, currentDay, showExerciseSelector}) {
+function ExerciseInput({ exercisesForDay, setExercisesForDay, exercises, currentDay, showExerciseSelector, dayName }) {
     const [error, setError] = useState(true);
     const [showNewExercise, setShowNewExercise] = useState(false);
 
@@ -280,12 +299,12 @@ function ExerciseInput({exercisesForDay, setExercisesForDay, exercises, currentD
 
     return (
         <div className={"flex flex-col justify-center w-full"}>
-            <h1 className={"text-3xl font-bold mb-5 text-left"}>Day {parseInt(currentDay) + 1}</h1>
+            <h1 className={"text-3xl font-bold mb-5 text-left"}>{dayName}</h1>
             <div className={"border-1 border-neutral-900 rounded-lg px-2 py-2 mb-5"}>
                 {exercisesForDay.map((e, index) => (
                     <div key={index}
                          className={`flex flex-row justify-around ${index > 0 && "border-t-1 border-neutral-900 mt-2 pt-1"}`}>
-                            <button onClick={() => showExerciseSelector(index, currentDay)} className={`rounded-lg bg-white px-2 py-1 overflow-wrap w-1/3 border-1 ${e.exercise === "" ? "border-red-400 hover:bg-red-100" : "border-gray-300 hover:bg-gray-200"} duration-200 transition  ${index > 0 && "mt-1"}`}>
+                            <button onClick={() => showExerciseSelector(index, currentDay)} className={`rounded-lg bg-white px-2 py-1 overflow-wrap w-1/3 border-1 ${e.exercise === "" ? "border-red-400 hover:bg-red-100" : "border-gray-300 hover:bg-cyan-accent/3 hover:border-cyan-accent"} duration-200 transition  ${index > 0 && "mt-1"}`}>
                                 {e.exercise === '' ? 'Select Exercise' : e.exercise.name}
                             </button>
                         <input
@@ -293,14 +312,14 @@ function ExerciseInput({exercisesForDay, setExercisesForDay, exercises, currentD
                             value={e.reps || ''}
                             onChange={(e) => setReps(index, e.target.value)}
                             placeholder="Reps"
-                            className={`border-1 ${error && e.reps === null ? "border-red-400" : "border-gray-300"} rounded-lg focus:ring-0 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
+                            className={`border-1 ${error && e.reps === null ? "border-red-400" : "border-gray-300 hover:border-cyan-accent"} focus:border-cyan-accent rounded-lg focus:ring-0 transition duration-200 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
                         />
                         <input
                             type="number"
                             value={e.sets || ''}
                             onChange={(e) => setSets(index, e.target.value)}
                             placeholder="Sets"
-                            className={`border-1 ${error && e.sets === null ? "border-red-400" : "border-gray-300"} rounded-lg focus:ring-0 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
+                            className={`border-1 ${error && e.sets === null ? "border-red-400" : "border-gray-300 hover:border-cyan-accent"} focus:border-cyan-accent rounded-lg focus:ring-0 transition duration-200 px-2 py-1 ml-2 w-1/3 ${index > 0 && "mt-1"}`}
                         />
                     </div>
                 ))}
@@ -309,12 +328,13 @@ function ExerciseInput({exercisesForDay, setExercisesForDay, exercises, currentD
                 {showNewExercise && <ExerciseSelector setSelectedExercise={setSelectedExercise}
                                                       exercises={exercises}
                                                       setClose={() => setShowNewExercise(false)}></ExerciseSelector>}
-                <button onClick={() => setShowNewExercise(true)} className={(exercisesForDay.length < 10 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " p-2 bg-cyan-accent hover:bg-cyan-accent-light transition-all duration-200 text-white rounded-full"}>
+                <button onClick={() => setShowNewExercise(true)} className={(exercisesForDay.length < 10 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " py-2 pl-2 pr-3 bg-cyan-accent hover:bg-cyan-accent-light transition-all hover:shadow-button ease-in duration-200 text-white rounded-full flex flex-row justify-center"}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
+                    Add Exercise
                 </button>
-                <button onClick={handleMinusExercise} className={(exercisesForDay.length > 1 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " ml-4 p-2 transition-all duration-200 text-white rounded-full"}>
+                <button onClick={handleMinusExercise} className={(exercisesForDay.length > 1 ? "bg-cyan-accent hover:bg-cyan-accent-light" : "bg-gray-700 hover:bg-gray-600") + " ml-4 p-2 transition-all hover:shadow-button ease-in duration-200 text-white rounded-full"}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
                     </svg>
