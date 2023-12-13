@@ -13,7 +13,7 @@ export async function generateMetadata({}, parent) {
         metadataBase: new URL("https://www.wavelength.fit/"),
         title: "Wavelength Fitness",
         description: "A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all.",
-        keywords: "weightlifting, muscles, muscle functions, muscle locations",
+        keywords: "weightlifting, muscles, muscle functions, muscle locations"
     }
 }
 
