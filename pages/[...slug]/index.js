@@ -169,7 +169,8 @@ export async function getServerSideProps(context) {
             "reps": "A repetition of a single movement of an exercise.",
             "set": "A set is a group of repetitions of an exercise.",
             "sets": "A set is a group of repetitions of an exercise.",
-            "weightlifting": "Blah blah blah"
+            "weightlifting": "Blah blah blah",
+            "training": "testing123 isnfkasjdhjflasdfasdfasdf"
         }
 
         let usedWords = [];
@@ -190,8 +191,24 @@ export async function getServerSideProps(context) {
                 if (!sections[i].match(regex)) return;
 
                 const match = sections[i].match(regex);
+
+
+                let matchIndex = 0;
+
+                for (let j = sections[i].indexOf(match[matchIndex]); j >= 0; j--) {
+                    console.log(sections[i][j])
+                    if (sections[i][j] === ">") break;
+                    if (sections[i][j] === "<") {
+                        if (matchIndex < match.length - 1) {
+                            matchIndex++;
+                            j = sections[i].indexOf(match[matchIndex]);
+                        }
+                        else return;
+                    }
+                }
+
                 // use the match to replace the word with the definition
-                sections[i] = sections[i].replace(match[0], (match) => {
+                sections[i] = sections[i].replace(match[matchIndex], (match) => {
                     return match.replace(key, `<Definition text='${match.substring(0, match.length-1)}' definition="${dictionary[key]}">${key}</Definition>`);
                 });
 

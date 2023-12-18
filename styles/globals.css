@@ -250,7 +250,6 @@ li span {
 
 
 
-
 .core-styles-module_tooltip__3vRRp {
   position: absolute;
   top: 0;
@@ -305,6 +304,8 @@ li span {
 .styles-module_arrow__K0L3T {
   width: 8px;
   height: 8px;
+  background: inherit;
+
 }
 
 [class*='react-tooltip__place-top'] > .styles-module_arrow__K0L3T {
