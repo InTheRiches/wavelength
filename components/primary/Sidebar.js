@@ -116,7 +116,7 @@ export function HeaderListSidebar({ headers, ads, setAds }) {
                         );
                     })}
                 </div>
-                <div className={"mt-10 bg-white border-1 border-neutral-900 dark:bg-neutral-800 px-4 py-3 max-w-[16rem] rounded-xl flex flex-col"}>
+                <div className={"mt-10 bg-white dark:bg-neutral-800 border-slate-200 border-1 dark:border-0 px-4 py-3 max-w-[16rem] rounded-xl flex flex-col"}>
                     Seeing ads? Ads are off by default, but you can turn them off/on by clicking the button below. Remember, ads are how Wavelength stays free, consider putting them on if you enjoy the content!
                     <button className={"bg-cyan-accent w-full rounded-xl py-1 text-white mt-4"} onClick={() => {
                         setAds(!ads);
