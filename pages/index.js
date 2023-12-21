@@ -39,10 +39,10 @@ export default function LandingPage() {
             {/*</div>*/}
 
             <NextSeo
-                title={"Wavelength"}
+                title={"Wavelength Fitness"}
                 canonical={"https://www.wavelength.fit/"}
                 description={"A science based approach to building muscle, losing fat, and getting stronger, arranged to be understood and accessible by all."}
-                keywords={"weightlifting, muscles, muscle functions, muscle locations"}
+                keywords={"weightlifting, muscles, muscle functions, muscle locations, fitness, wavelength, wavelength fitness"}
             />
 
             <Head>
