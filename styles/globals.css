@@ -167,8 +167,8 @@ span:hover .tooltip {
 }
 
 *::-webkit-scrollbar {
+  z-index:100;
   width: 6px;
-  z-index: 20;
 }
 
 *::-webkit-scrollbar-track {
