@@ -10,6 +10,7 @@ import ExerciseSelector from "@/components/programs/ExerciseSelector";
 
 export default function ProgramCreator({ exercises }) {
     const [selectedSplit, setSelectedSplit] = useState("")
+    const [selectedStyle, setSelectedStyle] = useState("")
     const [page, setPage] = useState(0)
     const [workout, setWorkout] = useState({}); // Store workout data
 
@@ -25,6 +26,7 @@ export default function ProgramCreator({ exercises }) {
 
     const steps = [
         "Select Split",
+        "Select Training Style",
         "Build Workout",
         "Finish Program"
     ]
@@ -38,7 +40,11 @@ export default function ProgramCreator({ exercises }) {
             setWorkout(new Array(daysInSplit).fill(null).map(() => [{ exercise: '', sets: null, reps: null }, { exercise: '', sets: null, reps: null }, { exercise: '', sets: null, reps: null }]));
 
             setPage(1);
-        } else {
+        }
+        if (page === 1) {
+            setPage(2);
+        }
+        else {
             // Workout building is complete
             // You may want to perform some action here, like saving the workout
             console.log('Workout Building Complete!', workout);
@@ -52,9 +58,9 @@ export default function ProgramCreator({ exercises }) {
     }
 
     return (
-        <div className={"flex flex-col items-center min-h-screen bg-slate-50 dark:bg-neutral-900"}>
+        <div className={"flex flex-col items-center h-screen bg-slate-50 dark:bg-neutral-900"}>
             <Navigation/>
-            <div className={"flex flex-col justify-between items-center w-full"}>
+            <div className={"flex flex-col justify-between items-center w-full h-full"}>
                 <div className={"flex flex-row justify-between items-start w-full h-full mt-64 px-10 text-neutral-900 dark:text-slate-50 max-w-screen-3xl mb-24"}>
                     <div className='h-full w-1/4 overflow-y-auto flex justify-start flex-col mt-16'>
                         <h2 className={"text-2xl font-bold mb-3 w-full text-left"}>Program Completion</h2>
@@ -96,8 +102,12 @@ export default function ProgramCreator({ exercises }) {
                                 selectedSplit={selectedSplit}
                                 setSelectedSplit={setSelectedSplit}/>
                         }
-
                         {page === 1 && (
+                            <SelectTrainingStyle
+                                setSelectedStyle={setSelectedStyle}
+                                selectedStyle={selectedStyle}/>
+                        )}
+                        {page === 2 && (
                             <WorkoutBuilder
                                 exercises={exercises}
                                 selectedSplit={selectedSplit}
@@ -211,6 +221,75 @@ function determineDayNamesInSplit(selectedSplit) {
         default:
             return [];
     }
+}
+
+function TrainingStyle({style, selectedStyle, setSelectedStyle}) {
+    return (
+        <div onClick={() => {
+            if (selectedStyle === style.id)
+                setSelectedStyle("");
+            else
+                setSelectedStyle(style.id);
+        }} className={"border-1 rounded-xl px-6 py-4 transform transition duration-200 " +
+            "hover:cursor-pointer hover:scale-105 hover:border-cyan-accent " +
+            `${selectedStyle === style.id ? "bg-blue-50 border-sky-500 dark:bg-blue-500 dark:bg-opacity-5" : "bg-white border-neutral-900 dark:bg-neutral-800"}`}>
+
+            <h2 className={"font-bold w-full mb-2 text-1xl"}>{style.title}</h2>
+            <p className={"min-[424px]:text-md min-[1350px]:text-lg text-base"}>{style.description}</p>
+            <p className={"mt-3 pt-3 border-t-1 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Reps: <p className={"inline font-normal"}>{style.reps}</p></p>
+            <p className={"mt-2 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Sets: <p className={"inline font-normal"}>{style.sets}</p></p>
+            <p className={"mt-2 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Rest Times: <p className={"inline font-normal"}>{style.rest}m</p></p>
+
+            {selectedStyle === style.id && <div className={"absolute -right-3 -top-3"}>
+                <div className={"bg-white rounded-full w-6 h-6 absolute top-[4px] right-[4px] -z-10"}></div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-blue-400 w-8 h-8">
+                    <path className={"z-20"} fillRule="evenodd"
+                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                          clipRule="evenodd"/>
+                </svg>
+            </div>}
+        </div>
+    );
+}
+
+function SelectTrainingStyle({selectedStyle, setSelectedStyle}) {
+    const styles = [
+        {
+            title: "Strength",
+            description: "Strength training is a type of physical exercise specializing in the use of resistance to induce muscular contraction, which builds the strength, anaerobic endurance, size of skeletal muscles and bone density.",
+            id: "strength",
+            rest: "3-5",
+            reps: "3-6",
+            sets: "2-4"
+        },
+        {
+            title: "Hypertrophy",
+            description: "Hypertrophy is the increase in the volume of an organ or tissue due to the enlargement of its component cells.",
+            id: "hypertrophy",
+            rest: "1-5",
+            reps: "6-12",
+            sets: "2-4"
+        },
+        {
+            title: "Endurance",
+            description: "Endurance training is the act of exercising to increase endurance. The term endurance training generally refers to training the aerobic system as opposed to the anaerobic system.",
+            id: "endurance",
+            rest: "1-5",
+            reps: "12-30",
+            sets: "2-4"
+        }
+    ];
+    return (
+        <div className={"w-full h-full flex flex-col items-center"}>
+            <h1 className={"text-3xl font-bold mb-10 w-full text-left "}>What training style do you prefer?</h1>
+            <div className={"grid grid-cols-3 gap-12 h-fit"}>
+                {styles.map((style, index) => (
+                        <TrainingStyle key={index} selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle}
+                                       style={style}/>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 function WorkoutBuilder({exercises, selectedSplit, workout, setWorkout}) {
