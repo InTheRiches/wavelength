@@ -52,8 +52,12 @@ export default function ProgramCreator({ exercises }) {
     }
 
     const handleLast = () => {
+        // TODO IF THIS ISN'T NECESSARY REMOVE IT
         if (page === 1) {
             setPage(0);
+        }
+        if (page === 2) {
+            setPage(1);
         }
     }
 
@@ -230,15 +234,22 @@ function TrainingStyle({style, selectedStyle, setSelectedStyle}) {
                 setSelectedStyle("");
             else
                 setSelectedStyle(style.id);
-        }} className={"border-1 rounded-xl px-6 py-4 transform transition duration-200 " +
+        }} className={"border-1 rounded-xl px-6 py-4 transform transition duration-200 flex flex-col justify-between " +
             "hover:cursor-pointer hover:scale-105 hover:border-cyan-accent " +
             `${selectedStyle === style.id ? "bg-blue-50 border-sky-500 dark:bg-blue-500 dark:bg-opacity-5" : "bg-white border-neutral-900 dark:bg-neutral-800"}`}>
 
-            <h2 className={"font-bold w-full mb-2 text-1xl"}>{style.title}</h2>
-            <p className={"min-[424px]:text-md min-[1350px]:text-lg text-base"}>{style.description}</p>
-            <p className={"mt-3 pt-3 border-t-1 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Reps: <p className={"inline font-normal"}>{style.reps}</p></p>
-            <p className={"mt-2 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Sets: <p className={"inline font-normal"}>{style.sets}</p></p>
-            <p className={"mt-2 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Rest Times: <p className={"inline font-normal"}>{style.rest}m</p></p>
+            <div>
+                <h2 className={"font-bold w-full mb-2 text-1xl"}>{style.title}</h2>
+                <p className={"min-[424px]:text-md min-[1350px]:text-lg text-base"}>{style.description}</p>
+            </div>
+            <div>
+                <p className={"mt-3 pt-3 border-t-1 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Reps: <p
+                    className={"inline font-normal"}>{style.reps}</p></p>
+                <p className={"mt-2 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Sets: <p
+                    className={"inline font-normal"}>{style.sets}</p></p>
+                <p className={"mt-2 min-[424px]:text-md min-[1350px]:text-lg text-base font-bold"}>Rest Times: <p
+                    className={"inline font-normal"}>{style.rest}m</p></p>
+            </div>
 
             {selectedStyle === style.id && <div className={"absolute -right-3 -top-3"}>
                 <div className={"bg-white rounded-full w-6 h-6 absolute top-[4px] right-[4px] -z-10"}></div>
@@ -377,12 +388,12 @@ function ExerciseInput({ exercisesForDay, setExercisesForDay, exercises, current
     }
 
     return (
-        <div className={"flex flex-col justify-center w-full"}>
-            <h1 className={"text-3xl font-bold mb-5 text-left"}>{dayName}</h1>
-            <div className={"border-1 border-neutral-900 rounded-lg px-2 py-2 mb-5"}>
+        <div className={"flex flex-col justify-center w-full px-6 py-4 border-1 border-neutral-900 rounded-xl bg-white"}>
+            <h1 className={"text-2xl font-bold mb-5 text-left"}>{dayName}</h1>
+            <div className={"mb-5"}>
                 {exercisesForDay.map((e, index) => (
                     <div key={index}
-                         className={`flex flex-row justify-around ${index > 0 && "border-t-1 border-neutral-900 mt-2 pt-1"}`}>
+                         className={`flex flex-row justify-around ${index > 0 && "mt-2 pt-1"}`}>
                             <button onClick={() => showExerciseSelector(index, currentDay)} className={`rounded-lg bg-white px-2 py-1 overflow-wrap w-1/3 border-1 ${e.exercise === "" ? "border-red-400 hover:bg-red-100" : "border-gray-300 hover:bg-cyan-accent/3 hover:border-cyan-accent"} duration-200 transition  ${index > 0 && "mt-1"}`}>
                                 {e.exercise === '' ? 'Select Exercise' : e.exercise.name}
                             </button>
