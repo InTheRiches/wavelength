@@ -14,7 +14,6 @@ import {serialize} from "next-mdx-remote/serialize";
 import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import {loginUser} from "@/components/backend/Authentication";
 import { NextSeo } from 'next-seo';
-import Script from "next/script";
 
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
@@ -215,7 +214,7 @@ export async function getServerSideProps(context) {
             },
         };
     } catch (error) {
-        console.log(error);
+        // console.log("error: " + error);
         return {
             notFound: true,
         };

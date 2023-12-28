@@ -2,9 +2,7 @@ import React, {useEffect, useState} from "react";
 import Navigation from "@/components/primary/Navigation";
 import path from "path";
 import Footer from "@/components/Footer";
-import {ScrollButton, scrollPageToContent} from "@/components/ContentScroll";
 import useDarkMode from "@/components/useDarkMode/use-dark-mode";
-import {loginUser} from "@/components/backend/Authentication";
 import exerciseJson from "@/data/exercises_new.json";
 import ExerciseSelector from "@/components/programs/ExerciseSelector";
 
