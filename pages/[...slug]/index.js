@@ -19,7 +19,7 @@ import Script from "next/script";
 export default function Page({ title, description="", markdown="", activeTopic, headers }) {
     const router = useRouter();
     const [location, setLocation] = useState("Location");
-    const [ads, setAds] = useState(false);
+    // const [ads, setAds] = useState(false);
 
     const [keys, setKeys] = useState([]);
     const [content, setContent] = useState([]);
@@ -81,8 +81,6 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                 keywords={"weightlifting, muscles, muscle functions, muscle locations"}
                 canonical={"https://www.wavelength.fit" + activeTopic}
             />
-            {ads && <Script strategy={"afterInteractive"} src="https://glimtors.net/pfe/current/tag.min.js?z=6682094" data-cfasync="false" async></Script>}
-            {ads && <Script strategy={"afterInteractive"}>{`(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('agaenteitor.com',6682078,document.createElement('script'))`}</Script>}
 
             {/*<div className={"absolute top-0 right-0 w-full h-full z-10"}>*/}
             {/*    <img src={"/images/backgrounds/contentBG.png"} className={"w-full h-full object-cover opacity-20 dark:opacity-10"} alt={"background"}></img>*/}
@@ -139,7 +137,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                     </div>
                     <Footer></Footer>
                 </div>
-                <HeaderListSidebar setAds={setAds} ads={ads} headers={headers}></HeaderListSidebar>
+                <HeaderListSidebar headers={headers}></HeaderListSidebar> {/* setAds={setAds} ads={ads} */}
             </div>
             <ScrollButton positioning={"bottom-8 right-8 fixed min-[1350px]:hidden flex"}></ScrollButton>
         </div>
