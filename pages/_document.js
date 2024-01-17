@@ -27,7 +27,7 @@ export default function Document() {
                 </Script>
                 <Script src="//servedby.eleavers.com/ads/ads.php?t=MjkxNTM7MTk0OTY7aG9yaXpvbnRhbC5sZWFkZXJib2FyZA==&index=1"/>
                 <Script strategy={"beforeInteractive"}>{"window.msAdsQueue = window.msAdsQueue || [];"}</Script>
-                <Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10321808&publisherId=253109271" crossOrigin="anonymous"></Script>
+                <Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10322021&publisherId=253109271" crossOrigin="anonymous"></Script>
                 <Main/>
                 <NextScript/>
             </body>
