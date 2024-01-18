@@ -89,7 +89,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
 
             <div className={`flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]`}>
                 <Sidebar activeTopic={activeTopic}></Sidebar>
-                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[17rem] xl:ml-[19rem]"}>
+                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[19rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-8">
