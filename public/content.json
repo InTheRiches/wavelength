@@ -14,7 +14,7 @@
     "subtopics": [
       { "id": 0, "title": "Growth", "href": "/muscles/growth" },
       {
-        "id": 1, "title": "Biology", "subtopics": [
+        "id": 1, "title": "Biology", "url": "/muscles/biology", "subtopics": [
           { "id": 0, "title": "Tendons & Ligaments", "href": "/muscles/biology/tendons-and-ligaments" }
         ]
       },
