@@ -17,19 +17,23 @@ export default function Document() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <body>
-            <Script strategy={"beforeInteractive"} async src="https://www.googletagmanager.com/gtag/js?id=G-5376MG73KY"></Script>
-                <Script strategy={"beforeInteractive"}>
-                    {`window.dataLayer = window.dataLayer || [];
+            <Script strategy={"beforeInteractive"} async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-5376MG73KY"></Script>
+            <Script strategy={"beforeInteractive"}>
+                {`window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
     
                     gtag('config', 'G-5376MG73KY');`}
-                </Script>
-                <Script src="//servedby.eleavers.com/ads/ads.php?t=MjkxNTM7MTk0OTY7aG9yaXpvbnRhbC5sZWFkZXJib2FyZA==&index=1"/>
-                <Script strategy={"beforeInteractive"}>{"window.msAdsQueue = window.msAdsQueue || [];"}</Script>
-                <Script strategy={"beforeInteractive"} async src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10322021&publisherId=253109271" crossOrigin="anonymous"></Script>
-                <Main/>
-                <NextScript/>
+            </Script>
+            <Script
+                src="//servedby.eleavers.com/ads/ads.php?t=MjkxNTM7MTk0OTY7aG9yaXpvbnRhbC5sZWFkZXJib2FyZA==&index=1"/>
+            <Script strategy={"beforeInteractive"}>{"window.msAdsQueue = window.msAdsQueue || [];"}</Script>
+            <Script strategy={"beforeInteractive"} async
+                    src="https://adsdk.microsoft.com/pubcenter/sdk.js?siteId=10322021&publisherId=253109271"
+                    crossOrigin="anonymous"></Script>
+            <Main/>
+            <NextScript/>
             </body>
         </Html>
     )
