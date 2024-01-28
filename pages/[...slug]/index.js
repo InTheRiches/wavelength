@@ -89,13 +89,13 @@ export default function Page({ title, description="", markdown="", activeTopic, 
 
             <div className={`flex flex-row justify-around max-w-screen-4xl md:px-6 my-8 z-20 mx-auto min-[1350px]:pr-[20rem]`}>
                 <Sidebar activeTopic={activeTopic}></Sidebar>
-                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[17rem] xl:ml-[19rem]"}>
+                <div className={"px-6 sm:px-9 flex flex-col w-full h-full lg:ml-[19rem]"}>
                     {/* Page Header */}
                     <div className="w-full max-w-5xl flex-col">
                         <div className="flex flex-col mb-8">
                             <span className="text-cyan-accent mb-1 text-lg lg:text-xl font-semibold">{location}</span>
                             <h1 className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</h1>
-                            <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify"}>
+                            <div className={"border-cyan-accent border-1 flex flex-col p-2 xl:p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify"}>
                                 <span>
                                     <Markdown components={useDescriptionComponents()}>{description}</Markdown>
                                 </span>
