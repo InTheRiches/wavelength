@@ -95,7 +95,7 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                         <div className="flex flex-col mb-8">
                             <span className="text-cyan-accent mb-1 text-lg lg:text-xl font-semibold">{location}</span>
                             <h1 className="mb-10 inline-block text-4xl xl:text-5xl font-bold text-slate-900 tracking-tight dark:text-slate-50 text-left">{title}</h1>
-                            <div className={"border-cyan-accent border-1 flex flex-col p-2 xl:p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify"}>
+                            <div className={"border-cyan-accent border-1 flex flex-col p-4 bg-neutral-500 bg-opacity-5 rounded-md text-left sm:text-justify"}>
                                 <span>
                                     <Markdown components={useDescriptionComponents()}>{description}</Markdown>
                                 </span>
