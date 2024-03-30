@@ -9,7 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be896b55-8482-4c8d-bd71-8dfc312afe18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/info/reps-and-sets.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/info/reps-and-sets.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/muscles/training/basics.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/muscles/training/basics.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pages/recovery/basics.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/data/pages/recovery/basics.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,6 +228,8 @@
       <workItem from="1706149195781" duration="1000" />
       <workItem from="1706400592001" duration="1403000" />
       <workItem from="1706977754591" duration="595000" />
+      <workItem from="1709495390834" duration="592000" />
+      <workItem from="1711805576327" duration="326000" />
     </task>
     <servers />
   </component>
