@@ -53,9 +53,9 @@ export default function Page({ title, description="", markdown="", activeTopic, 
                             subsubtopic.subtopics.forEach((subsubsubtopic) => {
                                 if (subsubsubtopic.href === activeTopic)
                                     setLocation(
-                                        topic.title + " • "
-                                        + (subtopic.showInLocation === undefined ? subtopic.title : subtopic.showInLocation ? " • " + subtopic.title : "")
-                                        + (subsubtopic.showInLocation === undefined ? " • " + subsubtopic.title : subsubtopic.showInLocation ? " • " + subsubtopic.title : "")
+                                        topic.title
+                                        + (subtopic.showInLocation === undefined ? " • " + subtopic.title : " • " + subtopic.showInLocation ? " • " + subtopic.title : "")
+                                        + (subsubtopic.showInLocation === undefined ? " • " + subsubtopic.title : " • " + subsubtopic.showInLocation ? " • " + subsubtopic.title : "")
                                     );
                                 if (!keys.includes(subsubsubtopic.href)) keys.push(subsubsubtopic.href);
                                 content.push(subsubsubtopic.title);
